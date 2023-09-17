@@ -9,7 +9,7 @@
 
 
 % Paragraphs
-\parindent=5pt
+\parindent=0pt
 \parskip=5 pt plus 2 pt minus 1pt
 
 \titleformat{\section}
@@ -18,10 +18,8 @@
 \titleformat{\subsection}
   {\normalfont\normalsize\centering}{\thesection.}{1em}{}
 
-\theoremstyle{theorem}
+\theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
-\newtheorem{corollary}{Corollary}
-\newtheorem{definition}{Definition}
 \newtheorem{proposition}{Proposition}
 \newtheorem{lemma}{Lemma}
 \newtheorem{problem}{Problem}
@@ -33,15 +31,17 @@
 
 \subsection*{Art. 1\\ \begin{small}\textit{(Congruences, moduli, residues and nonresidues)} \end{small} 
 } 
- If the difference between numbers $b$ and $c$ is a multiple of a number $a$, then $b$ and $c$ are said to be congruent modulo $a$, otherwise they are incongruent; $a$ is called the modulus of the congruence.  In the former case, each of the numbers $b$ and $c$ is called a residue of the other, and in the latter case, a non-residue.
+ If the difference between numbers $b$ and $c$ is a multiple of a number $a$, then $b$ and $c$ are said to be congruent modulo $a$, otherwise they are incongruent; the number $a$ is called the modulus of the congruence.  In the former case, each of the numbers $b$ and $c$ is called a residue of the other, and in the latter case, a non-residue.
 
-These notions apply to all integers, both positive and negative, but they are not to be extended to fractions.  For example, $-9$ and $16$ are congruent modulo $5$; $-7$ and $15$ are residues of each other modulo $11$, but not modulo $3$.  Moreover, since zero is divisible by all numbers, every number must be regarded as congruent to itself according to any modulus.
+These notions apply to all integers, both positive and negative\footnote{Of course, the modulus is always absolute, i.e. it is to be taken without regard to sign}  but they are not to be extended to fractions.  For example, $-9$ and $16$ are congruent modulo $5$; $-7$ and $15$ are residues of each other modulo $11$, but not modulo $3$.  Moreover, since zero is divisible by all numbers, every number must be regarded as congruent to itself according to any modulus.
 
 \subsection*{Art. 2} 
 
 All of the numbers congruent to $a$ modulo $m$ are given by the formula $a+km$ where $k$ denotes an indeterminate integer.  The propositions which we shall give hereafter can be derived from this with no difficulty; but indeed their truth is equally easy to demonstrate directly.
 
-We will denote congruences with the sign $\equiv$, and if necessary the modulus will be in parentheses, e.g. $-16 \equiv 9 \; (\mathrm{mod.} 5)$, $-7 \equiv 15  \;(\mathrm{mod.} 11)$. 
+We will denote congruences with the sign $\equiv$, and if necessary the modulus will be in parentheses, e.g. \footnote{We have adopted this sign due to the strong analogy between equality and congruence.   For the same reason, the illustrious Legendre used the sign of equality for congruity.  We hesitated to imitate that convention, lest any ambiguity should arise.}
+\begin{eqnarray*} -16 &\equiv& 9 \; (\mathrm{mod.} \; 5) \\
+  -7 &\equiv& 15  \;(\mathrm{mod.} \; 11). \end{eqnarray*}
 
 \subsection*{Art. 3} \begin{theorem} Given $m$ consecutive whole numbers
 \[ a, a+1, a+2,\dots, a+m-1 \]
@@ -53,7 +53,7 @@ If indeed $\frac{a-A}{m}$ is an integer, we have $a \equiv A$.  If it is a fract
 
 For example, $-13$ modulo $5$ has minimum positive residue $2$, which is the absolute minimum, and also $-3$, which is the minimum negative residue.  $5$ modulo $7$ is its own minimum positive residue, $-2$ is the negative minimum residue, which is also the absolute minimum.
 
-\subsection*{Art. 5 (Elementary propositions about congruences)}  Having established these notions, let us collect those properties of congruent numbers which present themselves most immediately.
+\subsection*{Art. 5  \\ \begin{small}\textit{(Elementary propositions about congruences)}\end{small}}  Having established these notions, let us collect those properties of congruent numbers which present themselves most immediately.
 
 \begin{proposition} Numbers which are congruent according to a composite modulus, are also congruent according to any divisor of the modulus. \end{proposition}
 
@@ -62,13 +62,13 @@ For example, $-13$ modulo $5$ has minimum positive residue $2$, which is the abs
 \begin{proposition}  Congruent numbers have the same minimum residues, incongruent ones have different ones. \end{proposition}
 
 \subsection*{Art. 6} Given any number of numbers $A$, $B$, $C$, etc. and as many others $a$, $b$, $c$, etc., and any modulus whatsoever, 
-\[ \textit{If  }A \equiv a, B \equiv b \;\mathrm{ etc.} \textit{ then } A + B + C + \;\mathrm{etc.} \equiv a+b+c+\;\mathrm{etc.} \]
-\[ \textit{If  }A \equiv a, B \equiv b, \textit{ then } A - B  \equiv a-b \]
+\begin{proposition} $\textit{If  }A \equiv a, B \equiv b \;\mathrm{ etc.} \textit{ then } A + B + C + \;\mathrm{etc.} \equiv a+b+c+\;\mathrm{etc.} $ \end{proposition}
+\begin{proposition} $ \textit{If  }A \equiv a, B \equiv b, \textit{ then } A - B  \equiv a-b $. \end{proposition}
 
 \subsection*{Art. 7} 
-\[ \textit{If  }A \equiv a, \textit{ then } kA \;\mathrm{etc.} \equiv ka \]
+\begin{proposition} $ \textit{If  }A \equiv a, \textit{ then } kA \equiv ka $. \end{proposition}
 If $k$ is a positive number, this is just a special case of the preceding proposition, in which $A=B=C$ etc and $a=b=c$ etc.  If $k$ is negative, then $-k$ is positive, and $-kA \equiv -ka$ and therefore $kA \equiv ka$.
-\[ \textit{If  }A \equiv a, B \equiv b, \textit{ then } AB \equiv ab, \textrm{ since } AB \equiv Ab \equiv ab \]
+\begin{proposition} $\textit{If  }A \equiv a, B \equiv b, \textit{ then } AB \equiv ab, \textrm{ since } AB \equiv Ab \equiv ab$.  \end{proposition}
 
 \subsection*{Art. 8} Given any number of numbers $A$, $B$, $C$, etc. and as many others $a$, $b$, $c$, etc., which are congruent to each other, $A \equiv a$, $B \equiv b$, etc., the products of both will be congruent, $ABC$ etc.$\equiv abc$ etc.
 
@@ -80,5 +80,25 @@ If all the numbers $A$, $B$, $C$ are assumed to be equal, then so are the corres
 \begin{proposition} Let $X$ be a function of a variable $x$, of the form
 \[ A x^a + B x^b + C x^c + \cdots \]
 where $A$, $B$, $C$ etc. are arbitrary integers and $a$, $b$, $c$ are non-negative integers.  Then if the indeterminate $x$ values are congruent according to any modulus, the resulting values of the function $X$ will also be congruent. \end{proposition}
+\begin{proof} Let $f$, $g$ be congruent values of $x$.  Then from the preceding article $f^a \equiv g^a$ and $Af^a \equiv Ag^a$, and in the same way $Bf^b \equiv Bg^b$ etc.  Thus 
+\[ Af^a + Bf^b + Cf^c + \textit{etc}. \equiv Ag^a + Bg^b + Cg^c + \textit{etc}. \]
+\end{proof}
+Moreover, it is easy to understand how this theorem can be extended to functions of several variables.
+
+\subsection*{Art. 10}
+
+If, therefore, all consecutive integers are substituted for $x$, and the values of the function $X$ are reduced to their minimum residues, these will constitute a series in which, after an interval of $m$ (where $m$ denotes the modulus), the same terms recur again; the series will be formed from the same terms repeated infinitely with period $m$. \textbf{(??)}
+
+For example, let  $X = x^3 - 8x + 6$ and $m=5$.   Then for $x = 0,1,2,3$ etc., the values of $X$ have minimum positive residues $1,4,3,4,3,1, 4$ etc., where the first $1,4,3,4,3$ are infinitely repeated; and if the series is continued backwards, i.e. $x$ is given negative values, then the same period is produced with an inverted order of terms.  From this it is clear that terms other than those which constitute the period cannot occur anywhere in the series.
+
+\subsection*{Art. 11}
+
+In this example, therefore, $X$ can become neither $\equiv 0$ nor $\equiv 2$, much less $=0$ or $=2$. Hence it follows  that the equations $x^3 -8x + 6 = 0$ and $x^3 - 8x + 4 =0$ cannot be solved by integers, and therefore, as is well known, they cannot be solved by rational numbers.   It is generally clear that the equation $X=0$, when $X$ is a function of the variable $x$, of the form
+\[ x^n + Ax^{n-1} + Bx^{n-2} + \textrm{etc.} + N \]
+with $A$, $B$, $C$ etc. integers and $n$ a positive integer (to which form it is clear that any algebraic equation can be reduced) can have no rational root, if there is a modulus for which the congruence $X\equiv0$ is impossible.  This criterion, which spontaneously presented itself to us, will be discussed in greater detail in Section VIII.  Certainly from this example one obtains a sense of the utility of these investigations.
+
+
+
+
 
 \end{document}
