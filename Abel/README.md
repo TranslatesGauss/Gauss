@@ -1,0 +1,14 @@
+English Translation of a French Translation of Abel's Complete Works (in progress).  
+The original can be found <a href="https://archive.org/details/117742591">here</a> <br><br>
+
+Please email translatesgauss@gmail.com to report errors, make requests, or contribute. 
+
+Contents
+
+1. GENERAL METHOD FOR FINDING FUNCTIONS OF A SINGLE VARIABLE
+QUANTITY, WHEN A PROPERTY OF THESE FUNCTIONS IS GIVEN BY AN
+EQUATION IN TWO VARIABLES.
+2. SOLUTION OF SOME PROBLEMS WITH THE HELP OF DEFINITE INTEGRALS
+3. MEMOIRE ON ALGEBRAIC EQUATIONS, IN WHICH THE IMPOSSIBILITY OF
+SOLVING THE GENERAL EQUATION OF DEGREE FIVE IS DEMONSTRATED
+4. A SIMPLE DEFINITE INTEGRAL EXPRESSING THE FINITE INTEGRAL $\Sigma^n \phi x$
