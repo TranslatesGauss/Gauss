@@ -1,4 +1,5 @@
-English Translation of a French Translation of Abel's Complete Works (in progress).  The original can be found <a href="https://archive.org/details/117742591">here</a>. <br><br>
+English Translation of a French Translation of Abel's Complete Works (in progress).  
+The original can be found <a href="https://archive.org/details/117742591">here</a>.
 
 Please email translatesgauss@gmail.com to report errors, make requests, or contribute. 
 
