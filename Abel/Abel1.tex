@@ -1,0 +1,233 @@
+\documentclass[12pt]{article}
+\usepackage{geometry}
+\usepackage{amsmath}
+\geometry{legalpaper, margin=1in}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\parindent=0pt
+\parskip=8pt
+\arraycolsep=2pt
+\usepackage{pgfplots}
+
+
+\begin{document}
+
+\begin{center}
+GENERAL METHOD FOR FINDING FUNCTIONS OF A SINGLE VARIABLE QUANTITY, WHEN A PROPERTY OF THESE FUNCTIONS IS GIVEN BY AN EQUATION IN TWO VARIABLES.
+\end{center}
+
+Let $x$ and $y$ be two independent variable quantities, let $\alpha$, $\beta$, $\gamma$, $\delta$ etc be given functions of $x$ and $y$, and let $\phi$, $f$, $F$ etc. be unknown functions, between which a relation is given by an equation $V=0$, containing in some manner the quantities $x$, $y$, $\phi\alpha$, $f \beta$, $F\gamma$ etc. and their differentials.  We can, in general, with the help of this single equation, find all the unknown functions, provided that the problem admits a solution.  
+
+To find one of the functions, it is clear that we must find an equation where this function is the only unknown, and therefore we must eliminate all the others.  We therefore seek to first eliminate one unknown function, for example $\phi\alpha$, and its differentials.  The quantities $x$ and $y$ being independent, we can regard one of them, or a given function of the two, as constant.  We can therefore differentiate the equation $V = 0$ with respect to one of the variables $x$, while considering $\alpha$ constant, and therefore considering the other variable $y$ to be a function of $x$ and $a$.  Now, if we successively differentiating the equation $V = 0$, while holding $\alpha$ constant, then the resulting equations will contain no functions of $\alpha$ other than $\phi \alpha$ and its differentials. Therefore, if the function $V$ contains
+\[ \phi \alpha, d \phi \alpha, \dots, d^n\phi \alpha, \]
+we will obtain, upon differentiating the equation $V=0$ $n+1$ times in succession with $\alpha$ held constant, the following $n+2$ equations:
+\[ V = 0, dV = 0, d^2V = 0, \dots, d^{n+1} V = 0. \]
+Eliminating from these $n+2$ equations the $n+1$ unknown quantities 
+\[ \phi \alpha, d \phi \alpha, d^2 \phi \alpha \mathrm{\; \; etc.}, \]
+there will result an equation $V_1 = 0$ which does not contain the function $\phi \alpha$ or any of its differentials, but only the functions $f\beta$, $F\gamma$, etc. and their differentials.  
+
+The equation $V_1$ can then be treated in the same manner, with respect to one of the other unknown functions $f \beta$, and we will obtain an equation $V_2 = 0$ which contains neither $\phi \alpha$ nor $f \beta$, nor any of their differentials, but only $F\gamma$, etc. and the differentials of these functions.   
+
+In this way we can continue eliminating unknown functions, until we have an equation which contains a single unknown function and its differentials.  Regarding one of the variable quantities as constant, we now have a differential equation relating the unknown function and the remaining variable, from which we can extract the unknown function by integration.  
+
+We may remark that it is sufficient to carry out the elimination only to the point where we have obtained an equation containing two of the unknown functions and their differentials.  Indeed, if for example the functions are $\phi \alpha$ and $f \beta$, we can, by supposing $\beta$ to be constant, express $x$ and $y$ as functions of $\alpha$ with the help of the two equations $\alpha = \alpha$ and $\beta = c$, and arrive in this  way at a differential equation relating $\phi\alpha$ and $\alpha$, from which we may deduce $\phi \alpha$.  In the same way, we can find an equation relating $f\beta$ and $\beta$, if we determine $x$ and $y$ from the equations $\alpha = c$ and $\beta = \beta$.  The functions being found, we may easily find the other functions with the help of the remaining equations.  
+ 
+ In this way, we can therefore in general find all of the unknown functions, whenever the problem admits a solution.  To verify this, we must substitute the values we have found into the given equation, and see whether it is satisfied.
+ 
+The above discussion depends, as we have seen, on differentiating a function of $x$ and $y$ with respect to $x$, while holding constant a given function of $x$ and $y$; $y$ is therefore a function of $x$ and in the differentials [of V = 0] may be found the expressions $\frac{dy}{dx}$, $\frac{d^2y}{dx^2}$, $\frac{d^3y}{dx^3}$, etc.  These expressions can be found easily by differentiating the equation $\alpha = c$ with respect to $x$, and supposing $y$ to be a function of $x$.  In particular, we obtain the following:
+ \[ \frac{d \alpha}{dx} + \frac{d \alpha}{dy} \frac{dy}{dx} = 0, \]
+ \[ \frac{d^2\alpha}{dx^2} + 2 \frac{d^2\alpha}{dx dy}  \frac{dy}{dx} + \frac{d^2\alpha}{dy^2} \frac{dy^2}{dx^2} + \frac{d\alpha}{dy} \frac{d^2y}{dx^2} = 0 \mathrm{\; \; etc.,} \]
+ 
+ from which we have
+ \[ \frac{dy}{dx} = - \frac{\frac{d\alpha}{dx}}{\frac{d\alpha}{dy}} , \]
+ \[ \frac{d^2y}{dx^2} = - \frac{\frac{d^2\alpha}{dx^2}}{\frac{d\alpha}{dy}} + \frac{\frac{d^2\alpha}{dx dy}\frac{d\alpha}{dx}}{\left(\frac{d\alpha}{dy}\right)^2} - \frac{\frac{d^2\alpha}{dy^2}\left(\frac{d\alpha}{dx}\right)^2}{\left(\frac{d\alpha}{dy}\right)^3} \mathrm{ \; \; etc.}\]
+ 
+ The general method of resolving the equation $V=0$ is applicable whenever the elimination can be carried out, but this may not always be possible, and then it is necessary to have recourse to the calculus of differences, but to avoid a lengthy discussion I will pass over this case in silence.  One may find how this is to be done in M. \emph{Lacroix}'s \emph{Trait\'e du Calcul Diff\'erentiel et du Calcul Int\'egral}, t. III, p. 208. 
+
+We now apply the general theory to several examples.
+
+\textbf{1.} Find the function $\phi$ which satisfies the equation
+\[ \phi\alpha = f(x,y,\phi\beta,\phi\gamma), \]
+$f$ being any given function.
+
+Differentiating this equation with respect to $x$, while holding $\alpha$ constant, we have
+\[ 0 = f'x + f'y \frac{dy}{dx} + f'(\phi\beta) \phi'\beta \left(\frac{d\beta}{dx} + \frac{d\beta}{dy} \frac{dy}{dx}\right) + f'(\phi\gamma) \phi ' \gamma \left(\frac{d\gamma}{dx}+\frac{d \gamma}{dy}{\frac{dy}{dx}} \right), \]
+and since we have seen that 
+ \[ \frac{dy}{dx} = - \frac{\frac{d\alpha}{dx}}{\frac{d\alpha}{dy}} ; \]
+this value being substituted in the equation above, we obtain, after multiplying by $\frac{d\alpha}{dy}$:
+\[ 0 = f'x + f'y \frac{dy}{dx} + f'(\phi\beta)\phi'\beta\left(\frac{d\beta}{dx} \frac{d\alpha}{dy} - \frac{d\alpha}{dx} \frac{d\beta}{dy} \right) + f'(\phi\gamma) \phi ' \gamma \left(\frac{d\gamma}{dx}\frac{d\alpha}{dy}-\frac{d\alpha}{dx} \frac{d \gamma}{dy}\right), \]
+Now holding $\gamma$ constant, determine $x$ and $y$ in terms of $\beta$ from the two equations $\gamma = c$, $\beta = \beta$.  Substituting their values, we obtain a first order differential equation between $\phi \beta$ and $\beta$, from which we may find the function $\phi \beta$.
+
+Taking 
+\[ f(x,y,\phi\beta,\phi\gamma) = \phi\beta + \phi \gamma, \]
+we have 
+\[ f'x = 0, \; f'y = 0, \; f'(\phi\beta) = 1, \;f'(\phi\gamma) = 1. \]
+The equation therefore becomes
+\[ 0 = \phi'\beta\left(\frac{d\beta}{dx} \frac{d\alpha}{dy} - \frac{d\alpha}{dx} \frac{d\beta}{dy} \right) + \phi ' \gamma \left(\frac{d\gamma}{dx}\frac{d\alpha}{dy}+\frac{d\alpha}{dx} \frac{d \gamma}{dy}\right); \]
+integrating, we find
+\[ \phi \beta = \phi' \gamma \int \frac{\frac{d\alpha}{dx} \frac{d \gamma}{dy} - \frac{d\gamma}{dx}\frac{d\alpha}{dy}}{ \frac{d\beta}{dx} \frac{d\alpha}{dy} - \frac{d\alpha}{dx} \frac{d\beta}{dy} } d\beta .\]
+It is easy to see that, without decreasing the generality of the problem, we may take $\beta = x$ and $\gamma = y$; from this we have
+\[ \frac{d\beta}{dx} = 1, \; \frac{d\beta}{dy} = 0, \; \frac{d\gamma}{dx} = 0, \frac{d\gamma}{dx} = 0, \frac{d\gamma}{dy} = 1. \]
+Therefore, from
+\[ \phi \alpha = \phi x + \phi y , \]
+we conclude that 
+\[ \phi x = \phi' y \int \frac{ \frac{d\alpha}{dx} }{ \frac{d\alpha}{dy} } dx ,\]
+where $y$ has been held constant after the differentiation.  
+
+We now apply this to the theory of logarithms.  We have 
+\[ \log xy = \log x + \log y , \]
+and therefore 
+\[ \alpha = xy, \frac{d\alpha}{dx} = y, \frac{d\alpha}{dy} = x; \]
+substituting these values we obtain 
+\[ \phi x = \phi' y \int \frac{y}{x} dx = c \int \frac{dx}{x}, \]
+and therefore 
+\[ \log x = c \int \frac{dx}{x} .\]
+
+To find $\mathrm{arc \; tang \;} x$, we have 
+\[ \mathrm{arc \; tang \;} \frac{x+y}{1-xy} = \mathrm{arc \; tang \;} x + \mathrm{arc \; tang \;} y, \]
+and therefore 
+\[ \alpha = \frac{x+y}{1-xy}, \]
+from which 
+\[ \frac{d\alpha}{dx} = \frac{1}{1-xy} + \frac{y(x+y)}{(1-xy)^2} = \frac{1+y^2}{(1-xy)^2}, \]
+\[ \frac{d\alpha}{dy} = \frac{1}{1-xy} + \frac{x(x+y)}{(1-xy)^2} = \frac{1+x^2}{(1-xy)^2}. \]
+We find from this that 
+\[ \frac{\frac{d\alpha}{dx}}{\frac{d\alpha}{dy}} = \frac{1+y^2}{1+x^2}, \]
+and consequently,
+\[ \phi x = \phi'y \int \frac{1+y^2}{1+x^2} dx , \]
+from which 
+\[ \mathrm{arc \; tang \;} x = c \int \frac{dx}{1+x^2} = \int \frac{dx}{1+x^2} , \textrm{having set } c = 1. \]
+
+Now suppose that 
+\[ f(x,y,\phi\beta,\phi\gamma) = \phi \beta \cdot \phi \gamma = \phi x \cdot \phi y, \]
+where $\beta = x$, $\gamma = y$.  We have 
+\[ f'x = f'y = 0, \; f'(\phi x ) = \phi y, \; f'(\phi y) = \phi x, \]
+\[ \frac{d\beta}{dx} = \frac{d\gamma}{dy} = 1, \; \frac{d\beta}{dy} = \frac{d\gamma}{dx} = 0. \]
+The equation therefore becomes
+ \[ \phi y \cdot \phi'x \frac{d\alpha}{dy} - \phi x \cdot \phi' y \frac{d\alpha}{dx} = 0, \]
+ therefore
+ \[ \frac{\phi'x}{\phi x} = \frac{\phi'y}{\phi y} \frac{ \frac{d\alpha}{dx} }{ \frac{d\alpha}{dy} } , \]
+ and after integrating, 
+ \[ \log \phi x = \frac{\phi'y}{\phi y} \int \frac{\frac{d\alpha}{dx}}{\frac{d\alpha}{dy}} dx. \]
+Letting
+ \[ \int \frac{\frac{d\alpha}{dx}}{\frac{d\alpha}{dy}} dx = T, \]
+ we will have 
+ \[ \phi x = e^{c T}. \] 
+
+For example, if we take $\alpha = x+y$, we will have $\frac{d\alpha}{dx} = 1 = \frac{d\alpha}{dy}$, so
+\[ T = \int dx = x \]
+and 
+\[ \phi x = e^{cx}. \]
+
+Taking $\alpha = xy$, we will have 
+\[ \frac{d\alpha}{dx} = y, \; \frac{d\alpha}{dy} = x, \; T = y \int \frac{dx}{x}, \]
+and therefore 
+\[ \phi x = e^{c \log x} ,\]
+which is to say that 
+\[ \phi x = x^c. \]
+
+If we seek the resultant $R$ of two equal forces $P$, whose directions make an angle equal to $2x$, we find that $R = P \phi x$, where $\phi x$ is a function which satisfies the equation
+\[ \phi x \cdot \phi y = \phi(x+y) + \phi(x-y). \footnote{See \emph{Poisson}, trait\'e de mecanique t. I, p. 14} \]
+To determine this function, we must differentiate the equation with respect to $x$, holding $y+x = \mathrm{const.}$, and we have from this
+\[ \phi'x \cdot \phi y + \phi x \cdot \phi'y \frac{dy}{dx} = \phi'(x-y)\left(1-\frac{dy}{dx}\right).  \]
+But the equation $x+y = c$ gives us $\frac{dy}{dx} = -1$; substituting this value we obtain
+\[ \phi'x \cdot \phi y + \phi x \cdot \phi'y = 2 \phi'(x-y). \]
+Differentiating with respect to $x$, while keeping $x-y = \mathrm{const.}$, we have
+\[ \phi''x \cdot \phi y + \phi' x \phi'y \frac{dy}{dx} - \phi'x\cdot \phi'y - \phi x \cdot \phi'' y \frac{dy}{dx} = 0;\]
+The equation $x-y = c$ gives us $\frac{dy}{dx} = 1$, therefore
+\[ \phi''x \cdot \phi y - \phi x \cdot \phi''y = 0 .\]
+The assumption that $y$ is constant gives 
+\[ \phi'' x + c \phi x = 0, \]
+from which we obtain by integrating
+\[ \phi x = \alpha \cos(\beta x + \gamma), \]
+where $\alpha$,$\beta$,$\gamma$ are constants.  Determining this by the conditions of the problem, we find that 
+\[ \alpha = 2, \beta = 1, \gamma = 0,\]
+therefore 
+\[ \phi x = 2 \cos x, \] 
+from which it follows that 
+\[ R = 2P \cos x .\]
+
+\textbf{2.} Determine the three functions $\phi$, $f$, and $\psi$ which satisfy the equation
+\[ \psi \alpha = F(x,y,\phi x,\phi'x,\dots,fy,f'y,\dots), \]
+where $\alpha$ is a given function of $x$ and $y$, and $F$ is a given function of the quantities inside the parentheses. 
+
+Differentiating the equation with respect to $x$, and supposing $\alpha$ to be constant, and then writing $- \frac{\frac{d\alpha}{dx}}{\frac{d\alpha}{dy}}$ in place of $\frac{dy}{dx}$, we obtain the following equation
+\[ \frac{ \frac{d\alpha}{dx} }{ \frac{d \alpha}{dy} } = \frac{ F'x + F''(\phi x)\phi'x +\cdots }{F'y + F''(fy) f'y + \cdots }. \]
+
+If in this equation we take $y$ to be constant, we have a differential equation relating $\phi x $ and $x$, from which we may find $\phi x$, and if we take $x$ to be constant, we have a differential equation from which we may find $f y$; these two functions being found, the function $\psi \alpha$ can be found without difficulty from the proposed equation.  
+
+\textit{Example.} Find the three functions which satisfy the equation
+\[ \psi(x+y) = \phi x \cdot f'y + fy \cdot \phi'x .\]
+
+Here we have 
+\[ F(x,y, \phi x,\phi'x,fy,f'y) = \phi x \cdot f'y + fy \cdot \phi'x, \]
+so
+\[ F'x = F'y = 0, \; F'(\phi x) = f'y, \; F'(\phi' x) = fy, \; F'(fy) = \phi' x, \; F'(f'y) = \phi x; \] 
+and also 
+\[ \alpha = x+y, \]
+therefore
+\[ \frac{d\alpha}{dx} = 1, \frac{d\alpha}{dy} = 1. \]
+These values being substituted, we have 
+\[ 1 = \frac{f'y \cdot \phi'x + fy \cdot \phi'' x}{\phi' x \cdot f'y + \phi x \cdot f''y} , \]
+and so
+\[ \phi x \cdot f'' y - fy \cdot \phi''x = 0. \]
+Taking $y$ to be constant, we find that 
+\[ \phi x = a \sin(bx + c), \]
+and if we take $x$ to be constant, 
+\[ fy = a' \sin (by + c') .\]
+We see from this that 
+\[ \phi' x = ab \cos(bx + c), \]
+\[ f'y = a'b \cos(by + c'). \]
+These values being substituted into the proposed equation, we obtain
+\begin{eqnarray*} \psi(x+y) &=& aa'b\left (\sin(bx+c)\cos(by+c') + \sin(by+c')\cos(bx+c)\right) \\
+&=& aa'b \sin\left(b(x+y) + c + c'\right). \end{eqnarray*}
+The three functions to be found are therefore
+\begin{eqnarray*} \phi x &=& a \sin(bx +c), \\
+ fy &=& a'\sin(by+c'), \\
+ \psi \alpha &=& aa'b\sin(b \alpha + c + c;). \end{eqnarray*}
+If we take $a = a' = b = 1$ and $c = c' = 0$, we have 
+\[ \phi x = \sin x, f y = \sin y, \psi \alpha = \sin \alpha, \]
+from which it follows that 
+\[ \sin(x+y) = \sin x \cdot \sin' y + \sin y \cdot \sin ' x .\]
+
+\textit{Example.} Find the three functions which are determined by the equation
+\[ \psi(x+y) = f(xy) + \phi(x-y). \]
+Differentiating with respect to $x$, while keeping $x+y$ constant, we have
+\[ 0 = f'(xy)(y-x) + 2\phi'(x-y). \]
+To find $\phi$, let $xy = c$ and $x-y = \alpha$.  This gives
+\[ \phi' \alpha = k \alpha, \]
+so
+\[ \phi \alpha = k' + \frac{k}{2} \alpha^2 .\]
+To find $f$, let $xy = \beta$ and $x-y = c$.  This gives
+\[ f'\beta = c', \]
+therefore 
+\[ f\beta = c'' + c'\beta. \]
+These values of $\phi \alpha$ and $f \beta$ being substituted in the given equation, we obtain
+\[ \psi(x+y) = c'' + c' xy + k' + \frac{k}{2} (x-y)^2. \]
+To determine $\psi$, let $x+y = \alpha$.  From this we have $y = \alpha - x$, therefore
+\[\psi \alpha = c'' + c' x(\alpha - x) + k' + \frac{k}{2} (2x-\alpha)^2 = c'' + \frac{k}{2} \alpha^2 + k' + xa(c'-2k) + (2k-c')x^2. \]
+In order for this equation to hold, it is necessary that $x$ vanishes, thus we have
+\[ 2k-c' = 0, \mathrm{and} \; c' = 2k .\]
+These values being substituted, we obtain
+\[ \psi \alpha = k' + c'' + \frac{k}{2} \alpha^2, \; f \beta = c'' + 2k\beta, \; \phi \gamma = k' + \frac{k}{2} \gamma^2, \]
+which are the three functions we wished to find.
+
+As a final example, I take the following: Determine the functions $\phi$ and $f$ from the equation
+\[ \phi(x+y) = \phi x \cdot f y + fx \cdot \phi y .\]
+Supposing $x+y = c$, and differentiating, we obtain
+\[ 0 = \phi' x \cdot fy - \phi x \cdot f' y + f'x \cdot \phi y - f x \cdot \phi y. \]
+Supposing further that $f(0) = 1$ and $\phi(0) = 0$, we then set $y = 0$:
+\[ 0 = \phi' x - \phi x \cdot c + f x \cdot c', \]
+therefore 
+\[ f x = k \phi x + k' \phi ' x. \]
+Substituting this value for $f x$, and taking $y$ to be constant, we have 
+\[ \phi '' x + a \phi' x + b \phi x = 0, \]
+and integrating,
+\[ \phi x = c' e^{\alpha x} + c'' e^{\alpha' x} .\] 
+Knowing $\phi x$, and also $fx$, we may substitute the values of these functions in order to determine the values of the constants.  We may suppose 
+\[ c' = -c'' = \frac{1}{2 \sqrt{-1}} , \; \alpha = -\alpha' = \sqrt{-1}, \]
+which gives us 
+\[ \phi x = \frac{e^{ x \sqrt{-1}} - e^{-x \sqrt{-1}} }{2 \sqrt{-1}} = \sin x, fx = \cos x. \]
+
+
+ \end{document}

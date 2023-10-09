@@ -1,0 +1,122 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{geometry}
+\usepackage{amsmath}
+\geometry{legalpaper, margin=1in}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\parindent=0pt
+\parskip=8pt
+\arraycolsep=2pt
+\usepackage{pgfplots}
+
+
+\begin{document}
+
+\begin{center}
+A SIMPLE DEFINITE INTEGRAL EXPRESSING THE FINITE INTEGRAL $\Sigma^n \phi x$
+\end{center}
+
+According to the well-known theorem of \emph{Parseval}, one may express the finite integral $\Sigma^n \phi x$ as a definite double integral, but if I am not mistaken, this finite integral has never been expressed as a simple definite integral.   To do so will be the object of this memoire.  
+
+Writing $\phi x$ for an arbitrary function of $x$, it is easy to see that one may always set
+\begin{equation} \label{eqn1} \phi x = \int e^{vx} fv . dv, \end{equation}
+where the integral is taken between two limits of $v$ which are independent of $x$, and $fv$ denotes a function of $v$ whose form depends on that of $\phi x$.  Setting $\Delta x = 1$, and taking the finite integral of both sides of equation (\ref{eqn1}), one gets
+\begin{equation} \label{eqn2} \Sigma \phi x = \int e^{vx} \frac{f v}{e^v-1}dv, \end{equation}
+to which must be added an arbitrary constant.  Taking a second finite integral, one obtains
+\begin{equation} \label{eqn3} \Sigma^2 \phi x = \int e^{vx} \frac{fv}{\left(e^v-1\right)^2} dv. \end{equation}
+In general, one finds that
+\begin{equation} \label{eqn4} \Sigma^n \phi x = \int e^{vx} \frac{fv}{\left(e^v-1\right)^n} dv . \end{equation}
+To complete the integral one must add to the right hand side a function of the form
+\[ C + C_1 x + C_2 x^2 + \cdots + C_{n-1} x^{n-1}, \]
+where $C$, $C_1$, $C_2$ etc. are arbitrary constants.
+
+The task is now to find the value of the definite integral $\int e^{vx} \frac{fv}{\left(e^v-1\right)^n} dv$.  For this I will use a theorem of \emph{Lagrange} (Exerc. de calc. int. T. II p. 189):
+\[ \frac{1}{4} \frac{e^v + 1}{e^v - 1} - \frac{1}{2v} = \int^{\frac{1}{0}}_0 \frac{dt . \sin(vt)}{e^{2\pi t} -1 },\]
+from which follows
+\[ \frac{1}{e^v -1} = \frac{1}{v} - \frac{1}{2}  + 2 \int_0^{\frac{1}{0}} \frac{dt . \sin(vt)}{e^{2\pi t} -1 }. \]
+
+Substituting this value of $\frac{1}{e^v-1}$ in equation (\ref{eqn2}), one gets
+\[ \Sigma \phi x = \int e^{vx} \frac{fv}{v} dv - \frac{1}{2} \int e^{vx} fv . dv + 2 \int_0^{\frac{1}{0}} \frac{dt}{e^{2\pi t} - 1} \int e^{vx} fv. \sin vt . dv .\]
+The integral $\int e^{vx} fv.\sin vt . dv$ can be found in the following manner.  Substituting $x \pm t\sqrt{-1}$ for $x$ in equation (\ref{eqn1}), one gets:
+\[ \phi(x + t\sqrt{-1}) = \int e^{vx}e^{vt\sqrt{-1}} f(v) . dv , \]
+\[ \phi(x - t\sqrt{-1}) = \int e^{vx}e^{vt\sqrt{-1}} f(v) . dv .\]
+Taking the difference and dividing by $2 \sqrt{-1}$, one gets
+\[ \int e^{vx} \sin vt . fv. dv = \frac{\phi(x+t \sqrt{-1}) - \phi(x - t \sqrt{-1})}{2\sqrt{-1}}. \]
+Therefore, 
+\[ \Sigma \phi x = \int \phi x. dx - \frac{1}{2} \phi x + 2 \int_0^{\frac{1}{0}} \frac{dt}{e^{2\pi t} - 1} \frac{\phi(x+t \sqrt{-1}) - \phi(x - t \sqrt{-1})}{2\sqrt{-1}} .\]
+
+Now to find the value of the general integral 
+\[ \Sigma^n\phi x = \int e^{vx} . fv . \frac{dv}{\left(e^v-1\right)^n}, \]
+one may set 
+\[ \frac{1}{\left(e^v - 1\right)^n} = (-1)^n\left( A_{0,n} p + A_{1,n} \frac{dp}{dv} + A_{2,n} \frac{d^2p}{dv^2} + \cdots + A_{n-1,n} \frac{d^{n-1}p}{dv^{n-1}} \right), \]
+where $p$ is equal to $\frac{1}{e^v-1}$, and $A_{0,n}, A_{1,n}, \dots$ are numerical coefficients to be determined.  Differentiating the equation above, one gets
+\[ \frac{ne^v}{\left(e^v-1\right)^{n+1}} = (-1)^n \left(A_{0,n} \frac{dp}{dv} + A_{1,n} \frac{d^2p}{dv^2} + \cdots + A_{n-1},n \frac{d^np}{dv^n} \right). \]
+Now,
+\[ \frac{ne^v}{\left(e^v-1\right)^{n+1}} = \frac{n}{\left(e^v-1\right)^n} + \frac{n}{\left(e^v-1\right)^{n+1}} , \]
+and therefore, 
+\begin{eqnarray*} \frac{ne^v}{\left( e^v -1\right)^{n+1}} &=& n (-1)^{n-1}\left( A_{0,n} p + A_{1,n} \frac{dp}{dv} + A_{2,n} \frac{d^2p}{dv^2} + \cdots + A_{n-1,n} \frac{d^{n-1}p}{dv^{n-1}} \right) \\
+&  &+  \; n(-1)^n\left( A_{0,n+1} p + A_{1,n+1} \frac{dp}{dv} + A_{2,n} \frac{d^2p}{dv^2} + \cdots + A_{n,n+1} \frac{d^n p}{dv^n} \right) . \end{eqnarray*}
+Comparing these two expressions for $\frac{ne^v}{\left(e^v-1\right)^{n+1}}$, one deduces the following equations:
+\[ \begin{array}{rclcrcl} A_{0,n+1} - A_{0,n} &=& 0 & \hspace{2cm} & \Delta A_{0,n} = 0 , \\ \\
+A_{1,n+1} - A_{1,n} &=& \frac{1}{n} A_{0,n} &  & \Delta A_{1,n} = \frac{1}{n}A_{0,n} , \\ \\
+A_{2,n+1} - A_{2,n} &=& \frac{1}{n}A_{1,n} &  & \Delta A_{0,n} = \frac{1}{n} A_{1,n} , \\ \\
+\cdots & \cdots & \cdots & & \cdots\\ \\
+A_{n-1,n+1} - A_{n-1,n} &=& \frac{1}{n}A_{n-2,n} &  & \Delta A_{n-1,n} = \frac{1}{n} A_{n-2,n} , \\ \\
+A_{n,n+1} &=& \frac{1}{n}A_{n-1,n}, & & \end{array} \]
+from which one gets
+\[ \begin{array}{c} A_{0,n} = 1, \; A_{1,n} = \Sigma \frac{1}{n}, \; A_{2,n} + \Sigma \frac{1}{n} \Sigma \frac{1}{n}, \; A_{3,n} = \Sigma \frac{1}{n} \Sigma \frac{1}{n} \Sigma \frac{1}{n}, \; \mathrm{etc.} \\ \\
+A_{n,n+1} = \frac{1}{n} \cdot \frac{1}{n-1} \cdot \frac{1}{n-2} \cdots \frac{1}{2} \cdot \frac{1}{1} \cdot A_{0,1} = \frac{1}{\Gamma(n +1)} . \end{array} \]
+The last equation serves to determine the constants in the expressions for $A_{0,n}$, $A_{1,n}$, $A_{2,n}$ etc.
+
+Having thus determined the coefficients $A_{0,n}$, $A_{1,n}$, $A_{2,n}$ etc., substituting the value of $\frac{1}{\left(e^v-1\right)^n}$ in equation (\ref{eqn3}) gives 
+\[ \Sigma^n \phi x = (-1)^{n-1} \int e^{vx} fv.dv \left(A_{0,n} p + A_{1,n} \frac{dp}{dv} + \cdots + A_{n-1,n} \frac{d^{n-1} p}{dv^{n-1}}\right). \]
+Now, one has
+\[ p = \frac{1}{v} - \frac{1}{2} + 2 \int_0^{\frac{1}{0}} \frac{dt . \sin vt}{e^{2\pi t} - 1} , \]
+and differentiating gives
+\begin{eqnarray*} \frac{dp}{dv} & = & - \frac{1}{v^2} + 2 \int_0^{\frac{1}{0}} \frac{t dt. \cos vt}{e^{2\pi t} - 1} , \\
+\frac{d^2p}{dv^2} & = & \frac{2}{v^2} - 2 \int_0^{\frac{1}{0}} \frac{t dt. \sin vt}{e^{2\pi t} - 1} , \\
+\frac{d^3p}{dv^3} & = & \frac{2 \cdot 3}{v^2} - 2 \int_0^{\frac{1}{0}} \frac{t dt. \cos vt}{e^{2\pi t} - 1} \; \mathrm{etc.;} \end{eqnarray*} 
+therefore, by substitution
+\[ \begin{array}{rcl} \Sigma^n \phi x &=& \displaystyle \int \left( A_{n-1,n} \frac{\Gamma n}{v^n} - A_{n-2,n} \frac{\Gamma(n-1)}{v^{n-1}} + \cdots + (-1)^{n-1} A_{0,n} \frac{1}{v} + (-1)^n . \frac{1}{2}\right) e^{vx} fv.dv \\
+& + & 2 (-1)^{n-1} \displaystyle \iint \frac{P \sin vt.dt}{e^{2\pi t}-1} e^{vx} fv.dv + 2 (-1)^{n-1} \iint_0^{\frac{1}{0}} \frac{Q \cos vt . dt}{e^{2\pi t} - 1} e^{vx} fv.dv.\end{array} \]
+Integrating the equation $\phi x = \int e^{vx}fv.dv$, one gets:
+\begin{eqnarray*} \int \phi x. dx &=& \int e^{vx} fv \frac{dv}{v} ,\\
+\int^2 \phi x dx^2 &=& \int e^{vx} fv \frac{dv}{v^2} ,\\
+\int^3 \phi x . dx^3 &=& \int e^{vx} fv \frac{dv}{v^3} \;  \; \; \mathrm{etc. } \end{eqnarray*}
+Furthermore,
+\[ \int e^{vx} \sin vt . fv. dv = \frac{\phi(x+t \sqrt{-1}) - \phi(x - t \sqrt{-1})}{2\sqrt{-1}}. \]
+\[ \int e^{vx} \cos vt . fv. dv = \frac{\phi(x+t \sqrt{-1}) + \phi(x - t \sqrt{-1})}{2}, \]
+ so by substitution one has
+  \begin{eqnarray*} \Sigma^n \phi x &=& A_{n-1,n} \Gamma n \int^n \phi x.dx^n - A_{n-2,n} \Gamma(n-1) \int^{n-1} \phi x.dx^{n-1} + \cdots + (-1)^{n-1} \int \phi x. dx \\
+  &+& (-1)^n\cdot \frac{\phi x}{2} +  2 (-1)^{n-1} \int_0^{\frac{1}{0}} \frac{Pdt}{e^{2\pi t} - 1} \frac{\phi(x+t \sqrt{-1}) - \phi(x - t \sqrt{-1})}{2\sqrt{-1}} \\
+ &+& 2 (-1)^{n-1} \int_0^{\frac{1}{0}} \frac{Qdt}{e^{2\pi t}-1} \frac{\phi(x+t \sqrt{-1}) + \phi(x - t \sqrt{-1})}{2} \end{eqnarray*}
+ where 
+ \begin{eqnarray*} P &=& A_{0,n} - A_{2,n}t^2 + A_{4,n}t^4 - \cdots, \\
+ Q &=& A_{1,n} t - A_{3,n}t^3 + A_{5,n}t^5 - \cdots  .\end{eqnarray*}
+ For example, taking $n=2$, one gets
+ \begin{eqnarray*} \Sigma^2\phi x &=& \iint \phi x.dx^2 - \int \phi x .dx + \frac{1}{2} \phi x  \\
+ & - & 2 \int_0^{\frac{1}{0}} \frac{dt}{e^{2\pi t}-1} \frac{\phi(x+t \sqrt{-1}) - \phi(x - t \sqrt{-1})}{2\sqrt{-1}} \\
+ & - & 2 \int_0^{\frac{1}{0}} \frac{dt}{e^{2\pi t}-1} \frac{\phi(x+t \sqrt{-1}) + \phi(x - t \sqrt{-1})}{2} \end{eqnarray*}  
+ and taking $\phi x = e^{ax}$,
+ \[ \phi(x \pm t\sqrt{-1}) = e^{ax}e^{\pm at\sqrt{-1}}, \; \int e^{ax}dx = \frac{1}{a}e^{ax}, \; \iint e^{ax}dx^2 = \frac{1}{a^2}e^{ax}. \]
+ Substituting and dividing by $e^{ax}$,
+\[ \frac{1}{\left(e^a - 1\right)^2} = \frac{1}{2} - \frac{1}{a} + \frac{1}{a^2} - 2 \int_0^{\frac{1}{0}} \frac{dt.\sin at}{e^{2\pi t} -1} - 2 \int_0^{\frac{1}{0}} \frac{tdt.\cos at}{e^{2\pi t}-1} . \]
+The most remarkable case is when $n=1$.  Then one has, from what we have seen:
+\[ \Sigma \phi x = C + \int \phi x.dx - \frac{1}{2} \phi x+ 2 \int_0^{\frac{1}{0}}\frac{dt}{e^{2 \pi t} -1} \frac{\phi(x+t \sqrt{-1}) - \phi(x - t \sqrt{-1})}{2\sqrt{-1}} . \]
+Assuming that the integrals $\Sigma \phi x$ and $\int \phi x dx$ vanish when $x = a$, one clearly has 
+\[ C = \frac{1}{2} \phi a - 2 \int_0^{\frac{1}{0}} \frac{dt}{e^{2\pi t} -1} \frac{\phi(a+t \sqrt{-1}) - \phi(a - t \sqrt{-1})}{2\sqrt{-1}}, \]
+and therefore
+\begin{eqnarray*} \Sigma \phi x &=&  \int \phi x.dx + \frac{1}{2} \left( \phi a-  \phi x \right) + 2 \int_0^{\frac{1}{0}}\frac{dt}{e^{2 \pi t} -1} \frac{\phi(x+t \sqrt{-1}) - \phi(x - t \sqrt{-1})}{2\sqrt{-1}} \\&-& 2 \int_0^{\frac{1}{0}} \frac{dt}{e^{2\pi t} -1} \frac{\phi(a+t \sqrt{-1}) - \phi(a - t \sqrt{-1})}{2\sqrt{-1}}. \end{eqnarray*}
+Taking $x = \infty$, and assuming that $\phi x$ and $\int \phi x .dx$ vanish for this value of $x$, one has:
+\[ \begin{array}{l} \phi a + \phi(a+1) + \phi(a+2) + \phi(a+3) + \dots \\ \\
+   = \displaystyle \int_0^{\frac{1}{0}} \phi x. dx + \frac{1}{2} \phi a - 2 \int_0^{\frac{1}{0}} \frac{dt}{e^{2\pi t}-1} \frac{\phi(a+t \sqrt{-1}) - \phi(a - t \sqrt{-1})}{2\sqrt{-1}} . \end{array} \] 
+For example, if $\phi x = \frac{1}{x^2}$, 
+\[ \frac{\phi(a+t \sqrt{-1}) - \phi(a - t \sqrt{-1})}{2\sqrt{-1}} = \frac{-2at}{\left(a^2 + t^2\right)^2} , \]
+and therefore 
+\[ \frac{1}{a^2} + \frac{1}{\left(a+1\right)^2} + \frac{1}{\left(a+2\right)^2} + \cdots = \frac{1}{2a^2} + \frac{1}{a} + 4a \int_0^{\frac{1}{0}} \frac{t dt}{(e^{2\pi t} - 1)(a^2 + t^2)^2} . \]
+Setting $a = 1$,
+\[ 1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \frac{1}{25} + \cdots = \frac{\pi^2}{6} = \frac{3}{2} + 4 \int_0^{\frac{1}{0}}  \frac{t dt}{(e^{2\pi t}-1)(1+ t^2)^2 } . \]
+  \end{document}

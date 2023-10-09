@@ -1,0 +1,99 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{geometry}
+\usepackage{amsmath}
+\geometry{legalpaper, margin=1in}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\parindent=0pt
+\parskip=8pt
+\arraycolsep=2pt
+\usepackage{pgfplots}
+
+
+\begin{document}
+
+\begin{center}
+RESEARCH ON FUNCTIONS OF TWO INDEPENDENT VARIABLES, $f(x,y)$, WITH THE PROPERTY THAT $f(z,f(x,y))$ IS A SYMMETRIC FUNCTION OF $z$, $x$, AND $y$.
+\end{center}
+
+If we denote the functions $x+y$ and $xy$ by $f(x,y)$, we have in the first case $f(z,f(x,y)) = z + x + y$, and in the second $f(z,f(x,y)) = zxy$.  In both cases, the function $f(x,y)$ therefore has the remarkable property that $f(z,f(x,y))$ is a symmetric function of the three variables $z$, $x$, and $y$.  In this memoire, I will attempt to find the most general form for a function which satisfies this property. 
+
+The fundamental equation is this:
+\begin{equation} \label{eqn1} f(z,f(x,y)) = \textrm{a symmetric function of } x, \;y, \textrm{ and } z . \end{equation}  
+A symmetric function remains the same when one exchanges its dependent variables in any manner whatsoever.  We therefore have the following equations:
+\begin{equation} \label{eqn2} \begin{array}{rcl} f(z,f(x,y)) &=& f(z,f(y,x)) \\
+  f(z,f(x,y)) &=& f(x,f(z,y)) \\
+  f(z,f(x,y)) &=& f(x,f(y,z)) \\
+  f(z,f(x,y)) &=& f(y,f(x,z)) \\
+  f(z,f(x,y)) &=& f(y,f(z,x)). \end{array} \end{equation}
+The first equation can only hold if 
+\[ f(x,y) = f(y,x), \]
+that is, if $f(x,y)$ is a symmetric function of $x$ and $y$.  For this reason, the equations (\ref{eqn2}) reduce to the following two equations:
+\begin{equation} \label{eqn3} \begin{array}{rcl} f(z,f(x,y)) &=& f(x,f(y,z)) \\
+ f(z,f(x,y)) &=& f(y,f(z,x)) \end{array} \end{equation}
+Abbreviating $f(x,y) = r$, $f(y,z) = v$, $f(z,x) = s$, we have 
+\begin{equation} \label{eqn4} f(z,r) = f(x,v) = f(y,s) . \end{equation}
+Differentiating with respect to $x$, $y$, and $z$ in turn gives us
+\begin{eqnarray*} f'r \frac{dr}{dx} &=& f's \frac{ds}{dx} \\
+f'v \frac{dv}{dy} &=& f'r \frac{dr}{dy} \\ 
+f's \frac{ds}{dz} &=& f'v \frac{dv}{dz} .\end{eqnarray*}
+If we multiply these equations together and divide by the product $f'r.f'v.f's$, we obtain
+\begin{equation} \label{eqn5} \frac{dr}{dx} \frac{dv}{dy} \frac{ds}{dz} = \frac{dr}{dy} \frac{dv}{dz} \frac{ds}{dx} \end{equation}
+or equivalently,
+\[ \frac{dr}{dx} \frac{\frac{dv}{dy}}{\frac{dv}{dz}} = \frac{dr}{dy} \frac{\frac{ds}{dx}}{\frac{ds}{dz}} . \]
+Taking $z$ to be constant, $\frac{dv}{dy}:\frac{dv}{dz}$ becomes a function of $y$ only.  Writing this function as $\phi y$, we have $\frac{ds}{dx} : \frac{ds}{dz} = \phi x$, since $s$ is the same function of $z$ and $x$ as $v$ is of $z$ and $y$.  Therefore,
+\begin{equation} \label{eqn6} \frac{dr}{dx} \phi y = \frac{dr}{dy} \phi x .\end{equation}
+Integrating, we find the general value of $r$,
+\[ r = \psi\left(\int \phi x.dx + \int \phi y . dy\right),  \]
+where $\psi$ is an arbitrary function.  Writing $\phi x$ for $\int \phi x dx$ and $\phi y$ for $\int \phi y  dy$, we have 
+\begin{equation} \label{eqn7} r = \psi(\phi(x) + \phi(y)), \textrm{ or } f(x,y) = \psi(\phi x + \phi y). \end{equation}
+The function that we seek must therefore have this form.  But a general function of this form will not satisfy equation (\ref{eqn4}).  Indeed, equation (\ref{eqn5}), from which we deduced the form of the function $f(x,y)$, is much more general than (\ref{eqn4}), which must be satisfied.  The general equation is therefore subject to the following additional restrictions.  We have 
+\[ f(z,r) = \psi(\phi z + \phi r). \]
+Now, $r = \psi(\phi x + \phi y )$, so
+\[ f(z,r) = \psi(\phi z + \phi \psi (\phi x + \phi y)) . \]
+This expression must be symmetric with respect to $x$, $y$, and $z$.  Therefore,
+\[ \phi z + \phi \psi ( \phi x + \phi y) = \phi x + \phi \psi ( \phi y + \phi z) . \]
+Setting $\phi z = 0$ and $\phi y = 0$, we have 
+\[ \phi \psi \phi x = \phi x + \phi \psi (0) = \phi x + c, \]
+and taking $\phi x = p$,
+\[ \phi \psi p  = p + c .\]
+Letting $\phi_1$ denote the inverse function of $\phi$, so that 
+\[ \phi \phi_1 x = x, \]
+we find that 
+\[ \psi p = \phi_1(p+c). \]
+
+The general form of the function $f(x,y)$ is therefore
+\[ f(x,y) = \phi_1(c + \phi x + \phi y), \]
+which does in fact satisfy the required property.  We see from this that 
+\[ \phi f(x,y) = c + \phi x + \phi y, \]
+or, putting $\psi x - c$ in place of $\phi x$, and therefore $\psi y - c$ in plave of $\phi y$ and $\psi f(x,y) - c$ in place of $\phi f(x,y)$,
+\[ \psi(f(x,y)) = \psi x + \psi y. \]
+This gives us the following theorem:
+
+\emph{ If a function $f(x,y)$ of two independent variables $x$ and $y$ has the property that $f(z,f(x,y))$ is a symmetric function of $x$, $y$, and $z$, then there is a function $\psi$ such that 
+\[ \psi f(x,y) = \psi x + \psi y. \]}
+ The function $f(x,y)$ being given, we can easily find the function $\psi x$.  We need only differentiate the equation above with respect to $x$ and $y$.  Abbreviating $f(x,y) = r$,
+ \[ \psi' r \frac{dr}{dx} = \psi' x,\]
+ \[ \psi' r \frac{dr}{dy} = \psi' y, \]
+ thus by eliminating $\psi' r$,
+ \[ \frac{dr}{dy} \psi' x = \frac{dr}{dx} \psi' y, \]
+ from which 
+ \[ \psi' x = \psi' y \frac{\frac{dr}{dx}}{\frac{dr}{dy}} . \]
+
+ For example, suppose that 
+ \[ r = f(x,y) = xy, \]
+ and we seek a function $\psi$ such that 
+ \[ \psi(xy) = \psi x + \psi y. \]
+Since $r = xy$, we have $\frac{dr}{dx} = y$, $\frac{dr}{dy} = x$, so
+\[ \psi x = \psi' y \int \frac{y}{x} dx = y \psi' y . \log cx, \]
+and taking $y$ to be constant,
+\[ \psi x = a \log cx .\]
+This shows that $\psi y = a \log cy$, $\psi xy = a \log c xy$; we therefore have
+\[ a \log cxy = a \log cx + a \log cy, \]
+which will hold if we take $c = 1$. 
+ 
+By a procedure similar to the above, one can in general find functions of two variable quantities, which satisfy given equations of three variables.  Indeed, by differentiating successively with respect to the different variables, one can find certain equations, from which the unknown functions may be successively eliminated, until one arrives at an equation containing a single unknown function.  This equation will be a partial differentiatial equation in two independent variables, whose solution will involve a certain number of arbitrary functions of a single variable.  When the unknown functions found in this manner have been substituted in the original given equations, one finds an equation relating these single-variable functions.  To determine these functions, one must differentiate again, which gives a system of ordinary differential equations, by means of which one may find the functions, which are no longer arbitrary.  In this way we can find the form of all the unknown functions, unless it is impossible to satisfy the given equations.
+  \end{document}

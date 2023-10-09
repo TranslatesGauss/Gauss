@@ -1,0 +1,401 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{geometry}
+\usepackage{amsmath}
+\geometry{legalpaper, margin=1in}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\parindent=0pt
+\parskip=8pt
+\arraycolsep=2pt
+\usepackage{pgfplots}
+
+
+\begin{document}
+
+\begin{center}
+SOLUTION OF SOME PROBLEMS WITH THE HELP OF DEFINITE INTEGRALS
+\end{center}
+
+\textbf{1.} It is well known that one can solve, with the help of definite integrals, many problems which otherwise cannot be solved, or at least would be very difficult to approach.  They have above all been successfully applied to the many difficult problems in mechanics, for example to the movement of elastic surfaces, the theory of waves, etc.  I will give here a new application, to the solution of the following problem.
+
+Let $CB$ be a horizontal line, $A$ a given point, $AB$ perpendicular to $BC$, $AM$ a curve given in rectangular coordinates by $AP = x$, $PM = y$.  Also let $AB = a$, $AM = s$. 
+ \begin{center} \includegraphics[width=100px]{Abel2Fig1.png}  \end{center}
+If we imagine a body moving along the arc $CA$, with intial velocity zero, the time $T$ it takes to descend $CA$ depends on the shape of the curve, and on $a$.  It is required to determine the curve $KCA$ for which the time $T$ is equal to a given function of $a$, for example $\psi a$.
+
+If we denote by $h$ the velocity of the body at the point $M$, and by $t$ the time it takes to descend along the arc $CM$, then as one knows
+\[ h = \sqrt{BP} = \sqrt{a-x}, \; dt = - \frac{ds}{h}, \]
+so 
+\[ dt = - \frac{ds}{\sqrt{a-x}} , \]
+and by integrating,
+\[ t = - \int \frac{ds}{\sqrt{a-x}} . \]
+To find $T$ we must take the definite integral from $x=0$ to $x=a$, so
+\[ T = \int_{x=0}^{x=a} \frac{ds}{\sqrt{a-x}} . \]
+Since $T$ is equal to $\psi a$, this equation becomes 
+\[ \psi a = \int_{x=0}^{x=a} \frac{ds}{\sqrt{a-x}} .\]
+Instead of using this particular equation, I will show how to find $s$ in the more general equation
+\[ \psi a = \int_{x=0}^{x=a} \frac{ds}{(a-x)^n}. \]
+Here $n$ is assumed to be less than $1$, so that the integral does not become infinite between the given limits, and $\psi a$ is a function which is not infinite when $a$ is equal to zero.   
+
+Set $s = \sum \alpha^{(m)}x^m$, which has the following value: 
+\[ \sum \alpha^{(m)}x^m = \alpha^{(m')}x^{m'} + \alpha^{(m'')} x^{m''} + \alpha^{(m''')}x^{m'''} + \dots . \]
+Differentiating, we obtain
+\[ ds = \sum m \alpha^{(m)} x^{m-1} dx , \]
+so
+\[ \frac{ds}{(a-x)^n} = \frac{ \sum m \alpha^{(m)} x^{m-1} dx}{(a-x)^n} = \sum m \alpha^{(m)} \frac{x^{m-1} dx}{(a-x)^n} . \]
+Integrating this, we have 
+\[ \int_{x=0}^{x=a} \frac{ds}{(a-x)^n} = \int_{x=0}^{x=a} \sum m\alpha^{(m)} \frac{x^{m-1}dx}{(a-x)^n} .\]
+Now, 
+\[ \int \sum m\alpha^{(m)} \frac{x^{m-1}dx}{(a-x)^n} = \sum m \alpha^{(m)} \int \frac{x^{m-1}dx}{(a-x)^n}, \]
+so, since $\psi a = \int_{x=0}^{x=a} \frac{ds}{(a-x)^n}$:
+\[ \psi a = \sum m \alpha^{(m)} \int_0^a \frac{x^{m-1}dx}{(a-x)^n} \]
+The value of the integral
+\[ \int_0^a \frac{x^{m-1}dx}{(a-x)^n} \]
+ may be found in the following way: if we set $x = at$, we have
+ \[ x^m = a^mt^m, \; mx^{m-1} dx = ma^m t^{m-1} dt \]
+ \[ (a-x)^n = (a - at)^n = a^n(1-t)^n, \]
+ therefore
+ \[ \frac{mx^{m-1} dx}{(a-x)^n} = \frac{ma^{m-n} t^{m-1} dt}{(1-t)^n}, \]
+ and integrating this gives
+ \[ m \int_0^a \frac{x^{m-1} dx}{(a-x)^n}  = ma^{m-n} \int_0^1 \frac{t^{m-1}dt}{(1-t)^n}. \]
+ Now, we know that
+ \[ \int_0^1 \frac{t^{m-1} dt}{(1-t)^n} = \frac{\Gamma(1-n)\Gamma(m)}{\Gamma(m-n+1)}, \]
+ where $\Gamma m$ is a function determined by the equations
+ \[ \Gamma(m+1) = m\Gamma m, \; \Gamma(1) = 1 . \footnote{ The properties of this remarkable function have been developed by \emph{Legendre} in is work, Exercices de calcul int\'egral t. I and II.} \] 
+ Substituting this value, and remarking that $m\Gamma m = \Gamma(m+1)$, we have 
+ \[ m \int_0^a \frac{x^{m-1}dx}{(a-x)^n} = \frac{\Gamma(1-n)\Gamma(m+1)}{\Gamma(m-n+1)} a^{m-n} . \]
+ Substituting this value in the expression for $\psi a$, we obtain
+ \[ \psi a = \Gamma(1-n) \sum \alpha^{(m)} a^{m-n} \frac{\Gamma(m+1)}{\Gamma(m-n+1)} \]
+ Letting 
+ \[ \psi a = \sum \beta^{(k)} a^k, \]
+ we have 
+ \[ \sum \beta^{(k)} a^k = \sum \frac{\Gamma(1-n)\Gamma(m+1)}{\Gamma(m-n+1) }\alpha^(m) a^{m-n}. \]
+ For this equation to be satisfied we must have $m-n =k$, so $m = n+k$, and therefore
+ \[ \beta^{(k)} = \frac{\Gamma(1-n)\Gamma(m+1)}{\Gamma(m-n+1)} \alpha^(m) = \frac{\Gamma(1-n)\Gamma(n+k+1)}{\Gamma(k+1)} \alpha^{(m)} , \]
+so
+ \[ \alpha^{(m)} = \frac{\Gamma(k+1)}{\Gamma(1-n)\Gamma(n+k+1)} \beta^{(k)} . \]
+Now, we have 
+\[ \int_0^1 \frac{t^k dt}{(1-t)^{1-n}} = \frac{\Gamma n \cdot \Gamma(k+1)}{\Gamma(n+k+1)}, \]
+and consequently,
+\[ \alpha^{(m)} = \frac{\beta^{(k)}}{\Gamma n \cdot \Gamma(1-n)} \int_0^1\frac{t^kdt}{(1-t)^{1-n}} .\]
+Multiplying this by $x^m = x^{n+k}$ we obtain
+\[ \alpha^{(m)} x^m = \frac{x^n}{\Gamma n \cdot \Gamma(1-n)} \int_0^1\frac{\beta^{(k)}(xt)^kdt}{(1-t)^{1-n}}, \]
+and from this
+\[ \sum \alpha^{(m)}x^m = \frac{x^n}{\Gamma n \cdot \Gamma(1-n)} \int_0^1 \sum \frac{\beta^{(k)}(xt)^kdt}{(1-t)^{1-n}} \]
+But we have $\sum \alpha^{(m)}x^m = s$, $\sum \beta^{(k)}(xt)^k = \psi(xt)$, so
+\[ s = \frac{x^n}{\Gamma n \Gamma(1-n)} \int_0^1 \frac{\psi(xt)dt}{(1-t)^{1-n}} . \]
+Next, observing that $\Gamma n \Gamma(1-n) = \frac{\pi}{\sin n\pi}$, we find
+\[ s = \frac{\sin n \pi \cdot x^n}{\pi} \int_0^1 \frac{\psi(xt)dt}{(1-t)^{1-n}} . \]
+The result of this discussion is a remarkable theorem:
+
+\begin{center}If $\psi a = \int_0^a \frac{ds}{(x-a)^n}$ , then $s = \frac{\sin \pi}{\pi} x^n \int_0^1 \frac{\psi(xt) dt}{(1-t)^{1-n}}$. 
+\end{center}
+
+We now apply this to the equation 
+\[ \psi a = \int_{x=0}^{x=a} \frac{ds}{\sqrt{a-x}} . \]
+In this case we have $n = \frac{1}{2}$ and $1-n = \frac{1}{2}$, so
+\[ s = \frac{\sqrt{x}}{\pi} \int_0^1 \frac{\psi(xt) dt}{\sqrt{1-t}} .\]
+This equation determines the arc length $s$ of the unknown curve in terms of the corresponding abscissa $x$; from this we can easily find an equation between the rectangular coordinates, by observing that $ds^2 = dx^2 + dy^2 $. 
+
+We now apply this result in some special cases.
+
+1) Find the curve with the property that the time that a body takes to descend any arc whatsoever is proportional to the $n^{th}$ power of the height which the body has descended.
+
+In this case we have $\psi a = ca^n$, where $c$ is a constant, so $\psi(xt) = cx^nt^n$.  It follows that 
+\[ s = \frac{\sqrt{x}}{\pi} \int_0^1 \frac{cx^nt^ndt}{\sqrt{1-t}} = x^{n+\frac{1}{2}} \frac{c}{\pi} \int_0^1 \frac{t^ndt}{sqrt(1-t)} , \]
+so if we set 
+\[ \frac{c}{\pi} \int_0^1 \frac{t^ndt}{\sqrt{1-t}} = C, \]
+we have 
+\[ s = C x^{n+\frac{1}{2}}; \]
+from this we get
+\[ ds = \left(n+\frac{1}{2}\right) C x^{n-\frac{1}{2}} dx, \]
+and 
+\[ ds^2 = \left(n+\frac{1}{2}\right)^2 C^2 x^{2n-1}dx^2 = dy^2 + dx^2 \]
+from which we deduce, after setting $(n+\frac{1}{2})^2C^2 = k$, that 
+\[ dy = dx \sqrt{kx^{2n-1} -1} ;\]
+the equation of the unknown curve therefore becomes
+\[ y = \int dx \sqrt{kx^{2n-1} - 1} . \]
+If we set $ n = \frac{1}{2}$, so that $x^{2n-1} = 1$, we have
+\[ y = \int dx \sqrt{k-1} = k' + x \sqrt{k-1}, \]
+so the curve is a line.
+
+2) Find the equation of the isochrone.
+
+Because the time is independent of the distance descended, we have $\psi a = c$, and consequently
+\[ s = \frac{\sqrt{x}}{\pi} c \int_0^1 \frac{dt}{\sqrt{1-t} }, \]
+so
+\[ s = k \sqrt{x} \]
+where 
+\[ k = \frac{c}{\pi} \int_0^1 \frac{dt}{\sqrt{1-t}}, \] 
+which is the known equation of the cycloid. 
+
+We have seen that if 
+\[ \psi a = \int_{x=0}^{x=a} \frac{ds}{(a-x)^n} , \]
+then 
+\[ s = \frac{\sin(n\pi)}{\pi} x^n \int_0^1 \frac{\psi(xt)dt}{(1-t)^{1-n}} .\]
+We can also express $s$ in another way, which I include because of its pecularity, namely
+\[ s = \frac{1}{\Gamma(1-n)}\int^n \psi(x) dx^n = \frac{1}{\Gamma(1-n)} \frac{d^{-n} \psi x}{dx^{-n} }\]
+which is to say, if
+\[ \psi a = \int_{x=0}^{x=a} ds (a-x)^n, \]
+then
+\[ s = \frac{1}{\Gamma(1+n)} \frac{d^n\psi x}{dx^n} ; \]
+or in other terms,  
+\[ \psi a = \frac{1}{\Gamma(1+n)} \int_{x=0}^{x=a} \frac{d^{n+1}\psi x}{dx^{n+1}} (a-x)^n dx .\]
+This proposition can be easily proved as follows. If we set 
+\[ \psi x = \sum \alpha^{(m)} x^m, \]
+then by differentiating we obtain:
+\[ \frac{d^k\psi x}{dx^k} = \sum \alpha^{(m)} m(m-1)(m-2)\dots(m-k+1)x^{m-k} ;\]
+but 
+\[ m(m-1)(m-2)\dots(m-k+1) = \frac{\Gamma(m+1)}{\Gamma(m-k+1)}, \]
+so
+\[ \frac{d^k \psi x}{dx^k} = \sum \alpha^{(m)} \frac{\Gamma(m+1)}{\Gamma(m-k+1)} x^{m-k} .\]
+Now, we have 
+\[ \frac{\Gamma(m+1)}{\Gamma(m-k+1)} = \frac{1}{\Gamma(-k)} \int_0^1 \frac{t^mdt}{(1-t)^{1+k}} ,\]
+and consequently
+\[ \frac{d^k\psi x}{dx^k} = \frac{1}{x^k \Gamma(-k)} \int_0^1 \frac{\sum \alpha^{(m)} (xt)^m dt}{(1- t)^{1+k}} ; \]
+but $\sum \alpha^{(m)}(xt)^m = \psi(xt)$, so
+\[ \frac{d^k\psi x}{dx^k} = \frac{1}{x^k\Gamma(-k)} \int_0^1\frac{\psi(xt)dt}{(1-t)^{1+k} }. \]
+Taking $k = -n$, we find that
+\[ \frac{d^{-n}\psi x}{dx^{-n}} = \frac{x^n}{\Gamma n} \int_0^1 \frac{\psi(xt)dt}{(1-t)^{1-n}}. \]
+Now we have seen that 
+\[ s = \frac{x^n}{\Gamma n \Gamma(1-n)} \int_0^1\frac{\psi(xt)dt}{(1-t)^{1-n}} , \]
+so we have 
+\[ s = \frac{1}{\Gamma(1-n)} \frac{d^{-n} \psi x}{dx^{-n}} ,\]
+if  
+\[ \psi a = \int_{x=0}^{x=a} \frac{ds}{(a-x)^n},\]
+which was to be shown.
+
+Differentiating the value $s$ a total of $n$ times, we obtain
+\[ \frac{d^n s}{dx^n} = \frac{1}{\Gamma(1-n)} \psi(x), \]
+and consequently, setting $s = \phi x$,
+\[ \frac{d^n \phi a}{da^n} = \frac{1}{\Gamma(1-n)} \int_0^1 \frac{\phi' x \cdot dx}{(a-x)^n} .\]
+We must point out that, in the above discussion, $n$ must always be less than $1$.
+
+If we set $n = \frac{1}{2}$, then we have
+\[ \psi a = \int_{x=0}^{x=a} \frac{ds}{\sqrt{a-x}} \]
+and
+\[ s = \frac{1}{\sqrt{\pi}} \frac{d^{-\frac{1}{2}} \psi x}{dx^{-\frac{1}{2}}} = \frac{1}{\sqrt{\pi}} \int^{\frac{1}{2}} \psi x dx^{\frac{1}{2}}  . \] 
+This is the equation of the unknown curve, when the time [of descent] is equal to $\psi a$. 
+
+From this equation we see that 
+\[ \psi x = \sqrt{\pi} \frac{d^{\frac{1}{2}} s}{dx^{\frac{1}{2}}}, \]
+so:
+
+\begin{center} If the equation of a curve is $s = \phi x$, the time that a body takes to descend through an arc of height $a$, is equal to $\sqrt{\pi} \frac{d^{\frac{1}{2}} \phi a}{da^{\frac{1}{2}}} $. \end{center}
+
+Finally I remark that, in the same way that, starting from the equation
+\[ \psi a = \int_{x=0}^{x=a} \frac{ds}{(a-x)^n}, \]
+I have found $s$, so starting from the equation
+\[ \psi a = \int \phi(xa) fx \cdot dx \]
+I have found the function $\phi$, when $\psi$ and $f$ are given functions and the integral is taken between any fixed limits; however, the solution to this problem is too long to give here.
+
+\pagebreak
+\begin{center}
+\textbf{2.}
+
+\emph{Value of the expression $\phi(x+y\sqrt{-1}) + \phi( x- y \sqrt{-1})$}.
+\end{center}
+
+When $\phi$ is an algebraic, logarithmic, exponential, or trigonometric function, we can always, as is well known, express the real value of $\phi(x+y\sqrt{-1}) + \phi( x- y \sqrt{-1})$ in a real and finite form.  If on the contrary $\phi$ is completely arbitrary, then as far as I know, no one until now has been able to express it in a real and finite form.   We can do this with the help of definite integrals, as follows.
+
+If we develop $\phi(x+y\sqrt{-1})$ and $\phi(x-y\sqrt{-1})$ using \emph{Taylor}'s theorem, we obtain
+\[ \phi(x+y\sqrt{-1}) = \phi(x) + \phi'(x)y\sqrt{-1} - \frac{\phi''x}{1\cdot 2}y^2 - \frac{\phi'''x}{1\cdot2\cdot3} y^3\sqrt{-1} + \frac{\phi'''' x}{1\cdot2\cdot3\cdot4} y^4 + \cdots \]
+\[ \phi(x-y\sqrt{-1}) = \phi(x) - \phi'(x)y\sqrt{-1} - \frac{\phi''x}{1\cdot 2} y^2 + \frac{\phi'''x}{1\cdot2\cdot3} y^3\sqrt{-1} + \frac{\phi'''' x}{1\cdot2\cdot3\cdot4} y^4 - \cdots \]
+and therefore 
+\[ \phi(x+y\sqrt{-1}) + \phi( x- y \sqrt{-1}) = 2(\phi x - \frac{\phi''x}{1\cdot2}y^2 + \frac{\phi''''x}{1\cdot 2 \cdot 3 \cdot 4} y^4 - \cdots) . \]
+To find the sum of this series, consider the series
+\[ \phi(x+t) = \phi x + t \phi' x + \frac{t^2}{1 \cdot 2} \phi'' x + \frac{t^3}{1 \cdot 2 \cdot 3} \phi'''x+\cdots \]
+Multiplying both sides of this equation by $e^{-v^2t^2}dt$, and taking the integral from $t= -\infty$ to $t=+\infty$, we have 
+\[ \int_{-\infty}^{\infty} \phi(x+t) e^{-v^2t^2} dt = \phi x \int_{-\infty}^{\infty} e^{-v^2t^2} dt + \phi' x \int_{-\infty}^{\infty} e^{-v^2t^2} tdt + \frac{1}{2} \phi'' x \int_{-\infty}^{\infty} e^{-v^2t^2}t^2dt + \cdots \]
+Now $\int_{-\infty}^{\infty} e^{-v^2t^2} t^{2n+1} dt = 0$, therefore 
+\[ \int_{-\infty}^{\infty} \phi(x+t) e^{-v^2t^2} dt = \phi x \int_{-\infty}^{\infty} e^{-v^2t^2} dt + \frac{1}{2} \phi'' x \int_{-\infty}^{\infty} e^{-v^2t^2}t^2dt + \frac{\phi'''' x}{1\cdot 2 \cdot 3 \cdot 4} \int_{-\infty}^{\infty} e^{-v^2t^2} t^4dt + \cdots \]
+Let $t = \frac{a}{v}$, so that $e^{-v^2t^2} = e^{-a^2}$, $t^{2n} = \frac{a^{2n}}{v^{2n}}$, $dt = \frac{da}{v}$, and therefore\footnote{\emph{Here Abel is either making an error or using confusing notation - the formula he gives is only valid for positive values of $v$.  For the remaining steps to be valid, every occurence of $v$ must be replaced by $|v|$.}}
+\[ \int_{-\infty}^{\infty} e^{-v^2t^2} t^{2n} dt = \frac{1}{v^{2n+1}} \int_{-\infty}^{\infty} e^{-a^2} a^{2n} da = \frac{\Gamma(\frac{2n+1}{2})}{v^{2n+1}}, \]
+which is to say
+\[ \int_{-\infty}^{\infty} e^{-v^2t^2} t^{2n} dt = \frac{1\cdot 3 \cdot 5 \cdots (2n-1) \sqrt{pi}}{2^n v^{2n+1}} = \frac{\sqrt{pi}}{v^{2n+1}} A_n. \]
+This value being substituted in the equation above, we obtain
+\[ \int_{-\infty}^{\infty} \phi(x+t) e^{-v^2t^2} dt = \frac{\sqrt{\pi}}{v} ( \phi x + \frac{A_1}{2} \frac{\phi''x}{v^2} + \frac{A_2}{2 \cdot 3 \cdot 4} \frac{\phi'''' x}{v^4} + \cdots ) \]
+Multiplying this by $e^{-v^2y^2}vdv$ and integrating from $v = -\infty$ to $v=\infty$, we obtain
+\[ \frac{1}{\sqrt{\pi}} \int_{-\infty}^{\infty} e^{-v^2y^2}vdv \int_{-\infty}^{\infty} \phi(x+t)e^{-v^2t^2}dt = \phi x \int_{-\infty}^{\infty} e^{-v^2y^2} dv+ \frac{A_1 \phi'' x}{2} \int_{-\infty}^{\infty} e^{-v^2y^2}\frac{dv}{v^2} + \cdots \]
+Setting $vy = \beta$, we have 
+\[ \int_{-\infty}^{\infty} e^{-v^2y^2} v^{-2n} dv = y^{2n-1} \int_{-\infty}^{\infty} e^{-\beta^2}\beta^{-2n} d\beta. \]
+Now,
+\[ \int_{-\infty}^{\infty} e^{-\beta^2} \beta^{-2n} d\beta = \Gamma(\frac{1-2n}{2}) = \frac{(-1)^n2^n\sqrt{\pi}}{1 \cdot 3 \cdot 5 \cdots (2n-1)} = \frac{(-1)^n\sqrt{\pi}}{A_n}, \]
+so
+\[ \int_{-\infty}^{\infty} e^{-v^2y^2}v^{-2n} dv = \frac{(-1)^n \sqrt{\pi} y^{2n-1}}{A_n}, \]
+and it follows that 
+\[ A_n \int_{-\infty}^{\infty} e^{-v^2y^2} v^{-2n} dv = (-1)^ny^{2n-1}\sqrt{\pi}. \]
+Substituting this value, and dividing by $\frac{\sqrt{\pi}}{2y}$, we obtain
+\[ \frac{2y}{\pi} \int_{-\infty}^{\infty} e^{-v^2y^2}vdv \int_{-\infty}^{\infty} \phi(x+t) e^{-v^2t^2}dt = 2 \left(\phi x - \frac{\phi''x}{2} y^2 + \frac{\phi'''' x}{2 \cdot 3 \cdot 4} y^4 - \cdots \right). \]
+The right hand side of this equation is equal to 
+\[ \phi(x+y\sqrt{-1}) + \phi(x-y\sqrt{-1}), \]
+therefore\footnote{\emph{It is interesting that Abel does not take the obvious next step and reduce his double integral to a single integral by reversing the order of integration.  Doing this, he would have discovered the Poisson integral
+\[ \frac{1}{\pi} \int_{-\infty}^{\infty} \frac{y}{y^2 + (t-x)^2} \phi(t) dt, \]
+which expresses a harmonic function on the upper half plane in terms of its boundary values.}}
+\[ \phi(x+y\sqrt{-1}) + \phi(x-y\sqrt{-1}) = \frac{2y}{\pi} \int_{-\infty}^{\infty} e^{-v^2y^2}vdv \int_{-\infty}^{\infty} \phi(x+t) e^{-v^2t^2}dt. \]
+
+Setting $x=0$, we have 
+\[ \phi(y \sqrt{-1}) + \phi(-y\sqrt{-1}) = \frac{2y}{\pi} \int_{-\infty}^{\infty} e^{-v^2y^2}vdv \int_{-\infty}^{\infty} \phi t \cdot e^{-v^2t^2} dt . \]
+For example, if $\phi t = e^t$, we have 
+\[ \phi(y \sqrt{-1}) + \phi(-y\sqrt{-1}) = e^{y \sqrt{-1}} + e^{-y\sqrt{-1}} = 2 \cos y, \]
+therefore
+\[ \cos y = \frac{y}{\pi} \int_{-\infty}^{\infty} e^{-v^2y^2}vdv \int_{\infty}^{\infty} e^{t-v^2t^2}dt ;\]
+Now,
+\[ \int_{-\infty}^{\infty} e^{t-v^2t^2}dt = \frac{\sqrt{\pi}}{v} e^{\frac{1}{4v^2}}, \]
+so
+\[ \cos y = \frac{y}{\sqrt{\pi}} \int_{-\infty}^{\infty} e^{-v^2y^2 + \frac{1}{4v^2}} dv . \]
+If we set $v=\frac{t}{y}$, we have 
+\[ \cos y = \frac{1}{\sqrt{\pi}} \int_{-\infty}^{\infty} e^{-t^2 + \frac{y^2}{4 t^2}} dt . \]
+By assigning other values to $\phi t$, one may find the values of other definite integrals, but since my goal was only to determine the value of $\phi(x+y\sqrt{-1}) + \phi(x-\sqrt{-1} y)$, I will not concern myself with this.
+
+\pagebreak
+\begin{center}
+\textbf{3.}
+
+\emph{Bernoulli numbers expressed by definite integrals, and the consequent derivation of an expression for the finite integral $\sum \phi x$. \footnote{\emph{When Abel refers to the \emph{finite integral} of a function $\phi(x)$, he has in mind the following sum:
+\[ \sum \phi x = \sum_{n=1}^{\infty} \phi(x+n). \]
+}}}
+\end{center}
+
+If we develop the function $1 - \frac{u}{2} \cot \frac{u}{2}$ in a series of integral powers of $u$, 
+\[ 1 - \frac{u}{2} \cot \frac{u}{2} = A_1 \frac{u^2}{2} + A_2 \frac{u^4}{2 \cdot 3 \cdot 4} + \cdots + A_n \frac{u^{2n}}{2\cdot 3 \cdot 4 \cdots 2n} + \cdots, \]
+the coefficients $A_1$, $A_2$, $A_3$ etc. are known as the Bernoulli numbers\footnote{ See \emph{Euler} Institutiones calculi diff. p. 426.}. Now \footnote{See \emph{Euler} Inst. calc. diff. p. 423} 
+\[ 1 - \frac{u}{2} \cot \frac{u}{2} = 2u^2 \left(\frac{1}{4\pi^2-u^2} + \frac{1}{4\cdot 4\pi^2 - u^2} + \frac{1}{4 \cdot 9\pi^2 - u^2} + \frac{1}{4 \cdot 16\pi^2 - u^2} + \cdots \right); \]
+and developing the right hand side in a series:
+\begin{eqnarray*} 1 - \frac{u}{2} \cot \frac{u}{2} &=& \frac{u^2}{2\pi^2} \left(1 + \frac{1}{2^2} + \frac{1}{3^2} + \cdots \right) \\
+& + & \frac{u^4}{2^3\pi^4} \left(1 + \frac{1}{2^2} + \frac{1}{3^2} + \cdots \right) \\
+& + & \frac{u^6}{2^5\pi^6} \left(1 + \frac{1}{2^6} + \frac{1}{3^6} + \cdots \right) \\
+& + & \cdots \\
+& + & \frac{ u^{2n} }{ 2^{2n-1} \pi^{2n} } \left(1 + \frac{1}{2^{2n}} + \frac{1}{3^{2n}} + \cdots \right)\\
+& + & \cdots . \end{eqnarray*}
+Comparing this development with the previous one, we have
+\[ \frac{A_n}{1 \cdot 2 \cdot 3 \cdots 2n} = \frac{1}{2^{2n-1}\pi^{2n}} \left( 1 + \frac{1}{2^{2n}} + \frac{1}{3^{2n}} + \cdots \right) . \]
+Let us now consider the integral $\int_0^\frac{1}{0} \frac{t^{2n-1}}{e^t-1}$. We have
+\[ \frac{1}{e^t -1} = e^{-t} + e^{-2t} + e^{-3t} + \cdots , \]
+therefore
+\[ \int \frac{t^{2n-1} dt}{e^t-1} = \int e^{-t} t^{2n-1} dt + \int e^{-2t} t^{2n-1} dt + \cdots + \int e^{-kt} t^{2n-1}dt + \cdots  \]
+Now, $\int_0^{\frac{1}{0}} e^{-kt} t^{2n-1} dt = \frac{\Gamma(2n)}{k^{2n}}$ \footnote{This expression can be deduced from the fundamental equation $\Gamma(a) = \int dx \left(\log \frac{1}{x} \right)^{a-1}$, by taking $a = 2n$ and $x = e^{-kt}$.  See \emph{Legendre}, Exercices de calc. int., t. i p. 277.}, therefore
+\[ \int_0^{\frac{1}{0}} \frac{t^{2n-1}dt}{e^t-1} = \Gamma(2n)\left(1 + \frac{1}{2^{2n}} + \frac{1}{3^{2n}} + \cdots \right) ; \]
+but from what we have seen, 
+\[ 1 + \frac{1}{2^{2n}} + \frac{1}{3^{2n}} + \cdots = \frac{2^{2n-1} \pi^{2n}}{1 \cdot 2 \cdot 3 \cdots 2n} A_n = \frac{2^{2n-1}\pi^{2n}}{\Gamma(2n+1)} A_n, \]
+therefore
+\[ \int_0^{\frac{1}{0}} \frac{t^{2n-1}dt}{e^t-1} = \frac{\Gamma(2n)}{\Gamma(2n+1)} 2^{2n-1} \pi^{2n} A_n = \frac{2^{2n-1}\pi^{2n}}{2n} A_n, \]
+and consequently:
+\[A_n = \frac{2n}{2^{2n-1} \pi^{2n}} \int \frac{t^{2n-1}dt}{e^t-1} .\]
+Putting $t\pi$ in place of $t$, we finally get
+\[ A_n = \frac{2n}{2^{2n-1}} \int_0^{\frac{1}{0}} \frac{t^{2n-1} dt}{e^{\pi t} - 1} . \]
+In this simple manner, we have expressed the Bernoulli numbers in terms of definite integrals.
+
+On the other hand, we also see that when $n$ is an integer, the expression $\int_0^{\frac{1}{0}} \frac{t^{2n-1}dt}{e^{\pi t}-1}$ will be rational and equal to $\frac{2^{2n-1}}{2n} A_n$, which is quite remarkable.  For example, 
+\begin{eqnarray*} \int_{0}^{\frac{1}{0}} \frac{t dt}{e^{\pi t} -1} &=& \frac{1}{6} ,\\
+ \int_{0}^{\frac{1}{0}} \frac{t^3 dt}{e^{\pi t} - 1}  &=& \frac{1}{30} \cdot \frac{2^3}{4} = \frac{1}{15}, \\
+ \int_{0}^{\frac{1}{0}} \frac{t^5 dt}{e^{\pi t} -1 } &=& \frac{1}{42} \cdot \frac{2^5}{6} = \frac{8}{63}, \; \mathrm{etc.} \end{eqnarray*}
+With the help of what is above, we can very easily describe the function $\sum \phi x$ by a definite integral.  We have \footnote{\emph{This result, which Abel clearly expects us to know, is called the Euler-Maclaurin summation formula.}} 
+\[ \sum \phi x = \int \phi x - \frac{1}{2} \phi(x) + A_1 \frac{\phi'x}{1\cdot 2} - A_2 \frac{\phi''' x}{1 \cdot 2 \cdot 3 \cdot 4} + \cdots .\]
+Inserting the values of $A_1$, $A_2$, $A_3$, etc., we have
+\[ \sum \phi x = \int \phi x - \frac{1}{2} \phi(x) +\frac{\phi' x}{1 \cdot 2} \int_{0}^{\frac{1}{0}} \frac{tdt}{e^{\pi t} - 1} - \frac{\phi''' x}{1 \cdot 2 \cdot 3 \cdot 2^3} \int_0^{\frac{1}{0}} \frac{t^3dt}{e^{\pi t}-1} + \cdots \]
+that is,
+\[ \sum \phi x = \int \phi x \cdot dc - \frac{1}{2} \phi x + \int\frac{dt}{e^{\pi t}-1} \left(\phi'x\cdot \frac{t}{2} - \frac{\phi'''x}{1\cdot 2 \cdot 3} \cdot \frac{t^3}{2^3} + \cdots \right) .\]
+Now,
+\begin{eqnarray*} \phi(x + \frac{t}{2} \sqrt{-1}) &=& \phi x - \frac{\phi'' x}{1 \cdot 2} \frac{t^2}{2^2} + \frac{\phi'''' x}{1 \cdot 2 \cdot 3 \cdot 4} \frac{t^4}{2^4} - \cdots \\
+& & + \sqrt{-1} \left( \phi'x \frac{t}{2} - \frac{\phi''' x}{1\cdot 2 \cdot 3} \frac{t^3}{2^3} + \cdots \right). \end{eqnarray*} 
+\begin{eqnarray*} \phi(x - \frac{t}{2} \sqrt{-1}) &=& \phi x - \frac{\phi'' x}{1 \cdot 2} \frac{t^2}{2^2} + \frac{\phi'''' x}{1 \cdot 2 \cdot 3 \cdot 4} \frac{t^4}{2^4} - \cdots \\
+& & - \sqrt{-1} \left( \phi'x \frac{t}{2} - \frac{\phi''' x}{1\cdot 2 \cdot 3} \frac{t^3}{2^3} + \cdots \right). \end{eqnarray*}
+Therefore,
+\[ \phi'x \cdot \frac{t}{2} - \frac{\phi''' x}{1 \cdot 2 \cdot 3} \frac{t^3}{2^3} + \cdots = \frac{1}{2 \sqrt{-1}} \left[ \phi(x + \frac{t}{2} \sqrt{-1}) - \phi(x - \frac{t}{2} \sqrt{-1}) \right]. \]
+This value being inserted in the expression for $\sum \phi x$, we obtain %\footnote{\emph{The reader may wish to amuse themselves by showing that Abel's result is a consequence of the Cauchy residue formula, applied to the integral
+%\[ \int_{-\infty}^{\infty} \frac{\phi(x + iz)}{e^{2\pi z} - 1} dz. \]}}
+\[ \sum \phi x = \int \phi x \cdot dx - \frac{1}{2} \phi x + \int_0^{\frac{1}{0}} \frac{ \phi(x+ \frac{t}{2} \sqrt{-1}) - \phi(x - \frac{t}{2} \sqrt{-1})}{2 \sqrt{-1}} \frac{dt}{e^{\pi t} - 1} .\]
+This seems to me to be a very remarkable expression for the finite integral, and as far as I am aware it has not so far been appreciated by anyone.
+
+From the equation above we find that 
+\[ \int_0^{\frac{1}{0}} \frac{ \phi(x+ \frac{t}{2} \sqrt{-1}) - \phi(x - \frac{t}{2} \sqrt{-1})}{2 \sqrt{-1}} \frac{dt}{e^{\pi t} - 1} = \sum \phi x - \int \phi x \cdot dx +\frac{1}{2} \phi x . \]
+Here we have an expression for a very general definite integral.  I will now apply it in a few special cases.
+
+1. Let $\phi x = e^x$.  In this case we have 
+\[ \phi(x + \frac{t}{2}\sqrt{-1}) = e^x e^{\frac{t}{2} \sqrt{-1}} = e^x\left(\cos \frac{t}{2} + \sqrt{-1} \sin \frac{t}{2}\right), \]
+so
+ \[ \frac{ \phi(x+ \frac{t}{2} \sqrt{-1}) - \phi(x - \frac{t}{2} \sqrt{-1})}{2 \sqrt{-1}} = e^x \sin \frac{t}{2} ,\]
+ and consequently
+ \[ \int_0^{\frac{1}{0}} \frac{\sin \frac{t}{2} dt}{e^{\pi t} - 1} = e^{-x} \sum e^x - e^{-x} \int e^x dx + \frac{1}{2}; \]
+ but $\sigma e^x = \frac{e^x}{e-1}$, and $\int e^x dx = e^x$, therefore
+ \[ \int_0^{\frac{1}{0}} \frac{\sin \frac{t}{2} dt}{e^{\pi t}-1} = \frac{1}{e-1} - \frac{1}{2} . \]
+If we let $\phi x = e^{mx}$, we can obtain in the same manner 
+ \[ \int_0^{\frac{1}{0}} \frac{\sin \frac{mt}{2} dt}{e^{\pi t}-1} = \frac{1}{e^m-1} - \frac{1}{m} + \frac{1}{2} . \]
+Putting $2t$ in place of $t$, we have
+ \[ \int_0^{\frac{1}{0}} \frac{\sin mt dt}{e^{2\pi t}-1} = \frac{1}{4}\frac{e^m+1}{e^m-1} - \frac{1}{2m} , \]
+ a formula which was found in another manner by \emph{Legendre} (Exerc. calc. int. T. II, p. 189.).
+ 
+ 2. Setting $\phi x = \frac{1}{x}$, we find that 
+ \[ \frac{ \phi(x+ \frac{t}{2} \sqrt{-1}) - \phi(x - \frac{t}{2} \sqrt{-1})}{2 \sqrt{-1}} = - \frac{t}{2(x^2 + \frac{1}{4}t^2)} ,\]
+ \[ \int \phi x \cdot dx = \int \frac{dx}{x} = \log x + C, \]
+ and therefore
+ \[ \int_0^{\frac{1}{0}} \frac{t dt}{(x^2 + \frac{1}{4} t^2)(e^{\pi t} - 1)} = 2 \log x - \frac{1}{x} - 2 \sum \frac{1}{x} + C .\]
+ We determine $C$ by setting $x=1$, which gives
+\[ C = 3 + \int_0^{\frac{1}{0}} \frac{t dt}{(1+4t^2)(e^{\pi t} -1)} . \]
+
+3. Setting $\phi x = \sin ax$, we have \footnote{ \emph{The reader may not be familiar with Abel's formula for $\sum \sin ax$, which can be proved by taking the imaginary part of the geometric series
+\[ \sum_{n=0}^{\infty} e^{ia(x+n)} = \frac{e^{iax}}{1-e^{ia}}. \]}}  
+\[ \sin(ax + \frac{at}{2} \sqrt{-1}) - \sin(ax - \frac{at}{2} \sqrt{-1}) = 2 \cos ax \cdot \sin \frac{at}{2} \sqrt{-1} = \cos ax \cdot \frac{e^{\frac{-at}{2}} - e^{\frac{at}{2}}}{ \sqrt{-1}} ,\]
+\[ \sum \sin ax = - \frac{\cos(ax - \frac{1}{2} a)}{2 \sin \frac{1}{2} a} , \int \sin ax \cdot dx = - \frac{1}{a} \cos ax. \]
+Therefore, 
+\[ \frac{\cos ax}{2} \int_0^{\frac{1}{0}} \frac{e^{\frac{at}{2}} - e^{-\frac{at}{2}}}{e^{\pi t} - 1} dt = - \frac{\cos(ax - \frac{1}{2} a)}{2 \sin \frac{1}{2} a} + \frac{1}{a} \cos ax + \frac{1}{2} \sin ax , \]
+and writing $2a$ instead of $a$, this reduces to 
+\[ \int_0^{\frac{1}{0}} \frac{e^{at} - e^{-at}}{e^{\pi t} - 1} dt = \frac{1}{a} - \mathrm{cotg} a . \]
+In the same manner, by taking other forms for the function $\phi x$ one may find the value of other definite integrals.
+
+\begin{center}
+\textbf{4.}
+
+\emph{ Summation of the infinite series $S = \phi (x+1) - \phi (x+2) + \phi(x+3) - \phi(x+4) + \cdots $ with the help of definite integrals. }
+\end{center}
+
+One sees easily that $S$ can be expressed like this:
+\[ S = \frac{1}{2} \phi x + A_1 \phi' x + A_2 \phi'' x + A_3 \phi'''x + \cdots .\]
+If we set $\phi x = e^{ax}$ we obtain
+\[ S = \frac{1}{2} e^{ax} + e^{ax}\left(A_1a + A_2 a^2 + A_3 a^3 + \cdots \right)\]
+But we also have 
+\[ S = e^{ax+a} - e^{ax + 2a} + e^{ax + 3a} - \cdots = \frac{e^{ax}e^a}{1+e^a}, \]
+so
+\[ \frac{e^a}{1+e^a} - \frac{1}{2} = A_1 a + A_2 a^2 + A_3 a^3 + \cdots \]
+By taking $a = c \sqrt{-1}$, we find 
+\[ \frac{e^{c \sqrt{-1}}}{1+e^{c \sqrt{-1}}} - \frac{1}{2} = \sqrt{-1} \left( A_1 c - A_3 c^3 + A_5 c^5 - \cdots\right) + P, \]
+where $P$ is the sum of the real terms.  But 
+\[ \frac{e^{c \sqrt{-1}}}{1+e^{c\sqrt{-1}}} - \frac{1}{2} = \frac{1}{2} \sqrt{-1} \mathrm{tang} \frac{1}{2} c ,\]
+so 
+\[ \frac{1}{2} \mathrm{tang} \frac{1}{2} c = A_1 c - A_3 c^3 + A_5 c^5 - \cdots .\]
+Now we have (\emph{Legendre} Exerc. calc. int. T. II, p. 186)
+\[ \frac{1}{2} \mathrm{tang} \frac{1}{2} c = \int_0^{\frac{1}{0}} \frac{e^{ct} - e^{-ct}}{e^{\pi t} - e^{-\pi t}} dt \]
+Therefore, using
+\[ e^{ct} - e^{-ct} = 2\left\{ct + \frac{c^3}{2\cdot 3} t^3 + \frac{c^5}{2 \cdot 3 \cdot 4 \cdot 5} t^5 + \cdots \right\}, \]
+we obtain
+\[ \frac{1}{2} \mathrm{tang} \frac{1}{2} c = 2c \int_0^{\frac{1}{0}} \frac{t dt}{e^{\pi t} - e^{-\pi t}} + 2 \frac{c^3}{2 \cdot 3} \int_0^{\frac{1}{0}} \frac{t^3 dt}{e^{\pi t} - e^{-\pi t}} + 2 \frac{c^5}{2 \cdot 3 \cdot 4\cdot 5} \int_0^{\frac{1}{0}} \frac{t^5dt}{e^{\pi t} - e^{-\pi t}} \]
+We conclude,
+\begin{eqnarray*} A_1 &=& 2 \int_0^{\frac{1}{0}} \frac{t dt}{e^{\pi t} - e^{-\pi t}} , \\
+A_3 &=& - \frac{2}{2 \cdot 3} \int_0^{\frac{1}{0}} \frac{t^3dt}{e^{\pi t} - e^{-\pi t}} , \\
+A_5 &=& \frac{2}{2 \cdot 3 \cdot 4 \cdot 5} \int_0^{\frac{1}{0}} \frac{t^5 dt}{e^{\pi t} - e^{-\pi t}} , \\
+ && etc. 
+\end{eqnarray*}
+Substituting these values in the expression for $S$, 
+\[ S = \frac{1}{2} \phi x + 2 \int_0^{\frac{1}{0}} \frac{dt}{e^{\pi t} - e^{-\pi t}} \left\{ t \phi'x - \frac{t^3}{2 \cdot 3} \phi''' x + \frac{t^5}{2 \cdot 3 \cdot 4 \cdot 5} \phi^{(V)}x - \cdots \right \}; \]
+but we have 
+\[ t \phi'x - \frac{t^3}{2 \cdot 3} \phi''' x + \frac{t^5}{2 \cdot 3 \cdot 4 \cdot 5} \phi^{(V)}x - \cdots = \frac{\phi(x+t\sqrt{-1}) - \phi(x - t \sqrt{-1})}{2 \sqrt{-1}}, \]
+therefore
+\[ \phi(x+1) - \phi (x+2) + \phi (x+3) - \phi (x+4) + \cdots = \frac{1}{2} \phi(x) + \int_0^{\frac{1}{0}} \frac{dt}{e^{\pi t} - e^{-\pi t}} \frac{ \phi(x + t \sqrt{-1}) - \phi(x-t\sqrt{-1})}{2 \sqrt{-1}} .\]
+
+If we set $x = 0$, we obtain 
+\[ \phi(1) - \phi(2) + \phi(3) -\phi(4) + \cdots  = \frac{1}{2} \phi(0) + 2 \int_0^{\frac{1}{0}} \frac{dt}{e^{\pi t} - e^{-\pi t}} \frac{\phi(t \sqrt{-1}) - \phi(-t \sqrt{-1})}{2 \sqrt{-1}} .\]
+Taking for example $\phi x = \frac{1}{x+1}$, we have 
+\[ \frac{\phi(t \sqrt{-1}) - \phi(-t\sqrt{-1})}{2 \sqrt{-1}} = - \frac{t}{1+t^2} , \]
+therefore
+\[ \frac{1}{2} - \frac{1}{3} + \frac{1}{4} - \frac{1}{5} + \cdots  = \frac{1}{2} - 2 \int_0^{\frac{1}{0}} \frac{t dt}{(1+t^2)(e^{\pi t} - e^{-\pi t} )} \]
+Now we have 
+\[ \frac{1}{2} - \frac{1}{3} + \frac{1}{4} - \frac{1}{5} + \cdots = 1  - \log 2 \]
+and consequently, 
+\[ \int_0^{\frac{1}{0}} \frac{t dt}{(1+t^2)(e^{\pi t} - e^{-\pi t} )}= \frac{1}{2} \log 2 - \frac{1}{4} .\] 
+
+
+
+  \end{document}

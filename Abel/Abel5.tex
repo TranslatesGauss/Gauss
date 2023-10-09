@@ -1,0 +1,32 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{geometry}
+\usepackage{amsmath}
+\geometry{legalpaper, margin=1in}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\parindent=0pt
+\parskip=8pt
+\arraycolsep=2pt
+\usepackage{pgfplots}
+
+
+\begin{document}
+
+\begin{center}
+A SMALL CONTRIBUTION TO THE THEORY OF TRANSCENDENTAL FUNCTIONS
+\end{center}
+
+Consider the integral 
+\[ p = \int \frac{qdx}{x-a} , \]
+where $q$ is a function of $x$ which does not depend on $a$.  Differentiating $p$ with respect to $a$ we find 
+\[ \frac{dp}{da} = \int \frac{qdx}{(x-a)^2}. \]
+If $q$ is chosen so that $\int \frac{qdx}{(x-a)^2}$ can be reduced to the integral $\int \frac{qdx}{x-a}$, then one can find a linear differential equation relating $p$ and $a$, which can be used to express $p$ as a function of $a$.  In this way, one can find relationships between many different integrals, some taken with respect to $x$, and others with respect to $a$.   Since this gives rise to several interesting theorems, I will attempt to develop it in a very general case in which the aforementioned reduction of the integral $\int \frac{qdx}{(x-a)^2}$ is possible.  Namely, this can always be done if $q = \phi x . e^{fx}$, where $fx$ is a rational algebraic function of $x$, and $\phi x$ is given by an equation of the form
+\[ \phi x = k (x+\alpha)^{\beta}(x+\alpha')^{\beta'} \cdots (x + \alpha^{(n)})^{\beta^{(n)}}, \]
+where $\alpha, \alpha', \alpha'',\dots$ are constants, and $\beta, \beta', \beta'',\dots$ are arbitrary rational numbers.  In this case one has 
+\[ p = \int \frac{e^{fx}\phi x.dx}{x-a}, \]
+\[ \frac{dp}{da} = \int \frac{e^{fx} \phi x.dx}{(x-a)^2} . \]
+
+  \end{document}
