@@ -4,5 +4,5 @@ Please email translatesgauss@gmail.com to report errors, make requests, or contr
 
 Contents <br><br>
 
-Section 1: On the Congruence of Numbers in General
+Section 1: On the Congruence of Numbers in General <br>
 Section 2: Congruences of the First Degree
