@@ -3,3 +3,5 @@ Open source English translation (in progress) of Volume 3 of Gauss' Complete Wor
 Please email translatesgauss@gmail.com to report errors, make requests, or contribute.
 
 Contents 
+
+Section 1: Demonstratio nova theorematis omnem functionem algebraicam rationalem integram unius variabilis in factores reales primi vel secundi gradus resolvi posse (Doctoral dissertation, first proof of the fundamental theorem of algebra)
