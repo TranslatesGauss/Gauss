@@ -1,0 +1,162 @@
+\documentclass[14pt]{memoir}
+\usepackage{standalone}
+\usepackage[dvips,text={6.5truein,9.1truein},left=0.86truein,right=0.8truein,top=1truein]{geometry}
+\usepackage{amsmath, amsthm, amsfonts}
+\usepackage{titlesec}
+
+% Uncomment to use syncing
+%\usepackage{pdfsync}
+
+
+% Paragraphs
+\usepackage{indentfirst}
+\parindent=3em
+\parskip=0pt
+
+%font
+\usepackage{lmodern}
+%\usepackage[T1]{fontenc}% http://ctan.org/pkg/fontenc
+\usepackage{microtype}
+
+\titleformat{\section}
+ {\centering}{\thesection.}{0em}{}
+
+\titleformat{\subsection}
+ {\normalfont\small\centering}{\thesection.}{0em}{}
+\titlespacing*{\subsection}
+{0pt}{\baselineskip}{0\baselineskip}
+
+%footnotes
+\usepackage[perpage]{footmisc}
+\usepackage{etoolbox}
+\DefineFNsymbols*{asterisks}{{ *}{ **}{ ***}}
+\setfnsymbol{asterisks}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\makeatletter
+\renewcommand{\@makefnmark}{\mbox{\normalfont\@thefnmark})}
+\settowidth{\footnotemargin}{***) }
+\patchcmd{\@makefntext}{\hss\@makefnmark}{\hss \@makefnmark\ }{}{}
+\makeatother
+
+%Line Spacing
+\renewcommand{\baselinestretch}{1.1}
+\renewcommand{\footnotelayout}{ \baselineskip=1.02\baselineskip }
+\setlength{\skip\footins}{2\baselineskip}
+
+\theoremstyle{plain}
+\newtheorem*{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{problem}{Problem}
+
+
+\theoremstyle{remark}
+\newtheorem*{example}{Example}
+\newtheorem*{examples}{Examples}
+
+\begin{document}
+\section*{THIRD PROOF OF THE THEOREM ON THE RESOLVABILITY
+OF INTEGRAL ALGEBRAIC FUNCTIONS INTO REAL FACTORS}
+
+\subsection*{1.}
+
+Let the function of the indeterminate \(x\) be given by
+\[X = x^m + Ax^{m-1} + Bx^{m-2} + Cx^{m-3} + \text{ etc. } + Lx + M,\]
+where the coefficients \(A,\) \(B,\) \(C\) etc. are fixed real quantities. Let \(r,\) \(\varphi\) be indeterminates, and consider
+\[\begin{array}{rl}
+r^m\cos m\varphi + A r^{m-1}\cos(m-1)\varphi + Br^{m-2}\cos(m-2)\varphi & \\
++ Cr^{m-3}\cos(m-3)\varphi + \text{ etc. } + Lr\cos\varphi + M &= t\\
+r^m\sin m\varphi + Ar^{m-1}\sin(m-1)\varphi + Br^{m-2}\sin(m-2)\varphi & \\
++ Cr^{m-3}\sin(m-3)\varphi + \text{ etc. } + Lr\sin\varphi &= u\\
+mr^m\cos m\varphi +(m-1)Ar^{m-1}\cos(m-1)\varphi+(m-2)Br^{m-2}\cos(m-2)\varphi &\\
++ (m-3)Cr^{m-3}\cos(m-3)\varphi + \text{ etc. } + Lr\cos\varphi &= t'\\
+mr^m\sin m\varphi +(m-1)Ar^{m-1}\sin(m-1)\varphi + (m-2)Br^{m-2}\sin(m-2)\varphi &\\
++ (m-3)Cr^{m-3}\sin(m-3)\varphi + \text{ etc. } + Lr\sin\varphi &= u'\\
+mmr^m\cos m\varphi+(m-1)^2Ar^{m-1}\cos(m-1)\varphi+(m-2)^2Br^{m-2}\cos(m-2)\varphi &\\
++ (m-3)^2Cr^{m-3}\cos(m-3)\varphi + \text{ etc. } + Lr\cos \varphi &= t''\\
+mmr^m\sin m\varphi+(m-1)^2Ar^{m-1}\sin(m-1)\varphi+(m-2)^2Br^{m-2}\sin(m-2)\varphi &\\
++ (m-3)^2Cr^{m-3}\sin(m-3)\varphi + \text{ etc. } + Lr\sin\varphi &= u''
+\end{array}\]
+\[\frac{(tt+uu)(tt''+uu'')+(tu'-ut')^2-(tt'+uu')^2}{r(tt+uu)^2} = y.\]
+The factor \(r\) can obviously be removed from the numerator and denominator of the final formula,  since it divides \(t',\) \(u',\) \(t'',\) \(u''\). Finally, let \(R\) be a positive quantity, arbitrarily chosen but greater than the maximum of the following quantities:
+\[mA\sqrt{2}, \sqrt{mB\sqrt{2}}, \sqrt[3]{mC\sqrt{2}}, \sqrt[4]{mD\sqrt{2}},\]
+where the signs of the quantities \(A,\) \(B,\) \(C\) etc. are excluded, i.e. the negatives, if any, have been changed to positives. These preparations being made, I say that \(tt'+uu'\) obtains a certain positive value when \(r = R,\) for any real value assigned to \(\varphi.\)
+
+\textit{Proof.} Let us set
+\begin{align*}
+R^m\cos 45^o + A R^{m-1}\cos(45^o+\varphi)+BR^{m-2}\cos(45^o+2\varphi) &\\
++CR^{m-3}\cos(45^o+3\varphi)+\text{ etc. }+LR\cos(45^o+(m-1)\varphi)+M\cos(45^o+m\varphi) &= T\\
+R^m\sin45^o+AR^{m-1}\sin(45^o+\varphi)+BR^{m-2}\sin(45^o+2\varphi)&\\
++CR^{m-3}\sin(45^o+3\varphi)+\text{etc.}+LR\sin(45^o+m\varphi)&= U \\
+mR^m\cos 45^o +(m-1)AR^{m-1}\cos(45^o+\varphi)+(m-2)BR^{m-2}\cos(45^o+2\varphi)&\\
++(m-3)CR^{m-3}\cos(45^o+3\varphi)+\text{ etc. }+LR\cos(45^o+(m-1)\varphi) &= T'\\
+mR^m\sin45^o +(m-1)AR^{m-1}\sin(45^o+\varphi) + (m-2)BR^{m-2}\sin(45^o+2\varphi)&\\
++(m-3)CR^{m-3}\sin(45^o+3\varphi)+\text{ etc. }+Lr\sin(45^o+(m-1)\varphi) &= U'.\end{align*}
+Then it is clear that
+
+I. \(T\) is composed of the parts
+\begin{align*}
+&\frac{R^{m-1}}{m\sqrt{2}}\left[R+mA\sqrt{2}.\cos(45^o+\varphi)\right]\\
++&\frac{R^{m-2}}{m\sqrt{2}}\left[RR+mB\sqrt{2}.\cos(45^o+2\varphi)\right]\\
++&\frac{R^{m-3}}{m\sqrt{2}}\left[R^3+mC\sqrt{2}.\cos(45^o+3\varphi)\right]\\
++&\frac{R^{m-4}}{m\sqrt{2}}\left[R^4+mD\sqrt{2}.\cos(45^o+4\varphi)\right]\\
++&\text{ etc.,} 
+\end{align*}
+each of which, for any determined real value of \(\varphi,\) is easily seen to be positive.  Hence, \(T\) necessarily takes a positive value. Similarly, it can be shown that \(U,\) \(T',\) \(U'\) are positive, and thus \(TT'+UU'\) is necessarily a positive quantity.
+
+II. For \(r=R,\) the functions \(t,\) \(u,\) \(t',\) \(u'\) respectively become
+\[\begin{array}{c}
+T\cos(45^o+m\varphi)+U\sin(45^o+m\varphi)\\
+T\sin(45^o+m\varphi)-U\cos(45^o+m\varphi)\\
+T'\cos(45^o+m\varphi)+U'\sin(45^o+m\varphi)\\
+T'\sin(45^o+m\varphi)-U'\cos(45^o+m\varphi)\end{array}\]
+as can be easily proven by expanding. Thus for \(r=R\), the value of the function \(tt'+uu'\)  is derived to be \(=TT'+UU',\) and thus it is a positive quantity. Q.E.D.
+
+Moreover, from the same formulas, we infer that for \(r=R\) the value of the function \(tt+uu\) is \(TT+UU,\) and therefore it is positive. Hence, we conclude that for no value of \(r,\) which is greater than \(mA\sqrt{2},\) \(\sqrt{mB\sqrt{2}},\) \(\sqrt[3]{mC\sqrt{2}}\) etc. simultaneously, is it possible to have \(t=0,\) \(u=0.\)
+
+\subsection*{2.}
+
+\textsc{Theorem.} \textit{Within the limits \(r=0\) and \(r=R,\) and \(\varphi=0\) and \(\varphi=360^o,\) there exist certain values of the indeterminates \(r,\) \(\varphi,\) for which \(t=0\) and \(u=0\) simultaneously.}
+
+\textit{Proof.} Let us suppose that the theorem is not true.  Then it is evident that for all values of the indeterminates within the assigned limits, the value of \(tt+uu\)  must be a positive quantity, and therefore the value of \(y\) must always be finite. Let us consider the double integral
+\[\iint y \,dr\,d\varphi\]
+from \(r=0\) to \(r=R,\) and from \(\varphi=0\) to \(\varphi=360^o,\) which has a fully determined finite value.  This value, which we denote by \(\Omega,\) must be the same whether the integration is first carried out with respect to \(\varphi\) and then with respect to \(r,\) or in the reverse order. However, we have \textit{indefinitely}, considering \(r\) as constant,
+\[\int y \,d\varphi = \frac{tu'-ut'}{r(tt+uu)},\]
+as is easily confirmed by differentiation with respect to \(\varphi\).  A constant need not be added, assuming that the integral begins at \(\varphi=0,\) since for \(\varphi=0,\) we have \(\frac{tu'-ut'}{r(tt+uu)}=0\). Therefore, since \(\frac{tu'-ut'}{r(tt+uu)}\) clearly also vanishes for \(\varphi=360^o,\) the integral \(\displaystyle \int y\,d\varphi\) from \(\varphi=0\) to \(\varphi=360^o\) becomes \(=0,\) with \(r\) remaining indefinite.  It follows from this that \(\Omega=0.\)
+
+On the other hand, considering \(\varphi\) as a constant, we have indefinitely
+\[\int y \,dr = \frac{tt'+uu'}{tt+uu},\]
+as is easily confirmed by differentiation with respect to \(r\). Here too, a constant need not be added, assuming that the integral starts at \(r=0\). Therefore, since the integral from \(r=0\) to \(r=R\) is carried out by what has been demonstrated in the previous article, it is \(=\frac{TT'+UU'}{TT+UU},\) and therefore, by the theorem in the previous article, it is always a positive quantity for any real value of \(\varphi\). Hence \(\Omega,\) i.e., the value of the integral
+\[\int\tfrac{TT'+UU'}{TT+UU}d\varphi\]
+from \(\varphi=0\) to \(\varphi=360^o,\) is necessarily a positive quantity\footnote{As is now self-evident. However, the indefinite integral is easily shown to be \(= m\varphi+45^o-\mathrm{arc.tang}\tfrac{U}{T}\), and it can be shown \textit{elsewhere} (since it is not immediately obvious which value from the infinitely many possible values of the multiform function \(\mathrm{arc.tang}\tfrac{U}{T}\) should be adopted for \(\varphi=360^o\)), that the definite integral from \(\varphi=0\) to \(\varphi=360^o\) will be \(=m\times360^o\) or \(=2 m\pi\). However, this is not necessary for our purpose.}. This is absurd, as we previously found that the same quantity is \(=0.\) Thus the assumption cannot hold, and the truth of the theorem is established.
+
+\subsection*{3.}
+
+The function \(X\) is transformed into \(t+u\sqrt{-1}\) by the substitution \(x = r(\cos\varphi + \sin\varphi \sqrt{-1}),\) and likewise it is transformed into \(t-u\sqrt{-1}\) by the substitution \(x=r(\cos\varphi-\sin\varphi.\sqrt{-1}).\)  Therefore, if for determined values of \(r\) and \(\varphi\), say for \(r=g\), \(\varphi=G\), it simultaneously results in \(t=0,\) \(u=0\) (as demonstrated in the previous article), then \(X\) obtains the value \(0\) for both substitutions
+\[ x=g(\cos G+\sin G.\sqrt{-1}),\quad x=g(\cos G - \sin G.\sqrt{-1})\]
+Consequently, it is indefinitely divisible by
+\[ x-g(\cos G+\sin G\sqrt{-1}),\quad x-g(\cos G - \sin G.\sqrt{-1})\]
+Whenever \(\sin G\) is not equal to 0, nor \(g=0\), these divisors are unequal. Thus, \(X\) is divisible by their product
+\[xx-2g\cos G .x+gg\]
+Whenever either \(\sin G =0\), and hence \(\cos G=\pm1\), or \(g=0\), these factors are identical, namely \(=x\mp g\). It is therefore certain that the function \(X\) involves a real divisor of the second or first order. Since the same conclusion holds for the quotient, \(X\) can be completely resolved into such factors. Q.E.D.
+
+\subsection*{4.}
+
+Although we have fully dealt with the matter proposed in the preceding section, it will not be superfluous to add some further reasoning about art. 2. Starting from the assumption that \(t\) and \(u\) vanish for any values of the indeterminates \(r, \varphi\) within the assigned limits, we have fallen into an inevitable contradiction, from which we concluded the falsity of the assumption itself. Therefore, this contradiction must cease if there are indeed values of \(r,\) \(\varphi,\) for which \(t\) and \(u\) simultaneously become \(=0.\) To illustrate this more clearly, we observe that for such values, \(tt+uu=0,\) and consequently, \(y\) becomes infinite. Hence, it will no longer be permissible to treat the double integral \(\iint y drd\varphi\) as an assignable quantity.
+
+In general terms, denoting \(\xi,\) \(\eta,\) \(\zeta,\) as indefinite coordinates of points in space, the integral \(\iint ydrd\varphi\) represents the volume of a solid contained between five planes with equations:
+\[ \xi=0\text{, }\eta=0\text{, }\zeta=0\text{, }\xi=R\text{, }\eta=360^o \]
+and the surface with equation \(\zeta=y,\) considering those parts as negative where the \(\zeta\) coordinates are negative. However, it is implicitly understood here that the sixth surface is \textit{continuous}. When this condition ceases, and \(y\) becomes infinite, it is indeed possible that the concept lacks meaning. In such a case, it is impossible to speak about the integral \(\iint y drd\varphi\), and it is not surprising that analytical operations applied blindly to empty calculations lead to absurdities.
+
+The integral \(\int y d\varphi = \frac{tu' - ut'}{r(tt + uu)}\) is a true integration, i.e., a summation, as long as within the limits over which it extends, \(y\) is everywhere a finite quantity. It becomes absurd, however, if \(y\) becomes infinite somewhere within those limits. For an integral like \(\int \eta d\xi,\) which generally represents the area between the abscissa line and the curve with the ordinate \(=\eta\) for the abscissa \(\xi,\) when we evaluate it according to usual rules, often ignoring continuity, we are frequently entangled in contradictions. For example, assuming \(\eta = \frac{1}{\xi\xi},\) the analysis provides an integral \(= C - \frac{1}{\xi},\) by which the area is correctly defined as long as the curve maintains continuity. However, if it is interrupted at \(\xi = 0,\) and someone incorrectly inquires about the magnitude of the area from the negative abscissa to the positive one, the formula will yield an absurd answer, stating that it is negative. We will explore the meaning of these and similar paradoxes of analysis more extensively on another occasion.
+
+Let me add a final observation. In the \textit{unrestricted} statements of the questions, which may turn out to be absurd in certain cases, consulting analysis often leads to ambiguous answers. Thus, the value of the integral \(\iint y \, dr \, d\varphi\) from \(r=e\) to \(r=f\) and from \(\varphi = E\) to \(\varphi = F,\) if the value of \(\frac{u}{t}\)
+\[ \begin{array}{ccccc} \text{for} & r=e,& \varphi = E ,& \text{is denoted by} &\theta \\
+& r=e, & \varphi = F,& .\dots. &\theta' \\
+& r=f, & \varphi = E,& .\dots. &\theta'' \\
+& r=f, & \varphi = F,& .\dots. &\theta''' \end{array} \]
+can be extended, through analytical operations, and is easily obtained as
+\[ \mathrm{Arc.tang }\theta - \mathrm{Arc.tang }\theta' -\mathrm{Arc.tang }\theta''+\mathrm{Arc.tang }\theta''' \]
+Of course, the integral can only have a definite value whenever \(y\) remains finite within the assigned limits. This value, given by the formula, is certainly satisfactory, but it is not yet fully determined through it, as \(\mathrm{Arc.tang}\) is a multiform function. It will be necessary to decide which values of the function should be used in the specific case, through other considerations (which are not difficult). On the other hand, whenever \(y\) becomes infinite somewhere within the assigned limits, the question of the value of the integral \(\iint y \, dr \, d\varphi\) is absurd. Despite this, if you insist on extracting an answer from the analysis, a variety of methods will lead you to the same result, in one way or another, each of which will be contained under the previously given general formula.
+
+\end{document}
