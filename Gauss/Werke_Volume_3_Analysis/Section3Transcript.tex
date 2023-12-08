@@ -1,0 +1,166 @@
+\documentclass[14pt]{memoir}
+\usepackage{standalone}
+\usepackage[dvips,text={6.5truein,9.1truein},left=0.86truein,right=0.8truein,top=1truein]{geometry}
+\usepackage{amsmath, amsthm, amsfonts}
+\usepackage{titlesec}
+
+% Uncomment to use syncing
+%\usepackage{pdfsync}
+
+
+% Paragraphs
+\usepackage{indentfirst}
+\parindent=3em
+\parskip=0pt
+
+%font
+\usepackage{mlmodern}
+%\usepackage[T1]{fontenc}% http://ctan.org/pkg/fontenc
+\usepackage{microtype}
+
+\titleformat{\section}
+ {\centering}{\thesection.}{0em}{}
+
+\titleformat{\subsection}
+ {\normalfont\small\centering}{\thesection.}{0em}{}
+\titlespacing*{\subsection}
+{0pt}{\baselineskip}{0\baselineskip}
+
+%footnotes
+\usepackage[perpage]{footmisc}
+\usepackage{etoolbox}
+\DefineFNsymbols*{asterisks}{{ *}{ **}{ ***}}
+\setfnsymbol{asterisks}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\makeatletter
+\renewcommand{\@makefnmark}{\mbox{\normalfont\@thefnmark})}
+\settowidth{\footnotemargin}{***) }
+\patchcmd{\@makefntext}{\hss\@makefnmark}{\hss \@makefnmark\ }{}{}
+\makeatother
+
+%Line Spacing
+\renewcommand{\baselinestretch}{1.1}
+\renewcommand{\footnotelayout}{ \baselineskip=1.02\baselineskip }
+\setlength{\skip\footins}{2\baselineskip}
+
+\theoremstyle{plain}
+\newtheorem*{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{problem}{Problem}
+
+
+\theoremstyle{remark}
+\newtheorem*{example}{Example}
+\newtheorem*{examples}{Examples}
+
+\begin{document}
+
+\setlength{\abovedisplayskip}{0.5\baselineskip}
+\setlength{\belowdisplayskip}{0.5\baselineskip}
+
+\section*{ \hspace{1pt} \\[3\baselineskip]
+\begin{small}THEOREMATIS DE RESOLUBILITATE\end{small} \\[\baselineskip]
+FUNCTIONUM ALGEBRAICARUM INTEGRARUM IN FACTORES REALES \\[\baselineskip]
+ \begin{small} DEMONSTRATIO TERTIA. \end{small} \\[\baselineskip]
+ \begin{scriptsize} SUPPLEMENTUM COMMENTATIONIS PRAECEDENTIS. \end{scriptsize}\\[\baselineskip]
+ \rule{0.85in}{0.5pt}}
+ 
+Postquam commentatio praecedens typis iam expressa esset, iteratae de eodem argumento meditationes ad novam theorematis demonstrationem perduxerunt, quae perinde quidem ac praecedens pure analytica est, sed principiis prorsus diversis innititur, et respectu simplicitatis illi longissime praeferenda videtur. Huic itaque tertiae demonstrationi pagellae sequentes dicatae sunto. 
+
+\subsection*{1.} 
+
+Proposita sit functio indeterminatae x haecce: 
+\[X = x^m + Ax^{m-1}+Bx^{m-2}+Cx^{m-3}+\text{ etc. }+Lx+M\]
+in qua coefficientes \(A,\) \(B,\) \(C\) etc. sunt quantitates reales determinatae. Sint \(r,\) \(\varphi\) alia indeterminatae, statuamusque 
+\begin{align*}
+r^m\cos m\varphi + A r^{m-1}\cos(m-1)\varphi+Br^{m-2}\cos(m-2)\varphi & \\
++Cr^{m-3}\cos(m-3)\varphi+\text{ etc. }+Lr\cos\varphi+M&=t\\
+r^m\sin m\varphi+Ar^{m-1}\sin(m-1)\varphi+Br^{m-2}\sin(m-2)\varphi&\\
++Cr^{m-3}\sin(m-3)\varphi+\text{etc.}+Lr\sin\varphi&=u \end{align*}
+\begin{align*}
+mr^m\cos m\varphi +(m-1)Ar^{m-1}\cos(m-1)\varphi+(m-2)Br^{m-2}\cos(m-2)\varphi&\\ +(m-3)Cr^{m-3}\cos(m-3)\varphi+\text{ etc. }+Lr\cos\varphi &= t'\\
+mr^m\sin m\varphi +(m-1)Ar^{m-1}\sin(m-1)\varphi + (m-2)Br^{m-2}\sin(m-2)\varphi&\\ +(m-3)Cr^{m-3}\sin(m-3)\varphi+\text{ etc. }+Lr\sin\varphi &= u'
+\end{align*}
+\begin{align*}
+mmr^m\cos m\varphi+(m-1)^2Ar^{m-1}\cos(m-1)\varphi+(m-2)^2Br^{m-2}\cos(m-2)\varphi&\\ +(m-3)^2Cr^{m-3}\cos(m-3)\varphi +\text{ etc. }+Lr\cos \varphi &= t''\\
+mmr^m\sin m\varphi+(m-1)^2Ar^{m-1}\sin(m-1)\varphi+(m-2)^2Br^{m-2}\sin(m-2)\varphi&\\ + (m-3)^2Cr^{m-3}\sin(m-3)\varphi+\text{ etc. }+Lr\sin\varphi&=u''\end{align*}
+\[ \frac{(tt+uu)(tt''+uu'')+(tu'-ut')^2-(tt'+uu')^2}{r(tt+uu)^2} = y \]
+Factorem \(r\) manifesto e denominatore formulae ultimae tollere licet, quum \(t',\) \(u',\) \(t'',\) \(u''\) per illum sint divisibiles. Denique sit \(R\) quantitas positiva determinata, arbitraria quidem, attamen maior maxima quantitatum 
+\[ mA\surd{2} , \; \sqrt{mB\surd{2}}, \; \sqrt[3]{(mC\surd{2})}, \; \sqrt[4]{mD\surd{2}} \] 
+abstrahendo a signis quantitatum \(A,\) \(B,\) \(C\) etc., i.e. mutatis negativis, si quae adsint, in positivas. His ita praeparatis, dico, \(tt'+uu'\) certo nancisci valorem 
+positivum, si statuatur \(r=R,\) quicunque valor (realis) ipsi \(\varphi\) tribuatur. 
+
+\textit{Demonstratio.} Statuamus 
+\[\begin{array}{rl}
+R^m\cos 45^o + A R^{m-1}\cos(45^o+\varphi)+BR^{m-2}\cos(45^o+2\varphi) &\\ +CR^{m-3}\cos(45^o+3\varphi)+\text{ etc. }+LR\cos(45^o+(m-1)\varphi)+M\cos(45^o+m\varphi) &=T\\
+R^m\sin45^o+AR^{m-1}\sin(45^o+\varphi)+BR^{m-2}\sin(45^o+2\varphi)&\\+CR^{m-3}\sin(45^o+3\varphi)+\text{etc.}+LR\sin(45^o+m\varphi)&=U \\
+mR^m\cos 45^o +(m-1)AR^{m-1}\cos(45^o+\varphi)+(m-2)BR^{m-2}\cos(45^o+2\varphi)&\\+(m-3)CR^{m-3}\cos(45^o+3\varphi)+\text{ etc. }+LR\cos(45^o+(m-1)\varphi) &= T'\\
+mR^m\sin45^o +(m-1)AR^{m-1}\sin(45^o+\varphi) + (m-2)BR^{m-2}\sin(45^o+2\varphi)&\\+(m-3)Cr^{m-3}\sin(45^o+3\varphi)+\text{ etc. }+Lr\sin(45^o+(m-1)\varphi) &= U'\end{array}\]
+patetque 
+
+I. \(T\) compositam esse e partibus \[\begin{array}{rl}
+&\frac{R^{m-1}}{m\surd{2}} \left[R+mA\surd{2}.\cos(45^o+\phi)\right]\\
++&\frac{R^{m-2}}{m\surd{2}}\left[RR+mB\surd{2}.\cos(45^o+2\phi)\right]\\
++&\frac{R^{m-3}}{m\surd{2}}\left[R^3+mC\surd{2}.\cos(45^o+3\phi)\right]\\
++&\frac{R^{m-4}}{m\surd{2}}\left[R^4+mD\surd{2}.\cos(45^o+4\phi)\right]\\
++&\text{etc.} \end{array}\]
+quas singulas, pro valore quolibet determinato reali ipsius \(\varphi\), positivas evadere facile perspicitur: hinc \(T\) necessario valorem positivum obtinet. Simili modo probatur, etiam \(U, \) \(T',\) \(U'\) fieri positivas, unde etiam \(TT'+UU'\) necessario 
+fit quantitas positiva. 
+
+II. Pro \(r=R\) functiones \(t,\) \(u,\) \(t',\) \(u'\) resp. transeunt in 
+\[\begin{array}{c}
+T\cos(45^o+m\varphi)+U\sin(45^o+m\varphi)\\
+T\sin(45^o+m\varphi)-U\cos(45^o+m\varphi)\\
+T\cos(45^o+m\varphi)+U\sin(45^o+m\varphi)\\
+T\sin(45^o+m\varphi)-U\cos(45^o+m\varphi)\end{array}\]
+uti evolutione facta facile probatur. Hinc vero valor functionis \(tt'+uu'\), pro \(r=R,\) derivatur \(=TT'+UU',\) adeoque est quantitas positiva. Q.E.D. 
+
+Ceterum ex iisdem formulis colligimus, valorem functionis \(tt+uu,\) pro \(r=R,\) esse \(TT+UU,\) adeoque positivum, unde concludimus, pro nullo valore ipsius \(r,\) singulis \(mA\surd{2},\) \(\sqrt{mB\surd{2}},\) \(\sqrt[3]{mC\surd{2}}\) etc. maiori, simul fieri posse \(t=0,\) \(u=0.\) 
+
+\subsection*{2.} 
+
+\textsc{Theorema.} \textit{Intra limites \(r=0\) et \(r=R,\) atque \(\varphi =0\) et \(\varphi = 360^o\) certo exstant valores tales indeterminatarum \(r,\) \(\varphi,\) pro quibus fiat simul \(t=0\) et \(u=0.\) }
+
+\textit{Demonstratio.} Supponamus theorema non esse verum, patetque, valorem ipsius \(tt+uu\) pro cunctis valoribus indeterminatarum intra limites assignatos fieri debere quantitatem positivam, et proin valorem ipsius \(y\) semper finitum. Consideremus integrale duplex \[\iint y dr d\varphi \] ab \(r=0\) usque ad \(r=R,\) atque a \(\varphi =0\) usque ad \(\varphi = 360^o\) extensum, quod igitur valorem finitum plene determinatum nanciscitur. Hic valor, quem per \(\Omega\) denotabimus, idem prodire debebit, sive integratio primo instituatur secundum \(\varphi\) ac dein secundum \(r,\) sive ordine inverso. At habemus \textit{indefinite}, considerando \(r\) tamquam constantem, 
+\[\displaystyle \int y d\varphi = \tfrac{tu'-ut'}{r(tt+uu)}\]
+uti per differentiationem secundum \(\varphi\) facile confirmatur. Constans non adiicienda, siquidem integrale a \(\varphi=0\) incipiendum supponamus, quoniam pro \(\varphi=0\) fit \(\tfrac{tu'-ut'}{r(tt+uu)}=0\). Quare quum manifesto \(\tfrac{tu'-ut'}{r(tt+uu)}\) etiam evanescat pro \(\varphi=360^o,\) integrale \(\displaystyle \int yd\varphi\) a \(\varphi=0\) usque ad \(\varphi = 360^o\) fit \(=0,\) manente \(r\) 
+indefinita. Hinc autem sequitur \(\Omega=0.\) 
+
+Perinde habemus indefinite, considerando \(\varphi\) tamquam constantem, 
+\[\displaystyle \int ydr = \frac{tt'+uu'}{tt+uu}\]
+uti aeque facile per differentiationem secundum \(r\) confirmatur; hic quoque constans non adiicienda, integrali ab \(r=0\) incipiente. Quapropter integrale ab \(r=0\) usque ad \(r=R\) extensum fit per ea, quae in art. praec. demonstrata sunt, \(=\frac{TT'+UU'}{TT+UU}\) adeoque per theorema art. praec. semper quantitas positiva pro quolibet valore reali ipsius \(\varphi\). Hinc etiam \(\Omega\), i. e. valor integralis \[\displaystyle \int\tfrac{TT'+UU'}{TT+UU}d\varphi \] a \(\varphi =0\) usque ad \(\varphi = 360^o,\) necessario fit quantitas positiva \footnote{Uti iam per se manifestum est. Ceterum integrale indefinitum facile eruitur \(= m\varphi+45^o-\mathrm{arc.tang}\tfrac{U}{T'}\) atque \textit{aliunde} demonstrari potest (per se enim nondum obvium est, quemnam valorem ex infinite multis functioni multiformi \(\mathrm{arc.tang}\tfrac{U}{T}\) competentibus pro \(\varphi = 360^o\) adoptare oporteat), huius valorem usque ad \(\varphi = 360^o\) extensum statui debere \(=m\times360^o\) sive \(=2 m\pi\). Sed hoc ad institutum nostrum non est necessarium.}. Quod est absurdum, quoniam eandem quantitatem antea invenimus \(=0:\) suppositio itaque consistere nequit, theorematisque veritas hinc evicta est. 
+
+\subsection*{3.} 
+
+Functio \(X\) per substitutionem \(x = r(\cos\varphi + \sin\varphi \surd{-1})\) transit in \(t+u\surd{-1}\) nec non per substitutionem \(x=r(\cos\varphi-\sin\varphi.\surd{-1})\) in \(t-u\surd{-1}.\) Quodsi igitur pro valoribus determinatis ipsarum \(r,\) \(\varphi,\) puta pro \(r=g\), \(\varphi=G\), simul provenit \(t=0,\) \(a=0\) (quales valores exstare in art. praec. demonstratum est), \(X\) per utramque substitutionem \[ x=g(\cos G+\sin G.\surd{-1})\text{, }x=g(\cos G - \sin G.\surd{-1})\]
+valorem 0 obtinet, et proin indefinite per 
+\[ x-g(\cos G+\sin G\surd{-1})\text{, nec non per }x-g(\cos G - \sin G.\surd{-1})\]
+divisibilis erit. Quoties non est \(\sin G=0,\) neque \(g=0,\) hi divisores sunt 
+inaequales, et proin \(X\) etiam per illorum productum 
+\[xx-2g\cos G .x+gg\]
+divisibilis erit, quoties autem vel \(\sin G =0\) adeoque \(\cos G=\pm1,\) vel \(g=0,\) illi factores sunt identici scilicet \(=x\mp g\). Certum itaque est, functionem \(X\) involvere divisorem realem secundi vel primi ordinis, et quum eadem conclusio rursus de quotiente valeat, \(X\) in tales factores complete resolubilis erit. Q.E.D. 
+
+\subsection*{4.} 
+Quamquam in praecedentibus negotio quod propositum erat, iam plene perfuncti simus, tamen haud superfluum erit, adhuc quaedam de ratiocinatione art. 2 
+adiicere. A suppositione, \(t\) et \(u\) pro nullis valoribus indeterminatarum \(r, \varphi\) intra limites illic assignatos simul evanescere, ad contradictionem inevitabilem delapsi sumus, unde ipsius suppositionis falsitatem conclusimus. Haec igitur contradictio cessare debet, si revera adsunt valores ipsarum \(r,\) \(\varphi,\) pro quibus \(t\) et \(u\) simul fiunt \(=0.\) Quod ut magis illustretur, observamus, pro talibus valoribus fieri \(tt+uu=0,\) adeoque ipsam \(y\) infinitam, unde haud amplius licebit, integrale duplex \(\iint y drd\varphi\) tamquam quantitatem assignabilem tractare. Generaliter quidem loquendo, denotantibus \(\xi,\) \(\eta,\) \(\zeta,\) indefinite coordinatas punctorum in spatio, integrale \(\iint ydrd\varphi\) exhibet volumen solidi, quod continetur inter quinque plana, quorum aequationes sunt 
+\[ \xi=0\text{, }\eta=0\text{, }\zeta=0\text{, }\xi=R\text{, }\eta=360^o \]
+atque superficiem, cuius aequatio \(\zeta=y,\) considerando eas partes tamquam negativas, in quibus coordinatae \(\zeta\) sunt negativae. Sed tacite hic subintelligitur, superficiem sextam esse \textit{continuam} qua conditione cessante, dum \(y\) evadit infinita, utique fieri potest, ut conceptus ille sensu careat. In tali casu de integrali \(\iint y drd\varphi\) colligendo sermo esse nequit, neque adeo mirandum est, operationes analyticas coeco calculo ad inania applicatas ad absurda perducere.
+
+Integratio \(\displaystyle \int y d\varphi = \tfrac{tu'-ut'}{r(tt+uu)} \) eatenus tantum est integratio vera, i.e. summatio, quatenus inter limites, per quos extenditur, \(y\) ubique est quantitas finita, absurda autem, si inter illos limites \(y\) alicubi infinita evadit. Si integrale tale \(\displaystyle \int \eta d\xi,\) quod generaliter loquendo exhibet aream inter lineam abscissarum atque curvam, cuius ordinata \(=\eta\) pro abscissa \(\xi,\) secundum regulas suetas evolvimus, continuitatis immemores, saepissime contradictionibus implicamur. E.g. statuendo 
+\(\eta = \frac{1}{\xi\xi},\) analysis suppeditat integrale \(= C-\frac{1}{\xi},\) quo area recte definitur, quamdiu curva continuitatem servat; qua pro \(\xi =0\) interrupta, si quis magnitudinem areae inde ab abscissa negativa usque ad positivam inepte rogat, responsum absurdum a formula feret, eam esse negativam. Quid autem sibi velint haec similiaque analyseos paradoxa, alia occasione fusius persequemur. 
+
+Hic unicam observationem adiicere liceat. Propositis \textit{absque restrictione} quaestionibus , quae certis casibus absurdae evadere possunt, saepissime ita sibi consulit analysis, ut responsum ex parte vagum reddat. Ita pro valore integralis \(\iint y dr d\varphi\) ab \(r=e\) usque ad \(r=f,\) atque a \(\varphi = E\) usque ad \(\varphi = F\) extendendi, si valor ipsius \(\tfrac{u}{t}\)
+\[ \begin{array}{ccccc}
+\text{pro} & r=e,& \varphi=E,& \text{designatur per} &\theta \\
+& r=e,& \varphi=F,& .\dots. &\theta' \\
+& r=f,& \varphi=E,& .\dots. &\theta'' \\
+& r=f,& \varphi=F,& .\dots. &\theta''' \end{array} \]
+per operationes analyticas facile obtinetur 
+\[ \mathrm{Arc.tang }\theta - \mathrm{Arc.tang }\theta' -\mathrm{Arc.tang }\theta''+\mathrm{Arc.tang }\theta''' \]
+Revera quidem integrale tunc tantum valorem certum habere potest, quoties \(y\) inter limites assignatos semper manet finita: hic valor sub formula tradita utique contentus, tamen per eam nondum ex asse definitur, quoniam \(\mathrm{Arc.tang.}\) est functio multiformis, seorsimque per alias considerationes (haud quidem difficiles) decidere oportebit, quinam potissimum functionis valores in casu determinato sint adhibendi. Contra quoties \(y\) alicubi inter limites assignatos infinita evadit, quaestio 
+de valore integralis \(\iint y dr d\varphi\) absurda est: quo non obstante si responsum ab analysi extorquere obstinaveris, pro methodorum diversitate modo hoc modo illud reddetur, quae tamen singula sub formula generali ante tradita contenta erunt. 
+
+
+
+\end{document}
