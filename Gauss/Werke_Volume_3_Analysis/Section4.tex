@@ -1,0 +1,101 @@
+\documentclass[14pt]{memoir}
+\usepackage{standalone}
+\usepackage[dvips,text={6.5truein,9.1truein},left=0.86truein,right=0.8truein,top=1truein]{geometry}
+\usepackage{amsmath, amsthm, amsfonts}
+\usepackage{titlesec}
+\usepackage{enumitem}
+% Uncomment to use syncing
+%\usepackage{pdfsync}
+
+
+% Paragraphs
+\usepackage{indentfirst}
+\parindent=3em
+\parskip=0pt
+
+%font
+\usepackage{mlmodern}
+%\usepackage[T1]{fontenc}% http://ctan.org/pkg/fontenc
+\usepackage{microtype}
+
+\titleformat{\section}
+ {\centering}{\thesection.}{0em}{}
+
+\titleformat{\subsection}
+ {\normalfont\small\centering}{\thesection.}{0em}{}
+\titlespacing*{\subsection}
+{0pt}{\baselineskip}{0\baselineskip}
+
+%footnotes
+\usepackage[perpage]{footmisc}
+\usepackage{etoolbox}
+\DefineFNsymbols*{asterisks}{{ *}{ **}{ ***}}
+\setfnsymbol{asterisks}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\makeatletter
+\renewcommand{\@makefnmark}{\mbox{\normalfont\@thefnmark})}
+\settowidth{\footnotemargin}{***) }
+\patchcmd{\@makefntext}{\hss\@makefnmark}{\hss \@makefnmark\ }{}{}
+\makeatother
+
+%Line Spacing
+\renewcommand{\baselinestretch}{1.1}
+\renewcommand{\footnotelayout}{ \baselineskip=1.02\baselineskip }
+\setlength{\skip\footins}{2\baselineskip}
+
+\theoremstyle{plain}
+\newtheorem*{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{problem}{Problem}
+
+
+\theoremstyle{remark}
+\newtheorem*{example}{Example}
+\newtheorem*{examples}{Examples}
+
+\begin{document}
+
+\setlength{\abovedisplayskip}{0.5\baselineskip}
+\setlength{\belowdisplayskip}{0.5\baselineskip}
+
+
+
+\section*{PROOF \\[\baselineskip]
+\begin{large}OF AN ALGEBRAIC THEOREM.\end{large}\\[\baselineskip]
+ \rule{0.85in}{0.5pt}}
+
+The subject of this essay is the Cartesian theorem, commonly attributed to Harriot, regarding the connection between the number of positive and negative roots of an algebraic equation and the number of alternations and repetitions in the signs of the coefficients. In the proofs attempted by various authors, one misses the clarity, conciseness, and comprehensive generality that one can rightfully demand for such an elementary subject. Therefore, a new treatment of the theorem seems not to be superfluous.
+
+Let \(X\) be an integral algebraic function of \(x\) of order \(m\), arranged in descending powers of \(x\). We assume (without loss of generality) that the highest term is \(x^m\), and the lowest term free of \(x\) is not missing; only the actually existing terms should be written down, so any potentially missing terms are assumed to have a coefficient of \(0\).
+
+If not all coefficients are positive, they will exhibit one or more sign changes. Let \(-Nx^n\) be the first negative term, the first positive \(+Px^p\) following it, the first subsequent negative \(-Qx^q\), and so on. Thus, \(m\), \(n\), \(p\), \(q\), etc., are decreasing integers; \(N\), \(P\), \(Q\), etc., are positive, and \(X\) appears represented as follows:
+\[X = x^m ++ .. - Nx^n - .. + Px^p + .. - Qx^q - \text{ etc.} \]
+
+Let \(X\) be multiplied by the simple factor \(x-\alpha\), where \(\alpha\) is assumed to be positive. It is easy to see that in the product, \(x^{n+1}\) will have a negative, \(x^{p+1}\) a positive, \(x^{q+1}\) a negative coefficient, and so on, so that the product will take this form:
+\[X(x-\alpha) = x^{m+1}\dots - N'x^{n+1}\dots + P'x^{p+1}\dots - Q'x^{q+1}\dots\]
+where \(N'\), \(P'\), \(Q'\), etc., are positive. The signs between the stated terms remain undetermined; however, it is clear that from the highest term to the power \(x^{n+1}\), at least one sign change will occur, up to \(x^{q+1}\) at least two, up to \(x^{q+1}\) at least three, and so on.  If the last sign change in \(X\) is at the term \(\pm Ux^u\), and if the coefficient of \(x^{u+1}\) in \(X(x-\alpha)\) is denoted by \(\pm U'\), then \(U'\) will be positive, and up to the term \(\pm U'x^{u+1}\), at least as many sign changes as in \(X\) must have occurred. However, the last term in \(X(x-\alpha)\) will have the sign \(\mp\); therefore, at least one more sign change must have occurred by then. We conclude that \(X(x-\alpha)\) has at least one more sign change than \(X\).
+
+Now let \(X\) be the product of all simple factors corresponding to the negative and imaginary roots of an equation \(y=0\). So if \(\alpha\), \(\beta\), \(\gamma\), etc., are the positive roots of the same equation,
+\[y = X(x-\alpha)(x-\beta)(x-\gamma)\dots\]
+According to the above theorem, there will be at least one sign change in \(X(x-\alpha)\), at least two in \(X(x-\alpha)(x-\beta)\), at least three in \(X(x-\alpha)(x-\beta)(x-\gamma)\), and so on, more than in \(X\). Consequently, even if \(X\) has no sign changes, \(y\) will have at least as many sign changes as positive roots. It is evident that if the equation has neither negative nor imaginary roots, \(X\) must be \(=1\), and the conclusion remains valid.
+
+Let \(y\) transform into \(y'\) when the coefficients of the powers \(x^{m-1}\), \(x^{m-3}\), \(x^{m-5}\), etc., are given opposite signs; all roots of the equation \(y'=0\) will then be opposite to the roots of the equation \(y=0\). Therefore, \(y'\) will have at least as many sign changes as the equation \(y=0\) has negative roots.
+
+Therefore, we have the following theorem:
+
+\textit{The equation \(y=0\) can have no more positive roots than the number of sign changes in \(y\), and no more negative roots than the number of sign changes in \(y'\).}
+
+This formulation of the theorem appears to be the most convenient, as it combines the greatest simplicity with the most comprehensive generality, and all forms of the theorem that are valid only under special conditions naturally follow from it.
+
+If one wants to directly determine the maximum number of negative roots based on the signs of the coefficients of \(y\), it becomes necessary to distinguish between the \textit{immediate} sign changes and repetitions (between terms where the exponents of \(x\) differ by one unit) from those \textit{interrupted} by missing terms. Clearly, each immediate sign change and each sign change interrupted by an even number of missing terms in \(y'\) corresponds to a repetition in \(y\), while a sign change interrupted by an odd number of missing terms in \(y'\) remains a sign change in \(y\). The second part of the theorem can therefore also be expressed as follows:
+
+The number of negative roots of the equation \(y=0\) cannot be greater than the sum of the number of immediate sign repetitions and those interrupted by an even number of missing terms, and the number of sign changes interrupted by an odd number of missing terms in \(y\).
+
+If \(y\) has no missing terms, the number of negative roots is no greater than the number of repetitions. Let \(A\) represent the number of immediate sign changes and \(B\) represent the number of immediate repetitions in \(y\). If no term is missing, then \(A+B=m\), that is, it is equal the total number of roots. Insofar as these signs only indicate that the number of positive roots cannot exceed \(A\) and that of negative roots cannot exceed \(B\), it remains undetermined whether or how many imaginary roots exist. However, if it is somehow known that the equation has no imaginary roots, then \(A\) must necessarily be equal to the number of positive roots, and \(B\) to the number of negative roots.
+
+However, it is different when terms are missing in \(y\). To clearly understand what can be concluded from this regarding the imaginary roots, let's denote by \(a\) the number of sign changes interrupted by an even number of missing terms, and by \(c\) the number interrupted by an odd number of missing terms; by \(b\) and \(d\), respectively, the number of repetitions interrupted by an even and odd number of missing terms in \(y\). It is easy to see that \(m-A-B-a-b-c-d\), which we will denote as \(e\), is equal to the number of all missing terms. Now, according to our theorem, the number of positive roots is at most \(A+a+c\), and the number of negative roots is at most \(B+b+c\), so the total number of real roots is at most \(A+B+a+b+2c=m+c-d-e\). Therefore, the number of imaginary roots must be at least \(e-c+d\).
+
+Thus, if we count all missing terms together, but for each gap between a sign change, add one unit less, and for each gap between a repetition, add one unit more than the number of missing terms, whenever their count is odd, then we obtain a number that must be at least equal to the number of imaginary roots.
+
+\end{document}
