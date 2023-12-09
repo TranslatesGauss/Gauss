@@ -9,3 +9,5 @@ Section 1: Demonstratio nova theorematis omnem functionem algebraicam rationalem
 Section 2: Demonstratio nova altera theorematis omnem functionem algebraicam rationalem integram unius variabilis in factores reales primi vel secundi gradus resolvi posse (second proof of the fundamental theorem of algebra)
 
 Section 3: Addendum to Demonstratio nova altera theorematis omnem functionem algebraicam rationalem integram unius variabilis in factores reales primi vel secundi gradus resolvi posse (third proof of the fundamental theorem of algebra)
+
+Section 4: Beweis eines algebraischen lehrsatzes (proof of Descartes' rule of signs)
