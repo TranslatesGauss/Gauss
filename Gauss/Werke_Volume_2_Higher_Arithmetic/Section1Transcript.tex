@@ -1,0 +1,164 @@
+\documentclass[14pt]{memoir}
+\usepackage{standalone}
+\usepackage[dvips,text={6.5truein,9.1truein},left=0.86truein,right=0.8truein,top=1truein]{geometry}
+\usepackage{amsmath, amsthm, amsfonts}
+\usepackage{titlesec}
+
+% Uncomment to use syncing
+%\usepackage{pdfsync}
+
+
+% Paragraphs
+\usepackage{indentfirst}
+\parindent=3em
+\parskip=0pt
+
+%font
+\usepackage{mlmodern}
+%\usepackage[T1]{fontenc}% http://ctan.org/pkg/fontenc
+\usepackage{microtype}
+
+\titleformat{\section}
+ {\centering}{\thesection.}{0em}{}
+
+\titleformat{\subsection}
+ {\normalfont\small\centering}{\thesection.}{0em}{}
+\titlespacing*{\subsection}
+{0pt}{\baselineskip}{0\baselineskip}
+
+%footnotes
+\usepackage[perpage]{footmisc}
+\usepackage{etoolbox}
+\DefineFNsymbols*{asterisks}{{ *}{ **}{ ***}}
+\setfnsymbol{asterisks}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\makeatletter
+\renewcommand{\@makefnmark}{\mbox{\normalfont\@thefnmark})}
+\settowidth{\footnotemargin}{***) }
+\patchcmd{\@makefntext}{\hss\@makefnmark}{\hss \@makefnmark\ }{}{}
+\makeatother
+
+%Line Spacing
+\renewcommand{\baselinestretch}{1.1}
+\renewcommand{\footnotelayout}{ \baselineskip=1.02\baselineskip }
+\setlength{\skip\footins}{\baselineskip}
+
+\usepackage{enumitem}
+
+\begin{document}
+\pagenumbering{gobble}
+\setlength{\abovedisplayskip}{0.5\baselineskip}
+\setlength{\belowdisplayskip}{0.5\baselineskip}
+
+
+\section*{\hspace{1pt} \\[4\baselineskip]
+\begin{large}THEOREMATIS ARITHMETICI\end{large} \\[\baselineskip]
+DEMONSTRATIO NOVA \\[\baselineskip]
+\rule{0.85in}{0.5pt}}
+
+\subsection*{1.}
+Quaestiones ex arithmetica sublimiori saepenumero phaenomenon singulare offerunt, quod in analysi longe rarius occurrit, atque ad illarum illecebras augendas multum confert. Dum scilicet in disquisitionibus analyticis plerumque ad veritates novas pertingere non licet, nisi prius principiis, quibus innituntur, quaeque ad eas viam quasi patefacere debent, penitus potiti simus: contra in arithmetica frequentissime per inductionem fortuna quadam inopinata veritates elegantissimae novae prosiliunt, quarum demonstrationes tam profunde latent tantisque tenebris obvolutae sunt, ut omnes conatus eludant, acerrimisque perscrutationibus aditum denegent. Tantus porro adest tamque mirus inter veritates arithmeticas, primo aspectu maxime heterogeneas, nexus, ut haud raro, dum longe alia quaerimus, tandem ad demonstrationem tantopere exoptatam longisque antea meditationibus frustra quaesitam longe alia via quam qua exspectata fuerat felicissime perveniamus. Plerumque autem huiusmodi veritates eius sunt indolis, ut pluribus viis valde diversis adiri queant, nec semper viae brevissimae sint, quae primo se offerunt. In magno itaque certe pretio habendum erit, si, tali veritate longe incassum ventilata, dein demonstrata quidem sed per ambages abstrusiores, tandem viam simplicissimam atque genuinam detegere contigerit.
+
+
+\subsection*{2.}
+ 
+Inter quaestiones, de quibus in art. praec. diximus, locum insignem tenet theorema omnem fere theoriam residuorum quadraticorum continens, quod in \textit{Disquisitionibus arithmeticis} (Sect. IV.) \textit{theorematis fundamentalis} nomine distinctum %pagebreak
+est. Pro \textit{primo} huius elegantissimi theorematis inventore ill. \textsc{Legendre} absque dubio habendus est, postquam longe antea summi geometrae \textsc{Euler} et \textsc{Lagrange} plures eius casus speciales iam per inductionem detexerant. Conatibus horum virorum circa demonstrationem enumerandis hic non immoror; adeant quibus volupe est opus modo commemoratum. Adiicere liceat tantummodo, in confirmationem eorum, quae in art. praec. prolata sunt, quae ad meos conatus pertinent. In ipsum theorema proprio marte incideram anno 1795, dum omnium, quae in arithmetica sublimiori iam elaborata fuerant, penitus ignarus et a subsidiis literariis omnino praeclusus essem: sed per integrum annum me torsit, operamque enixissimam effugit, donec tandem demonstrationem in Sectione quarta operis illius traditam nactus essem. Postea tres aliae principiis prorsus diversis innixae se mihi obtulerunt, quarum unam in Sectione quinta tradidi, reliquas elegantia illa haud inferiores alia occasione publici iuris faciam. Sed omnes hae demonstrationes, etiamsi respectu rigoris nihil desiderandum relinquere videantur, e principiis nimis heterogeneis derivatae sunt, prima forsan excepta, quae tamen per ratiocinia magis laboriosa procedit, operationibusque prolixioribus premitur. Demonstrationem itaque \textit{genuinam} hactenus haud affuisse non dubito pronunciare: esto iam penes peritos iudicium, an ea, quam nuper detegere successit, quamque pagellae sequentes exhibent, hoc nomine decorari mereatur. 
+
+\subsection*{3.}
+ 
+\textsc{Theorema}. \textit{Sit \(p\) numerus primus positivus; \(k\) integer quicunque per \(p\) non divisibilis;
+\begin{align*} 
+&A \textit{ complexus numerorum } 1,\;2,\;3\;.\;.\;.\;.\;\tfrac{1}{2}(p-1)  \\
+&B \textit{ complexus horum } \tfrac{1}{2}(p+1),\; \tfrac{1}{2}(p+3),\;\tfrac{1}{2}(p+5)\;.\;.\;.\;.\; p-1 
+\end{align*}
+Capiantur residua minima positiva productorum ex \(k\) in singulos numeros \(A\) secundum modulum \(p\), quae manifesto omnia diversa erunt, atque partim ad \(A\) partım ad \(B\) pertinebunt. Iam si ad \(B\) omnino \(\mu\) residua pertinere supponantur, erit \(k\) vel residuum vel non-residuum quadraticum ipsius \(p\), prout \(\mu\) par est vel impar.}
+
+\textit{Dem.} Sint residua ad \(A\) pertinentia haec \(a\), \(a'\), \(a''\)  \ldots reliqua ad \(B\) pertinentia \(b\), \(b'\), \(b''.  \ldots\), patetque posteriorum complementa \(p-b\), \(p-b'\), \(p-b''. \ldots\) cuncta a numeris \(a\), \(a'\), \(a''. \ldots\) diversa esse, cum his vero simul sumta complex%pagebreak
+um \(A\) explere. Habemus itaque 
+\[ 1\;.\;2\;.\;3\;.\;.\;.\;.\;\tfrac{1}{2}(p-1) = a a' a''.\;.\;.\;.\;(p-b)(p-b')(p-b'')\;.\;.\;.\;.\; \]
+Productum posterius autem manifesto fit 
+\[\begin{array}{l} \equiv (-1)^{\mu} aa'a''\;.\;.\;.\;.\;bb'b''\;.\;.\;.\;.\;\equiv(-1)^\mu k \;.\; 2k \;.\; 3k\;.\;.\;.\;.\; \tfrac{1}{2}(p-1)k \\
+\equiv (-1)^\mu k^{\frac{1}{2}(p-1)} \;1 \;.\; 2 \;.\; 3 \;.\;.\;.\;.\; \tfrac{1}{2}(p-1) \quad (\textrm{mod. }p)  \end{array}\]
+Hinc erit 
+\[ 1 \equiv (-1)^{\mu} k^{\frac{1}{2}(p-1)} \]
+sive \(k^{\frac{1}{2}(p-1)} \equiv \pm 1\), prout \(\mu\) par est vel impar, unde theorema nostrum protinus demanat. 
+
+
+4. 
+Ratiocinia sequentia magnopere abbreviare licebit per introductionem quarundam designationum idonearum. Exprimet igitur nobis character \((k, p)\) multitudinem productorum ex his 
+\[ k,\;2k,\;3k\;.\;.\;.\;.\;(p-1)k \]
+quorum residua minima positiva secundum modulum \(p\) huius semissem superant. Porro existente \(x\) quantitate quacunque non integra, per signum \([x]\) exprimemus integrum ipsa \(x\) proxime minorem, ita ut \(x-[x]\) semper fiat quantitas positiva intra limites \(0\) et \(1\) sita. Levi iam negotio relationes sequentes evolventur: 
+\begin{enumerate}[itemsep=0em]
+\item[I.] \([x] + [-x] = -1\) 
+\item[II.] \([x] + h = [x+h]\), quoties \(h\) est integer.
+\item[III.] \([x] + [h-x] = h-1\)
+\item[IV.] If \(x-[x]\) est fractio minor quam \(\tfrac{1}{2}\), erit \([2x]-2[x]=0\); si vero \(x-[x]\) est maior quam \(\tfrac{1}{2}\), erit $[2x]-2[x]=1$.
+\item[V.] Iacente itaque residuo minimo positivo integri \(h\) secundum modulum \(p\) infra \(\tfrac{1}{2}p\), erit \(\left[\tfrac{2h}{p}\right]-2\left[\tfrac{h}{p}\right] = 0\); iacente autem residuo illo ultra \(\tfrac{1}{2} p\), erit \(\left[\tfrac{2h}{p}\right]-2\left[\tfrac{h}{p}\right] = 1\).
+\end{enumerate}%pagebreak
+\begin{enumerate}
+\item[VI.] Hinc statim sequitur \((k, p)=\)
+\begin{align*}& \left[ \tfrac{2k}{p} \right] + \left[ \tfrac{4k}{p} \right] + \left[ \tfrac{6k}{p} \right] + \cdots + \left[ \tfrac{(p-1)k}{p} \right] \\
+- 2& \left[ \tfrac{k}{p} \right] - 2 \left[ \tfrac{2k}{p} \right] -2  \left[ \tfrac{3k}{p} \right]-  \cdots -  2 \left[ \tfrac{\frac{1}{2} (p-1)k}{p} \right] .\end{align*}
+\item[VII.] Ex VI. et I. nullo negotio derivatur 
+\[ (k,p) + (-k,p) = \tfrac{1}{2} (p-1) \]
+Unde sequitur,  \(-k\) vel eandem vel oppositam relationem ad \(p\) habere (quatenus huius residuum aut non-residuum quadraticum est) ut \(+k\), prout \(p\) vel formae \(4n+1\) fuerit, vel formae \(4n+3\). In casu priori manifesto \(-1\) residuum, in posteriori non-residuum ipsius \(p\) erit. 
+\item[VIII.] Formulam in VI. traditam sequenti modo transformabimus. Per III. fit
+\[ \left[ \tfrac{(p-1)k}{p}\right] = k-1-\left[\tfrac{k}{p}\right] , \left[ \tfrac{(p-3)k}{p}\right] = k-1-\left[\tfrac{3k}{p}\right] , \left[ \tfrac{(p-5)k}{p}\right] = k-1-\left[\tfrac{5k}{p}\right] \;.\;.\;.\;.\; \]
+Applicando hasce substitutiones ad \(\tfrac{p\mp1}{4}\) membra ultima seriei superioris in illa expressione, habebimus 
+
+\quad \textit{primo,} quoties \(p\) est formae \(4n+1\) 
+ \begin{align*} (k,p) =& \tfrac{1}{4}(k-1)(p-1) \\
+&-2\left\{ \left[ \tfrac{k}{p} \right] + \left[ \tfrac{3k}{p} \right] + \left[ \tfrac{5k}{p} \right] + \cdots + \left[ \tfrac{\frac{1}{2}(p-3)k}{p} \right]    \right\} \\
+&- \left\{ \left[ \tfrac{k}{p} \right] + \left[ \tfrac{2k}{p} \right] + \left[ \tfrac{4k}{p} \right] - \cdots - \left[ \tfrac{\frac{1}{2}(p-1)k}{p} \right] \right\} \end{align*}
+
+\quad \textit{secundo,} quoties \(p\) est formae \(4n+3\)
+ \begin{align*} (k,p) =& \tfrac{1}{4}(k-1)(p+1) \\
+&-2\left\{ \left[ \tfrac{k}{p} \right] + \left[ \tfrac{3k}{p} \right] + \left[ \tfrac{5k}{p} \right] + \cdots + \left[ \tfrac{\frac{1}{2}(p-1)k}{p} \right]    \right\} \\
+&- \left\{ \left[ \tfrac{k}{p} \right] + \left[ \tfrac{2k}{p} \right] + \left[ \tfrac{4k}{p} \right] - \cdots - \left[ \tfrac{\frac{1}{2}(p-1)k}{p} \right] \right\} \end{align*}
+\item[IX.] Pro casu speciali \(k=+2\) e formulis modo traditis sequitur \((2, p) = \tfrac{1}{4}(p\mp1)\), sumendo signum superius vel inferius, prout \(p\) est formae \(4n+1\) vel \(4n + 3\). Erit itaque \((2, p)\) par, adeoque \(2 R p\), quoties \(p\) est formae \(8n+1\) vel \(8n +7\); contra erit \((2, p)\) impar atque \(2Np\), quoties \(p\) est 
+formae \(8n+3\) vel \(8n+5\). 
+\end{enumerate}%pagebreak
+
+\subsection*{5.} 
+
+\textsc{Theorema}. \textit{Sit \(x\) quantitas positiva non integra, inter cuius multipla \(x\), \(2x\), \(3x\)\;.\;.\;.\;.\; usque ad \(nx\) nullum fiat integer; ponatur \([nx]=h\), unde facile concluditur, etiam inter multipla quantitatis reciprocae \(\tfrac{1}{x}\), \(\tfrac{2}{x}\), \(\tfrac{3}{x}\)\;.\;.\;.\;.\;.\; usque ad \(\tfrac{h}{x}\) integrum non reperiri.  Tum dico fore }
+\[ \left. \begin{array}{l} [x] + [2x] + [3x] + \;.\;.\; + [nx] \vspace{2mm} \\ + \left[\tfrac{1}{x}\right] + \left[ \tfrac{2}{x} \right] + \left[\tfrac{3}{x} \right] \;.\;.\;.\;.\; + \left[\tfrac{h}{x}\right] \end{array} \right\} = nh . \]
+
+\textit{Dem.} Seriei \([x] + [2x] + [3x] \;.\;.\;.\;.\; + [nx]\), quam ponemus \(=\Omega\), membra prima usque ad \(\left[\tfrac{1}{x}\right]^{tum}\) inclus. manifesto omnia erunt \(= 0\); sequentia usque ad \(\left[\tfrac{2}{x}\right]^{tum}\) cuncta \(=1\); sequentia usque ad \(\left[\tfrac{3}{x}\right]^{tum}\) cuncta \(=2\) et sic porro. Hinc fit 
+\[ \left. \begin{array}{rrl} \Omega = & &0 \times \left[\tfrac{1}{x}\right] \vspace{1mm} \\
+& +& 1 \times \left\{ \left[\tfrac{2}{x}\right] - \left[\tfrac{1}{x}\right] \right\} \vspace{1mm} \\
+& +& 2 \times \left\{ \left[\tfrac{3}{x}\right] - \left[\tfrac{2}{x}\right] \right\}\vspace{1mm}  \\
+& +& 3 \times \left\{ \left[\tfrac{4}{x}\right] - \left[\tfrac{3}{x}\right] \right\}\vspace{1mm}  \\
+&& \text{etc.}\vspace{1mm}  \\ 
+& +& (h-1)  \left\{ \left[\tfrac{h}{x}\right] - \left[\tfrac{h-1}{x}\right] \right\} \vspace{1mm} \\
+& +& h \left\{ n - \left[\tfrac{h}{x}\right] \right\} \end{array} \right\} = hn - \left[\tfrac{1}{x}\right] - \left[\tfrac{2}{x}\right]- \left[\tfrac{3}{x}\right] \;.\;.\;.\;.\; - \left[\tfrac{h}{x}\right] \]
+Q.E.D. 
+
+\subsection*{6.} 
+\textsc{Theorema}. \textit{Designantibus \(k\), \(p\) numeros positivos impares inter se primos quoscunque, erit }
+\[ \left. \begin{array}{rl}& \left[\frac{k}{p}\right] + \left[\frac{2k}{p}\right] + \left[\frac{3k}{p}\right] \;.\;.\;.\;.\; + \left[\frac{\frac{1}{2}(p-1)k}{p}\right] \vspace{2mm} \\
++& \left[\frac{p}{k}\right] + \left[\frac{2p}{k}\right] + \left[\frac{3p}{k}\right] \;.\;.\;.\;.\; + \left[\frac{\frac{1}{2}(k-1)p}{k}\right] \end{array} \right\} = \tfrac{1}{4}(k-1)(p-1) \]
+
+\textit{Demonstr.} Supponendo, quod licet, \(k<p\), erit minor quam \(\tfrac{\frac{1}{2}(p-1)k}{p}\), 
+sed maior quam \(\tfrac{1}{2}(k-1)\), adeoque \(\left[\tfrac{ \frac{1}{2}(p-1)k}{p}\right] = \tfrac{1}{2}(k-1)\). Hinc patet, theorema praesens ex praec. protinus sequi, statuendo illic \(\tfrac{k}{p}=x\), \(\tfrac{1}{2}(p-1)=n\), adeoque \(\tfrac{1}{2}(k-1) = h\). %pagebreak
+
+
+Ceterum simili modo demonstrari potest, si \(k\) fuerit numerus \textit{par} ad \(p\) primus, fore 
+\[ \left. \begin{array}{rl} &\left[\frac{k}{p}\right] + \left[\frac{2k}{p}\right] + \left[\frac{3k}{p}\right] \;.\;.\;.\;.\; + \left[\frac{\frac{1}{2}(p-1)k}{p}\right]  \vspace{2mm}\\
++& \left[\frac{p}{k}\right] + \left[\frac{2p}{k}\right] + \left[\frac{3p}{k}\right] \;.\;.\;.\;.\; + \left[\frac{\frac{1}{2}kp}{k}\right] \end{array} \right\} = \tfrac{1}{4}k(p-1) \]
+At huic propositioni ad institutum nostrum non necessariae non immoramur. 
+
+\subsection*{7.}
+
+Iam ex combinatione theorematis praec. cum propos. VIII, art. 4. theorema fundamentale protinus demanat. Nimirum denotantibus \(k\), \(p\) numeros primos positivos inaequales quoscunque, et ponendo 
+\begin{align*} &(k,p) + \left[\tfrac{k}{p}\right] + \left[\tfrac{2k}{p}\right] + \left[\tfrac{3k}{p}\right] \;.\;.\;.\;.\; + \left[\tfrac{\frac{1}{2}(p-1)k}{p}\right] = L \\
+&(p,k) + \left[\tfrac{p}{k}\right] + \left[\tfrac{2p}{k}\right] + \left[\tfrac{3p}{k}\right] \;.\;.\;.\;.\; + \left[\tfrac{\frac{1}{2}(k-1)p}{k}\right] = M. \end{align*}
+per VIII. art. 4. patet, \(L\) et \(M\) semper fieri numeros pares. At per theorema art. 6. erit 
+\[ L + M = (k,p) + (p,k) + \tfrac{1}{4}(k-1)(p-1) \]
+Quoties igitur \(\tfrac{1}{4}(k-1)(p-1)\) par evadit, quod fit, si vel uterque \(k\), \(p\) vel saltem alteruter est formae \(4n+1\), necessario \((k, p)\) et \((p, k)\) vel ambo pares vel ambo impares esse debent.  Quoties autem \(\tfrac{1}{4}(k-1)(p-1)\) impar est, quod evenit, si uterque \(k\), \(p\) est formae \(4n+3\), necessario alter numerorum \((k,p)\), \((p,k)\) par, alter impar esse debebit. In casu priori itaque relatio ipsius \(k\) ad \(p\) et relatio ipsius \(p\) ad \(k\) (quatenus alter alterius residuum vel non-residuum est) identicae erunt, in casu posteriori oppositae. 
+
+\qquad Q.E.D. \\[2\baselineskip]
+\begin{center}  \rule{2in}{0.5pt} \end{center}
+\end{document}
+
