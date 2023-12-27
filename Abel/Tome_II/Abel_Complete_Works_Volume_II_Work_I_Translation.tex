@@ -1,0 +1,156 @@
+\documentclass[oneside, 12 pt, leqno]{memoir}
+\usepackage{standalone}
+\usepackage[dvips,text={6.2in,8.5in},left=0.9truein,top=1.5truein]{geometry}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{microtype}
+\usepackage{indentfirst}
+\usepackage[utf8]{inputenc}
+\usepackage{exscale}
+\usepackage{mlmodern}
+\usepackage[OT1]{fontenc}
+\usepackage[bottomfloats]{footmisc}
+\parindent=2.27em
+\parskip=0pt
+\nonfrenchspacing
+\renewcommand{\baselinestretch}{1.15}
+\DeclareMathSizes{12}{12}{8}{6}
+\everymath{\displaystyle}
+\allowdisplaybreaks
+\raggedbottom
+\titleformat{\section}
+  {\normalfont\centering}{\thesection.}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\spaceskip=0.67em plus 0.33em minus 0.33em
+\thickmuskip=4mu plus 4mu
+\medmuskip=3mu plus 1.5mu minus 3mu
+\AtBeginDocument{%
+  \mathchardef\stdcomma=\mathcode`,
+  \mathcode`,="8000
+}
+\begingroup\lccode`~=`, \lowercase{\endgroup\def~}{\stdcomma\mspace{\medmuskip}}
+\let\oldfrac\frac
+\def\frac#1#2{\mathchoice{\text{\scalebox{.83}{${\oldfrac{#1}{#2}}$}}}{\text{\scalebox{.83}{${\displaystyle\oldfrac{#1}{#2}}$}}}{\genfrac{}{}{}{2}{#1}{#2}}{\genfrac{}{}{}{3}{#1}{#2}}}
+\begin{document}
+\setlength{\abovedisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+\setlength{\belowdisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+
+\section*{\begin{Large}I. \end{Large}\\
+THE TRANSCENDENTAL FUNCTIONS \(\Sigma \frac{1}{a^{2}}, \Sigma \frac{1}{a^{3}}, \Sigma \frac{1}{a^{4}}, \dots \Sigma \frac{1}{a^{n}}\) EXPRESSED AS DEFINITE INTEGRALS.\\
+\rule{2in}{0.1pt}}
+
+%
+If we differentiate the function \(\Sigma \frac{1}{a}\) several times, we will have
+\[\begin{aligned}
+& \frac{d \Sigma \frac{1}{a}}{d a}=\frac{\Sigma d \frac{1}{a}}{d a}=-\Sigma \frac{1}{a^{2}}, \\
+& \frac{d^{2} \Sigma \frac{1}{a}}{d a^{2}}=\frac{\Sigma d^{2}\left(\frac{1}{a}\right)}{d a^{2}}=+2 \Sigma \frac{1}{a^{3}}, \\
+& \frac{d^{3} \Sigma \frac{1}{a}}{d a^{3}}=\frac{\Sigma d^{3}\left(\frac{1}{a}\right)}{d a^{3}}=-2.3 \Sigma \frac{1}{a^{4}}, \\
+& \dots \dots \dots \dots \dots \dots \dots \dots \dots \dots \dots \dots \dots \dots \dots \\
+& \frac{d^{n} \Sigma \frac{1}{a}}{d a^{n}}=\frac{\Sigma d^{n}\left(\frac{1}{a}\right)}{d a^{n}}= \pm 2 . 3 .4 \dots n . \Sigma \frac{1}{a^{n+1}},
+\end{aligned}\]
+where the sign \(+\) occurs when \(n\) is even, and the sign \(-\) occurs when \(n\) is odd.
+
+%
+We then reciprocally conclude
+\[\Sigma \frac{1}{a^{2}}=-\frac{d \Sigma \frac{1}{a}}{d a}, \quad \Sigma \frac{1}{a^{3}}=+\frac{d^{2} \Sigma \frac{1}{a}}{2 . d a^{2}}, \quad \Sigma \frac{1}{a^{4}}=-\frac{d^{3} \Sigma \frac{1}{a}}{2 . 3 . d a^{3}}+\text { etc., }\]
+\[\Sigma \frac{1}{a^{n}}= \pm \frac{d^{n-1} \Sigma \frac{1}{a}}{1.2 .3 \dots(n-1) d a^{n-1}}= \pm \frac{d^{n-1} L(a)}{2.3 \dots(n-1) d a^{n-1}}.\]
+Now we have \(\Sigma \frac{1}{a}=L(a)=\int_{0}^{1} \frac{x^{a-1}-1}{x-1} d x\). Consequently, by differentiating with respect to \(a\),
+\[\begin{aligned}
+\frac{d \Sigma \frac{1}{a}}{d a}&=\int_{0}^{1} \frac{x^{a-1}(l x)}{x-1} d x, \\
+\frac{d^{2} \Sigma \frac{1}{a}}{d a^{2}}&=\int_{0}^{1} \frac{x^{a-1}(l x)^{2}}{x-1} d x, \\
+\frac{d^{3} \Sigma \frac{1}{a}}{d a^{3}}&=\int_{0}^{1} \frac{x^{a-1}(l x)^{3}}{x-1} d x, \\
+\dots &\dots \dots  \dots  \dots \dots \\
+\frac{d^{n-1} \Sigma \frac{1}{a}}{d a^{n-1}}&=\int_{0}^{1} \frac{x^{a-1}(l x)^{n-1}}{x-1} d x.
+\end{aligned}
+\]
+By substituting these values, we obtain
+\[\begin{aligned}
+\Sigma \frac{1}{a^{2}}&=-\int_{0}^{1} \frac{x^{a-1} l x}{x-1} d x,\\
+\Sigma \frac{1}{a^{3}}&=\frac{1}{2} \int_{0}^{1} \frac{x^{a-1}(l x)^{2}}{x-1} d x, \\
+\Sigma \frac{1}{a^{4}}&=-\frac{1}{2 . 3} \int_{0}^{1} \frac{x^{a-1}(l x)^{3}}{x-1} d x, \\
+\dots & \dots \dots \dots \dots \dots \dots \dots . \dots . \dots \\
+\Sigma \frac{1}{a^{2 n}}&=-\frac{1}{2 . 3 .4 \dots(2 n-1)} \int_{0}^{1} \frac{x^{a-1}(l x)^{2 n-1}}{x-1} d x, \\
+\Sigma \frac{1}{a^{2 n+1}}&=+\frac{1}{2 . 3 . 4 \dots 2 n} \int_{0}^{1} \frac{x^{a-1}(l x)^{2 n}}{x-1} d x .
+\end{aligned}\]
+In general, for any \(\alpha\), we have
+\[\Sigma \frac{1}{a^{\alpha}}=\frac{1}{\Gamma(\alpha)} \int_{0}^{1} \frac{x^{a-1}\left(l \frac{1}{x}\right)^{\alpha-1}}{x-1} d x.\]
+
+Denoting \(\Sigma \frac{1}{a^{\alpha}}\) by \(L(a, \alpha)\), we will have
+\[\tag{1} L(a, \alpha)=\frac{1}{\Gamma(\alpha)} \int_{0}^{1} \frac{x^{a-1}\left(l \frac{1}{x}\right)^{\alpha-1}}{x-1} d x+C.\]
+By expanding \(\frac{x^{a-1}}{x-1}\) into an infinite series, we obtain
+\[L(a, \alpha)=\frac{1}{\Gamma(\alpha)}\left[\int_{0}^{1} x^{a-2}\left(l \frac{1}{x}\right)^{\alpha-1} d x+\int_{0}^{1}x^{\alpha-3}\left(l \frac{1}{x}\right)^{\alpha-1} d x +\int_{0}^{1} x^{a-4}\left(l \frac{1}{x}\right)^{\alpha-1} d x+\dots\right];\]
+now \(\int_{0}^{1} x^{a-k-1}\left(l \frac{1}{x}\right)^{\alpha-1} d x=\frac{\Gamma(\alpha)}{(a-k)^{\alpha}}\), therefore
+\[L(a, \alpha)=\frac{1}{(a-1)^{\alpha}}+\frac{1}{(a-2)^{\alpha}}+\frac{1}{(a-3)^{\alpha}}+\dots+C,\]
+where \(C\) is a constant independent of \(a\). To find it, we substitute \(a=1\) in (1), yielding \(L(1, \alpha)=0\) and \(x^{a-1}=x^{0}=1\); hence
+\[C=-\frac{1}{\Gamma(\alpha)} \int_{0}^{1} \frac{\left(l \frac{1}{x}\right)^{\alpha-1}}{x-1} d x.\]
+We can then draw the conclusion that
+\[L(a, \alpha)=\frac{1}{\Gamma(\alpha)} \int_{0}^{1} \frac{x^{a-1}-1}{x-1}\left(l \frac{1}{x}\right)^{\alpha-1} d x,\]
+where \(\alpha\) can be either positive, negative or zero. We have
+\[x^{a-1}=\left(\frac{1}{x}\right)^{-a+1}=1-(a-1)\left(l \frac{1}{x}\right)+\frac{(a-1)^{2}}{2} \cdot\left(l \frac{1}{x}\right)^{2}-\frac{(a-1)^{3}}{2.3}\left(l \frac{1}{x}\right)^{3}+\text{ etc.}\]
+
+By substituting this value, we have
+\[L(a, \alpha)= \frac{1}{\Gamma(\alpha)}\left\{(a-1) \int_{0}^{1}\frac{\left(l \frac{1}{x}\right)^{\alpha}}{1-x} d x-\frac{(a-1)^{2}}{2} \int_{0}^{1} \frac{\left(l \frac{1}{x}\right)^{\alpha+1}}{1-x} d x+\frac{(a-1)^{3}}{2.3} \int_{0}^{1} \frac{\left(l \frac{1}{x}\right)^{\alpha+2}}{1-x} d x-\dots\right\}. \]
+Let us consider the expression \(\int_{0}^{1} \frac{\left(l \frac{1}{x}\right)^{k}}{1-x} d x\). By expanding \(\frac{1}{1-x}\), we have
+\[\int \frac{\left(l \frac{1}{x}\right)^{k}}{1-x} d x=\int\left(l \frac{1}{x}\right)^{k} d x+\int x\left(l \frac{1}{x}\right)^{k} d x+\int x^{2}\left(l \frac{1}{x}\right)^{k} d x+\dots;\]
+but \(\int_{0}^{1} x^{n}\left(l \frac{1}{x}\right)^{k} d x=\frac{\Gamma(k+1)}{(n+1)^{k+1}}\), thus
+\[\int_{0}^{1} \frac{\left(l \frac{1}{x}\right)^{k}}{1-x} d x=\Gamma(k+1)\left(1+\frac{1}{2^{k+1}}+\frac{1}{3^{k+1}}+\frac{1}{4^{k+1}}+\dots\right),\]
+and thus finally
+\[\begin{aligned}
+ L(a, \alpha)&=\frac{(a-1) . \Gamma(\alpha+1)}{\Gamma(\alpha)}\left(1+\frac{1}{2^{\alpha+1}}+\frac{1}{3^{\alpha+1}}+\frac{1}{4^{\alpha+1}}+\dots\right) \\
+& -\frac{(a-1)^{2} . \Gamma(\alpha+2)}{2 .  \Gamma(\alpha)}\left(1+\frac{1}{2^{\alpha+2}}+\frac{1}{3^{\alpha+2}}+\frac{1}{4^{\alpha+2}}+\dots\right) \\
+& +\frac{(a-1)^{3} . \Gamma(\alpha+3)}{2 . 3 . \Gamma(\alpha)}\left(1+\frac{1}{2^{\alpha+3}}+\frac{1}{3^{\alpha+3}}+\frac{1}{4^{\alpha+3}}+\dots\right)\\
+&\dots \dots \dots \dots \dots \dots \dots \dots \dots \dots \dots \dots 
+\end{aligned}\]
+
+Now we have \(\Gamma(\alpha+1)=\alpha \Gamma(\alpha),  \Gamma(\alpha+2)=\alpha(\alpha+1) \Gamma(\alpha)\), and in general \( \Gamma(\alpha+k)=\alpha(\alpha+1)(\alpha+2) \dots(\alpha+k-1)  \Gamma(\alpha)\). Substituting these values, we obtain
+\[\begin{aligned}
+L(a, \alpha) & =\frac{a-1}{1} \alpha\left(1+\frac{1}{2^{\alpha+1}}+\frac{1}{3^{\alpha+1}}+\frac{1}{4^{\alpha+1}}+\dots\right) \\
+& -\frac{(a-1)^{2}}{1.2} \alpha(\alpha+1)\left(1+\frac{1}{2^{\alpha+2}}+\frac{1}{3^{\alpha+2}}+\frac{1}{4^{\alpha+2}}+\dots\right) \\
+& +\frac{(a-1)^{3}}{1.2 .3} \alpha(\alpha+1)(\alpha+2)\left(1+\frac{1}{2^{\alpha+3}}+\frac{1}{3^{\alpha+3}}+\frac{1}{4^{\alpha+3}}+\dots\right)\\
+&\dots \dots \dots \dots \dots \dots \dots \dots \dots \dots \dots \dots 
+\end{aligned}\]
+
+If we let \(a\) go to infinity, we have
+\[L(\infty, \alpha)=1+\frac{1}{2^{\alpha}}+\frac{1}{3^{\alpha}}+\frac{1}{4^{\alpha}}+\dots,\]
+so denoting \(L(\infty, \alpha)\) by \(L^{\prime}(\alpha)\), we have
+\[L(a, \alpha)=\alpha .(a-1) L^{\prime}(\alpha+1)-\frac{\alpha(\alpha+1)}{2}(a-1)^{2} L^{\prime}(\alpha+2)+\frac{\alpha(\alpha+1)(\alpha+2)}{2.3}(a-1)^{3} L^{\prime}(\alpha+3)-\dots.\]
+
+If in formula (1) we replace \(a\) with \(\frac{m}{a}\), we obtain
+\[L\left(\frac{m}{a}, \alpha\right)=\frac{1}{\Gamma(\alpha)} \int_{0}^{1} \frac{\left(x^{\frac{m}{a}-1}-1\right)\left(l \frac{1}{x}\right)^{\alpha-1}}{x-1} d x.\]
+By letting \(x^{\frac{1}{a}}=y\), \(x\) becomes \(y^{a}\), \(d x=a y^{a-1}\), \(\left(l \frac{1}{x}\right)^{\alpha-1}=a^{\alpha-1}\left(l \frac{1}{y}\right)^{\alpha-1}\), and therefore
+\[L\left(\frac{m}{a}, \alpha\right)=\frac{a^{\alpha}}{\Gamma(\alpha)} \int_{0}^{1} \frac{\left(y^{m-a}-1\right)\left(l \frac{1}{y}\right)^{\alpha-1} y^{a-1}}{y^{a}-1} d y=\frac{a^{\alpha}}{\Gamma(\alpha)} \int_{0}^{1} \frac{y^{m-1}-y^{a-1}}{y^{a}-1}\left(l \frac{1}{y}\right)^{\alpha-1} d y.\]
+From this, we obtain
+\[ L\left(\frac{m}{a}, \alpha\right)=-\frac{1}{\Gamma(\alpha)} \int_{0}^{1} \frac{\left(l \frac{1}{y}\right)^{\alpha-1}}{y-1} d y+\frac{a^{\alpha}}{\Gamma(\alpha)} \int_{0}^{1} \frac{y^{m-1}\left(l \frac{1}{y}\right)^{\alpha-1}}{y^{a}-1} d y.\]
+
+Now if \(m-1<a\), as we can assume, then the fraction \(\frac{y^{m-1}}{y^{a}-1}\) can be expressed in terms of partial fractions of the form \(\frac{A}{1-c y}\). We will therefore have
+\[L\left(\frac{m}{a}, \alpha\right)=\left\{A \int_{0}^{1} \frac{\left(l \frac{1}{y}\right)^{\alpha-1}}{1-c y} d y+A^{\prime} \int_{0}^{1} \frac{\left(l \frac{1}{y}\right)^{\alpha-1}}{1-c^{\prime} y} d y+\dots\right\} \frac{a^{\alpha}}{\Gamma(\alpha)}.\]
+
+If we expand \(\frac{1}{1-c y}\) as a series, we see that
+\[\int \frac{\left(l \frac{1}{y}\right)^{\alpha-1}}{1-c y} d y=\int\left(l \frac{1}{y}\right)^{\alpha-1} d y+c \int y\left(l \frac{1}{y}\right)^{\alpha-1} d y+c^{2} \int y^{2}\left(l \frac{1}{y}\right)^{\alpha-1} d y+\dots,\]
+however \(\int_{0}^{1}\left(l \frac{1}{y}\right)^{\alpha-1} y^{k} d y=\frac{\Gamma(\alpha)}{(k+1)^{\alpha}}\), so
+\[\int_{0}^{1} \frac{\left(l \frac{1}{y}\right)^{\alpha-1}}{1-c y} d y=\Gamma(\alpha)\left(1+\frac{c}{2^{\alpha}}+\frac{c^{2}}{3^{\alpha}}+\frac{c^{3}}{4^{\alpha}}+\dots\right),\]
+and thus denoting \(1+\frac{c}{2^{\alpha}}+\frac{c^{2}}{3^{\alpha}}+\frac{c^{3}}{4^{\alpha}}+\dots\) by \(L^{\prime}(\alpha, c)\), we will have
+\[\int_{0}^{1} \frac{\left(l \frac{1}{y}\right)^{\alpha-1}}{1-c y} . d y=\Gamma(\alpha) . L^{\prime}(\alpha, c);\]
+and we will finally obtain:
+\[L\left(\frac{m}{a}, \alpha\right)=a^{\alpha}\left[A . L^{\prime}(\alpha, c)+A^{\prime} . L^{\prime}\left(\alpha, c^{\prime}\right)+A^{\prime \prime} . L^{\prime}\left(\alpha, c^{\prime \prime}\right)+\text{ etc. }\right].\]
+
+The function \(L\left(\frac{m}{a}, \alpha\right)\) can thus, when \(m\) and \(a\) are integers, be expressed in finite form using the functions \(\Gamma(\alpha)\) and \(L^{\prime}(\alpha, c)\). For example, let \(m=1, a=2\). Then we have
+\[L\left(\frac{1}{2}, \alpha\right)=\frac{2^{\alpha}}{\Gamma(\alpha)} \int_{0}^{1} \frac{1-y}{y^{2}-1}\left(l \frac{1}{y}\right)^{\alpha-1} d y=-\frac{2^{\alpha}}{\Gamma(\alpha)} \int_{0}^{1} \frac{\left(l \frac{1}{y}\right)^{\alpha-1}}{1+y} d y.\]
+Therefore, we have \(A=-1\) and \(c=-1\), thus
+\[L\left(\frac{1}{2}, \alpha\right)=-2^{\alpha} . L^{\prime}(\alpha,-1)=-2^{\alpha}\left(1-\frac{1}{2^{\alpha}}+\frac{1}{3^{\alpha}}-\frac{1}{4^{\alpha}}+\dots\right).
+\]
+
+When \(\alpha\) is an integer, we know that the sum of this series can be expressed in terms of the number \(\pi\) or by the logarithm of 2. Letting \(\alpha=1\), we have \(1-\frac{1}{2}+\frac{1}{3}-\frac{1}{4}+\dots=\log 2\), so \(L\left(\frac{1}{2}, 1\right)=L\left(\frac{1}{2}\right)=-2 \log 2\).
+
+By setting \(\alpha=2\), we have \(1-\frac{1}{2^{2}}+\frac{1}{3^{2}}-\frac{1}{4^{2}}+\dots=\frac{\pi^{2}}{12}\), thus
+\[L\left(\frac{1}{2}, 2\right)=-\frac{\pi^{2}}{3}.\]
+
+In general, we can express \(L\left(\frac{1}{2}, 2 n\right)\) as \(-M \pi^{2 n}\), where \(M\) is a rational number.
+\begin{center} \rule{2in}{0.1pt} \end{center}
+\end{document}
