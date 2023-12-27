@@ -1,0 +1,224 @@
+\documentclass[oneside, 12 pt, leqno]{memoir}
+\usepackage{standalone}
+\usepackage[dvips,text={6in,7.5in},left=1truein,top=1.5truein]{geometry}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{microtype}
+\usepackage{indentfirst}
+\usepackage[utf8]{inputenc}
+\usepackage{exscale}
+\usepackage{mlmodern}
+\usepackage[OT1]{fontenc}
+\usepackage[bottomfloats]{footmisc}
+\parindent=2.27em
+\parskip=0pt
+\nonfrenchspacing
+\renewcommand{\baselinestretch}{1.15}
+\DeclareMathSizes{12}{12}{8}{6}
+\everymath{\displaystyle}
+\allowdisplaybreaks
+\raggedbottom
+\titleformat{\section}
+  {\normalfont\centering}{\thesection.}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\spaceskip=0.67em plus 0.33em minus 0.2em
+\thickmuskip=4mu plus 4mu
+\medmuskip=3mu plus 1.5mu minus 3mu
+\AtBeginDocument{%
+  \mathchardef\stdcomma=\mathcode`,
+  \mathcode`,="8000
+}
+\begingroup\lccode`~=`, \lowercase{\endgroup\def~}{\stdcomma\mspace{\medmuskip}}
+\let\oldfrac\frac
+\def\frac#1#2{\mathchoice{\text{\scalebox{.83}{${\oldfrac{#1}{#2}}$}}}{\text{\scalebox{.83}{${\displaystyle\oldfrac{#1}{#2}}$}}}{\genfrac{}{}{}{2}{#1}{#2}}{\genfrac{}{}{}{3}{#1}{#2}}}
+\begin{document}
+\setlength{\abovedisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+\setlength{\belowdisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+
+\; \\[4\baselineskip]
+\section*{\begin{Large}II.\end{Large}\\
+SUR L'INTÉGRALE DÉFINIE \(\int_{0}^{1} x^{\alpha-1}(1-x)^{c-1}\left(l \frac{1}{x}\right)^{\alpha-1} d x\).\\
+\rule{2in}{0.1pt}}
+
+Dans les Exercices de calcul intégral de M. Legendre on trouve l'expression suivante
+\[\tag{1} \int_{0}^{1} x^{a-1}(1-x)^{c-1} d x=\frac{\Gamma a . \Gamma c}{\Gamma(a+c)}\]
+donc
+\[\log \int_{0}^{1} x^{a-1}(1-x)^{c-1} d x=\log \Gamma a+\log \Gamma c-\log \Gamma(a+c).\]
+
+En différentiant par rapport à \(a\) et à \(c\), et remarquant que
+\[\frac{d l \Gamma(a)}{d a}=L a-C\]
+on aura
+\[\begin{gathered}
+\frac{\int_{0}^{1} x^{a-1}(1-x)^{c-1} l x . d x}{\int_{0}^{1} x^{a-1}(1-x)^{c-1} d x}=L a-L(a+c), \\
+\frac{\int_{0}^{1} x^{a-1}(1-x)^{c-1} l(1-x) . d x}{\int_{0}^{1} x^{a-1}(1-x)^{c-1} d x}=L c-L(a+c) .\end{gathered}\]
+Ces deux équations combinées avec l'équation (1), donnent
+\[\begin{gathered}
+\int_{0}^{1} x^{a-1}(1-x)^{c-1} l x . d x=[L a-L(a+c)] \frac{\Gamma a . \Gamma c}{\Gamma(a+c)}, \\
+\int_{0}^{1} x^{a-1}(1-x)^{c-1} l(1-x) d x=[L c-L(a+c)] \frac{\Gamma a . \Gamma c}{\Gamma(a+c)}.
+\end{gathered}\]
+La dernière équation peut aussi se déduire de l'avant-dernière en échangeant \(a\) et \(c\) entre eux, et mettant \(1-x\) à la place de \(x\).
+
+Lorsque \(c=1\), on a, à cause de \(L(1+a)=\frac{1}{a}+L(a)\), et \(\Gamma(a+1)=a \Gamma(a)\),
+\[\int_{0}^{1} x^{a-1} l x . d x=-\frac{1}{a^{2}},\]
+résultat connu, et
+\[\int_{0}^{1} x^{a-1} l(1-x) d x=-\frac{L(1+a)}{a},\]
+donc
+\[L(1+a)=-a \int_{0}^{1} x^{a-1} l(1-x) d x .\]
+
+En développant \((1-x)^{c-1}\) en série, on trouvera
+\[\begin{aligned}
+&\int_{0}^{1} x^{a-1}(1-x)^{c-1} l\left(\frac{1}{x}\right) d x\\
+&=\int_{0}^{1} x^{a-1} l\left(\frac{1}{x}\right) d x-(c-1) \int_{0}^{1} x^{a} l\left(\frac{1}{x}\right) d x +\frac{(c-1)(c-2)}{2} \int_{0}^{1} x^{a+1} l\left(\frac{1}{x}\right) d x - \dots;\end{aligned}\]
+or \(\int_{0}^{1} x^{k} l\left(\frac{1}{x}\right) d x=\frac{1}{(k+1)^{2}}\), donc
+\[\begin{aligned}
+&\int_{0}^{1} x^{a-1}(1-x)^{c-1} l\left(\frac{1}{x}\right) d x\\
+&=\frac{1}{a^{2}}-(c-1) \frac{1}{(a+1)^{2}}+\frac{(c-1)(c-2)}{2} . \frac{1}{(a+2)^{2}}-\frac{(c-1)(c-2)(c-3)}{2.3} . \frac{1}{(a+3)^{2}}+\dots;
+\end{aligned}\]
+mais \(\int_{0}^{1} x^{a-1}(1-x)^{c-1} l\left(\frac{1}{x}\right) d x=[L(a+c)-L a] \frac{\Gamma a . \Gamma c}{\Gamma(a+c)}\), donc
+\[\tag{2}\begin{aligned}
+&[L(a+c)-L a] \frac{\Gamma a . \Gamma c}{\Gamma(a+c)}\\
+&=\frac{1}{a^{2}}-(c-1) \frac{1}{(a+1)^{2}}+\frac{(c-1)(c-2)}{2} . \frac{1}{(a+2)^{2}}-\frac{(c-1)(c-2)(c-3)}{2.3} . \frac{1}{(a+3)^{2}}+\dots.\end{aligned}\]
+
+Soit par exemple \(c=1-a\), on a
+\[\begin{gathered}
+L(a+c)-L a=-L a, \Gamma(a+c)=1, \\
+\Gamma a . \Gamma c=\Gamma a . \Gamma(1-a)=\frac{\pi}{\sin a \pi};
+\end{gathered}\]
+donc
+\[-L a \cdot \frac{\pi}{\sin a \pi}=\frac{1}{a^{2}}+\frac{a}{(a+1)^{2}}+\frac{a(a+1)}{2(a+2)^{2}}+\frac{a(a+1)(a+2)}{2 . 3 . (a+3)^{2}}+\dots.\]
+Soit \(a=\frac{1}{2}\), on a \(-L a=2 \log 2\), \(\sin \frac{\pi}{2}=1\), donc
+\[2 \pi \log 2=2^{2}+\frac{2}{3^{2}}+\frac{3}{2.5^{2}}+\frac{3.5}{2^{2} .3 .7^{2}}+\frac{3.5 .7}{2^{3} . 3.4 .9^{2}}+\dots.\]
+Soit \(a=1-x\), \(c=2 x-1\), on aura en remarquant que \(L(1-x)-L x=\pi \cot \pi x\),
+\[\begin{aligned}
+& -\pi . \cot \pi x . \frac{\Gamma(1-x) . \Gamma(2 x-1)}{\Gamma x} \\
+& =\frac{1}{(1-x)^{2}}-\frac{2 x-2}{(2-x)^{2}}+\frac{(2 x-2)(2 x-3)}{2(3-x)^{2}}-\frac{(2 x-2)(2 x-3)(2 x-4)}{2 . 3 . (4-x)^{2}}+\dots.
+\end{aligned}\]
+
+En échangeant \(a\) et \(c\) entre eux dans l'équation (2), on obtient
+\[[L(a+c)-L c] \frac{\Gamma a . \Gamma c}{\Gamma(a+c)}=\frac{1}{c^{2}}-(a-1) \frac{1}{(c+1)^{2}}+\frac{(a-1)(a-2)}{2(c+2)^{2}}-\dots.\]
+En divisant l'équation (2) par celle-ci membre à membre, on aura
+\[\frac{L(a+c)-L(a)}{L(a+c)-L(c)}=\frac{\frac{1}{a^{2}}-\frac{c-1}{(a+1)^{2}}+\frac{(c-1)(c-2)}{2(a+2)^{2}}-\dots}{\frac{1}{c^{2}}-\frac{a-1}{(c+1)^{2}}+\frac{(a-1)(a-2)}{2(c+2)^{2}}-\dots}.\]
+
+De cette équation on tirera, en y faisant \(c=1\),
+\[L(1+a)=a-\frac{a(a-1)}{2^{2}}+\frac{a(a-1)(a-2)}{2.3^{2}}-\dots,\]
+donc en écrivant \(-a\) pour \(a\),
+\[L(1-a)=-\left(a+\frac{a(a+1)}{2^{2}}+\frac{a(a+1)(a+2)}{2 . 3^{2}}+\dots\right),\]
+et en mettant \(a-1\) au lieu de \(a\),
+\[L a=(a-1)-\frac{(a-1)(a-2)}{2^{2}}+\frac{(a-1)(a-2)(a-3)}{2.3^{2}}-\dots; \]
+on tire de là
+\[\begin{aligned}
+& L(1-a)-L a=\pi . \cot \pi a \\
+&=  - \left(2 a-1+\frac{a(a+1)-(a-1)(a-2)}{2^{2}}+\frac{a(a+1)(a+2)+(a-1)(a-2)(a-3)}{2.3^{2}}+\dots\right) .
+\end{aligned}\]
+
+Si dans l'équation (2) on pose \(a=1\), on aura
+\[ [L(c+1)-L(1)] \frac{\Gamma(1) . \Gamma c}{\Gamma(c+1)}=\frac{L(1+c)}{c}=1-\frac{(c-1)}{2^{2}}+\frac{(c-1)(c-2)}{2.3^{2}}-\dots\]
+comme auparavant. En faisant \(c=0\), il vient
+\[\frac{L(1)}{0}=\frac{0}{0}=1+\frac{1}{2^{2}}+\frac{1}{3^{2}}+\frac{1}{4^{2}}+\dots=\frac{\pi^{2}}{6}.\]
+
+Nous avons vu que
+\[\int_{0}^{1} x^{a-1}(1-x)^{c-1} l\left(\frac{1}{x}\right) d x=[L(a+c)-L a] \frac{\Gamma a . \Gamma c}{\Gamma(a+c)} .\]
+En différentiant cette équation logarithmiquement, il viendra
+\[\frac{\int_{0}^{1} x^{a-1}(1-x)^{c-1}\left(l \frac{1}{x}\right)^{2} d x}{\int_{0}^{1} x^{a-1}(1-x)^{c-1} l\left(\frac{1}{x}\right) d x}=-\frac{\frac{d L(a+c)}{d a}-\frac{d L(a)}{d a}}{L(a+c)-L a}+L(a+c)-L(a) .\]
+Or on a \(\frac{d L a}{d a}=-\Sigma \frac{1}{a^{2}} ;\) soit \(\Sigma \frac{1}{a^{2}}=L^{\prime}(a)\), on aura
+\[\begin{aligned}
+&\int_{0}^{1} x^{a-1}(1-x)^{c-1}\left(l \frac{1}{x}\right)^{2} . d x \\ 
+=&\left[\left(L^{\prime}(a+c)-L^{\prime} a\right)+(L(a+c)-L a)^{2}\right] \frac{\Gamma a . \Gamma c}{\Gamma(a+c)}.
+\end{aligned}\]
+
+Si l'on désigne \(\Sigma \frac{1}{a^{3}}\) par \(L^{\prime \prime} a\), \(L \frac{1}{a^{4}}\) par \(L^{\prime \prime \prime} a\) etc., on obtiendra par des différentiations répétées
+\[\begin{aligned}
+&\begin{split}
+&\int_{0}^{1} x^{a-1}(1-x)^{c-1}\left(l \frac{1}{x}\right)^{3} d x\\
+=&\left[2\left(L^{\prime \prime}(a+c)-L^{\prime \prime} a\right)+ 3\left(L^{\prime}(a+c)-L^{\prime} a\right)(L(a+c)-L a)+(L(a+c)-L a)^{3}\right] \frac{\Gamma a . \Gamma c}{\Gamma(a+c)} ,
+\end{split}\\
+&\begin{split}&\int_{0}^{1} x^{a-1}(1-x)^{c-1}\left(l \frac{1}{x}\right)^{4} d x \\
+=&\text { etc. }
+\end{split}
+\end{aligned}\]
+
+En différentiant l'équation (2) par rapport à \(a\), on aura
+\[\begin{aligned}
+& \int_{0}^{1} x^{a-1}(1-x)^{c-1}\left(l \frac{1}{x}\right)^{2} d x \\
+= & 2\left(\frac{1}{a^{3}}-\frac{c-1}{1} . \frac{1}{(a+1)^{3}}+\frac{(c-1)(c-2)}{1.2} . \frac{1}{(a+2)^{3}}-\frac{(c-1)(c-2)(c-3)}{1.2 .3} . \frac{1}{(a+3)^{3}}+\dots\right), \\
+& \int_{0}^{1} x^{a-1}(1-x)^{c-1}\left(l \frac{1}{x}\right)^{3} d x \\
+= & 2.3\left(\frac{1}{a^{4}}-\frac{c-1}{1} . \frac{1}{(a+1)^{4}}+\frac{(c-1)(c-2)}{1.2} . \frac{1}{(a+2)^{4}}-\frac{(c-1)(c-2)(c-3)}{1.2 .3} . \frac{1}{(a+3)^{4}}+\dots\right),
+\end{aligned}\]
+et en général
+\[\begin{aligned}
+& \int_{0}^{1} x^{a-1}(1-x)^{c-1}\left(l \frac{1}{x}\right)^{\alpha-1} d x \\
+= & \Gamma \alpha\left(\frac{1}{a^{\alpha}}-\frac{c-1}{1} . \frac{1}{(a+1)^{\alpha}}+\frac{(c-1)(c-2)}{1.2} . \frac{1}{(a+2)^{\alpha}}-\frac{(c-1)(c-2)(c-3)}{1 . 2 . 3} . \frac{1}{(a+3)^{\alpha}}+\dots\right) .
+\end{aligned}\]
+Or la fonction \(\int_{0}^{1} x^{a-1}(1-x)^{c-1}\left(l \frac{1}{x}\right)^{\alpha-1} d x\) est exprimable par les fonctions \(\Gamma\), \(L\), \(L^{\prime}\), \(L^{\prime \prime}\),\(\dots L^{(\alpha-1)}\), donc la somme de la série infinie
+\[\frac{1}{a^{\alpha}}-\frac{c-1}{1} . \frac{1}{(a+1)^{\alpha}}+\frac{(c-1)(c-2)}{1.2} . \frac{1}{(a+2)^{\alpha}}-\dots\]
+est exprimable par ces mêmes fonctions.
+
+Il y a encore d'autres intégrales qui peuvent s'exprimer par les mêmes fonctions. En effet, soit
+\[\int_{0}^{1} x^{a-1}(1-x)^{c-1}\left(l \frac{1}{x}\right)^{\alpha-1} d x=\varphi(a, c),\]
+on obtiendra par des différentiations successives par rapport à \(c\),
+\[\begin{aligned}
+& \int_{0}^{1} x^{a-1}(1-x)^{c-1} l(1-x)\left(l \frac{1}{x}\right)^{\alpha-1} d x=\varphi^{\prime} c, \\
+& \int_{0}^{1} x^{a-1}(1-x)^{c-1}[l(1-x)]^{2}\left(l \frac{1}{x}\right)^{\alpha-1} d x=\varphi^{\prime \prime} c, \\
+& \int_{0}^{1} x^{a-1}(1-x)^{c-1}[l(1-x)]^{3}\left(l \frac{1}{x}\right)^{\alpha-1} d x=\varphi^{\prime \prime \prime} c,
+\end{aligned}\]
+et en général
+\[\int_{0}^{1} x^{a-1}(1-x)^{c-1}[l(1-x)]^{\beta-1}\left(l \frac{1}{x}\right)^{\alpha-1} d x=\varphi^{(\beta-1)} c .\]
+Or on a \(\varphi(a, c)=(-1)^{\alpha-1} \frac{d^{\alpha-1} \frac{\Gamma a}{\Gamma(a+c)}}{d a^{\alpha-1}}\), donc en substituant cette valeur, on obtiendra l'expression générale suivante,
+\[\int_{0}^{1} x^{a-1}(1-x)^{c-1}[l(1-x)]^{n}(l x)^{m} d x=\frac{d^{m+n} \frac{\Gamma a . \Gamma c}{\Gamma(a+c)}}{d a^{m} . d c^{n}},\]
+et cette fonction est, comme nous venons de le voir, exprimable par les fonctions \(\Gamma\), \(L\), \(L^{\prime}\), \(L^{\prime \prime}\), \(\dots L^{(n-1)} \dots L^{(m-1)}\).
+\begin{center} \rule{2in}{0.1pt} \end{center}
+
+On sait que
+\[\tag{A} \int_{0}^{1}\left(l \frac{1}{x}\right)^{\alpha-1} d x=\Gamma \alpha.\]
+En différentiant par rapport à \( \alpha\) on aura
+\[\int_{0}^{1}\left(l \frac{1}{x}\right)^{\alpha-1} l l\left(\frac{1}{x}\right) d x=\frac{d \Gamma \alpha}{d \alpha}=\frac{\frac{d \Gamma \alpha}{\Gamma \alpha} \Gamma \alpha}{d \alpha}=\Gamma \alpha . \frac{d l \Gamma \alpha}{d \alpha},\]
+or \(\frac{d l \Gamma \alpha}{d \alpha}=L \alpha-C\), donc
+\[\int_{0}^{1}\left(l \frac{1}{x}\right)^{\alpha-1} l l\left(\frac{1}{x}\right) d x=\Gamma \alpha \cdot(L \alpha-C);\]
+en différentiant encore, on aura
+\[\int_{0}^{1}\left(l \frac{1}{x}\right)^{\alpha-1}\left(l l \frac{1}{x}\right)^{2} d x=\Gamma \alpha\left[(L \alpha-C)^{2}-L^{\prime} \alpha \right].\]
+
+Une expression générale pour la fonction
+\[\int_{0}^{1}\left(l \frac{1}{x}\right)^{\alpha-1}\left(l l \frac{1}{x}\right)^{n} d x\]
+peut se trouver aisément comme il suit. En différentiant l'équation (A) \(n\) fois de suite, on aura:
+\[\int_{0}^{1}\left(l \frac{1}{x}\right)^{\alpha-1}\left(l l \frac{1}{x}\right)^{n} d x=\frac{d^{n} \Gamma \alpha}{d \alpha^{n}}.\]
+or \(\frac{d l \Gamma \alpha}{d \alpha}=L \alpha-C\), donc
+\[l \Gamma \alpha=\int(L \alpha-C) d \alpha \text { et } \Gamma \alpha=e^{\int[L \alpha-C] d \alpha},\]
+donc
+\[\int_{0}^{1}\left(l \frac{1}{x}\right)^{\alpha-1}\left(l l \frac{1}{x}\right)^{n} d x=\frac{d^{n} e^{\int(L \alpha-C) d \alpha}}{d \alpha^{n}},\]
+fonction qui est exprimable par les fonctions \(\Gamma\), \(L\), \(L^{\prime}\), \(L^{\prime \prime} \dots L^{n-1}\).
+
+Si l'on met \(e^{y}\) à la place de \(x\), on a \(l \frac{1}{x}=-y\), \(l l \frac{1}{x}=l(-y)\), \(d x=e^{y} d y\); donc\[
+\int_{-\infty}^{0}(-y)^{\alpha-1}[l(-y)]^{n} e^{y} d y=\frac{d^{n} e^{\int(L \alpha-C) d \alpha}}{d \alpha^{n}},\]
+ou en changeant \(y\) en \(-y\)
+\[\int_{\infty}^{0} y^{\alpha-1}(l y)^{n} e^{-y} d y=-\frac{d^{n} e^{\int(L \alpha - C) d \alpha}}{d \alpha^{n}},\]
+Faisant \(y=z^{\frac{1}{\alpha}}\), on a \(y^{\alpha-1} d y=\frac{1}{\alpha} d(y)^{\alpha}=\frac{1}{\alpha} d z\), \(l y=\frac{1}{\alpha} l z\), \(e^{-y}=e^{-\left(z^\frac{1}{\alpha}\right)}\), et par suite
+\[\int_{0}^{\infty}(l z)^{n} e^{-\left(z^{\frac{1}\alpha}}\right)} d z=\alpha^{n+1} \frac{d^{n} e^{\int (L \alpha-C) d \alpha}}{d \alpha^{n}}.
+\]
+
+Si l'on met \(\alpha\) au lieu de \(\frac{1}{\alpha}\), on aura en posant \(n=0\),
+\[\int_{0}^{\infty} e^{-x^{\alpha}} . d x=\frac{1}{\alpha} \Gamma\left(\frac{1}{\alpha}\right);\]
+en posant \(n=1\),
+\[\int_{0}^{\infty} l\left(\frac{1}{x}\right) e^{-x^{\alpha}} d x=-\frac{1}{\alpha^{2}} \Gamma\left(\frac{1}{\alpha}\right)\left[L\left(\frac{1}{\alpha}\right)-C\right].\]
+Si par exemple \(\alpha=2\), on aura
+\[\int_{0}^{\infty} e^{-x^{2}} d x=\frac{1}{2} \Gamma\left(\frac{1}{2}\right)=\frac{1}{2} \sqrt{\pi} \text { et } \int_{0}^{\infty} l\left(\frac{1}{x}\right) e^{-x^{2}} d x=\frac{1}{4} \sqrt{\pi}(C+2 \log 2),\]
+en remarquant que \(L\left(\frac{1}{2}\right)=-2 \log 2\). Il faut se rappeler que la constante \(C\) est égale à \(0,57721566 \dots\)
+
+Si dans l'équation (A) on pose \(x=y^{n}\), on trouvera
+\[\begin{aligned}
+& \int_{0}^{1} y^{n-1}\left(l \frac{1}{y}\right)^{\alpha-1} d y=\frac{\Gamma \alpha}{n^{\alpha}}, \text { lorsque } n \text { est positif, } \\
+& \int_{\infty}^{1} y^{n-1}\left(l \frac{1}{y}\right)^{\alpha-1} d y=\frac{\Gamma \alpha}{n^{\alpha}}, \text { lorsque } n \text { est négatif. }
+\end{aligned}\]
+En différentiant cette équation par rapport à \(\alpha\), on aura, lorsque \(n\) est positif,
+\[\int_{0}^{1} y^{n-1}\left(l \frac{1}{y}\right)^{\alpha-1} l l\left(\frac{1}{y}\right) d y=\frac{\Gamma \alpha}{n^{\alpha}}(L \alpha-C-\log n).\]
+Soit, \(y=e^{-x}\), on trouvera
+\[\int_{0}^{\infty} e^{-n x} x^{\alpha-1} l x . d x=\frac{\Gamma \alpha}{n^{\alpha}}(L \alpha-C-\log n),\]
+résultat qu'on peut aussi déduire aisément de l'équation
+\[\int_{0}^{\infty} e^{-x^{\alpha}} l \left(\frac{1}{x}\right) d x=-\frac{1}{\alpha^{2}} \Gamma\left(\frac{1}{\alpha}\right)\left[L\left(\frac{1}{\alpha}\right)-C\right].\]
+\begin{center} \rule{2in}{0.1pt} \end{center}
+\end{document}
