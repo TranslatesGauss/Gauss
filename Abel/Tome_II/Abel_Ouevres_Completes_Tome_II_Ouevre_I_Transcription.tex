@@ -1,0 +1,154 @@
+\documentclass[oneside, 12 pt, leqno]{memoir}
+\usepackage{standalone}
+\usepackage[dvips,text={6in,7.5in},left=1truein,top=1.5truein]{geometry}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{microtype}
+\usepackage{indentfirst}
+\usepackage[utf8]{inputenc}
+\usepackage{exscale}
+\usepackage{mlmodern}
+\usepackage[OT1]{fontenc}
+\usepackage[bottomfloats]{footmisc}
+\parindent=2.27em
+\parskip=0pt
+\nonfrenchspacing
+\renewcommand{\baselinestretch}{1.15}
+\DeclareMathSizes{12}{12}{8}{6}
+\everymath{\displaystyle}
+\allowdisplaybreaks
+\raggedbottom
+\titleformat{\section}
+  {\normalfont\centering}{\thesection.}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\spaceskip=0.67em plus 0.33em minus 0.2em
+\thickmuskip=4mu plus 4mu
+\medmuskip=3mu plus 1.5mu minus 3mu
+\AtBeginDocument{%
+  \mathchardef\stdcomma=\mathcode`,
+  \mathcode`,="8000
+}
+\begingroup\lccode`~=`, \lowercase{\endgroup\def~}{\stdcomma\mspace{\medmuskip}}
+\let\oldfrac\frac
+\def\frac#1#2{\mathchoice{\text{\scalebox{.83}{${\oldfrac{#1}{#2}}$}}}{\text{\scalebox{.83}{${\displaystyle\oldfrac{#1}{#2}}$}}}{\genfrac{}{}{}{2}{#1}{#2}}{\genfrac{}{}{}{3}{#1}{#2}}}
+\begin{document}
+\setlength{\abovedisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+\setlength{\belowdisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+
+\; \\[4\baselineskip]
+\section*{\begin{Large}I.\end{Large}\\
+LES FONCTIONS TRANSCENDANTES \(\Sigma \frac{1}{a^{2}}, \Sigma \frac{1}{a^{3}}, \Sigma \frac{1}{a^{4}}, \dots \Sigma \frac{1}{a^{n}}\) 
+EXPRIMÉES PAR DES INTÉGRALES DÉFINIES.\\
+\rule{2in}{0.1pt}}
+
+Si l'on différentie plusieurs fois de suite la fonction \(\Sigma \frac{1}{a}\), on aura
+\[\begin{aligned}
+& \frac{d \Sigma \frac{1}{a}}{d a}=\frac{\Sigma d \frac{1}{a}}{d a}=-\Sigma \frac{1}{a^{2}}, \\
+& \frac{d^{2} \Sigma \frac{1}{a}}{d a^{2}}=\frac{\Sigma d^{2}\left(\frac{1}{a}\right)}{d a^{2}}=+2 \Sigma \frac{1}{a^{3}}, \\
+& \frac{d^{3} \Sigma \frac{1}{a}}{d a^{3}}=\frac{\Sigma d^{3}\left(\frac{1}{a}\right)}{d a^{3}}=-2.3 \Sigma \frac{1}{a^{4}}, \\
+& \frac{d^{n} \Sigma \frac{1}{a}}{d a^{n}}=\frac{\Sigma d^{n}\left(\frac{1}{a}\right)}{d a^{n}}= \pm 2 . 3 .4 \dots n . \Sigma \frac{1}{a^{n+1}},
+\end{aligned}\]
+où le signe \(+\) a lieu, lorsque \(n\) est pair, et le signe \(-\), lorsque \(n\) est impair.
+
+On en conclut réciproquement
+\[\Sigma \frac{1}{a^{2}}=-\frac{d \Sigma \frac{1}{a}}{d a}, \quad \Sigma \frac{1}{a^{3}}=+\frac{d^{2} \Sigma \frac{1}{a}}{2 . d a^{2}}, \quad \Sigma \frac{1}{a^{4}}=-\frac{d^{3} \Sigma \frac{1}{a}}{2 . 3 . d a^{3}}+\text { etc., }\]
+\[\Sigma \frac{1}{a^{n}}= \pm \frac{d^{n-1} \Sigma \frac{1}{a}}{1.2 .3 \dots(n-1) d a^{n-1}}= \pm \frac{d^{n-1} L(a)}{2.3 \dots(n-1) d a^{n-1}}.\]
+Or on a \(\Sigma \frac{1}{a}=L(a)=\int_{0}^{1} \frac{x^{a-1}-1}{x-1} d x\). On en tire, en différentiant par rapport à \(a\),
+\[\begin{aligned}
+\frac{d \Sigma \frac{1}{a}}{d a}&=\int_{0}^{1} \frac{x^{a-1}(l x)}{x-1} d x, \\
+\frac{d^{2} \Sigma \frac{1}{a}}{d a^{2}}&=\int_{0}^{1} \frac{x^{a-1}(l x)^{2}}{x-1} d x, \\
+\frac{d^{3} \Sigma \frac{1}{a}}{d a^{3}}&=\int_{0}^{1} \frac{x^{a-1}(l x)^{3}}{x-1} d x, \\
+\dots &\dots \dots  \dots  \dots \dots \\
+\frac{d^{n-1} \Sigma \frac{1}{a}}{d a^{n-1}}&=\int_{0}^{1} \frac{x^{a-1}(l x)^{n-1}}{x-1} d x .
+\end{aligned}
+\]
+En substituant ces valeurs, on aura
+\[\begin{aligned}
+\Sigma \frac{1}{a^{2}}&=-\int_{0}^{1} \frac{x^{a-1} l x}{x-1} d x,\\
+\Sigma \frac{1}{a^{3}}&=\frac{1}{2} \int_{0}^{1} \frac{x^{a-1}(l x)^{2}}{x-1} d x, \\
+\Sigma \frac{1}{a^{4}}&=-\frac{1}{2 . 3} \int_{0}^{1} \frac{x^{a-1}(l x)^{3}}{x-1} d x, \\
+\dots & \dots \dots \dots \dots \dots \dots \dots . \dots . \dots \\
+\Sigma \frac{1}{a^{2 n}}&=-\frac{1}{2 . 3 .4 \dots(2 n-1)} \int_{0}^{1} \frac{x^{a-1}(l x)^{2 n-1}}{x-1} d x, \\
+\Sigma \frac{1}{a^{2 n+1}}&=+\frac{1}{2 . 3 . 4 \dots 2 n} \int_{0}^{1} \frac{x^{a-1}(l x)^{2 n}}{x-1} d x .
+\end{aligned}\]
+En général, quel que soit \(\alpha\), on aura
+\[\Sigma \frac{1}{a^{\alpha}}=\frac{1}{\Gamma(\alpha)} \int_{0}^{1} \frac{x^{a-1}\left(l \frac{1}{x}\right)^{\alpha-1}}{x-1} d x.\]
+
+Désignons \(\Sigma \frac{1}{a^{\alpha}}\) par \(L(a, \alpha)\), nous aurons
+\[\tag{1} L(a, \alpha)=\frac{1}{\Gamma(\alpha)} \int_{0}^{1} \frac{x^{a-1}\left(l \frac{1}{x}\right)^{\alpha-1}}{x-1} d x+C.\]
+En développant \(\frac{x^{a-1}}{x-1}\) en série infinie, il viendra
+\[L(a, \alpha)=\frac{1}{\Gamma(\alpha)}\left[\int_{0}^{1} x^{a-2}\left(l \frac{1}{x}\right)^{\alpha-1} d x+\int_{0}^{1}x^{\alpha-3}\left(l \frac{1}{x}\right)^{\alpha-1} d x +\int_{0}^{1} x^{a-4}\left(l \frac{1}{x}\right)^{\alpha-1} d x+\dots\right];\]
+or \(\int_{0}^{1} x^{a-k-1}\left(l \frac{1}{x}\right)^{\alpha-1} d x=\frac{\Gamma(\alpha)}{(a-k)^{\alpha}}\), par conséquent
+\[L(a, \alpha)=\frac{1}{(a-1)^{\alpha}}+\frac{1}{(a-2)^{\alpha}}+\frac{1}{(a-3)^{\alpha}}+\dots+C,\]
+où \(C\) est une constante indépendante de \(a\). Pour la trouver, faisons dans (1) \(a=1\), ce qui donne \(L(1, \alpha)=0\) et \(x^{a-1}=x^{0}=1\); par conséquent
+\[C=-\frac{1}{\Gamma(\alpha)} \int_{0}^{1} \frac{\left(l \frac{1}{x}\right)^{\alpha-1}}{x-1} d x.\]
+On tire de là
+\[L(a, \alpha)=\frac{1}{\Gamma(\alpha)} \int_{0}^{1} \frac{x^{a-1}-1}{x-1}\left(l \frac{1}{x}\right)^{\alpha-1} d x,\]
+où \(\alpha\) peut être positif, négatif où zéro. On a
+\[x^{a-1}=\left(\frac{1}{x}\right)^{-a+1}=1-(a-1)\left(l \frac{1}{x}\right)+\frac{(a-1)^{2}}{2} \cdot\left(l \frac{1}{x}\right)^{2}-\frac{(a-1)^{3}}{2.3}\left(l \frac{1}{x}\right)^{3}+\text{ etc.}\]
+
+Substituant cette valeur, on aura
+\[L(a, \alpha)= \frac{1}{\Gamma(\alpha)}\left\{(a-1) \int_{0}^{1}\frac{\left(l \frac{1}{x}\right)^{\alpha}}{1-x} d x-\frac{(a-1)^{2}}{2} \int_{0}^{1} \frac{\left(l \frac{1}{x}\right)^{\alpha+1}}{1-x} d x+\frac{(a-1)^{3}}{2.3} \int_{0}^{1} \frac{\left(l \frac{1}{x}\right)^{\alpha+2}}{1-x} d x-\dots\right\}. \]
+Considérons l'expression \(\int_{0}^{1} \frac{\left(l \frac{1}{x}\right)^{k}}{1-x} d x\). En développant \(\frac{1}{1-x}\), on aura
+\[\int \frac{\left(l \frac{1}{x}\right)^{k}}{1-x} d x=\int\left(l \frac{1}{x}\right)^{k} d x+\int x\left(l \frac{1}{x}\right)^{k} d x+\int x^{2}\left(l \frac{1}{x}\right)^{k} d x+\dots;\]
+or \(\int_{0}^{1} x^{n}\left(l \frac{1}{x}\right)^{k} d x=\frac{\Gamma(k+1)}{(n+1)^{k+1}}\), donc
+\[\int_{0}^{1} \frac{\left(l \frac{1}{x}\right)^{k}}{1-x} d x=\Gamma(k+1)\left(1+\frac{1}{2^{k+1}}+\frac{1}{3^{k+1}}+\frac{1}{4^{k+1}}+\dots\right),\]
+donc enfin
+\[\begin{aligned}
+ L(a, \alpha)&=\frac{(a-1) . \Gamma(\alpha+1)}{\Gamma(\alpha)}\left(1+\frac{1}{2^{\alpha+1}}+\frac{1}{3^{\alpha+1}}+\frac{1}{4^{\alpha+1}}+\dots\right) \\
+& -\frac{(a-1)^{2} . \Gamma(\alpha+2)}{2 .  \Gamma(\alpha)}\left(1+\frac{1}{2^{\alpha+2}}+\frac{1}{3^{\alpha+2}}+\frac{1}{4^{\alpha+2}}+\dots\right) \\
+& +\frac{(a-1)^{3} . \Gamma(\alpha+3)}{2 . 3 . \Gamma(\alpha)}\left(1+\frac{1}{2^{\alpha+3}}+\frac{1}{3^{\alpha+3}}+\frac{1}{4^{\alpha+3}}+\dots\right)\\
+&\dots \dots \dots \dots \dots \dots \dots \dots \dots \dots \dots \dots 
+\end{aligned}\]
+or on a \(\Gamma(\alpha+1)=\alpha \Gamma(\alpha)\), \(\Gamma(\alpha+2)=\alpha(\alpha+1) \Gamma(\alpha)\) et en général \( \Gamma(\alpha+k)=\alpha(\alpha+1)(\alpha+2) \dots(\alpha+k-1)  \Gamma(\alpha)\). Substituant ces valeurs, on obtient
+\[\begin{aligned}
+L(a, \alpha) & =\frac{a-1}{1} \alpha\left(1+\frac{1}{2^{\alpha+1}}+\frac{1}{3^{\alpha+1}}+\frac{1}{4^{\alpha+1}}+\dots\right) \\
+& -\frac{(a-1)^{2}}{1.2} \alpha(\alpha+1)\left(1+\frac{1}{2^{\alpha+2}}+\frac{1}{3^{\alpha+2}}+\frac{1}{4^{\alpha+2}}+\dots\right) \\
+& +\frac{(a-1)^{3}}{1.2 .3} \alpha(\alpha+1)(\alpha+2)\left(1+\frac{1}{2^{\alpha+3}}+\frac{1}{3^{\alpha+3}}+\frac{1}{4^{\alpha+3}}+\dots\right)\\
+&\dots \dots \dots \dots \dots \dots \dots \dots \dots \dots \dots \dots 
+\end{aligned}\]
+
+Si l'on pose \(a\) infini, on aura
+\[L(\infty, \alpha)=1+\frac{1}{2^{\alpha}}+\frac{1}{3^{\alpha}}+\frac{1}{4^{\alpha}}+\dots,\]
+donc en désignant \(L(\infty, \alpha)\) par \(L^{\prime}(\alpha)\)
+\[L(a, \alpha)=\alpha .(a-1) L^{\prime}(\alpha+1)-\frac{\alpha(\alpha+1)}{2}(a-1)^{2} L^{\prime}(\alpha+2)+\frac{\alpha(\alpha+1)(\alpha+2)}{2.3}(a-1)^{3} L^{\prime}(\alpha+3)-\dots.\]
+
+Si dans la formule (1) on met \(\frac{m}{a}\) au lieu de \(a\), on aura
+\[L\left(\frac{m}{a}, \alpha\right)=\frac{1}{\Gamma(\alpha)} \int_{0}^{1} \frac{\left(x^{\frac{m}{a}-1}-1\right)\left(l \frac{1}{x}\right)^{\alpha-1}}{x-1} d x.\]
+Faisant \(x^{\frac{1}{a}}=y, x\) devient \(=y^{a}\), \(d x=a y^{a-1}\), \(\left(l \frac{1}{x}\right)^{\alpha-1}=a^{\alpha-1}\left(l \frac{1}{y}\right)^{\alpha-1}\) et par suite
+\[L\left(\frac{m}{a}, \alpha\right)=\frac{a^{\alpha}}{\Gamma(\alpha)} \int_{0}^{1} \frac{\left(y^{m-a}-1\right)\left(l \frac{1}{y}\right)^{\alpha-1} y^{a-1}}{y^{a}-1} d y=\frac{a^{\alpha}}{\Gamma(\alpha)} \int_{0}^{1} \frac{y^{m-1}-y^{a-1}}{y^{a}-1}\left(l \frac{1}{y}\right)^{\alpha-1} d y.\]
+On tire de là
+\[ L\left(\frac{m}{a}, \alpha\right)=-\frac{1}{\Gamma(\alpha)} \int_{0}^{1} \frac{\left(l \frac{1}{y}\right)^{\alpha-1}}{y-1} d y+\frac{a^{\alpha}}{\Gamma(\alpha)} \int_{0}^{1} \frac{y^{m-1}\left(l \frac{1}{y}\right)^{\alpha-1}}{y^{a}-1} d y.\]
+
+Si maintenant \(m-1<a\), ce qu'on peut supposer, la fraction \(\frac{y^{m-1}}{y^{a}-1}\) est résoluble en fractions partielles de la forme \(\frac{A}{1-c y}\). On aura donc
+\[L\left(\frac{m}{a}, \alpha\right)=\left\{A \int_{0}^{1} \frac{\left(l \frac{1}{y}\right)^{\alpha-1}}{1-c y} d y+A^{\prime} \int_{0}^{1} \frac{\left(l \frac{1}{y}\right)^{\alpha-1}}{1-c^{\prime} y} d y+\dots\right\} \frac{a^{\alpha}}{\Gamma(\alpha)}.\]
+
+Si l'on développe \(\frac{1}{1-c y}\) en série, on voit que
+\[\int \frac{\left(l \frac{1}{y}\right)^{\alpha-1}}{1-c y} d y=\int\left(l \frac{1}{y}\right)^{\alpha-1} d y+c \int y\left(l \frac{1}{y}\right)^{\alpha-1} d y+c^{2} \int y^{2}\left(l \frac{1}{y}\right)^{\alpha-1} d y+\dots\]
+or \(\int_{0}^{1}\left(l \frac{1}{y}\right)^{\alpha-1} y^{k} d y=\frac{\Gamma(\alpha)}{(k+1)^{\alpha}}\), donc
+\[\int_{0}^{1} \frac{\left(l \frac{1}{y}\right)^{\alpha-1}}{1-c y} d y=\Gamma(\alpha)\left(1+\frac{c}{2^{\alpha}}+\frac{c^{2}}{3^{\alpha}}+\frac{c^{3}}{4^{\alpha}}+\dots\right),\]
+donc en désignant \(1+\frac{c}{2^{\alpha}}+\frac{c^{2}}{3^{\alpha}}+\frac{c^{3}}{4^{\alpha}}+\dots\) par \(L^{\prime}(\alpha, c)\), on aura
+\[\int_{0}^{1} \frac{\left(l \frac{1}{y}\right)^{\alpha-1}}{1-c y} . d y=\Gamma(\alpha) . L^{\prime}(\alpha, c);\]
+on obtiendra donc enfin:
+\[L\left(\frac{m}{a}, \alpha\right)=a^{\alpha}\left[A . L^{\prime}(\alpha, c)+A^{\prime} . L^{\prime}\left(\alpha, c^{\prime}\right)+A^{\prime \prime} . L^{\prime}\left(\alpha, c^{\prime \prime}\right)+\text{ etc. }\right].\]
+
+La fonction \(L\left(\frac{m}{a}, \alpha\right)\) peut donc, lorsque \(m\) et \(a\) sont des nombres entiers, être exprimée sous forme finie à l'aide des fonctions \(\Gamma(\alpha)\) et \(L^{\prime}(\alpha, c)\). Soit par exemple \(m=1\), \(a=2\), on aura
+\[L\left(\frac{1}{2}, \alpha\right)=\frac{2^{\alpha}}{\Gamma(\alpha)} \int_{0}^{1} \frac{1-y}{y^{2}-1}\left(l \frac{1}{y}\right)^{\alpha-1} d y=-\frac{2^{\alpha}}{\Gamma(\alpha)} \int_{0}^{1} \frac{\left(l \frac{1}{y}\right)^{\alpha-1}}{1+y} d y.\]
+On a par conséquent \(A=-1\) et \(c=-1\), donc
+\[L\left(\frac{1}{2}, \alpha\right)=-2^{\alpha} . L^{\prime}(\alpha,-1)=-2^{\alpha}\left(1-\frac{1}{2^{\alpha}}+\frac{1}{3^{\alpha}}-\frac{1}{4^{\alpha}}+\dots\right).
+\]
+
+Lorsque \(\alpha\) est un nombre entier, on sait que la somme de cette série peut s'exprimer par le nombre \(\pi\) ou par le logarithme de 2. Soit \(\alpha=1\), on a \(1-\frac{1}{2}+\frac{1}{3}-\frac{1}{4}+\dots=\log 2\), donc \(L\left(\frac{1}{2}, 1\right)=L\left(\frac{1}{2}\right)=-2 \log 2\).
+
+En posant \(\alpha=2\), on a \(1-\frac{1}{2^{2}}+\frac{1}{3^{2}}-\frac{1}{4^{2}}+\dots=\frac{\pi^{2}}{12}\), donc
+\[L\left(\frac{1}{2}, 2\right)=-\frac{\pi^{2}}{3}.\]
+
+On peut en général exprimer \(L\left(\frac{1}{2}, 2 n\right)\) par \(-M \pi^{2 n}\), où \(M\) est un nombre rationnel.
+\begin{center} \rule{2in}{0.1pt} \end{center}
+\end{document}
