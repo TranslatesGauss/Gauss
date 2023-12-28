@@ -1,0 +1,281 @@
+\documentclass[oneside, 12 pt, leqno]{memoir}
+\usepackage{standalone}
+\usepackage[dvips,text={6.2in,8.5in},left=0.9truein,top=1.5truein]{geometry}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{microtype}
+\usepackage{indentfirst}
+\usepackage[utf8]{inputenc}
+\usepackage{exscale}
+\usepackage{mlmodern}
+\usepackage[OT1]{fontenc}
+\usepackage[bottomfloats]{footmisc}
+\parindent=2.27em
+\parskip=0pt
+\nonfrenchspacing
+\renewcommand{\baselinestretch}{1.15}
+\DeclareMathSizes{12}{12}{8}{6}
+\everymath{\displaystyle}
+\allowdisplaybreaks
+\raggedbottom
+\titleformat{\section}
+  {\normalfont\centering}{\thesection.}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\spaceskip=0.67em plus 0.33em minus 0.33em
+\thickmuskip=4mu plus 4mu
+\medmuskip=3mu plus 1.5mu minus 3mu
+\AtBeginDocument{%
+  \mathchardef\stdcomma=\mathcode`,
+  \mathcode`,="8000
+}
+\begingroup\lccode`~=`, \lowercase{\endgroup\def~}{\stdcomma\mspace{\medmuskip}}
+\let\oldfrac\frac
+\def\frac#1#2{\mathchoice{\text{\scalebox{.83}{${\oldfrac{#1}{#2}}$}}}{\text{\scalebox{.83}{${\displaystyle\oldfrac{#1}{#2}}$}}}{\genfrac{}{}{}{2}{#1}{#2}}{\genfrac{}{}{}{3}{#1}{#2}}}
+\begin{document}
+\setlength{\abovedisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+\setlength{\belowdisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+
+\section*{\begin{Large}I.\end{Large} \\ [\baselineskip]
+MÉTHODE GÉNÉRALE POUR TROUVER DES FONCTIONS I'UNE SEULE QUANTITÉ VARIABLE, LORSQU'UNE PROPRIÉTÉ DE CES FONCTIONS EST EXPRIMÉE PAR UNE ÉQUATION ENTRE DEUX VARIABLES.}
+\begin{center}
+\rule{2in}{0.1pt}\\ [0.5\baselineskip]
+\begin{scriptsize} Magazin for Naturvidenskaberne, Aargang I, Bind 1, Christiania 1823. \par\end{scriptsize}
+\rule{2in}{0.1pt}
+\end{center}
+
+Soient \(x\) et \(y\) deux quantités variables indépendantes, \(\alpha\), \(\beta\), \(\gamma\), \(\delta\) etc. des fonctions données de \(x\) et \(y\), et \(\varphi\), \(f\), \(F\) etc. des fonctions cherchées entre lesquelles une relation est exprimée par une équation \(V=0\), contenant d'une manière quelconque les quantités \(x\), \(y\), \(\varphi \alpha\), \(f \beta\), \(F\gamma\) etc. et leurs différentielles. On pourra, en général, à l'aide de cette seule équation, trouver toutes les fonctions inconnues dans les cas où le problème est possible.
+
+Pour trouver l'une des fonctions, il est clair qu'on doit chercher une équation où cette fonction soit la seule inconnue et par conséquent chasser toutes les autres. Cherchons donc d'abord à chasser une fonction inconnue par exemple \(\varphi \alpha\) et ses différentielles. Les quantités \(x\) et \(y\) étant indépendantes, on peut regarder l'une d'elles, ou une fonction donnée des deux, comme constante. On peut donc différentier l'équation \(V=0\) par rapport à l'une des variables \(x\), en considérant \(\alpha\) comme constant, et dans ce cas l'autre variable \(y\) doit être considérée comme fonction de \(x\) et de \(a\). Or en différentiant l'équation \(V=0\) plusieurs fois de suite, en supposant \(\alpha\) constant, il ne se trouvera pas dans les équations résultantes, d'autres fonctions de \(\alpha\) que celles qui sont comprises dans l'équation \(V=0\), savoir \(\varphi \alpha\) et ses différentielles. Donc si la fonction \(V\) contient 
+\[\varphi \alpha, d \varphi \alpha, d^2 \varphi \alpha, \ldots d^n \varphi \alpha,\]\clearpage\noindent% 2
+on obtiendra, en différentiant l'équation \(V=0\) \(n+1\) fois de suite dans la supposition de \(\alpha\) constant, les \(n+2\) équations suivantes:
+\[V=0, d V=0, d^2 V=0, \ldots d^{n+1} V=0.\]
+Éliminant de ces \(n+2\) équations les \(n+1\) quantités inconnues
+\[\varphi \alpha, d \varphi \alpha, d^{2} \varphi \alpha \text{ etc.,}\]
+il en résultera une équation \(V_1=0\) qui ne contiendra ni la fonction \(\varphi \alpha\) ni ses différentielles, mais seulement les fonctions \(f \beta\), \(F \gamma\), etc. et leurs différentielles.
+
+Cette équation \(V_{1}=0\) pourra maintenant être traitée de la même manière, par rapport à l'une des autres fonctions inconnues \(f \beta\), et l'on obtiendra une équation \(V_2=0\) qui ne contiendra ni \(\varphi \alpha\) ou ses différentielles, ni \(f \beta\) ou ses différentielles, mais seulement \(F \gamma\) etc. et les différentielles de ces fonctions.
+
+De cette manière, on peut continuer l'élimination des fonctions inconnues, jusqu'à ce qu'on soit parvenu à une équation qui ne contienne qu'une seule fonction inconnue avec ses différentielles, et en regardant maintenant l'une des quantités variables comme constante, on a, entre la fonction inconnue et l'autre variable, une équation différentielle d'où l'on pourra tirer cette fonction par intégration.
+
+On peut remarquer, qu'il suffit d'éliminer jusqu'à ce qu'on ait obtenu une équation qui ne contienne que deux fonctions inconnues et leurs différentielles; car, si par exemple ces fonctions sont \(\varphi \alpha\) et \(f \beta\), on pourra, en supposant \(\beta\) constant, exprimer \(x\) et \(y\) en fonction de \(\alpha\) à l'aide des deux équations \(\alpha=\alpha\) et \(\beta=c\), et arriver de cette manière à une équation différentielle entre \(\varphi \alpha\) et \(\alpha\), d'où l'on pourra par conséquent déduire \(\varphi \alpha\). De la même manière, on trouvera une équation entre \(f \beta\) et \(\beta\) en déterminant \(x\) et \(y\) par les équations \(\alpha=c\) et \(\beta=\beta\). Ces fonctions étant ainsi trouvées, on trouvera aisément les autres fonctions à l'aide des équations qui restent.
+
+De cette manière, on pourra donc en général trouver toutes les fonctions inconnues, toutes les fois que le problème sera possible. Pour s'en rendre compte il faut substituer les valeurs trouvées dans l'équation donnée, et voir si elle est satisfaite.
+
+Ce qui précède dépend, comme nous venons de le voir, de la différentiation d'une fonction de \(x\) et \(y\) par rapport à \(x\), en supposant constante une fonction donnée de \(x\) et \(y\); \(y\) est donc fonction de \(x\) et dans les différentielles \clearpage\noindent% 3
+se trouvent les expressions \(\frac{d y}{d x}\), \(\frac{d^2 y}{d x^2}\), \(\frac{d^3 y}{d x^3}\), etc. Ces expressions se trouvent aisément en différentiant l'équation \(\alpha=c\) par rapport à \(x\), et en supposant \(y\) fonction de \(x\). En effet, on obtiendra les équations suivantes:
+\[\begin{gathered} 
+\frac{d \alpha}{d x} + \frac{d \alpha}{d y} \frac{d y}{d x} = 0,\\
+\frac{d^2 \alpha}{d x^2} + 2 \frac{d^2 \alpha}{d x d y} \frac{d y}{d x} + \frac{d^2 \alpha}{d y^2} \frac{d y^2}{d x^2} + \frac{d \alpha}{d y} \frac{d^2 y}{d x^2} = 0 \text { etc.,}
+\end{gathered}\] 
+d'où l'on tire
+\[\begin{gathered}
+\frac{d y}{d x} =  -\frac{\frac{d \alpha}{d x}}{\frac{d \alpha}{d y}},\\
+\frac{d^2 y}{d x^2} = - \frac{\frac{d^2 \alpha}{d x^2}}{\frac{d \alpha}{d y}} + 2 \frac{\frac{d^2 \alpha}{d x d y} \frac{d \alpha}{d x}}{\left(\frac{d \alpha}{d y}\right)^2} - \frac{\frac{d^2 \alpha}{d y^2}\left(\frac{d \alpha}{d x}\right)^2}{\left(\frac{d \alpha}{d y}\right)^3} \text { etc.}
+\end{gathered}\]
+
+La méthode générale de résoudre l'équation \(V=0\) est applicable dans tous les cas où l'élimination peut s'effectuer, mais il peut arriver que cela ne soit pas possible, et alors il faut avoir recours an calcul des différences; mais pour n'être pas trop long, je passerai ce cas sous silence, d'autant plus qu'on peut voir dans le traité du calcul différentiel et du calcul intégral de M. Lacroix t. III, p. 208, comment on doit s'y prendre.\\
+
+Nous allons appliquer la théorie générale à quelques exemples.\\
+1. Trouver la fonction \(\varphi\) qui satisfasse à l'équation
+\[ \varphi \alpha = f(x, y, \varphi \beta, \varphi \gamma),\]
+\(f\) étant une fonction quelconque donnée.
+
+En différentiant cette équation par rapport à \(x\), en supposant \(\alpha\) constant, on aura
+\[0=f^{\prime} x + f^{\prime} y \frac{d y}{d x} + f^{\prime}(\varphi \beta) \varphi^{\prime} \beta \left(\frac{d \beta}{d x} + \frac{d \beta}{d y} \frac{d y}{d x}\right) + f^{\prime}(\varphi \gamma) \varphi^{\prime} \gamma \left(\frac{d \gamma}{d x} + \frac{d \gamma}{d y} \frac{d y}{d x}\right),\]
+or nous avons vu que
+\[\frac{d y}{d x}=-\frac{\frac{d \alpha}{d x}}{\frac{d \alpha}{d y}};\]
+cette valeur étant substituée dans l'équation ci-dessus, on obtiendra, après \clearpage\noindent% 4
+avoir multiplié par \(\frac{d \alpha}{d y}\):
+\[0=f^{\prime} x \frac{d \alpha}{d y}-f^{\prime} y \frac{d \alpha}{d x}+f^{\prime}(\varphi \beta) \varphi^{\prime} \beta\left(\frac{d \beta}{d x} \frac{d \alpha}{d y}-\frac{d \alpha d \beta}{d x d y}\right)+f^{\prime}(\varphi \gamma) \varphi^{\prime} \gamma\left(\frac{d \gamma}{d x} \frac{d \alpha}{d y}-\frac{d \alpha d \gamma}{d x d y}\right).\]
+Faisant maintenant \(\gamma\) constant, déterminant \(x\) et \(y\) en \(\beta\) par les deux équations \(\gamma=c\), \(\beta=\beta\) et substituant leurs valeurs, on obtiendra entre \(\varphi \beta\) et \(\beta\) une équation différentielle du premier ordre, d'où l'on tirera la fonction \(\varphi \beta\).
+
+Soit
+\[f(x, y, \varphi \beta, \varphi \gamma)=\varphi \beta+\varphi \gamma,\]
+on aura
+\[f^{\prime} x=0, f^{\prime} y=0, f^{\prime}(\varphi \beta)=1, f^{\prime}(\varphi \gamma)=1.\]
+L'équation deviendra donc
+\[0=\varphi^{\prime} \beta\left(\frac{d \beta}{d x} \frac{d \alpha}{d y}-\frac{d \alpha}{d x} \frac{d \beta}{d y}\right)+\varphi^{\prime} \gamma\left(\frac{d y}{d x} \frac{d \alpha}{d y}-\frac{d \alpha}{d x} \frac{d \gamma}{d y}\right);\]
+on tire de là en intégrant
+\[\varphi \beta=\varphi^{\prime} \gamma \int \frac{\frac{d \alpha}{d x} \frac{d \gamma}{d y}-\frac{d \alpha}{d y} \frac{d \gamma}{d x}}{\frac{d \beta}{d x} \frac{d \alpha}{d y}-\frac{d \alpha}{d x} \frac{d \beta}{d y}} d \beta.\]
+On voit aisément que sans diminuer la généralité du problème on peut faire \(\beta=x\) et \(\gamma=y\); on aura ainsi
+\[\frac{d \beta}{d x}=1, \frac{d \beta}{d y}=0, \frac{d \gamma}{d x}=0, \frac{d \gamma}{d y}=1.\]
+Donc, ayant
+\[\varphi \alpha=\varphi x+\varphi y\]
+on en conclut
+\[\varphi x=\varphi^{\prime} y \int \frac{\frac{d \alpha}{d x}}{\frac{d \alpha}{d y}} d x,\]
+où \(y\) est supposé constant après la différentiation.
+
+Appliquons cela à la recherche du logarithme. On a
+\[\log (x y)=\log x+\log y,\]
+donc
+\[\alpha=x y, \frac{d \alpha}{d x}=y, \frac{d \alpha}{d y}=x;\] \clearpage\noindent% 5
+substituant ces valeurs on obtient
+\[\varphi x=\varphi^{\prime} y \int \frac{y}{x} d x=c \int \frac{d x}{x},\]
+donc
+\[\log x=c \int \frac{d x}{x}.\]
+
+Si l'on veut trouver \(\operatorname{arc\;tang} x\), on a
+\[\operatorname{arc\;tang} \frac{x+y}{1-x y}=\operatorname{arc\;tang} x+\operatorname{arc\;tang} y,\]
+donc
+\[\alpha=\frac{x+y}{1-x y}\]
+et par suite
+\[\begin{gathered}
+\frac{d \alpha}{d x}=\frac{1}{1-x y}+\frac{y(x+y)}{(1-x y)^2}=\frac{1+y^2}{(1-x y)^2},\\
+\frac{d \alpha}{d y}=\frac{1}{1-x y}+\frac{x(y+x)}{(1-x y)^2}=\frac{1+x^2}{(1-x y)^2}.
+\end{gathered}\]
+On tire de là
+\[\frac{\frac{d \alpha}{d x}}{\frac{d \alpha}{d y}}=\frac{1+y^2}{1+x^2},\]
+par conséquent
+\[\varphi x=\varphi^{\prime} y \int \frac{1+y^2}{1+x^2} d x,\]
+d'où
+\[\operatorname{arc\;tang} x=c \int \frac{d x}{1+x^2}=\int \frac{d x}{1+x^2},\text{ en faisant }c=1.\] 
+
+Supposons maintenant
+\[f(x, y, \varphi \beta, \varphi \gamma)=\varphi \beta. \varphi \gamma=\varphi x. \varphi y,\]
+en faisant \(\beta=x\), \(\gamma=y\). On aura
+\[\begin{gathered}
+f^{\prime} x=f^{\prime} y=0, f^{\prime}(\varphi x)=\varphi y, f^{\prime}(\varphi y)=\varphi x,\\
+\frac{d \beta}{d x}=\frac{d \gamma}{d y}=1, \frac{d \beta}{d y}=\frac{d \gamma}{d x}=0.
+\end{gathered}\]
+L'équation deviendra donc
+\[\varphi y.\varphi^{\prime} x \frac{d \alpha}{d y}-\varphi x. \varphi^{\prime} y \frac{d \alpha}{d x}=0,\] \clearpage\noindent% 6
+donc
+\[\frac{\varphi^{\prime} x}{\varphi^{\prime} x}=\frac{\varphi^{\prime} y}{\varphi^{\prime} y} \frac{\frac{d \alpha}{d x}}{\frac{d \alpha}{d y}},\]
+et en intégrant
+\[\log \varphi x=\frac{\varphi^{\prime} y}{\varphi y} \int \frac{\frac{d \alpha}{d x}}{\frac{d \alpha}{d y}} d x.\]
+Soit
+\[\int \frac{\frac{d \alpha}{d x}}{\frac{d \alpha}{d y}} d x=T,\]
+on aura
+\[\varphi x=e^{c T}.\]
+
+Soit par exemple \(\alpha=x+y\), on aura \(\frac{d \alpha}{d x}=1=\frac{d \alpha}{d y}\), donc
+\[T={\textstyle \int} d x=x,\]
+et
+\[\varphi x=e^{c x}.\]
+Soit \(\alpha=x y\), on aura
+\[\frac{d \alpha}{d x}=y, \frac{d \alpha}{d y}=x, \quad T=y \int \frac{d x}{x},\]
+donc
+\[\varphi x=e^{c \log x},\]
+c'est-à-dire
+\[\varphi x=x^c.\]
+
+Si l'on cherche la résultante \(R\) de deux forces égales \(P\), dont les directions font un angle égal à \(2 x\), on trouvera que \(R=P \varphi x\), où \(\varphi x\) est une fonction qui satisfait à l'équation
+\[\varphi x. \varphi y=\varphi(x+y)+\varphi(x-y).\footnote{Voyez Poisson traité de mécanique t. I, p. 14.}\]
+Pour déterminer cette fonction, il faut différentier l'équation par rapport à \(x\), en supposant \(y+x=\mathrm{const.}\), et l'on aura
+\[\varphi^{\prime} x. \varphi y+\varphi x. \varphi^{\prime} y \frac{d y}{d x}=\varphi^{\prime}(x-y)\left(1-\frac{d y}{d x}\right).\] \clearpage\noindent% 7
+Mais de l'équation \(x+y=c\) on tire \(\frac{d y}{d x}=-1\); substituant cette valeur, on obtient
+\[\varphi^{\prime} x. \varphi y-\varphi x. \varphi^{\prime} y=2 \varphi^{\prime}(x-y).\]
+Différentiant maintenant par rapport à \(x\), en supposant \(x-y=\) const., on aura
+\[\varphi^{\prime \prime} x. \varphi y+\varphi^{\prime} x. \varphi^{\prime} y \frac{d y}{d x}-\varphi^{\prime} x. \varphi^{\prime} y-\varphi x. \varphi^{\prime \prime} y \frac{d y}{d x}=0;\]
+or l'équation \(x-y=c\) donne \(\frac{d y}{d x}=1\), donc
+\[\varphi^{\prime \prime} x. \varphi y-\varphi x. \varphi^{\prime \prime} y=0.\]
+La supposition de \(y\) constant donne
+\[\varphi^{\prime \prime} x+c \varphi x=0,\]
+d'où l'on tire en intégrant
+\[\varphi x=\alpha \cos (\beta x+\gamma),\]
+\(\alpha\), \(\beta\) et \(\gamma\) étant des constantes. En déterminant celles-ci par les conditions du problème, on trouvera
+\[\alpha=2, \beta=1, \gamma=0,\]
+donc
+\[\varphi x=2 \cos x, \text { et par suite } R=2 P \cos x.\]
+
+2. Déterminer les trois fonctions \(\varphi\), \(f\) et \(\psi\) qui satisfassent à l'équation
+\[\psi \alpha=F\left(x, y, \varphi x, \varphi^{\prime} x, \ldots f y, f^{\prime} y, \ldots\right),\]
+où \(\alpha\) est une fonction donnée de \(x\) et de \(y\), et \(F\) une fonction donnée des quantités entre les parenthèses.
+
+Différentiant l'équation par rapport à \(x\), en supposant \(\alpha\) constant, et écrivant ensuite \(-\frac{\frac{d \alpha}{d x}}{\frac{d \alpha}{d y}}\) au lieu de \(\frac{d y}{d x}\), on obtiendra 
+\[ \frac{\frac{d \alpha}{d x}}{\frac{d \alpha}{d y}}=\frac{F^{\prime} x+F^{\prime}(\varphi x) \varphi^{\prime} x+\ldots}{F^{\prime} y+F^{\prime}(f y) f^{\prime} y+\ldots}. \] \clearpage\noindent% 8
+Si dans cette équation on fait \(y\) constant, on a une équation différentielle entre \(\varphi x\) et \(x\), d'où l'on peut tirer \(\varphi x\), et si l'on fait \(x\) constant, on a une équation différentielle d'où l'on peut tirer \(f y\); ces deux fonctions étant trouvées, la fonction \(\psi \alpha\) se trouvera sans difficulté par l'équation proposée.
+
+\textit{Exemples.} Trouver les trois fonctions qui satisfassent à l'équation
+\[\psi(x+y)=\varphi x. f^{\prime} y+f y. \varphi^{\prime} x.\]
+On a ici
+\[F\left(x, y, \varphi x, \varphi^{\prime} x, f y, f^{\prime} y\right)=\varphi x. f^{\prime} y+f y. \varphi^{\prime} x,\]
+donc
+\[\begin{gathered}
+F^{\prime} x=F^{\prime} y=0, \quad F^{\prime}(\varphi x)=f^{\prime} y, \quad F^{\prime}\left(\varphi^{\prime} x\right)=f y,\\
+F^{\prime}(f y)=\varphi^{\prime} x, \quad F^{\prime}\left(f^{\prime} y\right)=\varphi x;
+\end{gathered}\]
+de plus
+\[\alpha=x+y,\]
+donc
+\[\frac{d \alpha}{d x}=1, \frac{d \alpha}{d y}=1.\]
+Ces valeurs étant substituées, on aura
+\[1=\frac{f^{\prime} y. \varphi^{\prime} x+f y. \varphi^{\prime \prime} x}{\varphi^{\prime} x. f^{\prime} y+\varphi x. f^{\prime \prime} y},\]
+ou bien
+\[\varphi x. f^{\prime \prime} y-f y. \varphi^{\prime \prime} x=0.\]
+Faisant \(y\) constant, on trouvera
+\[\varphi x=a \sin (b x+c),\]
+et si l'on fait \(x\) constant,
+\[f y=a^{\prime} \sin \left(b y+c^{\prime}\right).\]
+On tire de là
+\[\begin{gathered}
+\varphi^{\prime} x=a b \cos (b x+c), \\
+f^{\prime} y=a^{\prime} b \cos \left(b y+c^{\prime}\right).
+\end{gathered}\]
+Ces valeurs étant substituées dans l'équation proposée, on obtiendra
+\[\begin{gathered}
+\psi(x+y)=a a^{\prime} b\left(\sin (b x+c) \cos \left(b y+c^{\prime}\right)+\sin \left(b y+c^{\prime}\right) \cos (b x+c)\right) \\
+=a a^{\prime} b \sin \left(b(x+y)+c+c^{\prime}\right).
+\end{gathered}
+\] \clearpage\noindent% 9
+Les trois fonctions cherchées sont donc
+\[\begin{aligned}
+& \varphi x=a \sin (b x+c),\\
+& f y=a^{\prime} \sin \left(b y+c^{\prime}\right),\\
+& \psi a=a a^{\prime} b \sin \left(b \alpha+c+c^{\prime}\right).
+\end{aligned}\]
+Si l'on fait \(a=a^{\prime}=b=1\) et \(c=c^{\prime}=0\), on aura
+\[\varphi x=\sin x, f y=\sin y, \psi \alpha=\sin \alpha,\]
+et par suite
+\[ \sin (x+y)=\sin x. \sin ^{\prime} y+\sin y. \sin ^{\prime} x.\]
+
+Trouver les trois fonctions qui sont déterminées par l'équation
+\[\psi(x+y)=f(x y)+\varphi(x-y). \]
+Différentiant par rapport à \(x\), en supposant \(x+y\) constant, on aura
+\[0=f^{\prime}(x y)(y-x)+2 \varphi^{\prime}(x-y).\]
+Maintenant pour trouver \(\varphi\), soit \(x y=c\) et \(x-y=\alpha\), on aura
+\[\varphi^{\prime} \alpha=k \alpha,\]
+donc
+\[\varphi \alpha=k^{\prime}+\frac{k}{2} \alpha^2.\]
+Pour trouver \(f\), soit \(x y=\beta\) et \(x-y=c\), on aura
+\[f^{\prime} \beta=c^{\prime},\]
+donc
+\[f \beta=c^{\prime \prime}+c^{\prime} \beta.\]
+Ces valeurs de \(\varphi \alpha\) et \(f \beta\) étant substituées dans l'équation donnée, on obtiendra
+\[\psi(x+y)=c^{\prime \prime}+c^{\prime} x y+k^{\prime}+\frac{k}{2}(x-y)^2.\]
+Pour déterminer \(\psi\), soit \(x+y=\alpha\), d'où l'on tire \(y=\alpha-x\), d'où
+\[\psi \alpha=c^{\prime \prime}+c^{\prime} x(\alpha-x)+k^{\prime}+\frac{k}{2}(2 x-\alpha)^2=c^{\prime \prime}+\frac{k}{2} \alpha^2+k^{\prime}+x \alpha\left(c^{\prime}-2 k\right)+\left(2 k-c^{\prime}\right) x^2.\]
+Pour que cette équation soit possible, il faut que \(x\) disparaisse; alors on aura
+\[2 k-c^{\prime}=0, \text { et } c^{\prime}=2 k.\]
+Cette valeur étant substituée, on obtient
+\[
+\psi \alpha=k^{\prime}+c^{\prime \prime}+\frac{k}{2} \alpha^2, f \beta=c^{\prime \prime}+2 k \beta, \varphi \gamma=k^{\prime}+\frac{k}{2} \gamma^2,
+\]
+qui sont les trois fonctions cherchées. \clearpage\noindent% 10
+
+Comme dernier exemple je prendrai le suivant: Déterminer les fonctions \(\varphi\) et \(f\) par l'équation
+\[\varphi(x+y)=\varphi x. f y+f x. \varphi y.\]
+En supposant \(x+y=c\), et en différentiant, on obtiendra
+\[0=\varphi^{\prime} x. f y-\varphi x. f^{\prime} y+f^{\prime} x. \varphi y-f x. \varphi^{\prime} y.\]
+Supposons de plus que \(f(0)=1\) et \(\varphi(0)=0\), nous aurons en posant \(y=0\):
+\[0=\varphi^{\prime} x-\varphi x. c+f x. c^{\prime},\]
+donc
+\[f x= k \varphi x+k^{\prime} \varphi^{\prime} x.\]
+Substituant cette valeur de \(f x\), et faisant \(y\) constant, on aura
+\[\varphi^{\prime \prime} x+a \varphi^{\prime} x+b \varphi x=0,\]
+et en intégrant,
+\[\varphi x=c^{\prime} e^{\alpha x}+c^{\prime \prime} e^{\alpha^{\prime} x}.\]
+Connaissant \(\varphi x\), on connaît aussi \(f x\), et en substituant les valeurs de ces fonctions, on pourra déterminer les valeurs des quantités constantes. On peut supposer
+\[c^{\prime}=-c^{\prime \prime}=\frac{1}{2 \sqrt{-1}}, \alpha=-\alpha^{\prime}=\sqrt{-1},\]
+ce qui donnera
+\[\varphi x=\frac{e^{x \sqrt{-1}}-e^{-x \sqrt{-1}}}{2 \sqrt{-1}}=\sin x, \quad f x=\cos x.\]
+\begin{center}
+\rule{2in}{0.1pt}
+\end{center}
+\end{document}
