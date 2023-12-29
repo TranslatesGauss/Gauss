@@ -1,0 +1,460 @@
+\documentclass[oneside, 12 pt, leqno]{memoir}
+\usepackage{standalone}
+\usepackage[dvips,text={6.2in,8.5in},left=0.9truein,top=1.5truein]{geometry}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{microtype}
+\usepackage{indentfirst}
+\usepackage[utf8]{inputenc}
+\usepackage{exscale}
+\usepackage{mlmodern}
+\usepackage[OT1]{fontenc}
+\usepackage[bottomfloats]{footmisc}
+\parindent=2.27em
+\parskip=0pt
+\nonfrenchspacing
+\renewcommand{\baselinestretch}{1.15}
+\DeclareMathSizes{12}{12}{8}{6}
+\everymath{\displaystyle}
+\allowdisplaybreaks
+\raggedbottom
+\titleformat{\section}
+  {\normalfont\centering}{\thesection.}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\spaceskip=0.67em plus 0.33em minus 0.33em
+\thickmuskip=4mu plus 4mu
+\medmuskip=3mu plus 1.5mu minus 3mu
+\AtBeginDocument{%
+  \mathchardef\stdcomma=\mathcode`,
+  \mathcode`,="8000
+}
+\begingroup\lccode`~=`, \lowercase{\endgroup\def~}{\stdcomma\mspace{\medmuskip}}
+\let\oldfrac\frac
+\def\frac#1#2{\mathchoice{\text{\scalebox{.83}{${\oldfrac{#1}{#2}}$}}}{\text{\scalebox{.83}{${\displaystyle\oldfrac{#1}{#2}}$}}}{\genfrac{}{}{}{2}{#1}{#2}}{\genfrac{}{}{}{3}{#1}{#2}}}
+\begin{document}
+\setlength{\abovedisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+\setlength{\belowdisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+
+\;\\ [3\baselineskip]
+\section*{\begin{Large}II.\end{Large} \\ [\baselineskip]
+SOLUTION DE QUELQUES PROBLÈMES À L'AIDE D'INTÉGRALES \\DÉFINIES.}
+\begin{center}
+\rule{2in}{0.1pt}\\ [0.5\baselineskip]
+\begin{scriptsize}Magazin for Naturvidenskaberne, Aargang I, Bind, Christiania 1823\par\end{scriptsize}
+\rule{2in}{0.1pt}
+\end{center}
+
+\subsection*{1.}
+
+C'est bien connu qu'on résout à l'aide d'intégrales définies, beaucoup de problèmes qui autrement ne peuvent point se résoudre, ou du moins sont très-difficiles à traiter. Elles ont surtout été appliquées avec avantage à la solution de plusieurs problèmes difficiles de la mécanique, par exemple, à celui du mouvement d'une surface élastique, des problèmes de la théorie des ondes etc. Je vais en montrer une nouvelle application en résolvant le problème suivant.
+
+%graphics
+Soit \(C B\) une ligne horizontale, \(A\) un point donné, \(A B\) perpendiculaire à \(B C\), \(A M\) une courbe dont les coordonnées rectangulaires sont \(A P=x, P M=y\). Soit de plus \(A B=a\), \(A M=s\). Si l'on conçoit maintenant qu'un corps se meut sur l'arc \(C A\), la vitesse initiale étant nulle, le temps \(T\) qu'il emploie pour le parcourir dépendra de la forme de la courbe, et de \(a\). Il s’agit de déterminer la courbe \(K C A\) pour que le temps \(T\) soit égal à une fonction donnée de \(a\), p. ex. \(\psi a\).
+
+Si l'on désigne par \(h\) la vitesse du corps au point \(M\), et par \(t\) le temps qu'il emploie pour parcourir l'arc \(C M\), on a comme on sait
+\[h=\sqrt{B P}=\sqrt{a-x}, d t=-\frac{d s}{h},\] 
+donc
+\[d t=-\frac{d s}{\sqrt{a-x}},\]
+et en intégrant
+\[t=-\int \frac{d s}{\sqrt{a-x}}.\]
+Pour avoir \(T\) on doit prendre l'intégrale depuis \(x=a\) jusqu'à \(x=0\), on a donc
+\[T=\int_{x=0}^{x=a} \frac{d s}{\sqrt{a-x}}.\]
+Or comme \(T\) est égal à \(\psi a\), l'équation devient
+\[\psi a=\int_{x=0}^{x=a} \frac{d s}{\sqrt{a-x}}.\]
+Au lieu de résoudre cette équation, je vais montrer comment on peut tirer \(s\) de l'équation plus générale
+\[\psi a=\int_{x=0}^{x=a} \frac{d s}{(a-x)^n},\]
+où \(n\) est supposé moindre que l'unité, afin que l'intégrale ne devienne pas infinie entre les limites données; \(\psi a\) est une fonction quelconque qui n'est pas infinie quand \(a\) est égal à zéro.
+
+Posons
+\[s=\Sigma \alpha^{(m)} x^m,\]
+où \(\Sigma {\alpha}^{(m)} x^m\) a la valeur suivante:
+\[\Sigma {\alpha}^{(m)} x^m={\alpha}^{\left(m^{\prime}\right)} x^{m^{\prime}}+{\alpha}^{\left(m^{\prime \prime}\right)} x^{m^{\prime  \prime}}+\alpha^{\left(m^{\prime \prime \prime}\right)} x^{m^{\prime \prime \prime}}+\ldots.\]
+En différentiant on obtient
+\[d s=\Sigma m \alpha^{(m)} x^{m-1} d x,\]
+donc
+\[\frac{d s}{(a-x)^n}=\frac{\Sigma m \alpha^{(m)} x^{m-1} d x}{(a-x)^n}={\Sigma m} \alpha^{(m)} \frac{x^{m-1} d x}{(a-x)^n}.\]
+En intégrant on a
+\[\int_{x=0}^{x=a} \frac{d s}{(a-x)^n}=\int_{x=0}^{x=a} \Sigma m \alpha^{(m)} \frac{x^{m-1} d x}{(a-x)^n}.\]
+Or
+\[\int \Sigma m \alpha^{(m)} \frac{x^{m-1} d x}{(a-x)^n}=\Sigma m \alpha^{(m)} \int \frac{x^{m-1} d x}{(a-x)^n},\] 
+donc, puisque \( \int_{x=0}^{x=a} \frac{d s}{(a-x)^n}=\psi a\):
+\[\psi a= \Sigma m \alpha^{(m)} \int_0^a \frac{x^{m-1} d x}{(a-x)^n}.\]
+La valeur de l'intégrale
+\[\int_0^a \frac{x^{m-1} d x}{(a-x)^n}\]
+se trouve aisément de la manière suivante: Si l'on pose \(x=a t\), on a
+\[\begin{gathered}
+x^m=a^m t^m, m x^{m-1} d x=m a^m t^{m-1} d t \\
+(a-x)^n=(a-a t)^n=a^n(1-t)^n,
+\end{gathered}\]
+donc
+\[\frac{m x^{m-1} d x}{(a-x)^n}=\frac{m a^{m-n} t^{m-1} d t}{(1-t)^n},\]
+et en intégrant
+\[m \int_0^a \frac{x^{m-1} d x}{(a-x)^n}=m a^{m-n} \int_0^1 \frac{t^{m-1} d t}{(1-t)^n}.\]
+Or on a
+\[\int_0^1 \frac{t^{m-1} d t}{(1-t)^n}=\frac{\Gamma(1-n) \Gamma m}{\Gamma(m-n+1)},\]
+où \(\Gamma m\) est une fonction déterminée par les équations
+\[\Gamma(m+1)=m \Gamma m, \Gamma(1)=1.\footnote{Les propriétés de cette fonction remarquable ont été largement développées par M. \textit{Legendre} dans son ouvrage, Exercices de calcul intégral t. I et II.}\]
+En substituant cette valeur pour l'intégrale \(\int_0^1 \frac{t^{m-1} d t}{(1-t)^n}\), et remarquant que \(m \Gamma m=\Gamma(m+1)\) on a
+\[m \int_0^a \frac{x^{m-1} d x}{(a-x)^n}=\frac{\Gamma(1-n) \Gamma(m+1)}{\Gamma(m-n+1)} a^{m-n}.\]
+En substituant cette valeur dans l'expression pour \(\psi a\), on obtient
+\[\psi a=\Gamma(1-n) \Sigma \alpha^{(m)} a^{m-n} \frac{\Gamma(m+1)}{\Gamma(m-n+1)}.\]
+
+Soit
+\[\psi a=\Sigma \beta^{(k)} a^k,\]
+on a
+\[\Sigma \beta^{(k)} a^k=\sum \frac{\Gamma(1-n) \Gamma(m+1)}{\Gamma(m-n+1)} \alpha^{(m)} a^{m-n}.\] 
+Pour que cette équation soit satisfaite il faut que \(m-n=k\), donc \(m=n+k\), et que
+\[\beta^{(k)} = \frac{\Gamma(1-n) \Gamma(m+1)}{\Gamma(m-n+1)} \alpha^{(m)}=\frac{\Gamma(1-n) \Gamma(n+k+1)}{\Gamma(k+1)} \alpha^{(m)},\]
+donc
+\[\alpha^{(m)}=\frac{\Gamma(k+1)}{\Gamma(1-n) \Gamma(n+k+1)} \beta^{(k)}.\]
+Or on a
+\[\int_0^1 \frac{t^k d t}{(1-t)^{1-n}}=\frac{\Gamma n. \Gamma(k+1)}{\Gamma(n+k+1)},\]
+par conséquent
+\[\alpha^{(m)}=\frac{\beta^{(k)}}{\Gamma n. \Gamma (1-n)} \int_0^1 \frac{t^k d t}{(1-t)^{1-n}}.\]
+En multipliant par \(x^m=x^{n+k}\) on obtient
+\[\alpha^{(m)} x^m=\frac{x^n}{\Gamma n. \Gamma(1-n)} \int_0^1 \frac{\beta^{(k)}(x t)^k d t}{(1-t)^{1-n}},\]
+d'où
+\[\Sigma \alpha^{(m)} x^m=\frac{x^n}{\Gamma n. \Gamma(1-n)} \int_0^1 \frac{\Sigma \beta^{(k)}(x t)^k d t}{(1-t)^{1-n}}.\]
+Mais on a \(\Sigma {\alpha}^{(m)} x^m=s\), \(\Sigma \beta^{(k)}(x t)^k=\psi(x t)\), donc
+\[s=\frac{x^n}{{\Gamma n}. {\Gamma}(1-n)} \int_0^1 \frac{\psi(x t) d t}{(1-t)^{1-n}}.\]
+En remarquant ensuite qu'on a \(\Gamma n. \Gamma(1-n)=\frac{\pi}{\sin n \pi}\), on trouve
+\[s=\frac{\sin n \pi. x^n}{\pi} \int_0^1 \frac{\psi(x t) d t}{(1-t)^{1-n}}.\]
+
+De ce qui précède découle ce théorème remarquable:
+
+Si l'on a
+\[\psi a=\int_{x=0}^{x=a} \frac{d s}{(a-x)^n},\]
+on a aussi
+\[s=\frac{\sin n \pi}{\pi} x^n \int_0^1 \frac{\psi(x t) d t}{(1-t)^{1-n}}.\]
+
+Appliquons maintenant cela à l'équation
+\[\psi a=\int_{x=0}^{x=a} \frac{d s}{\sqrt{a-x}}.\] 
+On a dans ce cas \(n=\frac{1}{2}\), donc \(1-n=\frac{1}{2}\) et par conséquent
+\[s=\frac{\sqrt{x}}{\pi} \int_0^1 \frac{\psi(x t) d t}{\sqrt{1-t}}.\]
+
+Voilà donc l'équation qui détermine l'arc \(s\) de la courbe cherchée par l'abscisse correspondante \(x\); on en tirera facilement une équation entre les. coordonnées rectangulaires, en remarquant que l'on a \(d s^2=d x^2+d y^2\).\\
+
+Appliquons maintenant la solution précédente à quelques cas spéciaux.\\
+1) Trouver la courbe qui a la propriété, que le temps qu'un corps emploie pour parcourir un arc quelconque, soit proportionel à la \(n^{\text {ième }}\) puissance de la hauteur que le corps a parcourue.
+
+Dans ce cas on a \(\psi a=c a^n\), où \(c\) est une constante, donc \(\psi(x t)=c x^n t^n\), par suite:
+\[s=\frac{\sqrt{x}}{\pi} \int_0^1 \frac{c x^n t^n d t}{\sqrt{1-t}}=x^{n+\frac{1}{2}} \frac{c}{\pi} \int_0^1 \frac{t^n d t}{\sqrt{1-t}},\]
+donc en faisant
+\[\frac{c}{\pi} \int_0^1 \frac{t^n d t}{\sqrt{1-t}}=C,\]
+on a
+\[s=C x^{n+\frac{1}{2}};\]
+on tire de là
+\[d s=\left(n+\frac{1}{2}\right) C x^{n-\frac{1}{2}} d x,\]
+et
+\[d s^2=\left(n+\frac{1}{2}\right)^2 C^2 x^{2 n-1} d x^2=d y^2+d x^2,\]
+d'où l'on déduit en posant \(\left(n+\frac{1}{2}\right)^2 C^2=k\)
+\[d y=d x \sqrt{k x^{2 n-1}-1};\]
+l'équation de la courbe cherchée devient donc
+\[y=\int d x \sqrt{k x^{2 n-1}-1}.\]
+
+Si l'on fait \(n=\frac{1}{2}\), on a \(x^{2 n-1}=1\), donc
+\[y=\int d x \sqrt{k-1}=k^{\prime}+x \sqrt{k-1},\]
+la courbe cherchée est donc une droite. 
+
+2) Trouver l'équation de l'isochrone.
+
+Puisque le temps doit être indépendant de l'espace parcouru, on a \(\psi a=c\) et par conséquent
+\[s=\frac{\sqrt{x}}{\pi} c \int_0^1 \frac{d t}{\sqrt{1-t}},\]
+donc
+\[s=k \sqrt{x},\]
+où
+\[k=\frac{c}{\pi} \int_0^1 \frac{d t}{\sqrt{1-t}},\]
+ce qui est l'équation connue de la cycloide.
+
+Nous avons vu que si l'on a
+\[\psi a=\int_{x=0}^{x=a} \frac{d s}{(a-x)^n},\]
+on a aussi
+\[s=\frac{\sin n \pi }{\pi} x^n \int_0^1 \frac{\psi(x t) d t}{(1-t)^{1-n}}.\]
+On peut aussi exprimer \(s\) d'une autre manière, que je vais rapporter à cause de sa singularité, savoir
+\[s=\frac{1}{\Gamma(1-n)} \int^n \psi x. d x^n=\frac{1}{\Gamma(1-n)} \frac{d^{-n} \psi x}{d x^{-n}},\]
+c'est-à-dire, si l'on a
+\[\psi a=\int_{x=0}^{x=a} d s(a-x)^n,\]
+on a aussi
+\[s=\frac{1}{\Gamma(1+n)} \frac{d^n \psi x}{d x^n};\]
+en d'autres termes, on a
+\[\psi a=\frac{1}{\Gamma(1+n)} \int_{x=0}^{x=a} \frac{d^{n+1} \psi x}{d x^{n+1}}(a-x)^n d x.\]
+
+Cette proposition se démontre aisément comme il suit. Si l'on pose
+\[\psi x=\Sigma \alpha^{(m)} x^m,\]
+on obtient en différentiant:
+\[\frac{d^k \psi x}{d x^k}=\Sigma \alpha^{(m)} m(m-1)(m-2) \ldots(m-k+1) x^{n-k};\]
+mais
+\[m(m-1)(m-2) \ldots(m-k+1)=\frac{\Gamma(m+1)}{\Gamma(m-k+1)},\] 
+donc
+\[\frac{d^k \psi x}{d x^k}=\Sigma \alpha^{(m)} \frac{\Gamma(m+1)}{\Gamma(m-k+1)} x^{m-k}.\]
+Or on a
+\[\frac{\Gamma(m+1)}{\Gamma(m-k+1)}=\frac{1}{\Gamma(-k)} \int_0^1 \frac{t^m d t}{(1-t)^{1+k}},\]
+par conséquent
+\[\frac{d^k \psi x}{d x^k}=\frac{1}{x^k \Gamma(-k)} \int_0^1 \frac{{\Sigma} {\alpha}^{(n)}(x t)^m d t}{(1-t)^{1+k}};\]
+mais \(\Sigma \alpha^{(m)}(x t)^m=\psi(x t)\), donc
+\[\frac{d^k \psi x}{d x^k}=\frac{1}{x^k {\Gamma}(-k)} \int_0^1 \frac{\psi(x t) d t}{(1-t)^{1+k}}.\]
+En posant \(k=-n\), on en tire
+\[\frac{d^{-n} \psi x}{d x^{-n}}=\frac{x^n}{\Gamma n} \int_0^1 \frac{\psi(x t) d t}{(1-t)^{1-n}}.\]
+Or nous avons vu que
+\[s=\frac{x^n}{\Gamma n. \Gamma(1-n)} \int_0^1 \frac{\psi(x t) d t}{(1-t)^{1-n}},\]
+donc on a
+\[s=\frac{1}{\Gamma(1-n)} \frac{d^{-n} \psi x}{d x^{-n}},\]
+si
+\[\begin{gathered}
+\psi a=\int_{x=0}^{x=a} \frac{d s}{(a-x)^n},\\
+\text{c. q. f. d.}
+\end{gathered}\]
+
+En différentiant \(n\) fois de suite la valeur de \(s\), on obtient
+\[\frac{d^n s}{d x^n}=\frac{1}{\Gamma(1-n)} \psi x,\]
+et par conséquent, en faisant \(s=\varphi x\),
+\[\frac{d^n {\varphi} a}{d {a}^n}=\frac{1}{\Gamma(1-n)} \int_0^a \frac{\varphi^{\prime} x. d x}{(a-x)^n}.\]
+On doit remarquer que, dans ce qui précède, \(n\) doit toujours être moindre que l'unité.
+
+Si l'on fait \(n=\frac{1}{2}\), on a
+\[\psi a=\int_{x=0}^{x=a} \frac{d s}{\sqrt{a-x}}\] 
+et
+\[s=\frac{1}{\sqrt{\pi}} \frac{d^{-\frac{1}{2}} \psi x}{d x^{-\frac{1}{2}}}=\frac{1}{\sqrt{\pi}} \int^{\frac{1}{2}} \psi x. d x^{\frac{1}{2}}.\]
+C'est là l'équation de la courbe cherchée, quand le temps est égal à \(\psi a\).
+
+De cette équation on tire
+\[\psi x=\sqrt{\pi} \frac{d^{\frac{1}{2}} s}{d x^{\frac{1}{2}}},\]
+donc:
+
+Si l'équation d'une courbe est \(s=\varphi x\), le temps qu'un corps emploie pour en parcourir un arc, dont la hauteur est \(a\), est égal à \(\sqrt{\pi} \frac{d^{\frac{1}{2}} \varphi a}{d a^{\frac{1}{2}}}\).
+
+Je remarquerai enfin que de la même manière, qu'en partant de l'équation
+\[\psi a=\int_{x=0}^{x=a} \frac{d s}{(a-x)^n}\]
+j'ai trouvé \(s\), de même en partant de l'équation
+\[\psi a=\int \varphi(x a) f x. d x\]
+j'ai trouvé la fonction \(\varphi, \psi\) et \(f\) étant des fonctions données, et l'intégrale étant prise entre des limites quelconques; mais la solution de ce problème est trop longue pour être donnée ici.
+
+\subsection*{2.\\
+\begin{small}\textit{Valeur de l'expression \(\varphi(x+y \sqrt{-1})+\varphi(x-y \sqrt{-1})\).}\end{small}}
+
+Lorsque \(\varphi\) est une fonction algébrique, logarithmique, exponentielle ou circulaire, on peut, comme on sait, toujours exprimer la valeur réelle de \(\varphi(x+y \sqrt{-1})+\varphi(x-y \sqrt{-1})\) sous forme réelle et finie. Si au contraire \(\varphi\) conserve sa généralité, on n'a pas que je sache, jusqu'à présent pu l'exprimer sous forme réelle et finie. On peut le faire à l'aide d'intégrales définies de la manière suivante.
+
+Si l'on développe \(\varphi(x+y \sqrt{-1})\) et \(\varphi(x-y \sqrt{-1})\) d'après le théorème de \textit{Taylor}, on obtient
+\[\begin{aligned}
+& \varphi(x+y \sqrt{-1})=\varphi x+\varphi^{\prime} x. y \sqrt{-1}-\frac{\varphi^{\prime \prime} x}{1.2} y^2-\frac{\varphi^{\prime \prime \prime} x}{1.2.3} y^3 \sqrt{-1}+\frac{\varphi^{\prime \prime \prime \prime} x}{1.2.3.4} y^4+\cdots \\
+& \varphi(x-y \sqrt{-1})=\varphi x-\varphi^{\prime} x. y \sqrt{-1}-\frac{\varphi^{\prime \prime} x}{1.2} y^2+\frac{\varphi^{\prime \prime \prime} x}{1.2.3} y^3 \sqrt{-1}+\frac{\varphi^{\prime \prime \prime \prime} x}{1.2.3.4} y^4-\ldots 
+\end{aligned}\] 
+donc
+\[\varphi(x+y \sqrt{-1})+\varphi(x-y \sqrt{-1})=2\left(\varphi x-\frac{\varphi^{\prime \prime} x}{1.2} y^2+\frac{\varphi^{\prime \prime \prime \prime} x}{1.2.3.4} y^4-\ldots\right).\]
+Pour trouver la somme de cette série, considérons la série
+\[\varphi(x+t)=\varphi x+t \varphi^{\prime} x+\frac{t^2}{1.2} \varphi^{\prime \prime} x+\frac{t^3}{1.2.3} \varphi^{\prime \prime \prime} x+\ldots\]
+En multipliant les deux membres de cette équation par \(e^{-v^2 t^2} d t\), et prenant ensuite l'intégrale depuis \(t=-\infty\) jusqu'à \(t=+\infty\), on aura
+\[
+\int_{-\infty}^{+\infty} \varphi(x+t) e^{-v^2 t^2} d t=\varphi x \int_{-\infty}^{+\infty} e^{-v^2 t^2} d t+\varphi^{\prime} x \int_{-\infty}^{+\infty} e^{-v^2 t^2} t d t+\frac{1}{2} \varphi^{\prime \prime} x \int_{-\infty}^{+\infty} e^{-v^2 t^2} t^2 d t+\ldots
+\]
+Or \(\quad \int_{-\infty}^{+\infty} e^{-v^2 t^2} t^{2 n+1} d t=0\), donc
+\[\int_{-\infty}^{+\infty} \varphi(x+1) e^{-v^2 t^2} d t=\varphi x \int_{-\infty}^{+\infty} e^{-v^2 t^2} d t+\frac{\varphi^{\prime \prime} x}{1.2} \int_{-\infty}^{+\infty} e^{-v^2 t^2} t^2 d t+\frac{\varphi^{\prime \prime \prime \prime} x}{1.2.3.4} \int_{-\infty}^{+\infty} e^{-v^2 t^2} t^4 d t+...\]
+Considérons l'intégrale
+\[\int_{-\infty}^{+\infty} e^{-v^2 t^2} t^{2 n} d t.\]
+Soit \(t=\frac{\alpha}{v}\), on a \(e^{-v^2 t^2}=e^{-\alpha^2}, t^{2 n}=\frac{\alpha^{2 n}}{v^{2 n}}, d t=\frac{d \alpha}{v}\), donc
+\[\int_{-\infty}^{+\infty} e^{-v^2 t^2} t^{2 n} d t=\frac{1}{v^{2 n+1}} \int_{-\infty}^{+\infty} e^{-\alpha^2} \alpha^{2 n} d \alpha=\frac{\Gamma \left(\frac{2 n+1}{2}\right)}{v^{2 n+1}},\]
+\[\int_{-\infty}^{+\infty} e^{-v^2 t^2} t^{2 n} d t=\frac{1.3.5 \ldots(2 n-1) \sqrt{\pi}}{2^n v^{2 n+1}}=\frac{\sqrt{\pi}}{v^{2 n+1}} A_n.\]
+
+Cette valeur étant substituée ci-dessus, on obtient
+\[\int_{-\infty}^{+\infty} \varphi(x+t) e^{-v^2 t^2} d t=\frac{\sqrt{\pi}}{v}\left(\varphi x+\frac{A_1}{2} \frac{\varphi^{\prime \prime} x}{v^2}+\frac{A_2}{2.3.4} \frac{\varphi^{\prime \prime \prime \prime} x}{v^4}+\ldots\right).\]
+En multipliant par \(e^{-v^2 y^2} v d v\), et prenant l'intégrale depuis \(v=-\infty\) jusqu'à \(v=+\infty\), on obtiendra
+\[\frac{1}{\sqrt{\pi}} \int_{-\infty}^{+\infty} e^{-v^2 y^2} v d v \int_{-\infty}^{+\infty} \varphi(x+t) e^{-v^2 t^2} d t=\varphi x \int_{-\infty}^{+\infty} e^{-v^2 y^2} d v+\frac{A_1 \varphi^{\prime \prime} x}{2} \int_{-\infty}^{+\infty} e^{-v^2 y^2} \frac{d v}{v^2}+\ldots\] 
+Soit \(v y=\beta\), on a
+\[\int_{-\infty}^{+\infty} e^{-v^2 y^2} v^{-2 n} d v=y^{2 n-1} \int_{-\infty}^{+\infty} e^{-\beta^2} \beta^{-2 n} d \beta.\]
+Or \(\int_{-\infty}^{+\infty} e^{-\beta^2} \beta^{-2 n} d \beta=\Gamma\left(\frac{1-2 n}{2}\right)=\frac{(-1)^n 2^n \sqrt{\pi}}{1.3.5 \ldots(2 n-1)}=\frac{(-1)^n \sqrt{\pi}}{A_n}\), donc
+\[\int_{-\infty}^{+\infty} e^{-v^2 y^2} v^{-2 n} d v=\frac{(-1)^n \sqrt{\pi} y^{2 n-1}}{A_n},\]
+et par suite
+\[A_n \int_{-\infty}^{+\infty} e^{-v^2 y^2} v^{-2 n} d v=(-1)^n y^{2 n-1} \sqrt{\pi}.\]
+En substituant cette valeur, et divisant par \(\frac{\sqrt{\pi}}{2 y}\), on obtiendra
+\[\frac{2 y}{\pi} \int_{-\infty}^{+\infty} e^{-v^2 y^2} v d v \int_{-\infty}^{+\infty} \varphi(x+t) e^{-v^2 t^2} d t=2\left(\varphi x-\frac{\varphi^{\prime \prime} x}{2} y^2+\frac{\varphi^{\prime \prime \prime \prime} x}{2.3.4} y^4-\ldots\right).\]
+Le second membre de cette équation est égal à
+\[\varphi(x+y \sqrt{-1})+\varphi(x-y \sqrt{-1}),\]
+donc
+\[\varphi(x+y \sqrt{-1})+\varphi(x-y \sqrt{-1})=\frac{2 y}{\pi} \int_{-\infty}^{+\infty} e^{-v^2 y^2} v d v \int_{-\infty}^{+\infty} \varphi(x+t) e^{-v^2 t^2} d t.\]
+
+Posant \(x=0\), on a
+\[\varphi(y \sqrt{-1})+\varphi(-y \sqrt{-1})=\frac{2 y}{\pi} \int_{-\infty}^{+\infty} e^{-v^2 y^2} v d v \int_{-\infty}^{+\infty} \varphi t. e^{-v^2 t^2} d t.\]
+Soit par exemple \(\varphi t=e^t\), on aura
+\[\varphi(y \sqrt{-1})+\varphi(-y \sqrt{-1})=e^{y \sqrt{-1}}+e^{-y \sqrt{-1}}=2 \cos y,\]
+donc
+\[\cos y=\frac{y}{\pi} \int_{-\infty}^{+\infty} e^{-v^2 y^2} v d v \int_{-\infty}^{+\infty} e^{t-v^2 t^2} d t;\]
+or \(\int_{-\infty}^{+\infty} e^{t-v^2 t^2} d t=\frac{\sqrt{\pi}}{v} e^{\frac{1}{4 v^2}}\), donc
+\[\cos y=\frac{y}{\sqrt{\pi}} \int_{-\infty}^{+\infty} e^{-v^2 y^2+\frac{1}{4 v^2}} d v.\]
+Si l'on fait \(v=\frac{t}{y}\), on aura 
+\[\cos y=\frac{1}{\sqrt{\pi}} \int_{-\infty}^{+\infty} e^{-t^2+\frac{1}{4} \frac{y^2}{t^2}} d t.\]
+En donnant d'autres valeurs à \(\varphi t\), on peut déduire la valeur d'autres intégrales définies, mais comme mon but était seulement de déterminer la valeur de \(\varphi(x+y \sqrt{-1})+\varphi(x-y \sqrt{-1})\) je ne m'en occuperai pas.
+
+\subsection{3.\\
+\textit{Nombres de Bernoulli exprimés par des intégrales définies, d'où l'on a ensuite déduit l'expression de l'intégrale finie \(\mathbf{\Sigma} \varphi x\).}}
+
+Si l'on développe la fonction \(1-\frac{u}{2} \cot \frac{u}{2}\) en série suivant les puissances entières de \(u\), en posant
+\[
+1-\frac{u}{2} \cot \frac{u}{2}=A_1 \frac{u^2}{2}+A_2 \frac{u^4}{2.3.4}+\ldots+A_n \frac{u^{2 n}}{2.3.4..2 n}+\ldots,
+\]
+les coefficiens \(A_1\), \(A_2\), \(A_3\) etc. sont, comme on sait, les nombres de \textit{Bernoulli}.\footnote{Voyez Euleri Institutiones calc. diff. p. 426.}
+
+On a\footnote{Voyez Euleri Institutiones calc. diff. p. 423.}
+\[1-\frac{u}{2} \cot \frac{u}{2}=2 u^2\left(\frac{1}{4 \pi^2-u^2}+\frac{1}{4.4 \pi^2-u^2}+\frac{1}{9.4 \pi^2-u^2}+\ldots\right);\]
+et en développant le second membre en série:
+\[\begin{aligned}
+1-\frac{u}{2} \cot \frac{u}{2} & =\frac{u^2}{2 \pi^2}\left(1+\frac{1}{2^2}+\frac{1}{3^2}+\ldots\right) \\
+& +\frac{u^4}{2^3 \pi^4}\left(1+\frac{1}{2^4}+\frac{1}{3^4}+\ldots\right) \\
+& +\frac{u^6}{2^5 \pi^6}\left(1+\frac{1}{2^6}+\frac{1}{3^6}+\ldots\right) \\
+& \ldots \ldots \ldots \ldots \ldots. \\
+& +\frac{u^{2 n}}{2^{2 n-1} \pi^{2 n}}\left(1+\frac{1}{2^{2 n}}+\frac{1}{3^{2 n}}+\ldots\right) \\
+& +\cdots \cdots \cdots \cdots \cdots \cdot.
+\end{aligned}\]
+En comparant ce développement au précédent, on aura
+\[\frac{A_n}{1.2.3 \ldots 2 n}=\frac{1}{2^{2 n-1} \pi^{2 n}}\left(1+\frac{1}{2^{2 n}}+\frac{1}{3^{2 n}}+\ldots\right).\] 
+
+Considérons maintenant l'intégrale \(\int_0^{\frac{1}{0}} \frac{t^{2 n-1} d t}{e^t-1}\). On a
+\[\frac{1}{e^t-1}=e^{-t}+e^{-2 t}+e^{-3 t}+\ldots,\]
+donc
+\[\int \frac{t^{2 n-1} d t}{e^t-1}=\int e^{-t} t^{2 n-1} d t+\int e^{-2 t} t^{2 n-1} d t+\ldots+\int e^{-k t} t^{2 n-1} d t+\ldots\]
+Or \(\int_0^{\frac{1}{0}} e^{-k t} t^{2 n-1} d t=\frac{\Gamma(2 n)}{k^{2 n}}\)\footnote{Cette expression se déduit de l'équation fondamentale \(\Gamma a=\int_0^1 d x\left(\log \frac{1}{x}\right)^{a-1}\), en y faisant \(a=2 n\) et \(x=e^{-k t}\). \textit{Legendre}, Exercices de calc. int. t. I, p. 277.}, donc
+\[\int_0^{\frac{1}{0}} \frac{t^{2 n-1} d t}{e^t-1}=\Gamma(2 n)\left(1+\frac{1}{2^{2 n}}+\frac{1}{3^{2 n}}+\ldots\right);\]
+mais d'après ce qui précède, on a
+\[1+\frac{1}{2^{2 n}}+\frac{1}{3^{2 n}}+\ldots=\frac{2^{2 n-1} \pi^{2 n}}{1.2.3 \ldots 2 n} A_n=\frac{2^{2 n-1} \pi^{2 n}}{\Gamma(2 n+1)} A_n,\]
+donc
+\[\int_0^{\frac{1}{0}} \frac{t^{2 n-1} d t}{e^t-1}=\frac{\Gamma(2 n)}{\Gamma(2 n+1)} 2^{2 n-1} \pi^{2 n} A_n=\frac{2^{2 n-1} \pi^{2 n}}{2 n} A_n,\]
+et par conséquent
+\[A_n=\frac{2 n}{2^{2 n-1} \pi^{2 n}} \int_0^{\frac{1}{0}} \frac{t^{2 n-1} d t}{e^t-1}.\]
+En mettant \(t \pi\) au lieu de \(t\), on obtiendra enfin
+\[A_n=\frac{2 n}{2^{2 n-1}} \int_0^{\frac{1}{0}} \frac{t^{2 n-1} d t}{e^{\pi t}-1}.\]
+Ainsi les nombres de \textit{Bernoulli} peuvent être exprimés d'une manière très simple, par des intégrales définies.
+
+D'un autre côté on voit aussi, lorsque \(n\) est un nombre entier, que l'expression \(\int_0^{\frac{1}{0}} \frac{t^{2 n-1} d t}{e^{\pi t}-1}\) est toujours rationnelle et égale à \(\frac{2^{2 n-1}}{2 n} A_n\), ce qui est assez remarquable. Ainsi on aura par exemple en faisant \(n=1\), \(2\), \(3\) etc.
+\begin{align*}
+& \int_0^{\frac{1}{0}} \frac{t d t}{e^{\pi t}-1}=\frac{1}{6}, \\
+& \int_0^{\frac{1}{0}} \frac{t^3 d t}{e^{\pi t}-1}=\frac{1}{30}. \frac{2^3}{4}=\frac{1}{15},\\ 
+& \int_0^{\frac{1}{0}} \frac{t^5 d t}{e^{\pi t}-1}=\frac{1}{42}. \frac{2^5}{6}=\frac{8}{63} \text { etc. }
+\end{align*}
+
+Maintenant à l'aide de ce qui précède, on pourra très facilement exprimer la fonction \(\Sigma \varphi x\) par une intégrale définie. On a
+\[\Sigma \varphi x=\int \varphi x. d x-\frac{1}{2} \varphi x+A_1 \frac{\varphi^{\prime} x}{1.2}-A_2 \frac{\varphi^{\prime \prime \prime} x}{1.2.3.4}+\ldots\]
+En substituant les valeurs de \(A_1\), \(A_2\), \(A_3\) etc., on aura
+\[\Sigma \varphi x=\int \varphi x. d x-\frac{1}{2} \varphi x+\frac{\varphi^{\prime} x}{1.2} \int_0^{\frac{1}{0}} \frac{t d t}{e^{\pi t}-1}-\frac{\varphi^{\prime \prime \prime} x}{1.2. 3. 2^3} \int_0^{\frac{1}{0}} \frac{t^3 d t}{e^{\pi t}-1}+\ldots\]
+c'est-à-dire
+\[\Sigma \varphi x=\int \varphi x. d x-\frac{1}{2} \varphi x+\int_0^{\frac{1}{0}} \frac{d t}{e^{\pi t}-1}\left(\varphi^{\prime} x \frac{t}{2}-\frac{\varphi^{\prime \prime \prime} x}{1.2.3} \frac{t^3}{2^3}+\ldots\right).\]
+Or
+\[\begin{aligned}
+ \varphi\left(x+\frac{t}{2} \sqrt{-1}\right)=\varphi x&-\frac{\varphi^{\prime \prime} x}{1.2} \frac{t^2}{2^2}+\frac{\varphi^{\prime \prime \prime \prime} x}{1.2.3.4} \frac{t^4}{2^4}-\ldots \\
+& +\sqrt{-1}\left(\varphi^{\prime} x \frac{t}{2}-\frac{\varphi^{\prime \prime \prime} x}{1.2.3} \frac{t^3}{2^3}+\ldots\right), \\
+ \varphi\left(x-\frac{t}{2} \sqrt{-1}\right)=\varphi x&-\frac{\varphi^{\prime \prime} x}{1.2} \frac{t^2}{2^2}+\frac{\varphi^{\prime \prime \prime \prime} x}{1.2.3.4} \frac{t^4}{2^4}-\ldots \\
+& -\sqrt{-1}\left(\varphi^{\prime} x \frac{t}{2}-\frac{\varphi^{\prime \prime \prime} x}{1.2.3} \frac{t^3}{2^3}+\ldots\right).
+\end{aligned}\]
+On tire de là
+\[\varphi^{\prime} x. \frac{t}{2}-\frac{\varphi^{\prime \prime \prime} x}{1.2.3} \frac{t^3}{2^3}+\ldots=\frac{1}{2 \sqrt{-1}}\left[\varphi\left(x+\frac{t}{2} \sqrt{-1}\right)-\varphi\left(x-\frac{t}{2} \sqrt{-1}\right)\right].\]
+Cette valeur étant substituée dans l'expression de \(\Sigma \varphi x\), on obtient
+\[\Sigma \varphi x=\int \varphi x. d x-\frac{1}{2} \varphi x+\int_0^{\frac{1}{0}} \frac{\varphi\left(x+\frac{t}{2} \sqrt{-1}\right)-\varphi\left(x-\frac{t}{2} \sqrt{-1}\right)}{2 \sqrt{-1}} \frac{d t}{e^{\pi t}-1}.\]
+Cette expression de l'intégrale finie d'une fonction quelconque me paraît très remarquable, et je ne crois pas qu'elle ait été trouvée auparavant.
+
+De l'équation précédente on tire
+\[ \int_0^{\frac{1}{0}} \frac{\varphi\left(x+\frac{t}{2} \sqrt{-1}\right)-\varphi\left(x-\frac{t}{2} \sqrt{-1}\right)}{2 \sqrt{-1}} \frac{d t}{e^{\pi t}-1} = \Sigma \varphi x - \int \varphi x. dx + \frac{1}{2} \varphi x.\]
+On a ainsi l'expression d'une intégrale définie très générale. Je vais en faire voir l'application à quelques cas particuliers.
+
+1. Soit \(\varphi x=e^x\). Dans ce cas on a
+\[\varphi\left(x+\frac{t}{2} \sqrt{-1}\right)=e^x e^{\frac{t}{2} \sqrt{-1}}=e^x\left(\cos \frac{t}{2}+\sqrt{-1} \sin \frac{t}{2}\right),\]
+donc
+\[\frac{\varphi\left(x+\frac{t}{2} \sqrt{-1}\right)-\varphi\left(x-\frac{t}{2} \sqrt{-1}\right)}{2 \sqrt{-1}}=e^x \sin \frac{t}{2},\]
+et par conséquent
+\[\int_0^{\frac{1}{0}} \frac{\sin \frac{t}{2} d t}{e^{\pi t}-1}=e^{-x} \Sigma e^x-e^{-x} \int e^x d x+\frac{1}{2} ;\]
+mais  \(\Sigma e^x = \frac{e^x}{t-1}\), et \(\int e^x d x=e^x\), donc
+\[\int_0^{\frac{1}{0}} \frac{\sin \frac{t}{2} d t}{e^{\pi t}-1}=\frac{1}{e-1}-\frac{1}{2}.\]
+Si l'on fait \(\varphi x=e^{m x}\), on obtiendra de la même manière
+\[\int_0^{\frac{1}{0}} \frac{\sin \frac{m t}{2} d t}{e^{\pi t}-1}=\frac{1}{e^m-1}-\frac{1}{m}+\frac{1}{2}.\]
+Si l'on met \(2 t\) à la place de \(t\), on aura
+\[\int_0^{\frac{1}{0}} \frac{\sin m t. d t}{e^{2 \pi t}-1}=\frac{1}{4} \frac{e^m+1}{e^m-1}-\frac{1}{2 m},\]
+formule trouvée d'une autre manière par M. \textit{Legendre}. (Exerc. de calc. int. t. II, p. 189.)
+
+2. Soit \(\varphi x=\frac{1}{x}\), on trouvera
+\[\frac{\varphi\left(x+\frac{t}{2} \sqrt{-1}\right)-\varphi\left(x-\frac{t}{2} \sqrt{-1}\right)}{2 \sqrt{-1}}=-\frac{t}{2\left(x^2+\frac{1}{4} t^2\right)},\]
+et
+\[\int \varphi x. d x=\int \frac{d x}{x}=\log x+C,\] 
+donc
+\[
+\int_0^{\frac{1}{0}} \frac{t d t}{\left(x^2+\frac{1}{4} t^2\right)\left(e^{\pi t}-1\right)}=2 \log x-\frac{1}{x}-2 \Sigma \frac{1}{x}+C.
+\]
+On détermine \(C\) en posant \(x=1\), ce qui donne
+\[C=3+\int_0^{\frac{1}{0}} \frac{t d t}{\left(1+\frac{1}{4} t^2\right)\left(e^{\pi t}-1\right)}.\]
+
+3. Soit \(\varphi x=\sin a x\), on aura
+\[\begin{gathered}
+\sin \left(a x+\frac{a t}{2} \sqrt{-1}\right)-\sin \left(a x-\frac{a t}{2} \sqrt{-1}\right)=2 \cos a x. \sin \frac{a t}{2} \sqrt{-1}=\cos a x \frac{e^{-\frac{a t}{2}}-e^{\frac{a t}{2}}}{\sqrt{-1}},\\
+\Sigma \sin a x=-\frac{\cos \left(a x-\frac{1}{2} a\right)}{2 \sin \frac{1}{2} a}, \int \sin a x. d x=-\frac{1}{a} \cos a x,
+\end{gathered}\]
+donc
+\[
+\frac{\cos a x}{2} \int_0^{\frac{1}{0}} \frac{e^{\frac{a t}{2}}-e^{-\frac{a t}{2}}}{e^{\pi t}-1} d t=-\frac{\cos \left(a x-\frac{1}{2} a\right)}{2 \sin \frac{1}{2} a}+\frac{1}{a} \cos a x+\frac{1}{2} \sin a x,
+\]
+et en écrivant \(2 a\) au lieu de \(a\), et réduisant
+\[
+\int_0^{\frac{1}{0}} \frac{e^{a t}-e^{-a t}}{e^{\pi t}-1} d t=\frac{1}{a}-\operatorname{cotg} a.
+\]
+En supposant d'autres formes pour la fonction \(\varphi x\) on pourra de la même manière trouver la valeur d'autres intégrales définies.
+
+\subsection*{4.\\
+\begin{small}\textit{Sommation de la série infinie \(S=\varphi(x+1)-\varphi(x+2)+\varphi(x+3)-\varphi(x+4)+\ldots\) à l'aide d'intégrales définies.}\end{small}}
+
+On voit aisément que \(S\) pourra être exprimé comme il suit,
+\[S=\frac{1}{2} \varphi x+A_1 \varphi^{\prime} x+A_2 \varphi^{\prime \prime} x+A_3 \varphi^{\prime \prime \prime} x+\ldots\]
+Si l'on suppose \(\varphi x=e^{a x}\) on obtient
+\[S=\frac{1}{2} e^{a x}+e^{a x}\left(A_1 a+A_2 a^2+A_3 a^3+\ldots\right).\]
+Mais on a aussi
+\[S=e^{a x+a}-e^{a x+2 a}+e^{a x+3 a}-\ldots=\frac{e^{a x} e^a}{1+e^a}\] 
+donc
+\[\frac{e^a}{1+e^a}-\frac{1}{2}=A_1 a+A_2 a^2+A_3 a^3+\ldots,\]
+En faisant \(a=c \sqrt{-1}\), on trouve
+\[\frac{e^{c \sqrt{-1}}}{1+e^{c \sqrt{-1}}}-\frac{1}{2}=\sqrt{-1}\left(A_1 c-A_3 c^3+A_5 c^{5}-\ldots\right)+P,\]
+où \(P\) désigne la somme de tous les termes réels. Mais
+\[\frac{e^{c \sqrt{-1}}}{1+e^{c \sqrt{-1}}}-\frac{1}{2}=\frac{1}{2} \frac{e^{\frac{c}{2} \sqrt{-1}}-e^{-\frac{c}{2} \sqrt{-1}}}{e^{\frac{c}{2} \sqrt{-1}}+e^{-\frac{c}{2} \sqrt{-1}}}=\frac{1}{2} \sqrt{-1} \operatorname{tang} \frac{1}{2} c,\]
+donc
+\[\frac{1}{2} \operatorname{tang} \frac{1}{2} c=A_1 c-A_3 c^3+A_5 c^5-\ldots\]
+Or on a (\textit{Legendre} Exerc. de calc. int. t. II, p. 186)
+\[\frac{1}{2} \operatorname{tang} \frac{1}{2} c=\int_0^{\frac{1}{0}} \frac{e^{c t}-e^{-c t}}{e^{\pi t}-e^{-\pi t}} d t,\]
+donc, puisque
+\[e^{c t}-e^{-c t} = 2\left\{c t+\frac{c^3}{2.3} t^3+\frac{c^5}{2.3.4.5} t^5+\ldots\right\},\]
+on obtient
+\[\begin{gathered}
+\frac{1}{2} \operatorname{tang} \frac{1}{2} c=A_1 c-A_3 c^3+A_5 c^5-\ldots \\
+=2 c \int_0^{\frac{1}{0}} \frac{t d t}{e^{\pi t}-e^{-\pi t}}+2 \frac{c^3}{2.3} \int_0^{\frac{1}{0}} \frac{t^3 d t}{e^{\pi t}-e^{-\pi t}}+2 \frac{c^5}{2.3.4.5} \int_0^{\frac{1}{0}} \frac{t^5 d t}{e^{\pi t}-e^{-\pi t}}+\ldots
+\end{gathered}\]
+On en conclut,
+\[\begin{aligned}
+A_1&=2 \int_0^{\frac{1}{0}} \frac{t d t}{e^{\pi t}-e^{-\pi t}}, \\
+A_3&=-\frac{2}{2. 3} \int_0^{\frac{1}{0}} \frac{t^3 d t}{e^{\pi t}-e^{-\pi t}}, \\
+A_5&=\frac{2}{2. 3.4. 5} \int_0^{\frac{1}{0}} \frac{t^5 d t}{e^{\pi t}-e^{-\pi t}},\\
+& \text{ etc.}
+\end{aligned}\]
+
+En substituant ces valeurs dans l'expression pour \(S\), on trouve
+\[S=\frac{1}{2} \varphi x+2 \int_0^{\frac{1}{0}} \frac{d t}{e^{\pi t}-e^{-\pi t}}\left\{ t \varphi^{\prime} x-\frac{t^3}{2.3} \varphi^{\prime \prime \prime} x+\frac{t^5}{2.3.4.5} \varphi^{\scriptscriptstyle (V)} x-\ldots\right\};\]
+mais on a 
+\[t \varphi^{\prime} x-\frac{t^3}{2.3} \varphi^{\prime \prime \prime} x+\frac{t^5}{2.3.4.5} \varphi^{\scriptscriptstyle (V)} x-\ldots=\frac{\varphi(x+t \sqrt{-1})-\varphi\left(x-t \sqrt{-1}\right)}{2 \sqrt{-1}},\]
+donc
+\[\begin{aligned}
+& \varphi(x+1)-\varphi(x+2)+\varphi(x+3)-\varphi(x+4)+\cdots \\ 
+&\phantom{\varphi}=\frac{1}{2} \varphi x+2 \int_0^{\frac{1}{0}} \frac{d t}{e^{\pi t}-e^{-\pi t}} \frac{\varphi(x+t \sqrt{-1})-\varphi(x-t \sqrt{-1})}{2 \sqrt{-1}}.
+\end{aligned}\]
+
+Si l'on pose \(x=0\), on obtient
+\[\begin{aligned}
+& \varphi(1)-\varphi(2)+\varphi(3)-\varphi(4)+\ldots \text { in inf. } \\
+& \phantom{\varphi}=\frac{1}{2} \varphi(0)+2 \int_0^{\frac{1}{0}} \frac{d t}{e^{\pi t}-e^{-\pi t}} \frac{\varphi(t \sqrt{-1})-\varphi(-t \sqrt{-1})}{2 \sqrt{-1}}.
+\end{aligned}\]
+Supposons par exemple \(\varphi x=\frac{1}{x+1}\), on a
+\[\frac{\varphi(t \sqrt{-1})-\varphi(-t \sqrt{-1})}{2 \sqrt{-1}}=-\frac{t}{1+t^2},\]
+donc
+\[\frac{1}{2}-\frac{1}{3}+\frac{1}{4}-\frac{1}{5}+\ldots=\frac{1}{2}-2 \int_0^{\frac{1}{0}} \frac{t d t}{\left(1+t^2\right)\left(e^{\pi t}-e^{-\pi t}\right)};\]
+or on a
+\[\frac{1}{2}-\frac{1}{3}+\frac{1}{4}-\frac{1}{5}+\cdots=1-\log 2,\]
+par conséquent
+\[\int_0^{\frac{1}{0}} \frac{t d t}{\left(1+t^2\right)\left(e^{\pi t}-e^{-\pi t}\right)}=\frac{1}{2} \log 2-\frac{1}{4}.\]
+\begin{center}\rule{2in}{0.1pt}\end{center}
+\end{document}

@@ -1,0 +1,145 @@
+\documentclass[oneside, 12 pt, leqno]{memoir}
+\usepackage{standalone}
+\usepackage[dvips,text={6.2in,8.5in},left=0.9truein,top=1.5truein]{geometry}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{microtype}
+\usepackage{indentfirst}
+\usepackage[utf8]{inputenc}
+\usepackage{exscale}
+\usepackage{mlmodern}
+\usepackage[OT1]{fontenc}
+\usepackage[bottomfloats]{footmisc}
+\parindent=2.27em
+\parskip=0pt
+\nonfrenchspacing
+\renewcommand{\baselinestretch}{1.15}
+\DeclareMathSizes{12}{12}{8}{6}
+\everymath{\displaystyle}
+\allowdisplaybreaks
+\raggedbottom
+\titleformat{\section}
+  {\normalfont\centering}{\thesection.}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\spaceskip=0.67em plus 0.33em minus 0.33em
+\thickmuskip=4mu plus 4mu
+\medmuskip=3mu plus 1.5mu minus 3mu
+\AtBeginDocument{%
+  \mathchardef\stdcomma=\mathcode`,
+  \mathcode`,="8000
+}
+\begingroup\lccode`~=`, \lowercase{\endgroup\def~}{\stdcomma\mspace{\medmuskip}}
+\let\oldfrac\frac
+\def\frac#1#2{\mathchoice{\text{\scalebox{.83}{${\oldfrac{#1}{#2}}$}}}{\text{\scalebox{.83}{${\displaystyle\oldfrac{#1}{#2}}$}}}{\genfrac{}{}{}{2}{#1}{#2}}{\genfrac{}{}{}{3}{#1}{#2}}}
+\begin{document}
+\setlength{\abovedisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+\setlength{\belowdisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+
+\;\\ [3\baselineskip]
+\section*{\begin{Large}III.\end{Large} \\ [\baselineskip]
+MÉMOIRE SUR LES ÉQUATIONS ALGÉBRIQUES, OU L'ON DÉMONTRE L'IMPOSSIBILITÉ DE LA RÉSOLUTION DE L'ÉQUATION GÉNÉRALE DU CINQUIÈME DEGRÉ.}
+\begin{center}
+\rule{2in}{0.1pt}\\ [0.5\baselineskip]
+\begin{scriptsize} Brochure imprimée chez Grondahl, Christiania 1824. \par\end{scriptsize}
+\rule{2in}{0.1pt}
+\end{center}
+
+Les géomètres se sont beaucoup occupés de la résolution générale des équations algébriques, et plusieurs d'entre eux ont cherché à en prouver l'impossibilité; mais si je ne me trompe pas, on n'y a pas réussi jusqu'à présent. J'ose donc espérer que les géomètres recevront avec bienveillance ce mémoire qui a pour but de remplir cette lacune dans la théorie des équations algébriques.
+
+Soit
+\[y^5-a y^4+b y^3-c y^2+d y-e=0\]
+l'équation générale du cinquième degré, et supposons qu'elle soit résoluble algébriquement, c'est-à-dire qu'on puisse exprimer \(y\) par une fonction des quantités \(a\), \(b\), \(c\), \(d\) et \(e\), formée par des radicaux. Il est clair qu'on peut dans ce cas mettre \(y\) sous la forme:
+\[y=p+p_1 R^{\frac{1}{m}}+p_2 R^{\frac{2}{m}}+\ldots+p_{m-1} R^{\frac{m-1}{m}},\]
+\(m\) étant un nombre premier et \(R\), \(p\), \(p_1\), \(p_2\) etc. des fonctions de la même forme que \(y\), et ainsi de suite jusqu'à ce qu'on parvienne à des fonctions rationnelles des quantités \(a\), \(b\), \(c\), \(d\) et \(e\). On peut aussi supposer qu'il soit impossible d'exprimer \(R^{\frac{1}{m}}\) par une fonction rationnelle des quantités \(a\), \(b\) etc. \(p\), \(p_1\), \(p_2\) etc., et en mettant \(\frac{R}{p_1^m}\) au lieu de \(R\) il est clair qu'on peut faire \(p_1=1\). On aura donc,
+\[y=p+R^{\frac{1}{m}}+p_2 R^{\frac{2}{m}}+\ldots+p_{m-1} R^{\frac{m-1}{m}}.\]
+
+En substituant cette valeur de \(y\) dans l'équation proposée, on obtiendra en réduisant un résultat de cette forme,
+\[P=q+q_1 R^{\frac{1}{m}}+q_2 R^{\frac{2}{m}}+\ldots+q_{m-1} R^{\frac{m-1}{m}}=0,\]
+\(q\), \(q_1\), \(q_2\) etc. étant des fonctions rationnelles et entières des quantités \(a\), \(b\), \(c\), \(d\), \(e\), \(p\), \(p_2\) etc. et \(R\). Pour que cette équation puisse avoir lieu il faut que \(q=0\), \(q_1=0\), \(q_2=0\) etc. \(q_{m-1}=0\). En effet, en désignant \(R^{\frac{1}{m}}\) par \(z\), on aura les deux équations
+\[z^m-R=0 \text { et } q+q_1 z+\ldots+q_{m-1} z^{m-1}=0.\]
+Si maintenant les quantités \(q\), \(q_1\) etc. ne sont pas égales à zéro, ces équations ont nécessairement une ou plusieurs racines communes. Soit \(k\) le nombre de ces racines, on sait qu'on peut trouver une équation du degré \(k\) qui a pour racines les \(k\) racines mentionnées, et dans laquelle tous les coefficiens sont des fonctions rationnelles de \(R\), \(q\), \(q_1\) et \(q_{m-1}\). Soit
+\[r+r_1 z+r_2 z^2+\ldots+r_k z^k=0\]
+cette équation. Elle a ces racines communes avec l'équation \(z^m-R=0\); or toutes les racines de cette équation sont de la forme \(\alpha_\mu z\), \(\alpha_\mu\) désignant une des racines de l'équation \(\alpha_\mu^m-1=0\). On aura donc en substituant les équations suivantes,
+\[\begin{gathered}
+r+r_1 z+r_2 z^2+\ldots+r_k z^k=0,\\
+r+\alpha r_1 z+\alpha^2 r_2 z^2+\ldots+\alpha^k r_k z^k=0,\\
+\cdots \cdots \cdots \cdots \cdots \\
+r+\alpha_{k-2} r_1 z+\alpha_{k-2}^2 r_2 z^2+\ldots+\alpha_{k-2}^k r_k z^k=0.
+\end{gathered}\]
+De ces \(k\) équations, on peut toujours tirer la valeur de \(z\) exprimée par une fonction rationnelle des quantités \(r\), \(r_1\), \(r_2\) etc. \(r_k\), et comme ces quantités sont elles-mêmes des fonctions rationnelles de \(a\), \(b\), \(c\), \(d\), \(e\), \(R \dots\) \(p\), \(p_2\) etc., il s'en suit que \(z\) est aussi une fonction rationnelle de ces dernières quantités; mais cela est contre l'hypothèse. Il faut donc que
+\[q=0, q_1=0 \text { etc. } q_{m-1}=0.\]
+
+Si maintenant ces équations ont lieu, il est clair que l'équation proposée est satisfaite par toutes les valeurs qu'on obtiendra pour \(y\), en donnant à \(R^{\frac{1}{m}}\) toutes les valeurs
+\[R^{\frac{1}{m}}, \alpha R^{\frac{1}{m}}, \alpha^2 R^{\frac{1}{m}}, \alpha^3 R^{\frac{1}{m}} \text {, etc. } \alpha^{m-1} R^{\frac{1}{m}};\] 
+\(\alpha\) étant une racine de l'équation
+\[\alpha^{m-1}+\alpha^{m-2}+\cdots+\alpha+1=0.\]
+On voit aussi que toutes ces valeurs de \(y\) sont différentes; car dans le cas contraire on aurait une équation de la même forme que l'équation \(P=0\), et une telle équation conduit comme on vient de le voir à un résultat qui ne peut avoir lieu. Le nombre \(m\) ne peut donc dépasser 5. En désignant donc par \(y_1\), \(y_2\), \(y_3\), \(y_4\) et \(y_5\) les racines de l'équation proposée, on aura
+\[\begin{gathered}
+y_1=p+R^{\frac{1}{m}}+p_2 R^{\frac{2}{m}}+\ldots+p_{m-1} R^{\frac{m-1}{m}},\\
+y_2 = p +\alpha R^{\frac{1}{m}}+\alpha^2 p_2 R^{\frac{2}{m}}+\ldots+\alpha^{m-1} p_{m-1} R^{\frac{m-1}{m}}, \\
+\ldots \ldots \ldots \ldots \ldots \ldots \ldots \ldots\\
+y_m=p+\alpha^{m-1} R^{\frac{1}{m}}+\alpha^{m-2} p_2 R^{\frac{2}{m}}+\ldots + \alpha p_{m-1} R^{\frac{m-1}{m}}.
+\end{gathered}\]
+De ces équations on tirera sans peine
+\[\begin{aligned}
+p & =\frac{1}{m}\left(y_1+y_2+\ldots+y_m\right), \\
+R^{\frac{1}{m}} & =\frac{1}{m}\left(y_1+\alpha^{m-1} y_2+\ldots+\alpha y_m\right), \\
+p_2 R^{\frac{2}{m}} & =\frac{1}{m}\left(y_1+\alpha^{m-2} y_2+\ldots+\alpha^2 y_m\right), \\
+\cdots & \cdots \cdots \\
+p_{m-1} R^{\frac{m-1}{m}} & =\frac{1}{m}\left(y_1+\alpha y_2+\ldots+\alpha^{m-1} y_m\right).
+\end{aligned}\]
+On voit par là que \(p\), \(p_2\) etc. \(p_{m-1}\), \(R\) et \(R^{\frac{1}{m}}\) sont des fonctions rationnelles des racines de l'équation proposée.
+
+Considérons maintenant l'une quelconque de ces quantités, par exemple R. Soit
+\[R=S+v^{\frac{1}{n}}+S_2 v^{\frac{2}{n}}+\cdots+S_{n-1} v^{\frac{n-1}{n}}.\]
+En traitant cette quantité de la même manière que \(y\), on obtiendra un résultat pareil savoir que les quantités \(v^{\frac{1}{n}}\), \(v\), \(S\), \(S_2\) etc. sont des fonctions rationnelles des différentes valeurs de la fonction \(R\); et comme celles-ci sont des fonctions rationnelles de \(y_1\), \(y_2\) etc., les fonctions \(v^{\frac{1}{n}}\), \(v\), \(S\), \(S_2\) etc. le sont de même. En poursuivant ce raisonnement on conclura que toutes les fonctions irrationnelles contenues dans l'expression de \(y\) sont des fonctions rationnelles des racines de l'équation proposée.
+
+Cela posé, il n'est pas difficile d'achever la démonstration. Considérons d'abord les fonctions irrationnelles de la forme \(R^{\frac{1}{m}}\), \(R\) étant une fonction rationnelle de \(a\), \(b\), \(c\), \(d\) et \(e\). Soit \(R^{\frac{1}{m}}=r\), \(r\) est une fonction rationnelle \(y_1\), \(y_2\), \(y_3\), \(y_4\) et \(y_5\), et \(R\) une fonction symétrique de ces quantités. Maintenant comme il s'agit de la résolution de l'équation générale du cinquième degré, il est clair qu'on peut considérer \(y_1\), \(y_2\), \(y_3\), \(y_4\) et \(y_5\) comme des variables indépendantes; l'équation \(R^{\frac{1}{m}}=r\) doit donc avoir lieu dans cette supposition. Par conséquent on peut échanger les quantités \(y_1\), \(y_2\), \(y_3\), \(y_4\) et \(y_5\) entre elles dans l'équation \(R^{\frac{1}{m}}=r\); or par ce changement \(R^{\frac{1}{m}}\) obtient nécessairement \(m\) valeurs différentes en remarquant que \(R\) est une fonction symétrique. La fonction \(r\) doit donc avoir la propriété qu'elle obtient \(m\) valeurs différentes en permutant de toutes les manières possibles les cinq variables qu'elle contient. Or pour cela il faut que \(m=5\) ou \(m=2\) en remarquant que \(m\) est un nombre premier. (Voyez un mémoire de M. \textit{Cauchy} inséré dans le. Journal de l'école polytechnique, XVII\(^{e}\) Cahier). Soit d'abord \(m=5\). La fonction \(r\) a donc cinq valeurs différentes; et peut par conséquent être mise sous la forme
+\[R^{\frac{1}{5}}=r=p+p_1 y_1+p_2 y_1^2+p_3 y_1^3+p_4 y_1^4,\]
+\(p\), \(p_1\), \(p_2 \ldots\) étant des fonctions symétriques de \(y_1\), \(y_2\) etc. Cette équation donne en changeant \(y_1\) en \(y_2\)
+\[p+p_1 y_1+p_2 y_1^2+p_3 y_1^3+p_4 y_1^4=\alpha p+\alpha p_1 y_2+\alpha p_2 y_2^2+\alpha p_3 y_2^3+\alpha p_4 y_2^4\]
+où
+\[\alpha^4+\alpha^3+\alpha^2+\alpha+1=0;\]
+mais cette équation ne peut avoir lieu; le nombre \(m\) doit par conséquent être égal à deux. Soit donc
+\[R^{\frac{1}{2}}=r,\]
+\(r\) doit avoir deux valeurs différentes et de signe contraire; on aura donc (voyez le mémoire de M. \textit{Cauchy})
+\[R^{\frac{1}{2}}=r=v\left(y_1-y_2\right)\left(y_1-y_3\right) \ldots\left(y_2-y_3\right) \ldots\left(y_4-y_5\right)=v S^{\frac{1}{2}},\]
+\(v\) étant une fonction symétrique. 
+
+Considérons maintenant les fonctions irrationnelles de la forme
+\[\left(p+p_1 R^{\frac{1}{\nu}}+p_2 R_1^{\frac{1}{\mu}}+\ldots\right)^{\frac{1}{m}},\]
+\(p\), \(p_1\), \(p_2\) etc., \(R\), \(R_1\) etc. étant des fonctions rationnelles de \(a\), \(b\), \(c\), \(d\) et \(e\) et par conséquent des fonctions symétriques de \(y_1\), \(y_2\), \(y_3\), \(y_4\) et \(y_5\). Comme on l'a vu, on doit avoir \(\nu=\mu=\) etc. \(=2\), \(R=v^2 S\), \(R_1=v_1^2 S\) etc. I La fonction précédente peut donc être mise sous la forme
+\[\left(p+p_1 S^{\frac{1}{2}}\right)^{\frac{1}{m}}.\]
+
+Soit
+\[\begin{aligned}
+& r=\left(p+p_1 S^{\frac{1}{2}}\right)^{\frac{1}{m}}, \\
+& r_1=\left(p-p_1 S^{\frac{1}{2}}\right)^{\frac{1}{m}},
+\end{aligned}\]
+on aura en multipliant,
+\[r r_1=\left(p^2-p_1^2 S\right)^{\frac{1}{m}}.\]
+Si maintenant \(r r_1\) n'est pas une fonction symétrique, le nombre \(m\) doit être égal à deux; mais dans ce cas \(r\) aura quatre valeurs différentes, ce qui est impossible; il faut donc que \(rr_1\) soit une fonction symétrique. Soit \(v\) cette fonction, on aura
+\[r+r_1=\left(p+p_1 S^{\frac{1}{2}}\right)^{\frac{1}{m}}+v\left(p+p_1 S^{\frac{1}{2}}\right)^{-\frac{1}{m}}=z.\]
+Cette fonction a \(m\) valeurs différentes, il faut donc que \(m=5\), en remarquant que \(m\) est un nombre premier. On aura par conséquent
+\[z=q+q_1 y+q_2 y^2+q_3 y^3+q_4 y^4=\left(p+p_1 S^{\frac{1}{2}}\right)^{\frac{1}{5}}+v\left(p+p_1 S^{\frac{1}{2}}\right)^{-\frac{1}{5}},\]
+\(q\), \(q_1\), \(q_2\) etc. étant des fonctions symétriques de \(y_1\), \(y_2\), \(y_3\) etc. et par conséquent des fonctions rationnelles de \(a\), \(b\), \(c\), \(d\) et \(e\). En combinant cette équation avec l'équation proposée, on en tirera la valeur de \(y\) exprimée par une fonction rationelle de \(z\), \(a\), \(b\), \(c\), \(d\) et \(e\). Or une telle fonction est toujours réductible à la forme
+\[y=P+R^{\frac{1}{5}}+P_2 R^{\frac{2}{5}}+P_3 R^{\frac{3}{5}}+P_4 R^{\frac{4}{5}},\]
+où \(P,\) \(R\), \(P_2\), \(P_3\) et \(P_4\) sont des fonctions de la forme \(p+p_1 S^{\frac{1}{2}}\), \(p\), \(p_1\), et \(S\) étant des fonctions rationnelles de \(a\), \(b\), \(c\), \(d\) et \(e\). De cette valeur de \(y\) on tire
+\[R^{\frac{1}{5}}=\frac{1}{5}\left(y_1+\alpha^4 y_2+\alpha^3 y_3+\alpha^2 y_4+\alpha y_5\right)=\left(p+p_1 S^{\frac{1}{2}}\right)^{\frac{1}{5}}\]
+où
+\[\alpha^4+\alpha^3+\alpha^2+\alpha+1=0.\]
+Or le premier membre a 120 valeurs différentes et le second membre seulement 10; par conséquent \(y\) ne peut avoir la forme que nous venons de trouver; mais nous avons démontré que \(y\) doit nécessairement avoir cette forme, si l'équation proposée est résoluble; nous concluons donc
+
+\textls[100]{qu'il est impossible de résoudre par des radicaux l'équation générale du cinquième degré.}
+
+Il suit immédiatement de ce théorème qu'il est de même impossible de résoudre par des radicaux les équations générales des degrés supérieurs au cinquième.
+\begin{center}
+\rule{2in}{0.1pt}
+\end{center}
+\end{document}
