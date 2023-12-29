@@ -50,10 +50,8 @@ GENERAL METHOD FOR FINDING FUNCTIONS OF A SINGLE VARIABLE, WHEN A PROPERTY OF TH
 \rule{2in}{0.1pt}
 \end{center}
 
-%
 Let \(x\) and \(y\) be two independent variable quantities, \(\alpha\), \(\beta\), \(\gamma\), \(\delta\), etc. given functions of \(x\) and \(y\), and \(\varphi\), \(f\), \(F\), etc. sought functions between which a relation is expressed by an equation \(V=0\), containing in some way the quantities \(x\), \(y\), \(\varphi \alpha\), \(f \beta\), \(F\gamma\), etc. and their differentials. It is generally possible, using this equation alone, to find all unknown functions in cases where the problem is solvable.
 
-%
 To find one of the functions, it is clear that we must look for an equation where this function is the only unknown and consequently eliminate all the others. Let us first try to eliminate an unknown function, for example \(\varphi \alpha\), and its differentials. Since the quantities \(x\) and \(y\) are independent, we can consider one of them, or a given function of the two, as constant. We can then differentiate the equation \(V=0\) with respect to one of the variables \(x\), considering \(\alpha\) as constant, and in this case the other variable \(y\) must be considered as a function of \(x\) and \(a\). Now, by differentiating the equation \(V=0\) several times in succession, assuming \(\alpha\) to be constant, there will not be in the resulting equations any functions of \(\alpha\) other than those which are included in the equation \(V=0\), namely \(\varphi \alpha\) and its differentials. Therefore, if the function \(V\) contains 
 \[\varphi \alpha, d \varphi \alpha, d^2 \varphi \alpha, \ldots, d^n \varphi \alpha,\]
 by differentiating the equation \(V=0\) \(n+1\) times in the assumption of \(\alpha\) being constant, we obtain the following \(n+2\) equations:
@@ -62,19 +60,14 @@ Eliminating from these \(n+2\) equations the \(n+1\) unknown quantities
 \(\varphi \alpha, d \varphi \alpha, d^2 \varphi \alpha, \text{etc.}\),
 we obtain an equation \(V_1=0\) which does not contain the function \(\varphi \alpha\) nor its differentials, but only the functions \(f \beta\), \(F \gamma\), etc. and their differentials.
 
-%
 This equation \(V_{1}=0\) will now be treated in the same way, with respect to one of the other unknown functions \(f \beta\), and we will obtain an equation \(V_2=0\) that will not contain either \(\varphi \alpha\) or its differentials, nor \(f \beta\) or its differentials, but only \(F \gamma\) etc. and the differentials of these functions.
 
-%
 In this way, we can continue eliminating the unknown functions until we have arrived at an equation that contains only a single unknown function with its differentials. By now regarding one of the variable quantities as constant, we have, between the unknown function and the other variable, a differential equation from which we can derive this function by integration.
 
-%
 Note that it suffices to eliminate until one has obtained an equation that contains only two unknown functions and their differentials; because if, for example, these functions are \(\varphi \alpha\) and \(f \beta\), then one can, assuming \(\beta\) is constant, express \(x\) and \(y\) as functions of \(\alpha\) using the two equations \(\alpha=\alpha\) and \(\beta=c\), and arrive in this way at a differential equation relating \(\varphi \alpha\) and \(\alpha\), from which one can consequently deduce \(\varphi \alpha\). In the same way, one will find an equation relating \(f \beta\) and \(\beta\) by determining \(x\) and \(y\) using the equations \(\alpha=c\) and \(\beta=\beta\). These functions being thus found, one will easily find the other functions using the remaining equations.
 
-%
 In this way, we can generally find all unknown functions, whenever the problem is solvable. To realize this, one must substitute the found values into the given equation, and verify that it is satisfied.
 
-%
 What precedes depends, as we have just seen, on the differentiation of a function of \(x\) and \(y\) with respect to \(x\), assuming a given function of \(x\) and \(y\) is constant; thus \(y\) is a function of \(x\) and in the differentials we find the expressions \(\frac{d y}{d x}\), \(\frac{d^2 y}{d x^2}\), \(\frac{d^3 y}{d x^3}\), etc. These expressions are easily found by differentiating the equation \(\alpha=c\) with respect to \(x\) and assuming \(y\) is a function of \(x\). Indeed, we obtain the following equations:
 \[\begin{gathered} 
 \frac{d \alpha}{d x} + \frac{d \alpha}{d y} \frac{d y}{d x} = 0,\\
@@ -86,16 +79,13 @@ from which we deduce
 \frac{d^2 y}{d x^2} = - \frac{\frac{d^2 \alpha}{d x^2}}{\frac{d \alpha}{d y}} + 2 \frac{\frac{d^2 \alpha}{d x d y} \frac{d \alpha}{d x}}{\left(\frac{d \alpha}{d y}\right)^2} - \frac{\frac{d^2 \alpha}{d y^2}\left(\frac{d \alpha}{d x}\right)^2}{\left(\frac{d \alpha}{d y}\right)^3} \text{ etc.}
 \end{gathered}\]
 
-%
 The general method for solving the equation \(V=0\) is applicable in all cases where elimination can be carried out, but it can happen that this is not possible, and then it is necessary to resort to the calculus of differences; but to not be too long, I will pass over this case in silence, especially since one can see in the treatise on differential calculus and integral calculus by Mr. Lacroix, vol. III, p. 208, how one should proceed.
 
-%
 We will apply the general theory to a few examples.\\
 1. Find the function \(\varphi\) that satisfies the equation
 \[ \varphi \alpha = f(x, y, \varphi \beta, \varphi \gamma),\]
 where \(f\) is any given function.
 
-%
 By differentiating this equation with respect to \(x\), assuming \(\alpha\) is constant, we will have
 \[0=f^{\prime} x + f^{\prime} y \frac{d y}{d x} + f^{\prime}(\varphi \beta) \varphi^{\prime} \beta \left(\frac{d \beta}{d x} + \frac{d \beta}{d y} \frac{d y}{d x}\right) + f^{\prime}(\varphi \gamma) \varphi^{\prime} \gamma \left(\frac{d \gamma}{d x} + \frac{d \gamma}{d y} \frac{d y}{d x}\right),\]
 but we have seen that
@@ -104,7 +94,6 @@ this value being substituted in the equation above, we will obtain, after multip
 \[0=f^{\prime} x \frac{d \alpha}{d y}-f^{\prime} y \frac{d \alpha}{d x}+f^{\prime}(\varphi \beta) \varphi^{\prime} \beta\left(\frac{d \beta}{d x} \frac{d \alpha}{d y}-\frac{d \alpha d \beta}{d x d y}\right)+f^{\prime}(\varphi \gamma) \varphi^{\prime} \gamma\left(\frac{d \gamma}{d x} \frac{d \alpha}{d y}-\frac{d \alpha d \gamma}{d x d y}\right).\]
 Now, assuming \(\gamma\) is constant, determining \(x\) and \(y\) in terms of \(\beta\) by the two equations \(\gamma=c\), \(\beta=\beta\) and substituting their values, we will obtain a first-order differential equation between \(\varphi \beta\) and \(\beta\), from which we will derive the function \(\varphi \beta\).
 
-%
 Letting
 \[f(x, y, \varphi \beta, \varphi \gamma)=\varphi \beta+\varphi \gamma,\]
 we will have
@@ -121,7 +110,6 @@ we conclude that
 \[\varphi x=\varphi^{\prime} y \int \frac{\frac{d \alpha}{d x}}{\frac{d \alpha}{d y}} d x,\]
 where \(y\) is assumed to be constant after differentiation.
 
-%
 Let's apply this to the search for the logarithm. We have
 \[\log (xy)=\log x+\log y,\]
 thus
@@ -131,7 +119,6 @@ substituting these values we obtain
 thus
 \[\log x=c \int \frac{d x}{x}.\]
 
-%
 If we want to find \(\operatorname{arc\;tan} x\), we have
 \[\operatorname{arc\;tan} \frac{x+y}{1-xy}=\operatorname{arc\;tan} x+\operatorname{arc\;tan} y,\]
 so
@@ -148,7 +135,6 @@ therefore
 which implies
 \[\operatorname{arc\;tan} x=c \int \frac{dx}{1+x^2}=\int \frac{dx}{1+x^2},\text{ by taking }c=1.\]
 
-%
 Let us now assume
 \[f(x, y, \varphi \beta, \varphi \gamma)=\varphi \beta. \varphi \gamma=\varphi x. \varphi y,\]
 by setting \(\beta=x\), \(\gamma=y\). We will have
@@ -167,7 +153,6 @@ Let
 then we will have
 \[\varphi x=e^{c T}.\]
 
-%
 Let's take for example \(\alpha=x+y\), we have \(\frac{d \alpha}{d x}=1=\frac{d \alpha}{d y}\), so
 \[T={\textstyle \int} d x=x,\]
 and
@@ -179,11 +164,10 @@ so
 that is
 \[\varphi x=x^c.\]
 
-%
 If we seek the resultant \(R\) of two equal forces \(P\), whose directions make an angle equal to \(2x\), we find that \(R=P \varphi x\), where \(\varphi x\) is a function that satisfies the equation
 \[\varphi x. \varphi y=\varphi(x+y)+\varphi(x-y).\footnote{See Poisson's treatise on mechanics, vol. I, p. 14.}\]
 To determine this function, we differentiate the equation with respect to \(x\), assuming \(y+x=\mathrm{const.}\), and we obtain
-\[\varphi^{\prime} x. \varphi y+\varphi x. \varphi^{\prime} y \frac{d y}{d x}=\varphi^{\prime}(x-y)\left(1-\frac{d y}{d x}\right).\] % 7
+\[\varphi^{\prime} x. \varphi y+\varphi x. \varphi^{\prime} y \frac{d y}{d x}=\varphi^{\prime}(x-y)\left(1-\frac{d y}{d x}\right).\]
 But from the equation \(x+y=c\) we have \(\frac{d y}{d x}=-1\); substituting this value, we obtain
 \[\varphi^{\prime} x. \varphi y-\varphi x. \varphi^{\prime} y=2 \varphi^{\prime}(x-y).\]
 Differentiating now with respect to \(x\), assuming \(x-y=\) const., we have
@@ -199,17 +183,14 @@ where \(\alpha\), \(\beta\), and \(\gamma\) are constants. By determining these 
 so
 \[\varphi x=2 \cos x, \text { and thus } R=2 P \cos x.\]
 
-%
 2. Determine the three functions \(\varphi\), \(f\), and \(\psi\) that satisfy the equation
 \[\psi \alpha=F\left(x, y, \varphi x, \varphi^{\prime} x, \ldots f y, f^{\prime} y, \ldots\right),\]
 where \(\alpha\) is a given function of \(x\) and \(y\), and \(F\) is a given function of the quantities inside the parentheses.
 
-%
 Differentiating the equation with respect to \(x\), assuming \(\alpha\) is constant, and then writing \(-\frac{\frac{d \alpha}{d x}}{\frac{d \alpha}{d y}}\) instead of \(\frac{d y}{d x}\), we obtain 
-\[ \frac{\frac{d \alpha}{d x}}{\frac{d \alpha}{d y}}=\frac{F^{\prime} x+F^{\prime}(\varphi x) \varphi^{\prime} x+\ldots}{F^{\prime} y+F^{\prime}(f y) f^{\prime} y+\ldots}. \] \vspace{\baselineskip}% 8
+\[ \frac{\frac{d \alpha}{d x}}{\frac{d \alpha}{d y}}=\frac{F^{\prime} x+F^{\prime}(\varphi x) \varphi^{\prime} x+\ldots}{F^{\prime} y+F^{\prime}(f y) f^{\prime} y+\ldots}. \] \vspace{\baselineskip}
 If in this equation we assume \(y\) is constant, we have a differential equation between \(\varphi x\) and \(x\), from which we can determine \(\varphi x\), and if we assume \(x\) is constant, we have a differential equation from which we can determine \(f y\). Once these two functions are found, the function \(\psi \alpha\) can be easily determined using the proposed equation.
 
-%
 \textit{Examples.} Find the three functions that satisfy the equation
 \[\psi(x+y)=\varphi x. f^{\prime} y+f y. \varphi^{\prime} x.\]
 Here we have
@@ -240,8 +221,7 @@ Substituting these values into the proposed equation, we obtain
 \[\begin{gathered}
 \psi(x+y)=a a^{\prime} b\left(\sin (b x+c) \cos \left(b y+c^{\prime}\right)+\sin \left(b y+c^{\prime}\right) \cos (b x+c)\right) \\
 =a a^{\prime} b \sin \left(b(x+y)+c+c^{\prime}\right).
-\end{gathered}
-\] % 9
+\end{gathered}\] 
 The three sought functions are therefore
 \[\begin{aligned}
 & \varphi x=a \sin (b x+c),\\
@@ -253,7 +233,6 @@ If we take \(a=a^{\prime}=b=1\) and \(c=c^{\prime}=0\), we have
 and therefore
 \[ \sin (x+y)=\sin x. \sin ^{\prime} y+\sin y. \sin ^{\prime} x.\]
 
-%
 Find the three functions that are determined by the equation
 \[\psi(x+y)=f(x y)+\varphi(x-y). \]
 Differentiating with respect to \(x\), assuming \(x+y\) constant, we have
@@ -273,12 +252,9 @@ To determine \(\psi\), let \(x+y=\alpha\), from which we obtain \(y=\alpha-x\), 
 For this equation to be possible, \(x\) must vanish; then we will have
 \[2 k-c^{\prime}=0, \text { and } c^{\prime}=2 k.\]
 Substituting this value, we obtain
-\[
-\psi \alpha=k^{\prime}+c^{\prime \prime}+\frac{k}{2} \alpha^2, f \beta=c^{\prime \prime}+2 k \beta, \varphi \gamma=k^{\prime}+\frac{k}{2} \gamma^2,
-\]
-which are the three sought-after functions. % 10
+\[\psi \alpha=k^{\prime}+c^{\prime \prime}+\frac{k}{2} \alpha^2, f \beta=c^{\prime \prime}+2 k \beta, \varphi \gamma=k^{\prime}+\frac{k}{2} \gamma^2,\]
+which are the three sought-after functions. 
 
-%
 As a final example, I will take the following: Determine the functions \(\varphi\) and \(f\) by the equation
 \[\varphi(x+y)=\varphi(x) \cdot f(y)+f(x) \cdot \varphi(y).\]
 Assuming \(x+y=c\), and differentiating, we obtain
