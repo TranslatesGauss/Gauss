@@ -1,0 +1,183 @@
+\documentclass[oneside, 12 pt, leqno]{memoir}
+\usepackage{standalone}
+\usepackage[dvips,text={6.2in,8.5in},left=0.9truein,top=1.5truein]{geometry}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{microtype}
+\usepackage{indentfirst}
+\usepackage[utf8]{inputenc}
+\usepackage{exscale}
+\usepackage{mlmodern}
+\usepackage[OT1]{fontenc}
+\usepackage[bottomfloats]{footmisc}
+\parindent=2.27em
+\parskip=0pt
+\nonfrenchspacing
+\renewcommand{\baselinestretch}{1.15}
+\DeclareMathSizes{12}{12}{8}{6}
+\everymath{\displaystyle}
+\allowdisplaybreaks
+\raggedbottom
+\titleformat{\section}
+  {\normalfont\centering}{\thesection.}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\spaceskip=0.67em plus 0.33em minus 0.33em
+\thickmuskip=4mu plus 4mu
+\medmuskip=3mu plus 1.5mu minus 3mu
+\AtBeginDocument{%
+  \mathchardef\stdcomma=\mathcode`,
+  \mathcode`,="8000
+}
+\begingroup\lccode`~=`, \lowercase{\endgroup\def~}{\stdcomma\mspace{\medmuskip}}
+\let\oldfrac\frac
+\def\frac#1#2{\mathchoice{\text{\scalebox{.83}{${\oldfrac{#1}{#2}}$}}}{\text{\scalebox{.83}{${\displaystyle\oldfrac{#1}{#2}}$}}}{\genfrac{}{}{}{2}{#1}{#2}}{\genfrac{}{}{}{3}{#1}{#2}}}
+\begin{document}
+\setlength{\abovedisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+\setlength{\belowdisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+
+\;\\ [3\baselineskip]
+\section*{\begin{Large}IV.\end{Large} \\ [\baselineskip]
+L'INTÉGRALE FINIE \(\Sigma^n \varphi x\) EXPRIMÉE PAR UNE INTÉGRALE SIMPLE.}
+\begin{center}
+\rule{2in}{0.1pt}\\ [0.5\baselineskip]
+\begin{scriptsize} Magazin for Naturvidenskaberne, Aargang III, Bind 2, Christiania 1825.\par\end{scriptsize}
+\rule{2in}{0.1pt}
+\end{center}
+
+On peut comme on sait, au moyen du théorème de \textit{Parseval} exprimer l'intégrale finie \(\Sigma^n \varphi x\) par une intégrale définie double, mais si je ne me trompe, on n'a pas exprimé la même intégrale par une intégrale définie simple. C'est ce qui est l'objet de ce mémoire.
+
+En désignant par \(\varphi x\) une fonction quelconque de \(x\), il est aisé de voir qu'on peut toujours supposer
+\[\tag{1} \varphi x=\int e^{v x} f v. d v,\]
+l'intégrale étant prise entre deux limites quelconques de \(v\), indépendantes de \(x\). La fonction \(f v\) désigne une fonction de \(v\), dont la forme dépend de celle de \(\varphi x\). En supposant \(A x=1\), on aura en prenant l'intégrale finie des deux membres de l'équation (1)
+\[\tag{2} \Sigma \varphi x=\int e^{v x} \frac{f v}{e^v-1} d v,\]
+où il faut ajouter une constante arbitraire. En prenant une seconde fois l'intégrale finie, on obtiendra
+\[\Sigma^2 \varphi x=\int e^{v x} \frac{f v}{\left(e^v-1\right)^2} d v.\]
+En général on trouvera
+\[\tag{3} \Sigma^n \varphi x=\int e^{v x} \frac{f v}{\left(e^v-1\right)^n} d v.\]
+Pour compléter cette intégrale il faut ajouter au second membre une fonction de la forme
+\[C+C_1 x+C_2 x^2+\ldots+C_{n-1} x^{n-1},\]
+\(C\), \(C_1\), \(C_2\) etc. étant des constantes arbitraires.
+
+Il s'agit maintenant de trouver la valeur de l'intégrale définie \(\int e^{v x} \frac{f v}{\left(e^v-1\right)^n} d v\). Pour cela je me sers d'un théorème dû à M. \textit{Legendre} (Exerc. de calc. int. t. II, p. 189), savoir que
+\[\frac{1}{4} \frac{e^v+1}{e^v-1}-\frac{1}{2 v}=\int_0^{\frac{1}{0}} \frac{d t. \sin v t}{e^{2 \pi t}-1}.\]
+On tire de cette équation
+\[\tag{4} \frac{1}{e^v-1}=\frac{1}{v}-\frac{1}{2}+2 \int_0^{\frac{1}{0}} \frac{d t. \sin v t}{e^{2 \pi t}-1}.\]
+En substituant cette valeur de \(\frac{1}{e^v-1}\) dans l'équation (2), on aura
+\[\Sigma \varphi x=\int e^{v x} \frac{f v}{v} d v-\frac{1}{2} \int e^{v x} f v. d v+2 \int_0^{\frac{1}{0}} \frac{d t}{e^{2 \pi t}-1} \int e^{v x} f v. \sin v t. d v.\]
+L'intégrale \(\int e^{v x} f v. \sin v t. d v\) se trouve de la manière suivante. En remplaçant dans l'équation (1) \(x\) successivement par \(x+t \sqrt{-1}\) et \(x-t \sqrt{-1}\), on obtiendra
+\[\begin{aligned}
+& \varphi(x+t \sqrt{-1})=\int e^{v x} e^{v t \sqrt{-1}} f v. d v, \\
+& \varphi(x-t \sqrt{-1})=\int e^{v x} e^{-v t \sqrt{-1}} f v. d v,
+\end{aligned}\]
+d'où l'on tire, en retranchant et divisant par \(2 \sqrt{-1}\),
+\[\int e^{v x} \sin v t. f v. d v=\frac{\varphi(x+t \sqrt{-1})-\varphi(x-t \sqrt{-1})}{2 \sqrt{-1}}.\]
+Ainsi l'expression de \(\Sigma \varphi x\) devient
+\[\Sigma \varphi x=\int \varphi x. d x-\frac{1}{2} \varphi x+2 \int_0^{\frac{1}{0}} \frac{d t}{e^{2 \pi t}-1} \frac{\varphi(x+t \sqrt{-1})-\varphi(x-t \sqrt{-1})}{2 \sqrt{-1}}.\]
+
+Maintenant pour trouver la valeur de l'intégrale générale
+\[\Sigma^n \varphi x=\int e^{v x} f v \frac{d v}{\left(e^v-1\right)^n},\]
+posons
+\[\frac{1}{\left(e^v-1\right)^n}=(-1)^{n-1}\left(A_{0, n} p+A_{1, n} \frac{d p}{d v}+A_{2, n} \frac{d^2 p}{d v^2}+\ldots+A_{n-1, n} \frac{d^{n-1} p}{d v^{n-1}}\right)\]
+où \(p\) est égal à \(\frac{1}{e^v-1}\), \(A_{0, n}\), \(A_{1, n} \dots\) étant des coefficiens numériques qui doivent être déterminés. Si l'on différentie l'équation précédente, on a
+\[\frac{n e^v}{\left(e^v-1\right)^{n+1}}=(-1)^n\left(A_{0, n} \frac{d p}{d v}+A_{1, n} \frac{d^2 p}{d v^2}+\ldots+A_{n-1, n} \frac{d^n p}{d v^n}\right).\]
+Or
+\[\frac{n e^v}{\left(e^v-1\right)^{n+1}}=\frac{n}{\left(e^v-1\right)^n}+\frac{n}{\left(e^v-1\right)^{n+1}},\]
+donc
+\[\begin{aligned}
+\frac{n e^v}{\left(e^v-1\right)^{n+1}} & =n(-1)^{n-1}\left(A_{0, n} p+A_{1, n} \frac{d p}{d v}+\ldots+A_{n-1, n} \frac{d^{n-1} p}{d v^{n-1}}\right) \\
+& +n(-1)^n\left(A_{0, n+1} p+A_{1, n+1} \frac{d p}{d v}+\cdots+A_{n, n+1} \frac{d^n p}{d v^n}\right).
+\end{aligned}\]
+En comparant ces deux expressions de \(\frac{n e^v}{\left(e^v-1\right)^{n+1}}\), on en déduit les équations suivantes:
+\[\begin{aligned}
+ &A_{0, n+1}-A_{0, n}=0 && \text { \rotatebox[origin=c]{180}c: }&& \Delta A_{0, n}=0 \text {, } \\
+ &A_{1, n+1}-A_{1, n}=\frac{1}{n} A_{0, n} && \text { \rotatebox[origin=c]{180}c: }&&  \Delta A_{1, n}=\frac{1}{n} A_{0, n}, \\
+ &A_{2, n+1}-A_{2, n}=\frac{1}{n} A_{1, n} && \text { \rotatebox[origin=c]{180}c: }&& \Delta A_{2, n}=\frac{1}{n} A_{1, n}, \\
+ &\ldots \ldots \ldots \ldots \ldots && && \ldots \ldots \ldots &\\
+ &A_{n-1, n+1}-A_{n-1, n}=\frac{1}{n} A_{n-2, n} && \text { \rotatebox[origin=c]{180}c: }&& \Delta A_{n-1, n}=\frac{1}{n} A_{n-2, n}, \\
+ &\phantom{A_{n-1, n+1}-:} A_{n, n+1}=\frac{1}{n} A_{n-1, n}, &&
+\end{aligned}\]
+d'où l'on tire
+\[\begin{gathered}
+A_{0, n}=1, A_{1, n}=\Sigma \frac{1}{n}, A_{2, n}=\Sigma\left(\frac{1}{n} \Sigma \frac{1}{n}\right), A_{3, n}=\Sigma\left[\frac{1}{n} \Sigma\left(\frac{1}{n} \Sigma \frac{1}{n}\right)\right] \text { etc. } \\
+A_{n, n+1} = \frac{1}{n} \frac{1}{n-1} \frac{1}{n-2} \cdots \frac{1}{2}. \frac{1}{1}. A_{0,1}=\frac{1}{\Gamma(n+1)}.
+\end{gathered}\]
+Cette dernière équation servira à déterminer les constantes qui rentrent dans les expressions de \(A_{1, n}\), \(A_{2, n}\), \(A_{3, n}\) etc.
+
+Ayant ainsi déterminé les coefficiens \(A_{0, n}\), \(A_{1, n}\), \(A_{2, n}\) etc., on aura, en substituant dans l'équation (3) au lieu de \(\frac{1}{\left(e^v-1\right)^n}\) sa valeur,
+\[\Sigma^n \varphi x=(-1)^{n-1} \int e^{v x} f v. d v\left(A_{0, n} p+A_{1, n} \frac{d p}{d v}+\ldots+A_{n-1, n} \frac{d^{n-1} p}{d v^{n-1}}\right) ;\]
+maintenant on a
+\[p=\frac{1}{v}-\frac{1}{2}+2 \int_0^{\frac{1}{0}} \frac{d t. \sin v t}{e^{2 \pi t}-1},\]
+d'où l'on tire en différentiant
+\[\begin{aligned}
+ \frac{d p}{d v}&=-\frac{1}{v^2}+2 \int_0^{\frac{1}{0}} \frac{t d t. \cos v t}{e^{2 \pi t}-1}, \\
+ \frac{d^2 p}{d v^2}&=\phantom{-}\frac{2}{v^3}-2 \int_0^{\frac{1}{0}} \frac{t^2 d t. \sin v t}{e^{2 \pi t}-1}, \\
+\frac{d^3 p}{d v^3}&=-\frac{2.3}{v^4}-2 \int_0^{\frac{1}{0}} \frac{t^3 d t. \cos v t}{e^{2 \pi t}-1} \text { etc.};
+\end{aligned}\]
+donc en substituant
+\[\begin{aligned}
+\Sigma^n \varphi x & =\int\left(A_{n-1, n} \frac{\Gamma n}{v^n}-A_{n-2, n} \frac{\Gamma(n-1)}{v^{n-1}}+...+(-1)^{n-1} A_{0, n} \frac{1}{v}+(-1)^n. \frac{1}{2}\right) e^{v x} f v. d v \\
+& +2(-1)^{n-1} \iint_0^{\frac{1}{0}} \frac{P \sin v t. d t}{e^{2 \pi t}-1} e^{v x} f v. d v+2(-1)^{n-1} \iint_0^{\frac{1}{0}} \frac{Q \cos v t. d t}{e^{2. T t}-1} e^{v x} f v. d v.
+\end{aligned}\]
+De l'équation \(\varphi x=\int e^{v x} f v. d v\) on tire en intégrant:
+\[\begin{aligned}
+& \int \varphi x. d x=\int e^{v x} f v \frac{d v}{v},\\
+& \int^2 \varphi x. d x^2=\int e^{v x} f v \frac{d v}{v^2},\\
+& \int^3 \varphi x. d x^3=\int e^{v x} f v \frac{d v}{v^3} \text { etc.};
+\end{aligned}\]
+de plus on a
+\[\begin{aligned}
+& \int \sin v t. e^{v x} f v. d v=\frac{\varphi(x+t \sqrt{-1})-\varphi(x-t \sqrt{-1})}{2 \sqrt{-1}},\\
+& \int \cos v t. e^{v x} f v. d v=\frac{\varphi(x+t \sqrt{-1})+\varphi(x-t \sqrt{-1})}{2},
+\end{aligned}\]
+donc on aura en substituant
+\[\begin{aligned}
+\Sigma^n \varphi x & =A_{n-1, n} \Gamma n \int^n \varphi x. d x^n-A_{n-2, n} \Gamma(n-1) \int^{n-1} \varphi x. d x^{n-1}+...+(-1)^{n-1} \int \varphi x. d x \\
+& +(-1)^n. \frac{1}{2} \varphi x+2(-1)^{n-1} \int_0^{\frac{1}{0}} \frac{P d t}{e^{2 \pi t}-1} \frac{\varphi(x+t \sqrt{-1})-\varphi(x-t \sqrt{-1})}{2 \sqrt{-1}} \\
+& +2(-1)^{n-1} \int_0^{\frac{1}{0}} \frac{Q d t}{e^{2 \pi t}-1} \frac{\varphi(x+t \sqrt{-1})+\varphi(x-t \sqrt{-1})}{2}
+\end{aligned}\]
+où
+\[\begin{aligned}
+& P=A_{0, n}\phantom{t}-A_{2, n} t^2+A_{4, n} t^4-\ldots, \\
+& Q=A_{1, n} t-A_{3, n} t^3+A_{5, n} t^5-\ldots.
+\end{aligned}\]
+
+En faisant p. ex. \(n=2\), on aura
+\[\begin{aligned}
+\Sigma^2 \varphi x=\iint \varphi x. d x^2-\int \varphi x. d x+\frac{1}{2} \varphi x-2 \int_0^{\frac{1}{0}} \frac{d t}{e^{2 \pi t}-1} \frac{\varphi(x+t \sqrt{-1})-\varphi(x-t \sqrt{-1})}{2 \sqrt{-1}} &\\
+-2 \int_0^{\frac{1}{0}} \frac{t d t}{e^{2. \pi t}-1} \frac{\varphi(x+t \sqrt{-1})+\varphi(x-t \sqrt{-1})}{2}.&
+\end{aligned}\]
+Soit p. ex. \(\varphi x=e^{a x}\), on aura
+\[\varphi(x \pm t \sqrt{-1})=e^{a x} e^{ \pm a t \sqrt{-1}}, \int e^{a x} d x=\frac{1}{a} e^{a x}, \iint e^{a x} d x^2=\frac{1}{a^2} e^{a x},\]
+donc, en substituant et divisant par \(e^{a x}\),
+\[\frac{1}{\left(e^a-1\right)^2}=\frac{1}{2}-\frac{1}{a}+\frac{1}{a^2}-2 \int_0^{\frac{1}{0}} \frac{d t. \sin a t}{e^{2 \pi t}-1}-2 \int_0^{\frac{1}{0}} \frac{t d t. \cos a t}{e^{2\pi t}-1}.\]
+
+Le cas le plus remarquable est celui où \(n=1\). On a alors, comme on l'a vu précédemment:
+\[\Sigma \varphi x=C+\int \varphi x. d x-\frac{1}{2} \varphi x+2 \int_0^{\frac{1}{0}} \frac{d t}{e^{2 \pi t}-1} \frac{\varphi(x+t \sqrt{-1})-\varphi(x-t \sqrt{-1})}{2 \sqrt{-1}}.\]
+En supposant que les deux intégrales \(\Sigma \varphi x\) et \(\int \varphi x d x\) s'annulent pour \(x=a\), il est clair qu'on aura:
+\[C=\frac{1}{2} \varphi a-2 \int_0^{\frac{1}{0}} \frac{d t}{e^{2 \pi t}-1} \frac{\varphi(a+t \sqrt{-1})-\varphi(a-t \sqrt{-1})}{2 \sqrt{-1}};\]
+donc
+\[\begin{aligned}
+\Sigma \varphi x=\int \varphi x. d x-\frac{1}{2}(\varphi x-\varphi a) +2 \int_0^{\frac{1}{0}} \frac{d t}{e^{2 \pi t}-1} \frac{\varphi(x+t \sqrt{-1})-\varphi(x-t \sqrt{-1})}{2 \sqrt{-1}}& \\
+ -2 \int_0^{\frac{1}{0}} \frac{d t}{e^{2\pi t}-1} \frac{\varphi(a+t \sqrt{-1})-\varphi(a-t \sqrt{-1})}{2 \sqrt{-1}}.&
+\end{aligned}\]
+
+Si l'on fait \(x=\infty\), en supposant que \(\varphi x\) et \(\int \varphi x.d x\) s'annulent pour cette valeur de \(x\), on aura:
+\[\begin{aligned}
+& \varphi a+\varphi(a+1)+\varphi(a+2)+\varphi(a+3)+\ldots \text { in inf. } \\
+& =\int_a^{\frac{1}{0}} \varphi x. d x+\frac{1}{2} \varphi a-2 \int_0^{\frac{1}{0}} \frac{d t}{e^{2 \pi t}-1} \frac{\varphi(a+t \sqrt{-1})-\varphi(a-t \sqrt{-1})}{2 \sqrt{-1}}.
+\end{aligned}\]
+
+Soit p. ex. \(\varphi x=\frac{1}{x^2}\), on aura
+\[\frac{\varphi(a+t \sqrt{-1})-\varphi(a-t \sqrt{-1})}{2 \sqrt{-1}}=\frac{-2 a t}{\left(a^2+t^2\right)^2},\]
+donc
+\[\frac{1}{a^2}+\frac{1}{(a+1)^2}+\frac{1}{(a+2)^2}+\ldots=\frac{1}{2 a^2}+\frac{1}{a}+4 a \int_0^{\frac{1}{0}} \frac{t d t}{\left(e^{2 \pi t}-1\right)\left(a^2+t^2\right)^2},\]
+et en faisant \(a=1\)
+\[1+\frac{1}{4}+\frac{1}{9}+\frac{1}{16}+\frac{1}{25}+\ldots=\frac{\pi^2}{6}=\frac{3}{2}+4 \int_0^{\frac{1}{0}} \frac{t d t}{\left(e^{2 \pi t}-1\right)\left(1+t^2\right)^2}.\]
+\begin{center}\rule{2in}{0.1pt}\end{center}
+\end{document}
