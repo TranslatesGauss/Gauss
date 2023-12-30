@@ -1,6 +1,6 @@
 Open source LaTeX transcription and English translation of Abel's complete works (in progress).  
 
-The original can be found <a href="https://archive.org/details/117742591">here</a>.  Note that some of the articles were originally written in Norwegian, and translated into French.
+The original (in French) can be found <a href="https://archive.org/details/117742591">here</a>.  Note that some of the articles were originally written in Norwegian before they were translated into French.
 
 The transcriptions were aided by Mathpix, and the translations were aided by ChatGPT3.5 (see the script "translate.py" for details).  All transcriptions and translations have been checked by hand, but it is likely that there are still many errors.
 
