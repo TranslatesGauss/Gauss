@@ -1,0 +1,596 @@
+\documentclass[oneside, 12 pt, leqno]{memoir}
+\usepackage{standalone}
+\usepackage[dvips,text={6.2in,8.5in},left=0.9truein,top=1.5truein]{geometry}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{microtype}
+\usepackage{indentfirst}
+\usepackage[utf8]{inputenc}
+\usepackage{exscale}
+\usepackage{mlmodern}
+\usepackage[OT1]{fontenc}
+\usepackage[bottomfloats]{footmisc}
+\parindent=2.27em
+\parskip=0pt
+\nonfrenchspacing
+\renewcommand{\baselinestretch}{1.15}
+\DeclareMathSizes{12}{12}{8}{6}
+\everymath{\displaystyle}
+\allowdisplaybreaks
+\raggedbottom
+\titleformat{\section}
+  {\normalfont\centering}{\thesection.}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\spaceskip=0.67em plus 0.33em minus 0.33em
+\thickmuskip=4mu plus 4mu
+\medmuskip=3mu plus 1.5mu minus 3mu
+\AtBeginDocument{%
+  \mathchardef\stdcomma=\mathcode`,
+  \mathcode`,="8000
+}
+\begingroup\lccode`~=`, \lowercase{\endgroup\def~}{\stdcomma\mspace{\medmuskip}}
+\let\oldfrac\frac
+\def\frac#1#2{\mathchoice{\text{\scalebox{.83}{${\oldfrac{#1}{#2}}$}}}{\text{\scalebox{.83}{${\displaystyle\oldfrac{#1}{#2}}$}}}{\genfrac{}{}{}{2}{#1}{#2}}{\genfrac{}{}{}{3}{#1}{#2}}}
+\begin{document}
+\setlength{\abovedisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+\setlength{\belowdisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+
+\hspace{1pt}\\ [3\baselineskip]
+\section*{\begin{Large}V.\end{Large} \\ [\baselineskip]
+PETITE CONTRIBUTION A LA THÉORIE DE QUELQUES FONCTIONS TRANSCENDANTES.}
+\begin{center}
+\rule{2in}{0.1pt}\\ [0.5\baselineskip]
+\begin{scriptsize} Présenté à la société royale des sciences à Throndhjem le 22 mars 1826. Imprimé dans Det kongelige norske Videnskabers Selskabs Skrifter t. 2. Throndhjem 1824-1827.\par\end{scriptsize}
+\rule{2in}{0.1pt}
+\end{center}
+
+\subsection*{1.}
+
+Considérons l'intégrale
+\[p=\int \frac{q d x}{x-a},\]
+\(q\) étant une fonction de \(x\) qui ne contient pas \(a\). En différentiant \(p\) par rapport à \(a\) on trouve
+\[\frac{d p}{d a}=\int \frac{q d x}{(x-a)^2}.\]
+Si maintenant \(q\) est choisi tel que \(\int \frac{q d x}{(x-a)^2}\) puisse être exprimé par l'intégrale \(\int \frac{q d x}{x-a}\), on trouvera une équation différentielle linéaire entre \(p\) et \(a\) d'où l'on pourra tirer \(p\) en fonction de \(a\). On obtiendra ainsi une relation entre plusieurs intégrales prises les unes par rapport à \(x\), les autres par rapport à \(a\). Comme on est conduit par ce procédé à plusieurs théorèmes intéressants, je vais les développer pour un cas très étendu où la réduction mentionnée de l'intégrale \(\int \frac{q d x}{(x-a)^2}\) est possible, savoir le cas où l'on a \(q=\varphi x. e^{f x}\), \(f x\) étant une fonction algébrique rationnelle de \(x\), et \(\varphi x\) étant déterminé par l'équation
+\[\varphi x=k(x+\alpha)^\beta\left(x+\alpha^{\prime}\right)^{\beta^{\prime}}\left(x+\alpha^{\prime \prime}\right)^{\beta^{\prime \prime}} \ldots. \left(x+\alpha^{(n)}\right)^{\beta^{(n)}}\] 
+où \(\alpha\), \(\alpha^{\prime}\), \(\alpha^{\prime \prime} \ldots\) sont des constantes, \(\beta\), \(\beta^{\prime}\), \(\beta^{\prime \prime} \ldots\) des nombres rationnels quelconques. Dans ce cas on a
+\[\begin{aligned}
+p & =\int \frac{e^{f x} \varphi x. d x}{x-a}, \\
+\frac{d p}{d a} & =\int \frac{e^{f x} \varphi x. d x}{(x-a)^2}.
+\end{aligned}\]
+
+\subsection*{2.}
+
+La dernière de ces intégrales peut être réduite de deux manières.\\
+a) Si l'on différentie la quantité \(\frac{e^{f x} \varphi x}{x-a}\) on trouve
+\[-\frac{e^{f x} \varphi x. d x}{(x-a)^2}+\frac{\left(e^{f x} \varphi^{\prime} x+e^{f x} f^{\prime} x. \varphi x \right) d x}{x-a}=d\left(\frac{e^{f x} \varphi x}{x-a}\right).\]
+En intégrant cette équation de sorte que les intégrales s'annulent pour \(x=c\), on obtient
+\[\int \frac{e^{f x} \varphi x. d x}{(x-a)^2} = \frac{e^{fx}\varphi x}{a-x} - \frac{e^{fc}\varphi c}{a-c} + \int \frac{e^{fx}\left(\varphi^{\prime} x+\varphi x. f'x \right) dx}{x-a}. \]
+
+Si l'on différentie l'expression de \(\varphi x\) on obtient
+\[\varphi^{\prime} x=\left(\frac{\beta}{x+\alpha}+\frac{\beta^{\prime}}{x+\alpha^{\prime}}+\frac{\beta^{\prime \prime}}{x+\alpha^{\prime \prime}}+\ldots+\frac{\beta^{(n)}}{x+\alpha^{(n)}}\right) \varphi x=\Sigma \frac{\beta^{(p)}}{x+\alpha^{(p)}} \varphi x,\]
+où la somme doit être étendue aux valeurs \(p=0,1,2,3 \ldots n\). On tire de là
+\[\frac{\varphi^{\prime} x}{x-a}=\Sigma \frac{\beta^{(p)}}{\left(x+\alpha^{(p)}\right)(x-a)} \varphi x;\]
+or on a
+\[\frac{\beta^{(p)}}{\left(x+{\alpha}^{(p)}\right)(x-a)}=-\frac{\beta^{(p)}}{\left(x+\alpha^{(p)}\right)\left(a+\alpha^{(p)}\right)}+\frac{\beta^{(p)}}{(x-a)\left(a+\alpha^{(p)}\right)},\]
+donc
+\[\frac{\varphi^{\prime} x}{x-a}=-\varphi x \Sigma \frac{\beta^{(p)}}{\left(x+\alpha^{(p)}\right)\left(a+\alpha^{(p)}\right)}+\frac{\varphi x}{x-a} \Sigma \frac{\beta^{(p)}}{a+\alpha^{(p)}}.\]
+
+Considérons maintenant la quantité \(\frac{f^{\prime} x}{x-a}\). Comme \(f x\) est une fonction rationnelle de \(x\) on peut faire
+\[f x=\Sigma \gamma^{(p)} x^p+\Sigma \frac{\delta^{(p)}}{\left(x+\varepsilon^{(p)}\right)^{\mu(p)}},\]
+la somme étant étendue à toute valeur entière de \(p\), et \({\mu}^{(p)}\) désignant un nombre entier. En différentiant on obtient
+\[f^{\prime} x=\Sigma p \gamma^{(p)} x^{p-1}-\Sigma \frac{\delta^{(p)} \mu^{(p)}}{\left(x+\varepsilon^{(p)}\right)^{\mu^{(p)}+1}},\]
+donc
+\[\frac{f^{\prime} x}{x-a}=\Sigma p \gamma^{(p)} \frac{x^{p-1}}{x-a}-\Sigma \frac{\delta^{(p)} \mu^{(p)}}{(x-a)\left(x+\varepsilon^{(p)}\right)^{\mu^{(p)}+1}}.\]
+Or on a
+\[\frac{x^{p-1}}{x-a}=x^{p-2}+a x^{p-3}+\ldots+a^{p^{\prime}} x^{p-p^{\prime}-2}+\ldots+a^{p-2}+\frac{{a}^{p-1}}{x-a},\]
+donc
+\[\Sigma p \gamma^{(p)} \frac{x^{p-1}}{x-a}=\Sigma \Sigma p \gamma^{(p)} a^{p^{\prime}} x^{p-p^{\prime}-2}+\frac{1}{x-a} \Sigma p^{\gamma^{(p)}} a^{p-1}.\]
+
+Pour réduire l'expression \(\Sigma \frac{\delta^{(p)} \mu^{(p)}}{(x-a)\left(x+\varepsilon^{(p)}\right)^{\mu^{(p)}+1}}\) posons
+\[\frac{1}{(x-a)(x+c)^m}=\frac{A}{x-a}+\frac{A_1}{x+c}+\frac{A_2}{(x+c)^2}+\cdots+\frac{A_m}{(x+c)^m} ;\]
+si l'on multiplie de part et d'autre par \(x-a\), et qu'on fasse ensuite \(x=a\), on obtient
+\[A=\frac{1}{(a+c)^m}.\]
+Pour trouver \(A_{p^{\prime}}\) on multiplie les deux membres de l'équation par \((x+c)^m\),
+\[\begin{aligned}
+\frac{1}{x-a}= & \left(\frac{A}{x-a}+\frac{A_1}{x+a}+\cdots+\frac{A_{p^{\prime}-1}}{(x+c)^{p^{\prime}-1}}\right)(x+c)^m \\
+& +A_{p^{\prime}}(x+c)^{m-p^{\prime}}+A_{p^{\prime}+1}(x+c)^{m-p^{\prime}-1}+\ldots,
+\end{aligned}\]
+puis on différentie \(m-p^{\prime}\) fois de suite, ce qui donne
+\[(-1)^{m-p^{\prime}} \frac{1.2.3 \ldots\left(m-p^{\prime}\right)}{(x-a)^{m-p^{\prime}+1}}=(x+c) R+1.2.3 \ldots\left(m-p^{\prime}\right) A_{p^{\prime}}.\]
+En faisant \(x=-c\), on tire
+\[A_{p^{\prime}}=-\frac{1}{(a+c)^{m-p^{\prime}+1}},\]
+donc
+\[\frac{1}{(x-a)(x+c)^m}=\frac{1}{(a+c)^m(x-a)}-\Sigma \frac{1}{(a+c)^{m-p^{\prime}+1}(x+c)^{p^{\prime}}}.\]
+En écrivant maintenant \(\varepsilon^{(p)}\) au lieu de \(c\), \(\mu^{(p)}+1\) au lieu de \(m\), et multipliant par \({\mu}^{(p)}. \delta^{(p)}\) on a
+\[\frac{\mu^{(p)} \delta^{(p)}}{(x-a)\left(x+\varepsilon^{(p)}\right)^{\mu^{(p)}+1}}=\frac{\mu^{(p)} \delta^{(p)}}{\left(a+\varepsilon^{(p)}\right)^{\mu^{(p)}+1}(x-a)}-\Sigma \frac{\mu^{(p)} \delta(p)}{\left(a+\varepsilon^{(p)}\right)^{\mu^{(p)}-p^{\prime}+2}\left(x+\varepsilon^{(p)}\right)^{p^{\prime}}},\]
+donc
+\[\Sigma \frac{\mu^{(p)} \delta^{(p)}}{(x-a)\left(x+\varepsilon^{(p)}\right)^{\mu^{(p)}+1}}=\frac{1}{x-a} \Sigma \frac{\mu^{(p)} \delta^{(p)}}{\left(a+\varepsilon^{(p)}\right)^{\mu^{(p)}+1}}-\Sigma \Sigma \frac{\mu^{(p)} \delta^{(p)}}{\left(a+\varepsilon^{(p)}\right)^{\mu^{(p)}-p^{\prime}+2}\left(x+\varepsilon^{(p)}\right)^{p^{\prime}}}.\]
+En substituant dans l'expression de \(\frac{f^{\prime} x}{x-a}\) cette valeur, de même que celle trouvée plus haut pour \(\Sigma p \gamma^{(p)} \frac{x^{p-1}}{x-a}\), on obtient
+\[\begin{aligned}
+\frac{f^{\prime} x}{x-a}= & \frac{1}{x-a}\left(\Sigma p \gamma^{(p)} a^{p-1}-\Sigma \frac{\mu^{(p)} \delta^{(p)}}{\left(a+\varepsilon^{(p)}\right)^{\mu^{(p)}+1}}\right) \\
+& +\Sigma \Sigma p \gamma^{(p)} a^{p^{\prime}} x^{p-p^{\prime}-2}+\Sigma \Sigma \frac{\mu^{(p)} \delta(p)}{\left(a+\varepsilon^{(p)}\right)^{\mu^{(p)}-p^{\prime}+2}\left(x+\varepsilon^{(p)}\right)^{p^{\prime}}} \cdot
+\end{aligned}\]
+Si l'on multiplie les deux membres de cette équation par \(\varphi x\), et qu'on remarque que le coefficient de \(\frac{1}{x-a}\) est égal à \(f^{\prime} a\) on a
+\[\frac{\varphi x. f^{\prime} x}{x-a}=\frac{\varphi x. f^{\prime} a}{x-a}+\varphi x \Sigma \Sigma p \gamma^{(p)} a^{p^{\prime}} x^{p-p^{\prime}-2}+\varphi x \Sigma \Sigma \frac{\mu^{(p)} \delta^{(p)}}{\left(a+\varepsilon^{(p)}\right)^{\mu^{(p)}-p^{\prime}+2}\left(x+\varepsilon^{(p)}\right)^{p^{\prime}}}.\]
+En y ajoutant la valeur trouvée pour \(\frac{\varphi^{\prime} x}{x-a}\), multipliant ensuite par \(e^{f x} d x\) et intégrant, on en tire
+\[\begin{aligned}
+\int \frac{e^{f x}\left(\varphi^{\prime} x+\varphi x. f^{\prime} x\right) d x}{x-a}=\left(f^{\prime} a+\frac{\varphi^{\prime} a}{\varphi a}\right) \int \frac{e^{f x} {\varphi} x. d x}{x-a}+\Sigma \Sigma p \gamma^{(p)} a^{p^{\prime}} \int e^{f x} \varphi x. x^{p-p^{\prime}-2} d x &\\
+-\Sigma \frac{\beta^{(p)}}{a+\alpha^{(p)}} \int \frac{e^{f x} \varphi x. d x}{x+\alpha^{(p)}}+\Sigma \Sigma \frac{\mu^{(p)} \delta^{(p)}}{\left(a+\varepsilon^{(p)}\right)^{\mu^{(p)}-p^{\prime}+2}} \int \frac{e^{f x} \varphi x. d x}{\left(x+\varepsilon^{(p)}\right)^{p^{\prime}}}.& 
+\end{aligned}\]
+Si l'on substitue cette valeur dans l'expression de \(\int \frac{e^{f x} \varphi x. d x}{(x-a)^2}\) ou \(\frac{d p}{d a}\), et qu'on écrive \(p\) au lieu de \(\int \frac{e^{f x} \varphi x. d x}{x-a}\), on trouve 
+\[\tag{1} \begin{aligned}\frac{dp}{da} - \left(f'a + \frac{\varphi^{\prime} a}{\varphi a}\right)p = -\frac{e^{fx} \varphi x}{x-a} + \frac{e^{fc} \varphi c}{c-a} + \Sigma \Sigma p \gamma^{(p)} a^{p^{\prime}} \int e^{fx} \varphi x. x^{p-p^{\prime}-2} dx & \\
+-\Sigma \frac{\beta^{(p)}}{a + \alpha^{(p)}} \int \frac{e^{fx} \varphi x. dx}{x+\alpha^{(p)}}+\Sigma\Sigma\frac{\mu^{(p)}\delta^{(p)}}{(a+\varepsilon^{(p)})^{\mu^{(p)}-p^{\prime}+2}} \int \frac{e^{fx} \varphi x. dx}{(x+\varepsilon^{(p)})^{p'}}.
+\end{aligned}\]
+
+b) Je vais maintenant exposer la seconde méthode de réduction; mais comme celle-ci est assez longue et compliquée quand \(f x\) est. une fonction rationnelle quelconque de \(x\), je me bornerai au cas où \(f x\) est une fonction entière. On a donc
+\[f x=\Sigma \gamma^{(p)} x^p.\]
+En différentiant l'expression \(\frac{e^{f x} \varphi x. \psi x}{x-a}\) où 
+\[\psi x=(x+\alpha)\left(x+\alpha^{\prime}\right) \ldots\left(x+\alpha^{(n)}\right),\]
+on obtient
+
+\[-\frac{e^{f x} \varphi x. \psi x}{(x-a)^2} d x+\frac{e^{f x} \varphi x\left[\psi^{\prime} x+\psi x\left(\frac{\varphi^{\prime} x}{\varphi x}+f^{\prime} x\right)\right] d x}{x-a}=d\left(\frac{e^{f x} \varphi x. \psi x}{x-a}\right).\]
+Pour réduire cette expression, considérons l'équation
+\[\frac{Fx}{x-a}=\frac{F+F^{\prime}. x+\frac{F^{\prime \prime}}{2} x^2+\frac{F^{\prime \prime \prime}}{2. 3} x^3+\cdots+\frac{F^{(m)}}{2. 3 \ldots m} x^m}{x-a},\]
+où \(F\), \(F^{\prime}\), \(F^{\prime \prime} \ldots\) désignent les valeurs que prennent \(F x\), \(F^{\prime} x\), \(F^{\prime \prime} x \ldots\) quand on fait \(x=0\). On a ainsi
+\[\frac{F x}{x-a}=\Sigma \frac{F^{(p)}}{2.3 \ldots p} \frac{x^p}{x-a}=\frac{\Sigma \frac{F^{(p)}}{2.3 \ldots p} a^p}{x-a}+\Sigma \Sigma \frac{F^{(p)}}{2.3 \ldots p} a^{p^{\prime}} x^{p-p^{\prime}-1} \]
+ou, en remarquant que \(\Sigma \frac{F^{(p)}}{2.3 \ldots p} a^p=F a,\)
+\[ \frac{F x}{x-a}=\frac{F a}{x-a}+\Sigma \Sigma \frac{F^{\left(p+p^{\prime}+1\right)}}{2.3 \ldots\left(p+p^{\prime}+1\right)} a^{p^{\prime}} x^p,\]
+où l'on a mis \(p+p^{\prime}+1\) au lieu de \(p\). En différentiant cette formule par rapport à \(a\) on obtient
+\[\frac{F x}{(x-a)^2}=\frac{F a}{(x-a)^2}+\frac{F^{\prime} a}{x-a}+\Sigma \Sigma \frac{p'F^{(p+p^{\prime}+1)}}{2.3 \ldots\left(p+p^{\prime}+1\right)} a^{p^{\prime}-1} x^p.\]
+Si dans cette formule on pose \(F x=\psi x\), on a
+\[ \frac{\psi x}{(x-a)^2}=\frac{\psi a}{(x-a)^2}+\frac{\psi^{\prime} a}{x-a}+\Sigma \Sigma \frac{\left(p^{\prime}+1\right) \psi^{\left(p+p^{\prime}+2\right)}}{2.3 \ldots\left(p+p^{\prime}+2\right)} a^{p^{\prime}} x^p.\]
+En mettant dans la première formule, pour \(F x\) la fonction entière \(\psi^{\prime} x+\psi x\left(\frac{\varphi^{\prime} x}{\varphi x}+f^{\prime} x\right)\), on obtient
+\[\begin{aligned}
+ \frac{\psi^{\prime} x+\psi x\left(\frac{\varphi^{\prime} x}{\varphi x}+f^{\prime} x\right)}{x-a}=&\frac{\psi^{\prime} a+\psi a \left(\frac{\varphi^{\prime} a}{\varphi a}+f^{\prime} a\right)}{x-a}+\Sigma \Sigma \frac{\psi^{\left(p+p^{\prime}+2\right)}}{2.3 \ldots\left(p+p^{\prime}+1\right)} a^{p^{\prime}} x^p \\
+& +\Sigma \Sigma \frac{\left(\psi \frac{\varphi^{\prime}}{\varphi}+f^{\prime}\right)^{\left(p+p^{\prime}+1\right)}}{2.3 \ldots\left(p+p^{\prime}+1\right)} a^{p^{\prime}} x^p. 
+\end{aligned}\]
+Si l'on substitue ces valeurs dans l'expression de \(d\left(\frac{e^{f x} \varphi x . \psi x}{x-a}\right)\), on obtient
+\[\begin{aligned}
+ d\left(\frac{e^{f x} \varphi x. \psi. x}{x-a}\right)=&-\psi a \frac{e^{f x} \varphi x. d x}{(x-a)^2}+\psi a\left(\frac{\varphi^{\prime} a}{\varphi a}+f^{\prime} a\right) \frac{e^{f x} \varphi x. d x}{x-a} \\
+& +\Sigma \Sigma \frac{(p+1) \psi^{\left(p+p^{\prime}+2\right)}}{2.3 \ldots\left(p+p^{\prime}+2\right)} a^{p^{\prime}} e^{f x} \varphi x. x^p d x \\
+& +\Sigma \Sigma \frac{\left(\psi \frac{\varphi^{\prime}}{\varphi}+f^{\prime}\right)^{\left(p+p^{\prime}+1\right)}}{2.3 \ldots\left(p+p^{\prime}+1\right)} a^{p^{\prime}} e^{f x} \varphi x. x^p d x. 
+\end{aligned}\]
+En intégrant cette équation, divisant de part et d'autre par \(\psi \alpha\), et écrivant \(p\) au lieu de \(\int \frac{e^{f x} \varphi x . d x}{x-a}\), \(\frac{d p}{d a}\) au lieu de \(\int \frac{e^{f x} \varphi x. d x}{(x-a)^2}\), on trouve
+\[\begin{aligned}
+\frac{dp}{da} - \left(\frac{\varphi^{\prime} a}{\varphi a} + f^{\prime} a\right)p =& \frac{e^{fx} \varphi x. \psi x}{\psi a (a-x)} - \frac{e^{f c} \varphi c. \psi c}{\psi a (a-c)} \\
+& +\Sigma \Sigma \frac{(p+1) \psi^{(p+p'+2)}}{2.3 \ldots\left(p+p^{\prime}+2\right)} \frac{a^{p^{\prime}}}{\psi a} \int e^{f x} \varphi x. x^p d x \\
+& +\Sigma \Sigma \frac{\left(\psi \frac{\varphi^{\prime}}{\varphi}+f^{\prime}\right)^{\left(p+p^{\prime}+1\right)}}{2.3 \ldots\left(p+p^{\prime}+1\right)} \frac{a^{p^{\prime}}}{\psi a} \int e^{f x} \varphi x. x^p d x, 
+\end{aligned}\]
+ou bien
+\[ \tag{2}\begin{gathered}
+ \frac{dp}{da} - \left(\frac{\varphi^{\prime} a}{\varphi a} + f^{\prime} a\right)p=\frac{e^{fx} \varphi x. \psi x}{\psi a (a-x)} - \frac{e^{f c} \varphi c. \psi c}{\psi a (a-c)}+\Sigma \Sigma \varphi\left(p, p^{\prime}\right) \frac{a^{p^{\prime}}}{\psi a} \int e^{f x} \varphi x. x^p d x \\
+ \text{ où } \quad  \varphi\left(p, p^{\prime}\right)=\frac{(p+1) \psi^{\left(p+p^{\prime}+2\right)}}{2.3 \ldots\left(p+p^{\prime}+2\right)}+\frac{\left(\psi \frac{\varphi^{\prime}}{\varphi}+f^{\prime}\right)^{\left(p+p^{\prime}+1\right)}}{2.3 \ldots\left(p+p^{\prime}+1\right)}.
+ \end{gathered}\]
+
+\subsection*{3.}
+
+Les équations (1) et (2) deviennent immédiatement intégrables quand on les multiplie par \(\frac{e^{-f a}}{\varphi a}\); on obtient, de cette manière, en remarquant qu'on a
+\[\int\left(d p-\left(\frac{\varphi^{\prime} a}{\varphi a}+f^{\prime} a\right) p d a\right) \frac{e^{-f a}}{\varphi a}=\frac{p e^{-f a}}{\varphi a},\]
+les deux formules suivantes:
+\[\begin{aligned}
+\frac{p e^{-f a}}{\varphi a}&=e^{f x} \varphi x \int \frac{e^{-f a} d a}{(a-x) \varphi a}-e^{f c} \varphi c \int \frac{e^{-f a} d a}{(a-c) \varphi a} \\
+& +\Sigma \Sigma p \gamma^{(p)} \int \frac{e^{-f a} a^{p^{\prime}} d a}{\varphi a} \cdot \int e^{f x} \varphi x. x^{p-p^{\prime}-2} d x-\Sigma \beta^{(p)} \int \frac{e^{-f a} d a}{\left(a+\alpha^{(p)}\right) \varphi a} \cdot \int \frac{e^{f x} \varphi x. d x}{x+\alpha^{(p)}} \\
+& +\Sigma \Sigma \mu^{(p)} \delta^{(p)} \int \frac{e^{-f a} d a}{\left(a+\varepsilon^{(p)}\right)^{\mu^{(p)}-p^{\prime}+2} \varphi a} \cdot \int \frac{e^{f x} \varphi x. d x}{\left(x+\varepsilon^{(p)}\right)^{p^{\prime}}}+C(x), \\
+ \frac{p e^{-f a}}{\varphi a}&=e^{f x} \varphi x. \psi x \int \frac{e^{-f a} d a}{(a-x) \varphi a. \psi a}-e^{f c} \varphi c. \psi c \int \frac{e^{-f a} d a}{(a-c) \varphi a. \psi a} \\
+& +\Sigma \Sigma \varphi\left(p, p^{\prime}\right) \int \frac{e^{-f a} a^{p^{\prime}} d a}{\varphi a. \psi a} \cdot \int e^{f x} \varphi x. x^p d x+C(x). 
+\end{aligned}\]
+La quantité \(c\) étant arbitraire, nous ferons dans la première formule \(e^{f c} \varphi c=0\), dans la seconde \(e^{f c} \varphi c. \psi c=0\). Si de plus on suppose que les intégrales prises par rapport à \(a\) s'annulent pour \(\frac{e^{-f a}}{\varphi a}=0\), on voit aisément qu'on a \(C(x)=0\); on obtient ainsi, en remettant pour \(p\) sa valeur \(\int \frac{e^{f x} \varphi x. d x}{x-a}\), les deux formules suivantes:
+\[\tag{3} \begin{aligned}
+ \frac{e^{-f a}}{\varphi a} \int \frac{e^{f x} \varphi x. d x}{x-a} -e^{f x} \varphi x  \int \frac{e^{-f a} d a}{(a-x) \varphi a} =& \Sigma \Sigma p \gamma^{(p)} \int \frac{e^{-f a} a^{p^{\prime}} d a}{\varphi a}. \int e^{f x} \varphi x. x^{p-p^{\prime}-2} d x \\
+ &-\Sigma \beta^{(p)} \int \frac{e^{-f a} d a}{\left(a+\alpha^{(p)}\right) \varphi a} \cdot \int \frac{e^{f x} {\varphi} x d x}{x+{\alpha}^{(p)}} \\
+ &+\Sigma \Sigma \mu^{(p)} \delta^{(p)} \int \frac{e^{-f a} d a}{\left(a+\varepsilon^{(p)}\right)^{\mu^{(p)}-p^{\prime}+2} \varphi a} \cdot \int \frac{e^{f x} \varphi x. d x}{\left(x+\varepsilon^{(p)}\right)^{p^{\prime}}};
+\end{aligned}\]
+\[\tag{4} \frac{e^{-f a}}{\varphi a} \int \frac{e^{f x} \varphi x. d x}{x-a} -e^{f x} \varphi x. \psi x\int \frac{e^{-f a} d a}{(a-x) \varphi a.\psi a} =\Sigma \Sigma \varphi\left(p, p^{\prime}\right) \int \frac{e^{-f a} a^{p^{\prime}} d a}{\varphi a. \psi a} \cdot \int e^{f x} \varphi x. x^p d x.\]
+
+Si dans la première de ces formules, \(f x\) est une fonction entière, on a \(\delta^{(p)}=0\), donc
+\[\tag{5}
+\begin{aligned}
+ \frac{e^{-f a}}{\varphi a} \int \frac{e^{f x} \varphi x. d x}{x-a}-&e^{f x} \varphi x. \int \frac{e^{-f a} d a}{(a-x) \varphi a} \\
+ =&\Sigma \Sigma\left(p+p^{\prime}+2\right) \gamma^{\left(p+p^{\prime}+2\right)} \int \frac{e^{-f a} a^{p^{\prime}} d a}{\varphi a} \cdot \int e^{f x} \varphi x. x^p d x \\
+ &-\Sigma \beta^{(p)} \int \frac{e^{-f a} d a}{\left(a+\alpha^{(p)}\right) \varphi a} \cdot \int \frac{e^{f x} {\varphi} x d x}{x+{\alpha}^{(p)}}. 
+\end{aligned}\]
+
+\subsection*{4.}
+
+Je vais maintenant appliquer les formules générales à quelques cas spéciaux.
+
+a) Si l'on fait \(\varphi a=1\), la formule (3) donne
+\[\begin{aligned}
+e^{-f a} \int \frac{e^{f x} d x}{x-a}  -e^{f x}  \int \frac{e^{-f a} d a}{(a-x)} &= \Sigma \Sigma p \gamma^{(p)} \int e^{-f a} a^{p^{\prime}} d a \cdot \int e^{f x} x^{p-p^{\prime}-2} d x \\
+ &+\Sigma \Sigma \mu^{(p)} \delta^{(p)} \int \frac{e^{-f a} d a}{\left(a+\varepsilon^{(p)}\right)^{\mu^{(p)}-p^{\prime}+2} } \cdot \int \frac{e^{f x} d x}{\left(x+\varepsilon^{(p)}\right)^{p^{\prime}}}.
+\end{aligned}\]
+Si de plus \(f x\) est une fonction entière, on a \(\delta^{(p)}=0\); dans ce cas la formule devient
+\[ \tag{6} e^{-f a} \int \frac{e^{f x} d x}{x-a}-e^{f x} \int \frac{e^{-f a} d a}{a-x}=\Sigma \Sigma\left(p+p^{\prime}+2\right) \gamma^{\left(p+p^{\prime}+2\right)} \int e^{-f a} a^{p^{\prime}} d a. \int e^{f x} x^p d x.\]
+
+En développant le second membre, on obtient
+\[\begin{aligned}
+e^{-f a} \int \frac{e^{f x} d x}{x-a}-e^{f x} &\int \frac{e^{-f a} d a}{a-x}=2 \gamma^{(2)} \int e^{-f a} d a. \int e^{f x} d x  \\
+& +3 \gamma^{(3)}\left(\int e^{-f a} a d a. \int e^{f x} d x+\int e^{-f a} d a. \int e^{f x} x d x\right) \\
+& +4 \gamma^{(4)}\left(\int e^{-f a} a^2 d a \int e^{f x} d x+\int e^{-f a} a d a. \int e^{f x} x d x\right. \\
+& \phantom{+4 \gamma^{(4)}\left(\int e^{-f a} a^2 d a \int e^{f x} d x\right)} \left.+\int e^{-f a} d a. \int e^{f x} x^2 d x\right) \\
+& + \ldots \ldots \ldots \ldots \ldots \ldots \ldots \ldots \ldots \ldots \ldots \ldots \\
+& +n \gamma^{(n)}\left(\int e^{-f a} a^{n-2} d a. \int e^{f x} d x+\int e^{-f a} a^{n-3} d a. \int e^{f x} x d x+\ldots\right. \\
+&\phantom{+n \gamma^{(n)}\left(\int e^{-f a} a^{n-2} d a. \int e^{f x} d x+\int \right)} \left.+\int e^{-f a} d a. \int e^{f x} x^{n-2} d x\right).
+\end{aligned}\]
+
+Si par exemple \(f x=x^n\), on a \(\gamma^{(2)}=\gamma^{(3)}=\ldots=\gamma^{(n-1)}=0\), \(\gamma^{(n)}=1\); la formule ci-dessus devient
+\[\begin{aligned}
+ e^{-a^n} \int \frac{e^{x^n} d x}{x-a}-e^{x^n}& \int \frac{e^{-a^n} d u}{a-x}=n\left(\int e^{-a^n} a^{n-2} d a. \int e^{x^n} d x\right. \\
+& \left.+\int e^{-a^n} a^{n-3} d a. \int e^{x^n} x d x+\ldots+\int e^{-a^n} d a. \int e^{x^n} x^{n-2} d x\right) ;
+\end{aligned}\]
+par exemple pour \(n=2\), \(n=3\), on a respectivement
+\[\begin{aligned}
+& e^{-a^2} \int \frac{e^{x^2} d x}{x-a}-e^{x^2} \int \frac{e^{-a^2} d u}{a-x}=2 \int e^{-a^2} d u. \int e^{x^2} d x,\\
+& e^{-a^3} \int \frac{e^{x^3} d x}{x-a}-e^{x^3} \int \frac{e^{-a^3} d u}{a-x}=3\left(\int e^{-a^3} a d a. \int e^{x^3} d x+\int e^{-a^3} d u. \int e^{x^3} x d x\right).
+\end{aligned}\]
+
+b) Posons maintenant dans la formule (3) \(f x=0\), nous aurons
+\[\tag{7} \varphi x \int \frac{d a}{(a-x) \varphi a}-\frac{1}{\varphi a} \int \frac{\varphi x. d x}{x-a}=\Sigma \beta^{(p)} \int \frac{d a}{\left(a+\alpha^{(p)}\right) \varphi a}. \int \frac{\varphi x. d x}{x+\alpha^{(p)}},\]
+ou bien, en développant le second membre,
+\[\begin{aligned}
+\varphi x \int &\frac{d a}{(a-x) \varphi a}-\frac{1}{\varphi a} \int \frac{\varphi x. d x}{x-a}= \beta \int \frac{da}{(a+\alpha)\varphi a}. \int \frac{\varphi x. d x}{x + \alpha},\\
+&+\beta' \int \frac{da}{(a+\alpha')\varphi a}. \int \frac{\varphi x. d x}{x+\alpha'} + \ldots + \beta^{(n)} \int \frac{da}{(a+\alpha^{(n)}) \varphi a }. \int \frac{\varphi x. d x}{x + \alpha^{(n)}}
+\end{aligned}\]
+où il faut se rappeler qu'on a
+\[\begin{aligned}
+& \varphi x=(x+\alpha)^\beta\left(x+\alpha^{\prime}\right)^{\beta^{\prime}} \ldots. \left(x+\alpha^{(n)}\right)^{\beta^{(n)}} \\
+& \varphi a=(a+\alpha)^\beta\left(a+\alpha^{\prime}\right)^{\beta^{\prime}} \ldots. \left(a+\alpha^{(n)}\right)^{\beta^{(n)}}.
+\end{aligned}\]
+
+c) En faisant dans la formule (4) \(f x=0\), on obtient
+\[ \tag{8} \frac{1}{\varphi a} \int \frac{ \varphi x. d x}{x-a}  - \varphi x. \psi x\int \frac{ d a}{(a-x) \varphi a.\psi a}
+=\Sigma \Sigma \varphi\left(p, p^{\prime}\right) \int \frac{ a^{p^{\prime}} d a}{\varphi a. \psi a} \cdot \int \varphi x. x^p d x \]
+\[\begin{aligned}
+ \text { où } \varphi\left(p, p^{\prime}\right)=&\frac{(p+1) \psi^{\left(p+p^{\prime}+2\right)}}{2.3 \ldots\left(p+p^{\prime}+2\right)}+\frac{\left(\psi \frac{\varphi^{\prime}}{\varphi} \right)^{\left(p+p^{\prime}+1\right)}}{2.3 \ldots\left(p+p^{\prime}+1\right)}, \\
+  \psi x&=(x+\alpha)\left(x+\alpha^{\prime}\right) \ldots\left(x+\alpha^{(n)}\right).
+\end{aligned}\]
+
+d) Posons dans la formule (8) \(\beta=\beta^{\prime}=\ldots=\beta^{(n)}=m\), nous aurons
+\[\begin{gathered}
+\begin{aligned}
+ &\varphi x=(\psi x)^m, &&\quad  \varphi x. \psi x=(\psi x)^{m+1}, \\
+ &\varphi^{\prime} x=m(\psi x)^{m-1} \psi^{\prime} x, &&\quad \frac{\psi x. \varphi^{\prime} x}{\varphi x}=m \psi^{\prime} x,
+ \end{aligned} \\
+\left(\psi \frac{\varphi^{\prime}}{\varphi}\right)^{\left(p+p^{\prime}+1\right)}=m \psi^{\left(p+p^{\prime}+2\right)}; 
+\end{gathered}\]
+donc en posant
+\[\psi x=k+k^{\prime} x+k^{\prime \prime} x^2+\ldots+k^{(n)} x^n\]
+nous avons
+\[\varphi\left(p, p^{\prime}\right)=\frac{\left(p+1+m\left(p+p^{\prime}+2\right)\right) \psi^{\left(p+p^{\prime}+2\right)}}{2.3 \ldots\left(p+p^{\prime}+2\right)}=\left(p+1+m\left(p+p^{\prime}+2\right)\right) k^{\left(p+p^{\prime}+2\right)}.\]
+En substituant ces valeurs, on trouve
+\[\tag{9} \begin{aligned}
+ \frac{1}{\left(\psi a)^m\right.} \int &\frac{(\psi x)^m d x}{x-a}-(\psi x)^{m+1} \int \frac{d a}{(a-x)\left(\psi a)^{m+1}\right.} \\
+&=\Sigma \Sigma k^{\left(p+p^{\prime}+2\right)}\left(p+1+m\left(p+p^{\prime}+2\right)\right) \int \frac{a^{p^{\prime}} d a}{ (\psi a)^{m+1}}. \int(\psi x)^m x^p d x.
+\end{aligned}\]
+
+Le cas où \(m=-\frac{1}{2}\) a cela de remarquable, que les intégrales par rapport à \(x\) et à \(a\) prennent la même forme; en effet on a
+\[(\psi a)^{m+1}=(\psi a)^{\frac{1}{2}}=\sqrt{\psi a}, \; \frac{1}{(\psi a)^m}=\sqrt{\psi a},\]
+donc
+\[\sqrt{\psi a} \int \frac{d x}{(x-a) \sqrt{\psi x}}-\sqrt{\psi x} \int \frac{d a}{(a-x) \sqrt{\psi a}}=\frac{1}{2} \Sigma \Sigma\left(p-p^{\prime}\right) k^{\left(p+p^{\prime}+2\right)} \int \frac{a^{p^{\prime}} d a}{\sqrt{\psi a}}. \int \frac{x^p d x}{\sqrt{\psi x}}.\]
+Si l'on suppose, par exemple que \(\psi x=1+\alpha x^n\), on a \(k^{(n)}=\alpha\); \(k^{\left(p+p^{\prime}+2\right)}\) sera égal à zéro, à moins que \(p+p^{\prime}+2=n\), c'est-à-dire que \(p=n-p^{\prime}-2\); donc
+\[\begin{aligned}
+\sqrt{1+\alpha a^n} \int \frac{d x}{(x-a) \sqrt{1+\alpha x^n}}-\sqrt{1+\alpha x^n} \int \frac{d a}{(a-x) \sqrt{1+\alpha a^n}} \\
+=\frac{\alpha}{2} \Sigma\left(n-2 p^{\prime}-2\right) \int \frac{a^{p^{\prime}} d a}{\sqrt{1+\alpha a^n}}. \int \frac{x^{n-p^{\prime}-2} d x}{\sqrt{1+\alpha x^n}}.
+\end{aligned}\]
+En développant le second membre, on a
+\[\begin{aligned}
+\sqrt{1+\alpha a^n} & \int \frac{d x}{(x-a) \sqrt{1+\alpha x^n}}-\sqrt{1+\alpha x^n} \int \frac{d a}{(a-x) \sqrt{1+\alpha a^n}} \\
+& =\frac{\alpha}{2}(n-2)\left[\int \frac{d a}{\sqrt{1+\alpha a^n}}. \int \frac{x^{n-2} d x}{\sqrt{1+\alpha x^n}}-\int \frac{a^{n-2} d a}{\sqrt{1+\alpha a^n}}. \int \frac{d x}{\sqrt{1+\alpha x^n}}\right] \\
+& +\frac{\alpha}{2}(n-4)\left[\int \frac{a d a}{\sqrt{1+\alpha a^n}}. \int \frac{x^{n-3} d x}{\sqrt{1+\alpha x^n}}-\int \frac{a^{n-3} d a}{\sqrt{1+\alpha a^n}}. \int \frac{x d x}{\sqrt{1+\alpha x^n}}\right] \\
+& +\frac{\alpha}{2}(n-6)\left[\int \frac{a^2 d a}{\sqrt{1+\alpha a^n}}. \int \frac{x^{n-4} d x}{\sqrt{1+\alpha x^n}}-\int \frac{a^{n-4} d a}{\sqrt{1+\alpha a^n}}. \int \frac{x^2 d x}{\sqrt{1+\alpha x^n}}\right] \\
+& +.\;.\;.\;.\;.\;.\;.\;.\;.\;.\;.\;.\;.\;.\;.\;.\;.\;.\;.\;.\;.\;.\;.\;.\;.\;.\;.\;.\;.\;.\;.\;.\;.\;
+\end{aligned}\]
+Par exemple si \(n=3\), on a
+\[\begin{aligned}
+\sqrt{1+\alpha a^3} & \int \frac{d x}{(x-a) \sqrt{1+\alpha x^3}}-\sqrt{1+\alpha x^3} \int \frac{d a}{(a-x) \sqrt{1+\alpha a^3}} \\
+& =\frac{\alpha}{2}\left[\int \frac{d a}{\sqrt{1+\alpha a^3}}. \int \frac{x d x}{\sqrt{1+\alpha x^3}}-\int \frac{a d a}{\sqrt{1+\alpha a^3}}. \int \frac{d x}{\sqrt{1+\alpha x^3}}\right].
+\end{aligned}\]
+
+Comme second exemple je prends
+\[\psi x=\left(1-x^2\right)\left(1-\alpha x^2\right);\]
+alors on a \(k=1\), \(k^{\prime}=0=k^{\prime \prime \prime}\), \(k^{\prime \prime}=-(1+\alpha)\), \(k^{\prime \prime \prime}=\alpha\). Si l'on écrit \(-a\) pour \(a\), la formule devient
+\[\begin{aligned}
+ &\sqrt{\left(1-a^2\right)\left(1-\alpha a^2\right)} \int \frac{d x}{(x+a) \sqrt{\left(1-x^2\right)\left(1-\alpha x^2\right)}} \\
+ &\phantom{\sqrt{\left(1-a^2\right)}}-\sqrt{\left(1-x^2\right)\left(1-a x^2\right)} \int \frac{d a}{(a+x) \sqrt{\left(1-a^2\right)\left(1-\alpha a^2\right)}} \\
+ &\phantom{\sqrt{\left(1-a^2\right)}}=\alpha \int \frac{d a}{\sqrt{\left(1-a^2\right)\left(1-\alpha a^2\right)}}. \int \frac{x^2 d x}{\sqrt{\left(1-x^2\right)\left(1-\alpha x^2\right)}} \\
+ &\phantom{\sqrt{\left(1-a^2\right)}}-\alpha \int \frac{a^2 d a}{\sqrt{\left(1-a^2\right)\left(1-\alpha a^2\right)}}. \int \frac{d x}{\sqrt{\left(1-x^2\right)\left(1-\alpha  x^2\right)}}. 
+ \end{aligned}\]
+En posant
+\[x=\sin \varphi, \quad a=\sin \psi,\]
+on a
+\[\begin{aligned}
+ \sqrt{\left(1-x^2\right)\left(1-\alpha x^2\right)}&=\cos \varphi \sqrt{1-\alpha \sin ^2 \varphi}, \\
+ \sqrt{\left(1-a^2\right)\left(1-\alpha a^2\right)}&=\cos \psi \sqrt{1-\alpha \sin ^2 \psi}, \\
+ \frac{d x}{\sqrt{\left(1-x^2\right)\left(1-\alpha x^2\right)}}&=\frac{d \varphi}{\sqrt{1-\alpha \sin ^2 \varphi}}, \\
+ \frac{d a}{\sqrt{\left(1-a^2\right)\left(1-\alpha a^2\right)}}&=\frac{d \psi}{\sqrt{1-\alpha \sin ^2 \psi}}, \\
+ \frac{x^2 d x}{\sqrt{\left(1-x^2\right)\left(1-\alpha x^2\right)}}&=\frac{\sin ^2 \varphi d \varphi}{\sqrt{1-\alpha \sin ^2 \varphi}}, \\
+ \frac{a^2 d a}{\sqrt{\left(1-a^2\right)\left(1-\alpha a^2\right)}}&=\frac{\sin ^2 \psi d \psi}{\sqrt{1-\alpha \sin ^2 \psi}}.
+\end{aligned}\]
+En substituant ces valeurs, on trouve
+\[\begin{aligned}
+& \cos \psi \sqrt{1-\alpha \sin ^2 \psi} \int \frac{d \varphi}{\left(\sin \varphi+\sin \psi \right) \sqrt{1-\alpha \sin ^2 \varphi}} \\
+& -\cos \varphi \sqrt{1-\alpha \sin ^2 \varphi} \int \frac{d \psi}{(\sin \psi+\sin \varphi) \sqrt{1-\alpha \sin ^2 \psi}} \\
+& =\alpha \int \frac{d \psi}{\sqrt{1-\alpha \sin ^2 \psi}}. \int \frac{\sin ^2 \varphi d \varphi}{\sqrt{1-\alpha \sin ^2 \varphi}}-\alpha \int \frac{\sin ^2 \psi d \psi}{\sqrt{1-\alpha \sin ^2 \psi}}. \int \frac{d \varphi}{\sqrt{1-\alpha \sin ^2 \varphi}}. 
+\end{aligned}\]
+Cette formule répond à celle que M. \textit{Legendre} a donnée dans ses Exercices de calcul intégral t. I p. 136, et elle peut en être déduite.
+
+e) Si dans la formule (5) on pose \(f x=x\), on obtient 
+\[\tag{10} \frac{e^{-a}}{\varphi a} \int \frac{e^x \varphi x d x }{x-a} - e^x \varphi x \int \frac{e^{-a} d a}{(a-x) \varphi a} = - \Sigma \beta^{(p)} \int \frac{e^{-a} da}{(a+\alpha^{(p)}) \varphi a}. \int \frac{e^x \varphi x d x }{x+\alpha^{(p)}},\]
+d'où en développant le second membre on tire
+\[\begin{aligned}
+e^x \varphi x & \int \frac{e^{-a} d a}{(a-x) \varphi a}-\frac{e^{-a}}{\varphi a} \int \frac{e^x \varphi x. d x}{x-a}=\beta \int \frac{e^{-a} d a}{(a+\alpha) \varphi a}. \int \frac{e^x \varphi x. d x}{x+\alpha} \\
+& +\beta^{\prime} \int \frac{e^{-a} d a}{\left(a+\alpha^{\prime}\right) \varphi a}. \int \frac{e^x \varphi x. d x}{x+\alpha^{\prime}}+\cdots+\beta^{(n)} \int \frac{e^{-a} d a}{\left(a+\alpha^{(n)}\right) \varphi a}. \int \frac{e^x \varphi x. d x}{x+\alpha^{(n)}}.
+\end{aligned}\]
+Par exemple si \(\varphi x=\sqrt{x^2-1}\), on a \(\beta=\beta^{\prime}=\frac{1}{2}\), \(\alpha=1\), \(\alpha^{\prime}=-1\), donc
+\[\begin{aligned}
+& e^x \sqrt{x^2-1} \int \frac{e^{-a} d a}{(a-x) \sqrt{a^2-1}}-\frac{e^{-a}}{\sqrt{a^2-1}} \int \frac{e^x d x \sqrt{x^2-1}}{x-a} \\
+& \quad=\frac{1}{2} \int \frac{e^{-a} d a}{(a+1) \sqrt{a^2-1}}. \int \frac{e^x d x \sqrt{x^2-1}}{x+1}+\frac{1}{2} \int \frac{e^{-a} d a}{(a-1) \sqrt{a^2-1}}. \int \frac{e^x d x \sqrt{x^2-1}}{x-1}.
+\end{aligned}\]
+
+f) En posant dans la formule (4) \(\beta=\beta^{\prime}=\beta^{\prime \prime}=\ldots=\beta^{(n)}=m\), on a \(\varphi x=(\psi x)^m\), \(\varphi x. \psi x =(\psi x)^{m+1}\), donc
+\[\tag{11}\begin{aligned}
+\frac{e^{-f a}}{\left(\psi a\right)^m} \int \frac{e^{f x}(\psi x)^m d x}{x-a} & -e^{f x}(\psi x)^{m+1} \int \frac{e^{-f a} d a}{(a-x)\left(\psi a\right)^{m+1}} \\
+& =\Sigma \Sigma \varphi\left(p, p^{\prime}\right) \int \frac{e^{-f a} a^{p^{\prime}} d a}{\left(\psi a\right)^{m+1}}. \int e^{f x}\left(\psi x\right)^m x^p d x.
+\end{aligned}\]
+Or on trouve
+\[\varphi\left(p, p^{\prime}\right)=\frac{f^{\left(p+p^{\prime}+2\right)}}{2.3 \ldots\left(p+p^{\prime}+1\right)}+\left(p+1+m\left(p+p^{\prime}+2\right)\right) \frac{\psi^{\left(p+p^{\prime}+2\right)}}{2.3 \ldots\left(p+p^{\prime}+2\right)} ;\]
+donc, en faisant
+\[\begin{aligned}
+& f x=\gamma+\gamma^{\prime} x+\gamma^{\prime \prime} x^2+\cdots+\gamma^{\left(n^{\prime}\right)} x^{n^{\prime}}, \\
+& \psi x=k+k^{\prime} x+k^{\prime \prime} x^2+\cdots+k^{(n)} x^n,
+\end{aligned}\]
+on a
+\[\varphi\left(p, p^{\prime}\right)=\left(p+p^{\prime}+2\right) \gamma^{\left(p+p^{\prime}+2\right)}+\left(p+1+m\left(p+p^{\prime}+2\right)\right) k^{\left(p+p^{\prime}+2\right)}\]
+Par conséquent on a
+\[\tag{12}\begin{aligned}
+ \frac{e^{-f a}}{\left(\psi a\right)^m} \int &\frac{e^{f x}\left(\psi x\right)^m d x}{x-a}-e^{f x}(\psi x)^{m+1} \int \frac{e^{-f a} d a}{(a-x)\left(\psi a\right)^{m+1}} \\
+& =\Sigma \Sigma\left[\left(p+p^{\prime}+2\right) \gamma^{\left(p+p^{\prime}+2\right)}\right. \\
+& \left.+\left(p+1+m\left(p+p^{\prime}+2\right)\right) k^{\left(p+p^{\prime}+2\right)}\right] \int \frac{e^{-f a} a^{p^{\prime}} d a}{\left(\psi a\right)^{m+1}}. \int e^{f x}(\psi x)^m x^p d x.
+\end{aligned}\] 
+Si l'on fait \(m=-\frac{1}{2}\), on trouve
+\[\begin{aligned}
+ e^{-f a} &\sqrt{\psi a} \int \frac{e^{f x} d x}{(x-a) \sqrt{\psi x}}-e^{f x} \sqrt{\psi x} \int \frac{e^{-f a} d a}{(a-x) \sqrt{\psi a}} \\
+& =\Sigma \Sigma\left[\left(p+p^{\prime}+2\right) \gamma^{\left(p+p^{\prime}+2\right)}+\frac{1}{2}\left(p-p^{\prime}\right) k^{\left(p+p^{\prime}+2\right)}\right] \int \frac{e^{-f a} a^{p^{\prime}} d a}{\sqrt{\psi a}} \int \frac{e^{f x} x^p d x}{\sqrt{\psi x}}.
+\end{aligned}\]
+Soit par exemple \(f x=x\) et \(\psi x=1-x^2\), on a
+\[\gamma^{\left(p+p^{\prime}+2\right)}=0, \quad \frac{1}{2}\left(p-p^{\prime}\right) k^{\left(p+p^{\prime}+2\right)}=0,\]
+donc
+\[e^{-a} \sqrt{1-a^2} \int \frac{e^x d x}{(x-a) \sqrt{1-x^2}}=e^x \sqrt{1-x^2} \int \frac{e^{-a} d a}{(a-x) \sqrt{1-a^2}}.\]
+En écrivant \(-a\) au lieu de \(a\), on obtient
+\[e^a \sqrt{1-a^2} \int \frac{e^x d x}{(x+a) \sqrt{1-x^2}}=e^x \sqrt{1-x^2} \int \frac{e^a d a}{(a+x) \sqrt{1-a^2}};\]
+en posant \(x=\sin \varphi\), et \(a=\sin \psi\), on trouve
+\[\cos \psi e^{\sin \psi} \int \frac{e^{\sin \varphi} d \varphi}{\sin \varphi+\sin \psi}=\cos \varphi e^{\sin \varphi} \int \frac{e^{\sin \psi} d \psi}{\sin \psi+\sin \varphi},\]
+les intégrales devant s'annuler pour \(\varphi=\frac{\pi}{2}\), \(\psi=\frac{\pi}{2}\).
+
+Je vais maintenant faire une autre application des équations générales. Nous avons jusqu’à présent regardé \(x\) et \(a\) comme des indéterminées, sans nous occuper des valeurs spéciales de ces quantités qui simplifieraient les formules. Nous allons maintenant chercher de telles valeurs.
+
+a) Considérons en premier lieu l'équation (5). Le premier membre de cette équation contient deux intégrales, mais comme chacune d'elles est multipliée par une quantité dépendant respectivement de \(a\) et de \(x\), il est clair qu'on peut donner à ces quantités des valeurs telles, que les intégrales disparaissent, ou l'une, ou toutes les deux, pourvu seulement que chacune des équations \(\frac{e^{-f a}}{\varphi a}=0, e^{f x} \varphi x=0\), ait au moins deux racines différentes; car nous avons déjà supposé que les intégrales s'annulent pour des valeurs de \(x\) et de \(a\) qui satisfont à ces équations.
+
+Supposons d'abord \(e^{f x} \varphi x=0\), nous aurons après avoir multiplié par \(e^{f a} \varphi a\),
+\[\tag{13}\begin{gathered}
+\begin{aligned}
+\int \frac{e^{f x} \varphi x. d x}{x-a}&=e^{f a} \varphi a \Sigma \Sigma\left(p+p^{\prime}+2\right) \gamma^{\left(p+p^{\prime}+2\right)} \int \frac{e^{-f a} a^{p^{\prime}} d a}{\varphi a}. \int e^{f x} \varphi x. x^p d x \\
+&-e^{f a} \varphi a \Sigma \beta^{(p)} \int \frac{e^{-f a} d a}{\left(a+\alpha^{(p)}\right) \varphi a} \int \frac{e^{f x} \varphi x. d x}{x+\alpha^{(p)}} \end{aligned}\\
+\left(x=x^{\prime}, x=x^{\prime \prime}, a=a^{\prime}\right),
+\end{gathered}\]
+les équations entre parenthèses indiquant les limites entre lesquelles les intégrales doivent être prises; ces limites doivent satisfaire aux équations
+\[e^{f x^{\prime}} \varphi x^{\prime}=0, e^{f x^{\prime \prime}} \varphi x^{\prime \prime}=0 ; \frac{e^{-f a^{\prime}}}{\varphi a^{\prime}}=0.\]
+De la formule précédente découle le théorème suivant:
+
+"La valeur de l'intégrale \(\int \frac{e^{f x} \varphi x. d x}{x-a}\), entre des limites qui annulent la fonction \(e^{f x} \varphi x\) peut être exprimée par des intégrales des formes suivantes:
+\[\int e^{f x} \varphi x. x^p d x, \int \frac{e^{-f a} a^{p^{\prime}} d a}{\varphi a}, \int \frac{e^{f x} \varphi x. d x}{x+\alpha^{(p)}}, \int \frac{e^{-f a} d a}{\left(a+\alpha^{(p)}\right) \varphi a},\]
+les intégrales par rapport à \(x\) étant prises entre les mêmes limites que la première intégrale."
+
+Ce théorème a cela de remarquable, que la même réduction est impossible, quand l'intégrale \(\int \frac{e^{f x} \varphi x. d x}{x-a}\) est prise entre des limites indéterminées. En posant \(f x=0\), on obtient
+\[\tag{14}\begin{gathered}
+\int \frac{\varphi x. d x}{x-a}=-\varphi a \Sigma \beta^{(p)} \int \frac{d a}{\left(a+\alpha^{(p)}\right) \varphi a}. \int \frac{\varphi x. d x}{x+\alpha^{(p)}} \\
+\left(x=x^{\prime}, x=x^{\prime \prime}, a=a^{\prime}\right).
+\end{gathered}\]
+Si l'on pose \(\varphi x=1\), on aura
+\[\tag{15}\begin{gathered}
+\int \frac{e^{f x} d x}{x-a}=e^{f a} \Sigma \Sigma\left(p+p^{\prime}+2\right) \gamma^{\left(p+p^{\prime}+2\right)} \int e^{-f a} a^{p^{\prime}} d a. \int e^{f x} x^p d x. \\
+\left(x=x^{\prime}, x=x^{\prime \prime}, a=a^{\prime}\right).
+\end{gathered}\]
+
+Supposons maintenant qu'on donne en même temps à \(a\) une valeur qui annule la quantité \(\frac{e^{-f a}}{\varphi a}\), et soit \(a^{\prime \prime}\) cette valeur, la formule (13) donnera
+\[\tag{16}\begin{gathered}
+\begin{aligned}
+ \Sigma {\beta}^{(p)} &\int \frac{e^{-f a} d a}{\left(a+\alpha^{(p)}\right) \varphi a}. \int \frac{e^{f x} \varphi x. d x}{x+\alpha^{(p)}} \\
+& =\Sigma \Sigma\left(p+p^{\prime}+2\right) \gamma^{\left(p+p^{\prime}+2\right)} \int \frac{e^{-f a} a^{p^{\prime}} d a}{\varphi^a}. \int e^{f x} \varphi x. x^p d x.
+\end{aligned}\\
+\left(x=x^{\prime}, x=x^{\prime \prime} ; a=a^{\prime}, a=a^{\prime \prime}\right).
+\end{gathered}\]
+En supposant \(f x=k x\), on en tire
+\[\tag{17}\begin{gathered}
+\Sigma \beta^{(p)} \int \frac{e^{-k a} d a}{\left(a+\alpha^{(p)}\right) \varphi a}. \int \frac{e^{k x} \varphi x. d x}{x+\alpha^{(p)}}=0 \\
+\left(x=x^{\prime}, \quad x=x^{\prime \prime} ; \quad a=a^{\prime}, \quad a=a^{\prime \prime}\right).
+\end{gathered}\]
+En faisant \(k=0\), on obtient
+\[\tag{18}\begin{gathered}
+\Sigma \beta^{(p)} \int \frac{d a}{\left(a+\alpha^{(p)}\right) \varphi a}. \int \frac{\varphi x. d x}{x+\alpha^{(p)}}=0 \\
+\left(x=x^{\prime}, x=x^{\prime \prime} ; a=a^{\prime}, a=a^{\prime \prime}\right).
+\end{gathered}\]
+Posons par exemple \(\varphi x=\sqrt{x^2-1}=\sqrt{(x-1)(x+1)}\), on a
+\[\beta=\beta^{\prime}=\frac{1}{2} ;  \alpha=-1, \alpha^{\prime}=1 ; x^{\prime}=1, x^{\prime \prime}=-1 ; a^{\prime}=\infty, a^{\prime \prime}=-\infty ;\]
+donc
+\[\begin{gathered}
+\int \frac{d a}{(a-1) \sqrt{a^2-1}}. \int \frac{d x \sqrt{x^2-1}}{x-1}+\int \frac{d a}{(a+1) \sqrt{a^2-1}}. \int \frac{d x \sqrt{x^2-1}}{x+1}=0 \\
+\left(x^{\prime}=1, x^{\prime \prime}=-1 ; a^{\prime}=+\infty, a^{\prime \prime}=-\infty\right),
+\end{gathered}\]
+ce qui a lieu en effet, car on a
+\[\begin{aligned}
+\int \frac{d a}{(a-1) \sqrt{a^2-1}}=-\sqrt{\frac{a+1}{a-1}}=0 && \left(a^{\prime}=+\infty, a^{\prime \prime}=-\infty\right), \\
+\int \frac{d a}{(a+1) \sqrt{a^2-1}}=-\sqrt{\frac{a-1}{a+1}}=0 && \left(a^{\prime}=+\infty, a^{\prime \prime}=-\infty\right).
+\end{aligned}\]
+
+Si dans la formule (16) on fait \(\varphi x=1\), on obtient
+\[\tag{19}\begin{gathered}
+\Sigma \Sigma\left(p+p^{\prime}+2\right) \gamma^{\left(p+p^{\prime}+2\right)} \int e^{-f a} a^{p^{\prime}} d a. \int e^{f x} x^p d x=0 \\
+\left(x=x^{\prime}, x=x^{\prime \prime} ; a=a^{\prime}, a=a^{\prime \prime}\right).
+\end{gathered}\]
+
+b) Considérons en second lieu la formule (4). En supposant \(e^{f x} \varphi x. \psi x=0\), on trouve après avoir multiplié par \(e^{f a} \varphi a\)
+\[\tag{20}\begin{gathered}
+\int \frac{e^{f x} \varphi x. d x}{x-a}=e^{f a} \varphi a \Sigma \Sigma \varphi\left(p, p^{\prime}\right) \int \frac{e^{-f a} a^{p^{\prime}} d a}{\varphi a. \psi a}. \int e^{f x} \varphi x. x^p d x \\
+\left(x=x^{\prime}, x=x^{\prime \prime} ; a=a^{\prime}\right),
+\end{gathered}\]
+où l'on a
+\[e^{f x^{\prime}} \psi x^{\prime}. \psi x^{\prime}=0, e^{f x^{\prime \prime}} \psi x^{\prime \prime}. \psi. x^{\prime \prime}=0, \frac{e^{-f a^{\prime}}}{\psi a^{\prime}}=0\]
+Cette formule se traduit en théorème comme suit:
+
+"La valeur de l'intégrale \(\int \frac{e^{f x} \varphi x. d x}{x-a}\), prise entre des limites qui annulent la quantité \(e^{f x} \varphi x. \psi x\), peut être exprimée par des intégrales de ces formes: \(\int \frac{e^{-f a} a^{p^{\prime}} d a}{\varphi a. \psi a}, \int e^{f x} \varphi x. x^p d x\)."
+
+Pour des valeurs indéterminées de \(x\) au contraire, cette réduction de \(\int \frac{e^{f x} {\varphi} x. d x}{x-a}\) est impossible.
+
+En faisant \(\beta=\beta^{\prime}=\ldots.=\beta^{(n)}=m\), on obtient la formule suivante
+\[\tag{21}\begin{gathered}
+\int \frac{e^{f x}\left(\psi x\right)^m d x}{x-a}=e^{f a}(\psi a)^m \Sigma \Sigma \varphi\left(p, p^{\prime}\right) \int \frac{e^{-f a} a^{p^{\prime}} d a}{(\psi a)^{m+1}}. \int e^{f x}(\psi x)^m x^p d x \\
+\left(x=x^{\prime}, x=x^{\prime \prime} ; a=a^{\prime}\right),
+\end{gathered}\]
+où
+\[\psi x=(x+\alpha)\left(x+\alpha^{\prime}\right) \ldots. \left(x+\alpha^{(n)}\right).\]
+Si de plus on suppose \(f x=0\), on obtient
+\[\tag{22}\begin{gathered}
+\int \frac{(\psi x)^m d x}{x-a}=(\psi a)^m \Sigma \Sigma \varphi\left(p, p^{\prime}\right) \int \frac{a^{p^{\prime}} d a}{(\psi a)^{m+1}}. \int(\psi x)^m x^p d x \\
+\left(x=x^{\prime}, x=x^{\prime \prime};  a=a^{\prime}\right).
+\end{gathered}\]
+
+On a donc le théorème suivant, qui n'est qu'un cas spécial du précédent:
+
+"La valeur de l'intégrale \(\int \frac{\left(\psi^{\prime} x\right)^m d x}{x-a}\), prise entre des limites qui satisfont à l'équation \((\psi x)^{m+1}=0\), peut être exprimée par des intégrales des formes \(\int \frac{a^{p^{\prime}} d a}{(\psi a)^{m+1}}\), \(\int(\psi x)^m x^p d x\), \(\psi x\) étant une fonction entière de \(x\)."
+
+En faisant \(m=-\frac{1}{2}\), on obtient
+\[\tag{23}\begin{aligned}
+\int \frac{d x}{(x-a) \sqrt{\psi x}}= & \frac{1}{2 \sqrt{\psi a}} \Sigma \Sigma\left(p-p^{\prime}\right) k^{\left(p+p^{\prime}+2\right)} \int \frac{a^{p^{\prime}} d a}{\sqrt{\psi a}}. \int \frac{x^p d x}{\sqrt{\psi x}} \\
+& \left(x=x^{\prime}, x=x^{\prime \prime} ; a=a^{\prime}\right),
+\end{aligned}
+\]
+d'où le théorème suivant:
+
+"La valeur de l'intégrale \(\int \frac{dx}{(x - a) \sqrt{\psi x}}\), prise entre des limites qui annulent la fonction \(\psi x\), peut être exprimée par des intégrales de la forme \(\int \frac{x^p d x}{\sqrt{\psi x}}\)."
+
+Faisons par exemple \(\psi x=\left(1-x^2\right)\left(1-\alpha x^2\right)\), nous aurons \(x^{\prime}=1\), \(x^{\prime}=-1\), \(x^{\prime}=\sqrt{\frac{1}{a}}\), \(x^{\prime}=-\sqrt{\frac{1}{a}}\); \(a^{\prime}=1, -1, \sqrt{\frac{1}{a}}, -\sqrt{\frac{1}{a}}\); donc
+\[\begin{aligned}
+\sqrt{\left(1-a^2\right)\left(1-\alpha a^2\right)} & \int \frac{d x}{(x-a) \sqrt{\left(1-x^2\right)\left(1-\alpha x^2\right)}} \\
+& =\alpha \int \frac{d a}{\sqrt{\left(1-a^2\right)\left(1-\alpha a^2\right)}}. \int \frac{x^2 d x}{\sqrt{\left(1-x^2\right)\left(1-\alpha x^2\right)}} \\
+- & \alpha \int \frac{a^2 d a}{\sqrt{\left(1-a^2\right)\left(1-\alpha a^2\right)}}. \int \frac{d x}{\sqrt{\left(1-x^2\right)\left(1-\alpha x^2\right)}} \\
+& \left(x=1, x=-1 ; a= \pm 1, \pm \sqrt{\frac{1}{\alpha}}\right) \\
+& \left(x=1, x= \pm \sqrt{\frac{1}{\alpha}} ; a= \pm 1, \pm \sqrt{\frac{1}{\alpha}}\right) \\
+& \left(x=-1, x= \pm \sqrt{\frac{1}{\alpha}} ; a= \pm 1, \pm \sqrt{\frac{1}{\alpha}}\right) \\
+& \left(x=\sqrt{\frac{1}{\alpha}}, x=-\sqrt{\frac{1}{\alpha}} ; a= \pm 1, \pm \sqrt{\frac{1}{\alpha}}\right).
+\end{aligned}\]
+Si dans la formule (22) on suppose \(\psi x=1-x^{2 n}\), on trouve
+\[\begin{gathered}
+\int \frac{\left(1-x^{2 n}\right)^m d x}{x-a}=\left(1-a^{2 n}\right)^m \Sigma \Sigma \varphi\left(p, p^{\prime}\right) \int\left(1-x^{2 n}\right)^m x^p d x. \int \frac{a^{p^{\prime}} d a}{\left(1-a^{2 n}\right)^{m+1}} \\
+(x=1, x=-1, a=1),
+\end{gathered}\]
+où \(m+1\) doit être moindre que l'unité, c'est-à-dire que \(m<0\). On a
+\[\varphi\left(p, p^{\prime}\right)=\left(p+1+m\left(p+p^{\prime}+2\right)\right) k^{\left(p+p^{\prime}+2\right)}:\]
+puisque \(k^{\left(p+p^{\prime}+2\right)}=0\), à moins que \(p+p^{\prime}+2=2 n\), et comme \(k^{2 n}=-1\), on en tire
+\[\varphi\left(p, p^{\prime}\right)=-(p+1+2 m n).\]
+L'intégrale \(\int\left(1-x^{2 n}\right)^m x^p d x\) peut être exprimée par la fonction \(\Gamma\). On a en effet
+\[\int_{+1}^{-1}\left(1-x^{2 n}\right)^m x^p d x=-\int_0^1\left(1-x^{2 n}\right)^m x^p d x+\int_0^{-1}\left(1-x^{2 n}\right)^m x^p d x.\]
+Mais on a
+\[\int_0^{-1}\left(1-x^{2 n}\right)^m x^p d x=(-1)^{p+1} \int_0^1\left(1-x^{2 n}\right)^m x^p d x,\]
+comme on le voit en mettant \(-x\) au lieu de \(x\). Donc
+\[\int_{+1}^{-1}\left(1-x^{2 n}\right)^m x^p d x=\left((-1)^{p+1}-1\right) \int_0^1\left(1-x^{2 n}\right)^m x^p d x,\]
+c'est-à-dire qu'on a
+\[\begin{aligned}
+& \int_{+1}^{-1}\left(1-x^{2 n}\right)^m x^{2 p} d x=-2 \int_0^1\left(1-x^{2 n}\right) x^{2 p} d x, \\
+& \int_{+1}^{-1}\left(1-x^{2 n}\right)^m x^{2 p+1} d x=0.
+\end{aligned}\]
+Or on déduit aisément d'une formule connue (\textit{Legendre} Exercices de calcul intégral t. I p. 279) l'équation suivante
+\[\int_0^1\left(1-x^{2 n}\right)^m x^{2 p} d x=\frac{\Gamma(m+1) \Gamma\left(\frac{1+2 p}{2 n}\right)}{2 n \Gamma\left(m+1+\frac{1+2 p}{2 n}\right)};\]
+on a donc
+\[\int_{+1}^{-1}\left(1-x^{2 n}\right)^m x^{2 p} d x=-\frac{\Gamma(m+1) \Gamma\left(\frac{1+2 p}{2 n}\right)}{n \Gamma\left(m+1+\frac{1+2 p}{2 n}\right)}.\]
+En substituant cette valeur, et écrivant ensuite \(-m\) pour \(m\), on obtient 
+\[\tag{24}\begin{gathered}
+\int \frac{d x}{(x-a)\left(1-x^{2 n}\right)^m}=\frac{\Gamma(-m+1)}{n\left(1-a^{2 n}\right)^m} \Sigma(2 p+1-2 m n) \frac{\Gamma\left(\frac{1+2 p}{2 n}\right)}{\Gamma\left(-m+1+\frac{1+2 p}{2 n}\right)} \int \frac{a^{2 n-2 p-2} d a}{\left(1-a^{2 n}\right)^{1-m}}\\
+(x=1, x=-1 ; a=1).
+\end{gathered}\]
+Si l'on fait \(m=\frac{1}{2}\), on trouve
+\[\begin{gathered}
+\int \frac{d x}{(x-a) \sqrt{1-x^{2 n}}}=\frac{\Gamma\left(\frac{1}{2}\right)}{n \sqrt{1-a^{2 n}}} \Sigma(2 p+1-n) \frac{\Gamma\left(\frac{1+2 p}{2 n}\right)}{\Gamma\left(\frac{1}{2}+\frac{1+2 p}{2 n}\right)} \int \frac{a^{2 n-2 p-2} d u}{\sqrt{1-a^{2 n}}} \\
+(x=1, x=-1 ; a=1, a=a).
+\end{gathered}\]
+Par exemple si \(n=3\), on trouve
+\[\begin{gathered}
+\int \frac{d x}{(x-a) \sqrt{1-x^6}} =-\frac{2}{3} \frac{\Gamma\left(\frac{1}{2}\right) \Gamma\left(\frac{1}{6}\right)}{\Gamma\left(\frac{2}{3}\right) \sqrt{1-a^6}} \int \frac{a^4 d a}{\sqrt{1-a^6}}+\frac{2}{3} \frac{\Gamma\left(\frac{1}{2}\right) \Gamma\left(\frac{5}{6}\right)}{\Gamma\left(\frac{4}{3}\right) \sqrt{1-a^6}} \int \frac{d u}{\sqrt{1-a^6}} \\
+(x=1, x=-1 ; a=1). 
+\end{gathered}\]
+Or on a \(\Gamma\left(\frac{1}{2}\right)=\sqrt{\pi}\), en substituant cette valeur on obtient
+\[\begin{gathered}
+\int \frac{d x}{(x-a) \sqrt{1-x^6}}=-\frac{2}{3} \frac{\sqrt{\pi}}{\sqrt{1-a^6}} \frac{\Gamma\left(\frac{1}{6}\right)}{\Gamma\left(\frac{2}{3}\right)} \int \frac{a^4 d a}{\sqrt{1-a^6}}+\frac{2}{3} \frac{\sqrt{\pi}}{\sqrt{1-a^6}} \frac{\Gamma\left(\frac{5}{6}\right)}{\Gamma\left(\frac{4}{3}\right)} \int \frac{d a}{\sqrt{1-a^6}} \\
+(x=1, x=-1 ; a=1).
+\end{gathered}\]
+
+Dans ce qui précède nous avons supposé \(e^{f x} \varphi x. \psi x=0\); supposons maintenant qu'on ait en même temps \(\frac{e^{-f a}}{\varphi a}=0\), et désignons par \(a^{\prime \prime}\) une valeur de a qui satisfait à cette condition. L'équation (4) devient dans ce cas:
+\[\tag{25}\begin{gathered}
+\Sigma \Sigma \varphi\left(p, p^{\prime}\right) \int \frac{e^{-f a} a^{p^{\prime}} d a}{\varphi a. \psi a}. \int e^{f x} \varphi x. x^p d x=0 \\
+\left(x=x^{\prime}, x=x^{\prime \prime} ;  a=a^{\prime}, a=a^{\prime \prime}\right).
+\end{gathered}\]
+Si \(f x=0\), on a
+\[\tag{26}\begin{gathered}
+\Sigma \Sigma \varphi\left(p, p^{\prime}\right) \int \frac{a^{p^{\prime}} d a}{\varphi a. \psi a}. \int \varphi x. x^p d x=0 \\
+\left(x=x^{\prime}, x=x^{\prime \prime} ; a=a^{\prime}, a=a^{\prime \prime}\right).
+\end{gathered}\]
+
+Supposons que \(\beta\), \(\beta^{\prime}\), \(\beta^{\prime \prime} \ldots\) soient négatifs, mais que leurs valeurs absolues soient moindres que l'unité, nous aurons \(\varphi x. \psi x=0\) pour \(x=-\alpha^{(p)}\), et \(\frac{1}{\varphi a}=0\) pour \(a=-\alpha^{(q)}\). On obtient ainsi la formule suivante
+\[\tag{27}\begin{gathered}
+\Sigma \Sigma \varphi\left(p, p^{\prime}\right) \int \frac{a^{p^{\prime}} d a}{\psi a}. \int \frac{x^p d x}{\varphi x}=0 \\
+\left(x=-\alpha^{(p)}, x=-\alpha^{\left(p^{\prime}\right)} ; a=-\alpha^{(q)}, a=-\alpha^{\left(q^{\prime}\right)}\right),
+\end{gathered}\]
+où l'on a fait
+\[\begin{aligned}
+& \varphi x=(x+\alpha)^\beta\left(x+\alpha^{\prime}\right)^{\beta^{\prime}}\left(x+\alpha^{\prime \prime}\right)^{\beta^{\prime \prime}} \ldots. \\
+& \psi a=(a+\alpha)^{1-\beta} (a+\alpha^{\prime})^{1-\beta^{\prime}}(a+\alpha^{\prime \prime})^{1-\beta^{\prime \prime}} \ldots.,
+\end{aligned}\]
+\(\beta\), \(\beta^{\prime}\), \(\beta^{\prime \prime} \ldots\) étant positifs et moindres que l'unité.
+En faisant \(\beta=\beta^{\prime}=\beta^{\prime \prime}=\cdots=\frac{1}{2}\), on obtient
+\[\tag{28}
+\begin{gathered}
+\Sigma \Sigma\left(p-p^{\prime}\right) k^{\left(p+p^{\prime}+2\right)} \int \frac{a^{p^{\prime}} d a}{\sqrt{\varphi a}}. \int \frac{x^p d x}{\sqrt{\varphi x}}=0 \\
+\left(x=-\alpha^{(p)}, x=-\alpha^{\left(p^{\prime}\right)} ; \quad a=-\alpha^{(q)}, a=-\alpha^{\left(q^{\prime}\right)}\right).
+\end{gathered}\]
+Dans cette formule on a
+\[\varphi x=(x+\alpha)\left(x+\alpha^{\prime}\right)\left(x+\alpha^{\prime \prime}\right) \cdots=k+k^{\prime} x+k^{\prime \prime} x^2+\cdots\]
+
+Par exemple si l'on pose \(\varphi x=(1-x)(1+x)(1-c x)(1+c x)\), on a \(\alpha=1, \alpha^{\prime}=-1, \alpha^{\prime \prime}=\frac{1}{c}, \alpha^{\prime \prime \prime}=-\frac{1}{c}\), donc
+\[\begin{gathered}
+ \int \frac{d a}{\sqrt{\left(1-a^2\right)\left(1-c^2 a^2\right)}}. \int \frac{x^2 d x}{\sqrt{\left(1-x^2\right)\left(1-c^2 x^2\right)}}=\int \frac{a^2 d a}{\sqrt{\left(1-a^2\right)\left(1-c^2 a^2\right)}}. \int \frac{d x}{\sqrt{\left(1-x^2\right)\left(1-c^2 x^2\right)}} \\
+(x=1,\; x=-1; a=1,\;\; a=-1) \\
+(x=1,\; x=-1; a=1,\;\; a=\;\;\frac{1}{c}) \\
+(x=1,\; x=-1; a=1,\;\; a=-\frac{1}{c}) \\
+(x=1,\; x=-1; a=\frac{1}{c},\; a=-\frac{1}{c}) \\
+(x=1,\; x=\;\;\frac{1}{c}; a=1,\;\;  a=\;\;\frac{1}{c}) \\
+(x=1,\; x=\;\;\frac{1}{c};  a=1,\;\;  a=-\frac{1}{c}) \\
+(x=1,\; x=\;\;\frac{1}{c};  a=\frac{1}{c},\;\; a=-\frac{1}{c}) \\
+ (x=\frac{1}{c}, x=-\frac{1}{c} ; a=\frac{1}{c}\;\;, a=-\frac{1}{c}) 
+\end{gathered}\]
+Désignons par \(F x\) la valeur de l'intégrale \(\int \frac{d x}{\sqrt{\left(1-x^2\right)\left(1-c^2 x^2\right)}}\) prise depuis \(x=0\), et par \(E x\) celle de \(\int \frac{x^2 d x}{\sqrt{\left(1-x^2\right)\left(1-c^2 x^2\right)}}\) depuis \(x=0\), nous aurons
+\[\begin{aligned}
+& \int_\alpha^{\alpha^{\prime}} \frac{d x}{\sqrt{\left(1-x^2\right)\left(1-c^2 x^2\right)}}=F \alpha^{\prime}-F \alpha, \\
+& \int_\alpha^{\alpha^{\prime}} \frac{x^2 d x}{\sqrt{\left(1-x^2\right)\left(1-c^2 x^2\right)}}=E \alpha^{\prime}-E \alpha.
+\end{aligned}\]
+En substituant ces valeurs, on aura la formule suivante
+\[F(1) E\left(\frac{1}{c}\right)=E(1) F\left(\frac{1}{c}\right).\]
+On n'obtient pas d'autres relations quel que soit le système de limites qu'on emploie, excepté seulement les systèmes qui donnent des identités, savoir le \(1^{\text{er}}\), le \(5^{\text{ième }}\) et le \(8^{\text{ième }}\).
+
+Si l'on désigne en général par \(F(p, x)\) la valeur de l'intégrale \(\int \frac{x^p d x}{\sqrt{\varphi x}}\) prise d'une limite inférieure arbitraire, on a
+\[\int_\alpha^{a^{\prime}} \frac{x^p d x}{\sqrt{\rho x}}=F\left(p, \alpha^{\prime}\right)-F^{\prime}(p, \alpha)\]
+En substituant cette valeur dans la formule (28), on obtient la suivante:
+\[\tag{29}\begin{aligned}
+& \Sigma \Sigma\left(p-p^{\prime}\right) k^{\left(p+p^{\prime}+2\right)} F(p, \alpha) F\left(p^{\prime}, \alpha^{\prime}\right)+\Sigma \Sigma\left(p-p^{\prime}\right) k^{\left(p+p^{\prime}+2\right)} F\left(p, \alpha^{\prime \prime}\right) F\left(p^{\prime}, \alpha^{\prime \prime \prime}\right) \\
+= & \Sigma \Sigma\left(p-p^{\prime}\right) k^{\left(p+p^{\prime}+2\right)} F(p, \alpha) F\left(p^{\prime}, \alpha^{\prime \prime \prime}\right)+\Sigma \Sigma\left(p-p^{\prime}\right) k^{\left(p+p^{\prime}+2\right)} F\left(p, \alpha^{\prime \prime}\right) F\left(p^{\prime}, \alpha^{\prime}\right).
+\end{aligned}\]
+De cette formule on peut en déduire beaucoup d'autres plus spéciales en supposant \(\varphi x\) paire on impaire, mais pour ne pas m'étendre trop au long je les passe sous silence.
+
+Il faut se rappeler que \(\alpha\), \(\alpha^{\prime}\), \(\alpha^{\prime \prime}\), \(\alpha^{\prime \prime \prime}\) peuvent désigner des racines quelconques de l'équation \(\varphi x=0\). On peut aussi supposer \(\alpha=\alpha^{\prime}\), \(\alpha^{\prime \prime}=\alpha^{\prime \prime \prime}\).
+\begin{center}\rule{2in}{0.1pt}\end{center}
+\end{document}
