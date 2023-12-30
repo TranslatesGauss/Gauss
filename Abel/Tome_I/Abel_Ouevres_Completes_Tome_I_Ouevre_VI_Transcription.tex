@@ -1,0 +1,145 @@
+\documentclass[oneside, 12 pt, leqno]{memoir}
+\usepackage{standalone}
+\usepackage[dvips,text={6.2in,8.5in},left=0.9truein,top=1.5truein]{geometry}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{microtype}
+\usepackage{indentfirst}
+\usepackage[utf8]{inputenc}
+\usepackage{exscale}
+\usepackage{mlmodern}
+\usepackage[OT1]{fontenc}
+\usepackage[bottomfloats]{footmisc}
+\parindent=2.27em
+\parskip=0pt
+\nonfrenchspacing
+\renewcommand{\baselinestretch}{1.15}
+\DeclareMathSizes{12}{12}{8}{6}
+\everymath{\displaystyle}
+\allowdisplaybreaks
+\raggedbottom
+\titleformat{\section}
+  {\normalfont\centering}{\thesection.}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\spaceskip=0.67em plus 0.33em minus 0.33em
+\thickmuskip=4mu plus 4mu
+\medmuskip=3mu plus 1.5mu minus 3mu
+\AtBeginDocument{%
+  \mathchardef\stdcomma=\mathcode`,
+  \mathcode`,="8000
+}
+\begingroup\lccode`~=`, \lowercase{\endgroup\def~}{\stdcomma\mspace{\medmuskip}}
+\let\oldfrac\frac
+\def\frac#1#2{\mathchoice{\text{\scalebox{.83}{${\oldfrac{#1}{#2}}$}}}{\text{\scalebox{.83}{${\displaystyle\oldfrac{#1}{#2}}$}}}{\genfrac{}{}{}{2}{#1}{#2}}{\genfrac{}{}{}{3}{#1}{#2}}}
+\begin{document}
+\setlength{\abovedisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+\setlength{\belowdisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+
+\;\\ [3\baselineskip]
+\section*{\begin{Large}VI.\end{Large} \\ [\baselineskip]
+RECHERCHE DES FONCTIONS DE DEUX QUANTITÉS VARIABLES INDÉPENDANTES \(x\) ET \(y\), TELLES QUE \(f(x, y)\), QUI ONT LA PROPRIÉTÉ QUE \(f(z, f(x, y))\) EST UNE FONCTION SYMÉTRIQUE DE \(z\), \(x\) ET \(y\).}
+\begin{center}
+\rule{2in}{0.1pt}\\ [0.5\baselineskip]
+\begin{scriptsize} Journal für die reine und angewandte Mathematik, herausgegeben von Crelle, Bd. I, Berlin 1826. \par\end{scriptsize}
+\rule{2in}{0.1pt}
+\end{center}
+
+Si l'on désigne p. ex. les fonctions \(x+y\) et \(x y\) par \(f(x, y)\), on a pour la première, \(f(z, f(x, y))=z+f(x, y)=z+x+y\), et pour la seconde, \(f(z, f(x, y))=z f(x, y)=z x y\). La fonction \(f(x, y)\) a donc dans l'un et l'autre cas la propriété remarquable que \(f(z, f(x, y))\) est une fonction symétrique des trois variables indépendantes \(z\), \(x\) et \(y\). Je vais chercher dans ce mémoire la forme générale des fonctions qui jouissent de cette propriété.
+
+L'équation fondamentale est celle-ci:
+\[\tag{1} f(z, f(x, y))=\text{ une fonction symétrique de }x\text{, }y\text{ et }z. \]
+
+Une fonction symétrique reste la même lorsqu'on y échange entre elles d'une manière quelconque, les quantités variables dont elle dépend. On a donc les équations suivantes:
+\[\tag{2}\begin{aligned}
+& f(z, f(x, y))=f(z, f(y, x)), \\
+& f(z, f(x, y))=f(x, f(z, y)), \\
+& f(z, f(x, y))=f(x, f(y, z)), \\
+& f(z, f(x, y))=f(y, f(x, z)), \\
+& f\left(z, f(x, y)\right)=f(y, f(z, x)).
+\end{aligned}\]
+La première équation ne peut avoir lieu à moins qu'on n'ait
+\[f(x, y)=f(y, x),\]
+c'est-à-dire que \(f(x, y)\) doit être une fonction symétrique de \(x\) et \(y\). Par cette raison les équations (2) se réduisent aux deux suivantes:
+\[\tag{3}\begin{aligned}
+& f(z, f(x, y))=f(x, f(y, z)), \\
+& f(z, f(x, y))=f(y, f(z, x)).
+\end{aligned}\]
+Soit pour abréger \(f(x, y)=r\), \(f(y, z)=v\), \(f(z, x)=s\), on aura
+\[\tag{4}f(z, r)=f(x, v)=f(y, s).\]
+En différentiant successivement par rapport à \(x, y, z\), on aura
+\[\begin{aligned}
+& f^{\prime} r \frac{d r}{d x}=f^{\prime} s \frac{d s}{d x}, \\
+& f^{\prime} v \frac{d v}{d y}=f^{\prime} r \frac{d r}{d y}, \\
+& f^{\prime} s \frac{d s}{d z}=f^{\prime} v \frac{d v}{d z}.
+\end{aligned}\]
+Si l'on multiplie ces équations membre à membre et qu'on divise les produits par \(f^{\prime} r . f^{\prime} v . f^{\prime} s\), on obtiendra cette équation
+\[\tag{5}\frac{d r}{d x} \frac{d v}{d y} \frac{d s}{d z}=\frac{d r}{d y} \frac{d v}{d z} \frac{d s}{d x}\]
+ou bien
+\[\frac{d r}{d x} \frac{\frac{d v}{d y}}{\frac{d v}{d z}}=\frac{d r}{d y} \frac{\frac{d s}{d x}}{\frac{d s}{d z}}.\]
+Si l'on fait \(z\) invariable, \(\frac{d v}{d y}: \frac{d v}{d z}\) se réduira à une fonction de \(y\) seule. Soit \(\varphi y\) cette fonction, on aura en même temps \(\frac{d s}{d x}: \frac{d s}{d z}=\varphi x\); car s est la même fonction de \(z\) et \(x\) que \(v\) l'est de \(z\) et \(y\). Donc
+\[\tag{6}\frac{d r}{d x} \varphi y=\frac{d r}{d y} \varphi x.\]
+On en tirera, en intégrant, la valeur générale de \(r\),
+\[r=\psi\left(\int \varphi x. d x+\int \varphi y. d y\right),\]
+\(\psi\) étant une fonction arbitraire. En écrivant pour abréger \(\varphi x\) pour \(\int \varphi x d x\), et \(\varphi y\) pour \(\int \varphi y d y\), on aura
+\[\tag{7}r=\psi(\varphi x+\varphi y) \text {, on } f(x, y)=\psi(\varphi x+\varphi y).\]
+Voilà donc la forme que doit avoir la fonction cherchée. Mais elle ne peut pas dans toute sa généralité satisfaire à l'équation (4). En effet l'équation (5), qui donne la forme de la fonction \(f(x, y)\), est beaucoup plus générale que l'équation (4), à laquelle elle doit satisfaire. Il s'agit donc des restrictions auxquelles l'équation générale est assujettie. On a
+\[f(z, r)=\psi(\varphi z+\varphi r).\]
+Or \(r=\psi(\varphi x+\varphi y)\), donc
+\[f(z, r)=\psi(\varphi z+\varphi \psi(\varphi x+\varphi y)).\]
+Cette expression doit être symétrique par rapport à \(x, y\) et \(z\). Donc
+\[\varphi z+\varphi \psi(\varphi x+\varphi y)=\varphi x+\varphi \psi(\varphi y+\varphi z).\]
+Soit \(\varphi z=0\) et \(\varphi y=0\), on aura
+\[\varphi \psi \varphi x=\varphi x+\varphi \psi(0)=\varphi x+c,\]
+donc en faisant \(\varphi x=p\),
+\[\varphi \psi p=p+c.\]
+En désignant donc par \(\varphi_1\) la fonction inverse de celle qui est exprimée par \(\varphi\), de sorte que
+\[\varphi \varphi_1 x=x,\]
+on trouvera
+\[\psi p=\varphi_1(p+c).\]
+
+La forme générale de la fonction cherchée \(f(x, y)\) sera donc
+\[f(x, y)=\varphi_1(c+\varphi x+\varphi y),\]
+et cette fonction a en effet la propriété demandée. On tire de là
+\[\varphi f(x, y)=c+\varphi x+\varphi y\]
+ou, en mettant \(\psi x-c\) à la place de \(\varphi x\), et par conséquent \(\psi y-c\) à la place de \(\varphi y\) et \(\psi f(x, y)-c\) à la place de \(\varphi f(x, y)\),
+\[\psi f(x, y)=\psi x+\psi y.\]
+Cela donne le théorème suivant:
+
+\textit{Lorsqu'une fonction \(f(x, y)\) de deux quantités variables indépendantes \(x\) et \(y\) a la propriété que \(f(z, f(x, y))\) est une fonction symétrique de \(x\), \(y\) et \(z\), il y aura toujours une fonction \(\psi\) pour laquelle on a
+\[\psi f(x, y)=\psi x+\psi y.\]}
+
+La fonction \(f(x, y)\) étant donnée, on trouvera aisément la fonction \(\psi x\). En effet on aura en différentiant l'équation ci-dessus, par rapport à \(x\) et par rapport à \(y\), et faisant pour abréger \(f(x, y)=r\)
+\[\begin{aligned}
+\psi^{\prime} r \frac{d r}{d x}&=\psi^{\prime} x, \\
+\psi^{\prime} r \frac{d r}{d y}&=\psi^{\prime} y,
+\end{aligned}\]
+donc en éliminant \(\psi^{\prime} r\),
+\[\frac{d r}{d y} \psi^{\prime} x=\frac{d r}{d x} \psi^{\prime} y,\]
+d'où
+\[\psi^{\prime} x=\psi^{\prime} y \frac{\frac{d r}{d x}}{\frac{d r}{d y}}.\]
+Multipliant donc par \(d x\) et intégrant, on aura
+\[\psi x=\psi^{\prime} y \int \frac{\frac{d r}{d x}}{\frac{d r}{d y}} d x.\]
+
+Soit par exemple
+\[r=f(x, y)=x y,\]
+il se trouvera une fonction \(\psi\) pour laquelle
+\[\psi(x y)=\psi x+\psi y.\]
+Comme \(r=x y\), on a \(\frac{d r}{d x}=y\), \(\frac{d r}{d y}=x\), donc
+\[\psi x=\psi^{\prime} y \int \frac{y}{x} d x=y \psi^{\prime} y. \log c x,\]
+ou, puisque la quantité \(y\) est supposée constante,
+\[\psi x=a \log c x.\]
+Cela donne \(\psi y=a \log c y\), \(\psi(x y)=a \log c x y\); on doit donc avoir:
+\[a \log c x y=a \log c x+a \log c y,\]
+ce qui a effectivement lieu pour \(c=1\).
+
+Par un procédé semblable au précédent, on peut en général trouver dès fonctions de deux quantités variables, qui satisfassent à des équations données à trois variables. En effet, par des différentiations successives par rapport aux différentes quantités variables, on trouvera des équations, desquelles on peut éliminer autant de fonctions inconnues qu'on voudra, jusqu'à ce qu'on soit parvenu à une équation qui ne contienne qu'une seule fonction inconnue. Cette équation sera une équation différentielle partielle à deux variables indépendantes. L'expression que donne cette équation contiendra donc un certain nombre de fonctions arbitraires d'une seule quantité variable. Lorsque les fonctions inconnues trouvées de cette manière seront substituées dans l'équation donnée, on trouvera une équation entre plusieurs fonctions d'une seule quantité variable. Pour trouver ces fonctions, on doit différentier de nouveau et l'on parviendra ainsi à des équations différentielles ordinaires, au moyen desquelles on trouvera les fonctions, qui ne sont plus arbitraires. De cette manière on trouvera la forme de toutes les fonctions inconnues, à moins qu'il ne soit impossible de satisfaire à l'équation donnée.
+\begin{center}
+\rule{2in}{0.1pt}
+\end{center}
+\end{document}

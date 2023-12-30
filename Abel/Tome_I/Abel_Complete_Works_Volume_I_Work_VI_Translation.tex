@@ -1,0 +1,142 @@
+\documentclass[oneside, 12 pt, leqno]{memoir}
+\usepackage{standalone}
+\usepackage[dvips,text={6.2in,8.5in},left=0.9truein,top=1.5truein]{geometry}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{microtype}
+\usepackage{indentfirst}
+\usepackage[utf8]{inputenc}
+\usepackage{exscale}
+\usepackage{mlmodern}
+\usepackage[OT1]{fontenc}
+\usepackage[bottomfloats]{footmisc}
+\parindent=2.27em
+\parskip=0pt
+\nonfrenchspacing
+\renewcommand{\baselinestretch}{1.15}
+\DeclareMathSizes{12}{12}{8}{6}
+\everymath{\displaystyle}
+\allowdisplaybreaks
+\raggedbottom
+\titleformat{\section}
+  {\normalfont\centering}{\thesection.}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\spaceskip=0.67em plus 0.33em minus 0.33em
+\thickmuskip=4mu plus 4mu
+\medmuskip=3mu plus 1.5mu minus 3mu
+\AtBeginDocument{%
+  \mathchardef\stdcomma=\mathcode`,
+  \mathcode`,="8000
+}
+\begingroup\lccode`~=`, \lowercase{\endgroup\def~}{\stdcomma\mspace{\medmuskip}}
+\let\oldfrac\frac
+\def\frac#1#2{\mathchoice{\text{\scalebox{.83}{${\oldfrac{#1}{#2}}$}}}{\text{\scalebox{.83}{${\displaystyle\oldfrac{#1}{#2}}$}}}{\genfrac{}{}{}{2}{#1}{#2}}{\genfrac{}{}{}{3}{#1}{#2}}}
+\begin{document}
+\setlength{\abovedisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+\setlength{\belowdisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+
+\;\\ [3\baselineskip]
+\section*{\begin{Large}VI.\end{Large} \\ [\baselineskip]
+RESEARCH ON FUNCTIONS  \(f(x, y)\) OF TWO INDEPENDENT VARIABLES \(x\) AND \(y\), WHICH HAVE THE PROPERTY THAT \(f(z, f(x, y))\) IS A SYMMETRIC FUNCTION OF \(z\), \(x\), AND \(y\).}
+\begin{center}
+\rule{2in}{0.1pt}\\ [0.5\baselineskip]
+\begin{scriptsize} Journal für die reine und angewandte Mathematik, herausgegeben von Crelle, Bd. I, Berlin 1826. \par\end{scriptsize}
+\rule{2in}{0.1pt}
+\end{center}
+
+If we denote e.g. the functions \(x+y\) and \(x y\) by \(f(x, y)\), then for the first one, \(f(z, f(x, y))=z+f(x, y)=z+x+y\), and for the second one, \(f(z, f(x, y))=z f(x, y)=z x y\). Therefore, in both cases the function \(f(x, y)\) has the remarkable property that \(f(z, f(x, y))\) is a symmetric function of the three independent variables \(z\), \(x\), and \(y\). I will search in this paper for the general form of functions that possess this property.
+
+The fundamental equation is as follows:
+\[\tag{1} f(z, f(x, y))=\text{a symmetric function of }x\text{, }y\text{, and }z. \]
+
+A symmetric function remains the same when the variable quantities on which it depends are exchanged in any way. We therefore have the following equations:
+\[\tag{2}\begin{aligned}
+& f(z, f(x, y))=f(z, f(y, x)), \\
+& f(z, f(x, y))=f(x, f(z, y)), \\
+& f(z, f(x, y))=f(x, f(y, z)), \\
+& f(z, f(x, y))=f(y, f(x, z)), \\
+& f\left(z, f(x, y)\right)=f(y, f(z, x)).
+\end{aligned}\]
+The first equation cannot hold unless we have
+\[f(x, y)=f(y, x),\]
+which is to say that \(f(x, y)\) must be a symmetric function of \(x\) and \(y\). For this reason, the equations (2) reduce to the following two:
+\[\tag{3}\begin{aligned}
+& f(z, f(x, y))=f(x, f(y, z)), \\
+& f(z, f(x, y))=f(y, f(z, x)).
+\end{aligned}\]
+To simplify the notation, let \(f(x, y)=r\), \(f(y, z)=v\), \(f(z, x)=s\). Then we have
+\[\tag{4}f(z, r)=f(x, v)=f(y, s).\]
+Differentiating successively with respect to \(x\), \(y\), \(z\), we have
+\[\begin{aligned}
+& f^{\prime} r \frac{d r}{d x}=f^{\prime} s \frac{d s}{d x}, \\
+& f^{\prime} v \frac{d v}{d y}=f^{\prime} r \frac{d r}{d y}, \\
+& f^{\prime} s \frac{d s}{d z}=f^{\prime} v \frac{d v}{d z}.
+\end{aligned}\]
+If we multiply these equations term by term and divide the products by \(f^{\prime} r . f^{\prime} v . f^{\prime} s\), we obtain the equation
+\[\tag{5}\frac{d r}{d x} \frac{d v}{d y} \frac{d s}{d z}=\frac{d r}{d y} \frac{d v}{d z} \frac{d s}{d x}\]
+or
+\[\frac{d r}{d x} \frac{\frac{d v}{d y}}{\frac{d v}{d z}}=\frac{d r}{d y} \frac{\frac{d s}{d x}}{\frac{d s}{d z}}.\]
+If we keep \(z\) constant, \(\frac{d v}{d y}: \frac{d v}{d z}\) will reduce to a function of \(y\) alone. Let \(\varphi y\) be this function, then we will also have \(\frac{d s}{d x}: \frac{d s}{d z}=\varphi x\); since \(s\) is the same function of \(z\) and \(x\) as \(v\) is of \(z\) and \(y\). Therefore,
+\[\tag{6}\frac{d r}{d x} \varphi y=\frac{d r}{d y} \varphi x.\]
+By integrating, we obtain the general value of \(r\),
+\[r=\psi\left(\int \varphi x. d x+\int \varphi y. d y\right),\]
+where \(\psi\) is an arbitrary function. By writing \(\varphi x\) for \(\int \varphi x d x\) and \(\varphi y\) for \(\int \varphi y d y\), we have
+\[\tag{7}r=\psi(\varphi x+\varphi y) \text {, so } f(x, y)=\psi(\varphi x+\varphi y).\]
+This is the form that the sought function must have. However, in its generality, it cannot satisfy equation (4). Indeed, equation (5), which gives the form of the function \(f(x, y)\), is much more general than equation (4), which it must satisfy. Therefore, there are restrictions that the general equation must satisfy. We have
+\[f(z, r)=\psi(\varphi z+\varphi r).\]
+Now \(r=\psi(\varphi x+\varphi y)\), so
+\[f(z, r)=\psi(\varphi z+\varphi \psi(\varphi x+\varphi y)).\]
+This expression must be symmetric with respect to \(x\), \(y\), and \(z\). Therefore,
+\[\varphi z+\varphi \psi(\varphi x+\varphi y)=\varphi x+\varphi \psi(\varphi y+\varphi z).\]
+Letting \(\varphi z=0\) and \(\varphi y=0\), we have
+\[\varphi \psi \varphi x=\varphi x+\varphi \psi(0)=\varphi x+c,\]
+so by letting \(\varphi x=p\),
+\[\varphi \psi p=p+c.\]
+Thus, by denoting by \(\varphi_1\) the inverse function of \(\varphi\), so that
+\[\varphi \varphi_1 x=x,\]
+we find
+\[\psi p=\varphi_1(p+c).\]
+
+The general form of the desired function \(f(x, y)\) will therefore be
+\[f(x, y)=\varphi_1(c+\varphi x+\varphi y),\]
+and this function indeed has the desired property. We deduce from this
+\[\varphi f(x, y)=c+\varphi x+\varphi y\]
+or, by replacing \(\varphi x\) with \(\psi x-c\), and consequently replacing \(\varphi y\) with \(\psi y-c\) and \(\varphi f(x, y)\) with \(\psi f(x, y)-c\),
+\[\psi f(x, y)=\psi x+\psi y.\]
+This yields the following theorem:
+
+\textit{When a function \(f(x, y)\) of two independent variable quantities \(x\) and \(y\) has the property that \(f(z, f(x, y))\) is a symmetric function of \(x\), \(y\), and \(z\), there will always be a function \(\psi\) such that we have
+\[\psi f(x, y) = \psi x + \psi y.\]}
+
+The function \(f(x, y)\) being given, we can easily find the function \(\psi x\). Indeed, differentiating the equation above with respect to \(x\) and with respect to \(y\), and using \(f(x, y)=r\) for brevity, we have
+\[\begin{aligned}
+\psi^{\prime} r \frac{d r}{d x}&=\psi^{\prime} x, \\
+\psi^{\prime} r \frac{d r}{d y}&=\psi^{\prime} y,
+\end{aligned}\]
+thus by eliminating \(\psi^{\prime} r\),
+\[\frac{d r}{d y} \psi^{\prime} x=\frac{d r}{d x} \psi^{\prime} y,\]
+from which
+\[\psi^{\prime} x=\psi^{\prime} y \frac{\frac{d r}{d x}}{\frac{d r}{d y}}.\]
+Multiplying by \(d x\) and integrating, we have
+\[\psi x=\psi^{\prime} y \int \frac{\frac{d r}{d x}}{\frac{d r}{d y}} d x.\]
+
+For example, letting
+\[r=f(x, y)=x y,\]
+a function \(\psi\) will be found for which
+\[\psi(x y)=\psi x+\psi y.\]
+Since \(r=x y\), we have \(\frac{d r}{d x}=y\), \(\frac{d r}{d y}=x\), so
+\[\psi x=\psi^{\prime} y \int \frac{y}{x} d x=y \psi^{\prime} y. \log c x,\]
+or, since the quantity \(y\) is assumed to be constant,
+\[\psi x=a \log c x.\]
+This gives \(\psi y=a \log c y\), \(\psi(x y)=a \log c x y\); so we must have:
+\[a \log c x y=a \log c x+a \log c y,\]
+which is indeed the case for \(c=1\).
+
+By a procedure similar to the previous one, one can generally find functions of two variables that satisfy given equations in three variables. Indeed, through successive differentiations with respect to the different variables, we will find equations from which we can eliminate as many unknown functions as we want, until we have reached an equation that contains only one unknown function. This equation will be a partial differential equation with two independent variables. The expression given by this equation will therefore contain a certain number of arbitrary functions of a single variable. When the unknown functions found in this way are substituted into the given equation, we will obtain an equation involving several functions of a single variable. To find these functions, we must differentiate again and thus obtain ordinary differential equations, by means of which we will find functions that are no longer arbitrary. In this way, we will find the form of all the unknown functions, unless it is impossible to satisfy the given equation.
+\end{document}
