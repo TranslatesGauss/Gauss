@@ -1,0 +1,150 @@
+\documentclass[oneside, 12 pt, leqno]{memoir}
+\usepackage{standalone}
+\usepackage[dvips,text={6.2in,8.5in},left=0.9truein,top=1.5truein]{geometry}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{microtype}
+\usepackage{indentfirst}
+\usepackage[utf8]{inputenc}
+\usepackage{exscale}
+\usepackage{mlmodern}
+\usepackage[OT1]{fontenc}
+\usepackage[bottomfloats]{footmisc}
+\parindent=2.27em
+\parskip=0pt
+\nonfrenchspacing
+\renewcommand{\baselinestretch}{1.15}
+\DeclareMathSizes{12}{12}{8}{6}
+\everymath{\displaystyle}
+\allowdisplaybreaks
+\raggedbottom
+\titleformat{\section}
+  {\normalfont\centering}{\thesection.}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\spaceskip=0.67em plus 0.33em minus 0.33em
+\thickmuskip=4mu plus 4mu
+\medmuskip=3mu plus 1.5mu minus 3mu
+\AtBeginDocument{%
+  \mathchardef\stdcomma=\mathcode`,
+  \mathcode`,="8000
+}
+\begingroup\lccode`~=`, \lowercase{\endgroup\def~}{\stdcomma\mspace{\medmuskip}}
+\let\oldfrac\frac
+\def\frac#1#2{\mathchoice{\text{\scalebox{.83}{${\oldfrac{#1}{#2}}$}}}{\text{\scalebox{.83}{${\displaystyle\oldfrac{#1}{#2}}$}}}{\genfrac{}{}{}{2}{#1}{#2}}{\genfrac{}{}{}{3}{#1}{#2}}}
+\begin{document}
+\setlength{\abovedisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+\setlength{\belowdisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+
+\;\\ [3\baselineskip]
+\section*{{\Large IX.} \\ [\baselineskip]
+RÉSOLUTION D'UN PROBLÈME DE MECANIQUE.}
+\begin{center}
+\rule{2in}{0.1pt}\\ [0.5\baselineskip]
+\begin{scriptsize} Journal für die reine und angewandte Mathematik, herausgegeben von Crelle, Bd. I, Berlin 1826. \par\end{scriptsize}
+\rule{2in}{0.1pt}
+\end{center}
+
+\begin{wrapfigure}{r}[0\baselineskip]{6\baselineskip}\includegraphics[height=6\baselineskip]{Tome_I_Oeuvre_IX_Fig_1.png} \end{wrapfigure} \;\\[-0.5\baselineskip]
+
+Soit \(B D M A\) une courbe quelconque. Soit \(B C\) une droite horizontale et \(C A\) une droite verticale. Supposons qu'un point sollicité par la pesanteur se meuve sur la courbe, un point quelconque \(D\) étant son point de départ. Soit \(\tau\) le temps qui s'est écoulé quand le mobile est parvenu à un point donné \(A\), et soit \(a\) la hauteur \(E A\). La quantité \({\tau}\) sera une certaine fonction de \(a\), qui dépendra de la forme de la courbe. Réciproquement la forme de la courbe dépendra de cette fonction. Nous allons examiner comment, à l'aide d'une intégrale définie, on peut trouver l'équation de la courbe pour laquelle \(\tau\) est une fonction continue donnée de \(a\).
+
+Soit \(A M=s\), \(A P=x\), et soit \(t\) le temps que le mobile emploie à parcourir l'arc \(D M\). D'après les règles de la mécanique on a \(-\frac{d s}{d t}=\sqrt{a-x}\), donc \(d t=-\frac{d s}{\sqrt{a-x}}\). Il s'ensuit, lorsqu'on prend l'intégrale depuis \(x=a\) jusqu'à \(x=0\),
+\[\tau=-\int_a^0 \frac{d s}{\sqrt{a-x}}=\int_0^a \frac{d s}{\sqrt{a-x}},\]
+\(\int_\alpha^\beta\) désignant que les limites de l'intégrale sont \(x=\alpha\) et \(x=\beta\). Soit maintenant
+\[\tau=\varphi a\] \clearpage\noindent% 98
+la fonction donnée, on aura
+\[\varphi a=\int_0^a \frac{d s}{\sqrt{a-x}},\]
+équation de laquelle on doit tirer \(s\) en fonction de \(x\). Au lieu de cette équation, nous allons considérer cette autre plus générale
+\[\varphi a=\int_0^a \frac{d s}{(a-x)^n},\]
+de laquelle nous chercherons à déduire l'expression de \(s\) en \(x\). 
+
+Désignons par \(\Gamma \alpha\) la fonction
+\[\Gamma \alpha=\int_0^1 d x\left(\log \frac{1}{x}\right)^{\alpha-1},\]
+on a comme on sait
+\[\int_0^1 y^{\alpha-1}(1-y)^{\beta-1} d y=\frac{{\Gamma} \alpha. {\Gamma} \beta}{{\Gamma}(a+\beta)},\]
+où \(\alpha\) et \(\beta\) doivent être supérieurs à zéro. Soit \(\beta=1-n\), on trouvera
+\[\int_0^1 \frac{y^{\alpha-1} d y}{(1-y)^n}=\frac{{\Gamma} \alpha. {\Gamma}(1-n)}{{\Gamma}({\alpha}+1-n)},\]
+d'où l'on tire, en faisant \(z=a y\),
+\[\int_0^a \frac{z^{\alpha-1} d z}{(a-z)^n}=\frac{\Gamma \alpha. \Gamma(1-n)}{\Gamma(\alpha+1-n)} a^{\alpha-n}.\]
+En multipliant par \(\frac{d a}{(x-a)^{1-n}}\) et prenant l'intégrale depuis \(a=0\) jusqu'à \(a=x\), on trouve
+\[\int_0^x \frac{d a}{(x-a)^{1-n}} \int_0^a \frac{z^{\alpha-1} d z}{(a-z)^n}=\frac{\Gamma \alpha. \Gamma(1-n)}{\Gamma(\alpha+1-n)} \int_0^x \frac{a^{\alpha-n} d a}{(x-a)^{1-n}}.\]
+En faisant \(a=x y\), on aura
+\[\int_0^x \frac{a^{\alpha-n} d a}{(x-a)^{1-n}}=x^\alpha \int_0^1 \frac{y^{\alpha-n} d y}{(1-y)^{1-n}}=x^\alpha \frac{\Gamma(\alpha-n+1) \Gamma n}{\Gamma(\alpha+1)},\]
+donc
+\[\int_0^x \frac{d a}{(x-a)^{1-n}} \int_0^a \frac{z^{\alpha-1} d z}{(a-z)^n}=\Gamma n. \Gamma(1-n) \frac{\Gamma \alpha}{\Gamma(\alpha+1)} x^\alpha.\]\clearpage\noindent% 99
+Or d'après une propriété connue de la fonction \(\Gamma\), on a
+\[\Gamma(\alpha+1)=\alpha \Gamma \alpha;\]
+on aura donc en substituant:
+\[\int_0^x \frac{d a}{(x-a)^{1-n}} \int_0^a \frac{z^{\alpha-1} d z}{(a-z)^n}=\frac{x^\alpha}{\alpha} {\Gamma n}. \Gamma (1-n).\]
+En multipliant par \(\alpha \varphi \alpha. d \alpha\), et intégrant par rapport à \(\alpha\), on trouve
+\[\int_0^x \frac{d a}{(x-a)^{1-n}} \int_0^a \frac{\left(\int \varphi \alpha. \alpha z^{\alpha-1} d \alpha\right) d z}{(a-z)^n}=\Gamma n. \Gamma (1-n) \int \varphi \alpha. x^\alpha d \alpha.\]
+Soit
+\[\int \varphi \alpha. x^\alpha d \alpha=f x,\]
+on en tire en différentiant,
+\[\int \varphi \alpha. \alpha x^{\alpha-1} d \alpha=f^{\prime} x,\]
+donc
+\[\int \varphi \alpha. \alpha z^{\alpha-1} d \alpha=f^{\prime} z;\]
+par conséquent
+\[\int_0^x \frac{d a}{(x-a)^{1-n}} \int_0^a \frac{f^{\prime} z. d z}{(a-z)^n}=\Gamma n. \Gamma(1-n) f x,\]
+ou, puisque \(\Gamma n. \Gamma(1-n)=\frac{\pi}{\sin n \pi}\),
+\[\tag{1} f x=\frac{\sin n \pi}{\pi} \int_0^x \frac{d a}{(x-a)^{1-n}} \int_0^a \frac{f^{\prime} z. d z}{(a-z)^n}.\]
+
+A l'aide de cette équation, il sera facile de tirer la valeur de \(s\) de l'équation
+\[\varphi a=\int_0^a \frac{d s}{(a-x)^n}.\]
+Qu'on multiplie cette équation par \(\frac{\sin n \pi}{\pi} \frac{d a}{(x-a)^{1-n}}\), et qu'on prenne l'intégrale depuis \(a=0\) jusqu'à \(a=x\), on aura
+\[\frac{\sin n \pi}{\pi} \int_0^x \frac{\varphi a. d a}{(x-a)^{1-n}}=\frac{\sin n \pi}{\pi} \int_0^x \frac{d a}{(x-a)^{1-n}} \int_0^a \frac{d s}{(a-x)^n},\]
+donc en vertu de l'équation (1) \clearpage\noindent% 100
+\[s=\frac{\sin n \pi}{x} \int_0^x \frac{\varphi a. d a}{(x-a)^{1-n}}.\]
+
+Soit maintenant \(n=\frac{1}{2}\), on obtient
+\[\varphi a=\int_0^a \frac{d s}{\sqrt{a-x}}\]
+et
+\[s=\frac{1}{\pi} \int_0^x \frac{\varphi a. d a}{\sqrt{x-a}}.\]
+Cette équation donne l'arc \(s\) par l'abscisse \(x\), et par suite la courbe est entièrement déterminée.
+
+Nous allons appliquer l'expression trouvée à quelques exemples.
+
+I. Soit
+\[\varphi a=\alpha_0 a^{\mu_0}+\alpha_1 a^{\mu_1}+\dots+\alpha_m a^{\mu_m}=\Sigma \alpha a^\mu\]
+la valeur de \(s\) sera
+\[s=\frac{1}{\pi} \int_0^x \frac{d a}{\sqrt{x-a}} \Sigma \alpha \alpha^\mu=\frac{1}{\pi} \Sigma\left(\alpha \int_0^x \frac{a^\mu d a}{\sqrt{x-a}}\right).\]
+Si l'on fait \(a=x y\), on aura
+\[\int_0^x \frac{a^\mu d a}{\sqrt{x-a}}=x^{\mu+\frac{1}{2}} \int_0^1 \frac{y^\mu d y}{\sqrt{1-y}}=x^{\mu+\frac{1}{2}} \frac{\Gamma(\mu+1) \Gamma\left(\frac{1}{2}\right)}{\Gamma\left(\mu+\frac{3}{2}\right)},\]
+donc
+\[s=\frac{{\Gamma}\left(\frac{1}{2}\right)}{\pi} \Sigma \frac{\alpha {\Gamma}(\mu+1)}{{\Gamma}\left(\mu+\frac{3}{2}\right)} x^{\mu+\frac{1}{2}},\]
+ou, puisque \(\Gamma\left(\frac{1}{2}\right)=\sqrt{\pi}\),
+\[s=\sqrt{\frac{x}{\pi}}\left[\alpha_0 \frac{\Gamma\left(\mu_0+1\right)}{{\Gamma}\left({\mu}_0+\frac{3}{2}\right)} x^{\mu_0}+\alpha_1 \frac{{\Gamma}\left(\mu_1+1\right)}{{\Gamma}\left(\mu_1+\frac{3}{2}\right)} x^{\mu_1}+\dots+\alpha_m \frac{{\Gamma}\left(\mu_m+1\right)}{{\Gamma}\left(\mu_m+\frac{3}{2}\right)} x^{\mu_m}\right].\]
+
+Si l'on suppose p. ex. que \(m=0\), \(\mu_0=0\), c'est-à-dire que la courbe cherchée soit isochrone, on trouve
+\[s=\sqrt{\frac{x}{\pi}} \alpha_0 \frac{\Gamma(1)}{\Gamma\left(\frac{3}{2}\right)}=\frac{\alpha_0}{\frac{1}{2} \Gamma\left(\frac{1}{2}\right)} \sqrt{\frac{x}{\pi}}=\frac{2 \alpha_0}{x} \sqrt{x},\]
+or \(s=\frac{2 \alpha_0}{\pi} \sqrt{x}\) est l'équation connue de la cycloide. \clearpage\noindent% 101
+
+II. Soit
+\begin{center}
+\(\varphi a\) depuis \(a=0\) jusqu'à, \(a=a_0\), égal à \(\varphi_0 a\) \\
+\(\varphi a\) depuis \(a=a_0\) jusqu'à \(a=a_1\), égal à \(\varphi_1 a\) \\ 
+\(\varphi a\) depuis \(a=a_1\) jusqu'à \(a=a_2\), égal à \(\varphi_2 a\) \\
+\dots \dots \dots \dots \dots \dots \dots \\
+\(\varphi a\) depuis \(a=a_{m-1}\) jusqu'à \(a=a_m\), égal à \(\varphi_m a\), \\
+\end{center}
+on aura
+\[\begin{aligned}
+\pi s  =\int_0^x \frac{\varphi_0 a. d a}{\sqrt{a-x}},& \text { depuis } x=0 \text { jusqu'à } x=a_0, \\
+\pi s =\int_0^{a_0} \frac{\varphi_0 a. d a}{\sqrt{a-x}}&+\int_{a_0}^x \frac{\varphi_1 a. d a}{\sqrt{a-x}} \text {, depuis } x=a_0 \text { jusqu'à } x=a_1, \\
+\pi s =\int_0^{a_0} \frac{\varphi_0 a. d a}{\sqrt{a-x}}&+\int_{a_0}^{a_1} \frac{\varphi_1 a. d a}{\sqrt{a-x}}+\int_{a_1}^x \frac{\varphi_2 a. d a}{\sqrt{a-x}} \text {, depuis } x=a_1 \text { jusqu'à } x=a_2, \\
+ \dots \dots \dots & \dots \dots \dots \dots \dots \dots \dots \dots \dots \\
+\pi s = \int_0^{a_0} \frac{\varphi_0 a. d a}{\sqrt{a-x}}&+\int_{a_0}^{a_1} \frac{\varphi_1 a. d a}{\sqrt{a-x}} + \dots + \int_{a_{m-2}}^{a_{m-1}} \frac{\varphi_{m-1} a. d a}{\sqrt{a-x}}+\int_{a_{m-1}}^x \frac{\varphi_m a. d a}{\sqrt{a-x}},\\
+&\text{ depuis } x=a_{m-1} \text{ jusqu'à } x=a_m,
+\end{aligned}\]
+où il faut remarquer que les fonctions \(\varphi_0 a\), \(\varphi_1 a\), \(\varphi_2 a \dots \varphi_m a\) doivent être telles que
+\[\varphi_0 a_0=\varphi_1 a_0, \varphi_1 a_1=\varphi_2 a_1, \varphi_2 a_2=\varphi_3 a_2, \text { etc., }\]
+car la fonction \(\varphi a\) doit nécessairement être continue.
+\begin{center}\rule{2in}{0.1pt}\end{center}
+\vfill
+\end{document}
