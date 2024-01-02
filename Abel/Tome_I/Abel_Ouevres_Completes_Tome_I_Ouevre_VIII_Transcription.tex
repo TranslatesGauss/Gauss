@@ -1,0 +1,86 @@
+\documentclass[oneside, 12 pt, leqno]{memoir}
+\usepackage{standalone}
+\usepackage[dvips,text={6.2in,8.5in},left=0.9truein,top=1.5truein]{geometry}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{microtype}
+\usepackage{indentfirst}
+\usepackage[utf8]{inputenc}
+\usepackage{exscale}
+\usepackage{mlmodern}
+\usepackage[OT1]{fontenc}
+\usepackage[bottomfloats]{footmisc}
+\parindent=2.27em
+\parskip=0pt
+\nonfrenchspacing
+\renewcommand{\baselinestretch}{1.15}
+\DeclareMathSizes{12}{12}{8}{6}
+\everymath{\displaystyle}
+\allowdisplaybreaks
+\raggedbottom
+\titleformat{\section}
+  {\normalfont\centering}{\thesection.}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\spaceskip=0.67em plus 0.33em minus 0.33em
+\thickmuskip=4mu plus 4mu
+\medmuskip=3mu plus 1.5mu minus 3mu
+\AtBeginDocument{%
+  \mathchardef\stdcomma=\mathcode`,
+  \mathcode`,="8000
+}
+\begingroup\lccode`~=`, \lowercase{\endgroup\def~}{\stdcomma\mspace{\medmuskip}}
+\let\oldfrac\frac
+\def\frac#1#2{\mathchoice{\text{\scalebox{.83}{${\oldfrac{#1}{#2}}$}}}{\text{\scalebox{.83}{${\displaystyle\oldfrac{#1}{#2}}$}}}{\genfrac{}{}{}{2}{#1}{#2}}{\genfrac{}{}{}{3}{#1}{#2}}}
+\begin{document}
+\setlength{\abovedisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+\setlength{\belowdisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+
+\;\\ [3\baselineskip]
+\section*{{\Large VIII.} \\ [\baselineskip]
+REMARQUE SUR LE MÉMOIRE N\(^{\circ}\) 4 DU PREMIER CAHIER DU JOURNAL DE M. CRELLE.}
+\begin{center}
+\rule{2in}{0.1pt}\\
+{\tiny Journal für die reine und angewandte Mathematik, herausgegeben von \textit{Crelle}, Bd. I, Berlin 1826.}\\
+\rule{2in}{0.1pt}
+\end{center}
+
+L'objet du mémoire est de trouver l'effet d'une force sur trois points donnés. Les résultats de l'auteur sont très justes, quand les trois points ne sont pas placés sur une même ligne droite; mais dans ce cas ils ne le sont pas. Les trois équations, par lesquelles les trois inconnues \(Q, Q^{\prime}, Q^{\prime \prime}\) se déterminent, sont les suivantes
+\[\tag{1}\left\{\begin{array}{l}
+P=Q+Q^{\prime}+Q^{\prime \prime}, \\
+Q^{\prime} b \sin \alpha=Q^{\prime \prime} c \sin \beta, \\
+Q a \sin \alpha=-Q^{\prime \prime} c \sin (\alpha+\beta).
+\end{array}\right.\]
+Celles-ci ont lieu pour des valeurs quelconques de \(P\), \(a\), \(b\), \(c\), \(\alpha\) et \(\beta\). Elles donnent en général, comme l'auteur l'a trouvé,
+\[\tag{2}
+\left\{\begin{array}{l}
+Q=-\frac{b c \sin (\alpha+\beta)}{r} P, \\
+Q^{\prime}=\frac{a c \sin \beta}{r} P, \\
+Q^{\prime \prime}=\frac{a b \sin \alpha}{r} P,
+\end{array}\right.\]
+où
+\[r=a b \sin \alpha+a c \sin \beta-b c \sin (\alpha+\beta).\]
+Or les équations (2) cessent d'être déterminées lorsque l'une ou l'autre des 
+quantités \(Q\), \(Q^{\prime}\), \(Q^{\prime \prime}\) prend la forme \(\frac{0}{0}\), ce qui a lieu, comme on le voit aisément pour
+\[\alpha=\beta=180^{\circ}.\]
+Dans ce cas il faut recourir aux équations fondamentales (1), qui donnent alors
+\[\begin{aligned}
+& P=Q+Q^{\prime}+Q^{\prime \prime}, \\
+& Q^{\prime} b \sin 180^{\circ}=Q^{\prime \prime} c \sin 180^{\circ}, \\
+& Q a \sin 180^{\circ}=-Q^{\prime \prime} c \sin 360^{\circ}.
+\end{aligned}\]
+Or les deux dernières équations sont identiques puisque
+\[\sin 180^{\circ}=\sin 360^{\circ}=0.\]
+donc dans le cas où
+\[\alpha=\beta=180^{\circ}\]
+il n'existe qu'une seule équation, savoir
+\[P=Q+Q^{\prime}+Q^{\prime \prime},\]
+et, par suite, les valeurs de \(Q\), \(Q^{\prime}\), \(Q^{\prime \prime}\) ne peuvent alors se tirer des équations établies par l'auteur.
+\begin{center}\rule{2in}{0.1pt}\end{center}
+\vfill
+\end{document}

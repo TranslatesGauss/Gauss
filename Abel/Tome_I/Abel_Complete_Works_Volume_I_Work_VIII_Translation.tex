@@ -1,0 +1,76 @@
+\documentclass[oneside, 12 pt, leqno]{memoir}
+\usepackage{standalone}
+\usepackage[dvips,text={6.2in,8.5in},left=0.9truein,top=1.5truein]{geometry}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{microtype}
+\usepackage{indentfirst}
+\usepackage[utf8]{inputenc}
+\usepackage{exscale}
+\usepackage{mlmodern}
+\usepackage[OT1]{fontenc}
+\usepackage[bottomfloats]{footmisc}
+\parindent=2.27em
+\parskip=0pt
+\nonfrenchspacing
+\renewcommand{\baselinestretch}{1.15}
+\DeclareMathSizes{12}{12}{8}{6}
+\everymath{\displaystyle}
+\allowdisplaybreaks
+\raggedbottom
+\titleformat{\section}
+  {\normalfont\centering}{\thesection.}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\spaceskip=0.67em plus 0.33em minus 0.33em
+\thickmuskip=4mu plus 4mu
+\medmuskip=3mu plus 1.5mu minus 3mu
+\AtBeginDocument{%
+  \mathchardef\stdcomma=\mathcode`,
+  \mathcode`,="8000
+}
+\begingroup\lccode`~=`, \lowercase{\endgroup\def~}{\stdcomma\mspace{\medmuskip}}
+\let\oldfrac\frac
+\def\frac#1#2{\mathchoice{\text{\scalebox{.83}{${\oldfrac{#1}{#2}}$}}}{\text{\scalebox{.83}{${\displaystyle\oldfrac{#1}{#2}}$}}}{\genfrac{}{}{}{2}{#1}{#2}}{\genfrac{}{}{}{3}{#1}{#2}}}
+\begin{document}
+\setlength{\abovedisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+\setlength{\belowdisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+
+\;\\[4\baselineskip]
+\section*{{\Large VIII.} \\ [\baselineskip]
+REMARK ON PAPER NO. 4 IN THE FIRST ISSUE OF CRELLE'S JOURNAL.}
+\begin{center}
+\rule{2in}{0.1pt}\\
+{\tiny Journal für die reine und angewandte Mathematik, edited by \textit{Crelle}, Vol. I, Berlin 1826.}\\
+\rule{2in}{0.1pt}
+\end{center}
+
+The aim of the study is to find the effect of a force on three given points. The author's results are very much justified when the three points are not located on the same straight line; but not in the case when they are. The three equations by which the three unknowns \(Q, Q', Q''\) are determined are as follows:
+\[\tag{1}\left\{\begin{array}{l}
+P=Q+Q'+Q'', \\
+Q'b\sin\alpha=Q''c\sin\beta, \\
+Qa\sin\alpha=-Q''c\sin(\alpha+\beta).
+\end{array}\right.\]
+These equations hold for any values of \(P\), \(a\), \(b\), \(c\), \(\alpha\), and \(\beta\). In general, they give, as the author found,
+\[\tag{2}\left\{\begin{array}{l}
+Q=-\frac{bc\sin(\alpha+\beta)}{r}P, \\[0.25\normalbaselineskip] 
+Q'=\frac{ac\sin\beta}{r}P, \\[0.25\normalbaselineskip] 
+Q''=\frac{ab\sin\alpha}{r}P,
+\end{array}\right.\]
+where
+\[r=ab\sin\alpha+ac\sin\beta-bc\sin(\alpha+\beta).\]
+However, the equations (2) are not determined when one or the other of the quantities \(Q\), \(Q'\), \( Q''\) takes the form \(\frac{0}{0}\), which occurs, as is easily seen, for \(\alpha=\beta=180^{\circ}\). In this case, it is necessary to resort to the fundamental equations (1), which then give
+\[\begin{aligned}
+&P=Q+Q'+Q'', \\
+&Q'b\sin 180^{\circ}=Q''c\sin 180^{\circ},\\
+&Qa\sin 180^{\circ}=-Q''c\sin 360^{\circ}.\\
+\end{aligned}\]
+The last two equations are identical since \(\sin 180^{\circ}=\sin 360^{\circ}=0\), thus in the case where \(\alpha=\beta=180^{\circ}\), there exists only one equation, namely \(P=Q+Q'+Q''\), and consequently, the values of \(Q\), \(Q'\), \(Q''\) cannot be derived from the equations established by the author.
+\begin{center}\rule{2in}{0.1pt}\end{center}
+\vfill
+\end{document}
