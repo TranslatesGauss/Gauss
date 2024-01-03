@@ -1,0 +1,100 @@
+\documentclass[oneside, 12 pt, leqno]{memoir}
+\usepackage{standalone}
+\usepackage[dvips,text={6.2in,8.5in},left=0.9truein,top=1.5truein]{geometry}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{microtype}
+\usepackage{indentfirst}
+\usepackage[utf8]{inputenc}
+\usepackage{exscale}
+\usepackage{mlmodern}
+\usepackage[OT1]{fontenc}
+\usepackage[bottomfloats]{footmisc}
+\parindent=2.27em
+\parskip=0pt
+\nonfrenchspacing
+\renewcommand{\baselinestretch}{1.15}
+\DeclareMathSizes{12}{12}{8}{6}
+\everymath{\displaystyle}
+\allowdisplaybreaks
+\raggedbottom
+\titleformat{\section}
+  {\normalfont\centering}{\thesection.}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\spaceskip=0.67em plus 0.33em minus 0.33em
+\thickmuskip=4mu plus 4mu
+\medmuskip=3mu plus 1.5mu minus 3mu
+\AtBeginDocument{%
+  \mathchardef\stdcomma=\mathcode`,
+  \mathcode`,="8000
+}
+\begingroup\lccode`~=`, \lowercase{\endgroup\def~}{\stdcomma\mspace{\medmuskip}}
+\let\oldfrac\frac
+\def\frac#1#2{\mathchoice{\text{\scalebox{.83}{${\oldfrac{#1}{#2}}$}}}{\text{\scalebox{.83}{${\displaystyle\oldfrac{#1}{#2}}$}}}{\genfrac{}{}{}{2}{#1}{#2}}{\genfrac{}{}{}{3}{#1}{#2}}}
+\begin{document}
+\setlength{\abovedisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+\setlength{\belowdisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+
+\;\\ [3\baselineskip]
+\section*{\begin{Large}X.\end{Large} \\ [\baselineskip]
+DÉMONSTRATION D'UNE EXPRESSION DE LAQUELLE LA FORMULE BINOME EST UN CAS PARTICULIER.}
+\begin{center}
+\rule{2in}{0.1pt}\\ [0.5\baselineskip]
+\begin{scriptsize} Journal für die reine und angewandte Mathematik, herausgegeben von Crelle, Bd. 1, Berlin 1826.\par\end{scriptsize}
+\rule{2in}{0.1pt}\\ [0.5\baselineskip]
+\end{center}
+
+Cette expression est la suivante:
+\[\begin{aligned}
+(x+\alpha)^n=&x^n+\frac{n}{1} \alpha(x+\beta)^{n-1}+\frac{n(n-1)}{1.2} \alpha(\alpha-2 \beta)(x+2 \beta)^{n-2}+\dots \\
+&+\frac{n(n-1) \dots(n-\mu+1)}{1.2 \dots \mu} \alpha(\alpha-\mu \beta)^{\mu-1}(x+\mu \beta)^{n-\mu}+\dots \\
+&+\frac{n}{1} \alpha(\alpha-(n-1) \beta)^{n-2}(x+(n-1) \beta)+\alpha(\alpha-n \beta)^{n-1};
+\end{aligned}\]
+\(x\), \(\alpha\) et \(\beta\) sont des quantités quelconques, \(n\) est un nombre entier positif.
+
+Lorsque \(n=0\), l'expression donne
+\[(x+\alpha)^0=x^0,\]
+qu'il fallait. Or on peut, comme il suit, démontrer que si l'expression subsiste pour \(n=m\), elle doit aussi subsister pour \(n=m+1\), c'est-à-dire qu'elle est vraie en général.
+
+Soit
+\[\begin{aligned}
+(x+\alpha)^m=&x^m+\frac{m}{1} \alpha(x+\beta)^{m-1}+\frac{m(m-1)}{1.2} \alpha(\alpha-2 \beta)(x+2 \beta)^{m-2}+\dots \\
+&+\frac{m}{1} \alpha(\alpha-(m-1) \beta)^{m-2}(x+(m-1) \beta)+\alpha(\alpha-m \beta)^{m-1}.
+\end{aligned}\]
+En multipliant par \((m+1) d x\) et intégrant, on trouve \clearpage\noindent% 103
+\[\begin{gathered}
+(x+\alpha)^{m+1}=x^{m+1}+\frac{m+1}{1} \alpha(x+\beta)^m+\frac{(m+1) m}{1.2} \alpha(\alpha-2 \beta)(x+2 \beta)^{m-1}+\dots \\
++\frac{m+1}{1} \alpha(\alpha-m \beta)^{m-1}(x+m \beta)+C,
+\end{gathered}\]
+\(C\) étant la constante arbitraire. Pour trouver sa valeur posons \(x=-(m+1) {\beta}\), les deux dernières équations donneront
+\[\begin{gathered}
+(\alpha-(m+1) \beta)^m=(-1)^m\left[(m+1)^m \beta^m-m^m \alpha \beta^{m-1}\right. \\
++\frac{m}{2}(m-1)^{m-1} \alpha(\alpha-2 \beta) \beta^{m-2}-\frac{m(m-1)}{2.3}(m-2)^{m-2} \alpha\left(\alpha-3 \beta^2 \beta^{m-3}+\dots\right], \\
+(\alpha-(m+1) \beta)^{m+1}=(-1)^{m+1}\left[(m+1)^{m+1} \beta^{m+1}-(m+1) m^m \alpha \beta^m\right. \\
+\left.+\frac{(m+1) m}{2}(m-1)^{m-1} \alpha(a-2 \beta) \beta^{m-1}-\dots\right]+C.
+\end{gathered}\]
+Multipliant la première de ces équations par \((m+1) {\beta}\) et ajoutant le produit à la seconde, on trouve
+\[C=(\alpha-(m+1) \beta)^{m+1}+(m+1) \beta(\alpha-(m+1) \beta)^m,\]
+ou bien
+\[C=\alpha(\alpha-(m+1) \beta)^n.\]
+
+Il s'ensuit que l'équation proposée subsiste de même pour \(n=m+1\). Or elle a lieu pour \(n=0\); donc elle aura lieu pour \(n=0,1,2,3\) etc.\ c'est-à-dire pour toute valeur entière et positive de \(n\).
+
+Si l'on fait \(\beta=0\), on obtient la formule binome. Si l'on fait \(\alpha=-x\), on trouve
+\[0=x^n-\frac{n}{1} x(x+\beta)^{n-1} +\frac{n(n-1)}{1.2} x(x+2 \beta)^{n-1} -\frac{n(n-1)(n-2)}{1.2.3} x(x+3 \beta)^{n-1}+\dots\]
+ou en divisant par \(x\),
+\[0=x^{n-1}-\frac{n}{1}(x+\beta)^{n-1} +\frac{n(n-1)}{1.2}(x+2 \beta)^{n-1} -\frac{n(n-1)(n-2)}{1.2.3}(x+3 \beta)^{n-1}+\dots\]
+ce qui est d'ailleurs connu; car le second membre de cette équation n'est autre chose que
+\[(-1)^n \Delta^n\left(x^{n-1}\right),\]
+en faisant la différence constante égale à \({\beta}\).
+\begin{center}
+\rule{2in}{0.1pt}
+\end{center}
+\vfill
+\end{document}

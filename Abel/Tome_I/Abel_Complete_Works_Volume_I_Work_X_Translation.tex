@@ -1,0 +1,102 @@
+\documentclass[oneside, 12 pt, leqno]{memoir}
+\usepackage{standalone}
+\usepackage[dvips,text={6.2in,8.5in},left=0.9truein,top=1.5truein]{geometry}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{microtype}
+\usepackage{indentfirst}
+\usepackage[utf8]{inputenc}
+\usepackage{exscale}
+\usepackage{mlmodern}
+\usepackage[OT1]{fontenc}
+\usepackage[bottomfloats]{footmisc}
+\parindent=2.27em
+\parskip=0pt
+\nonfrenchspacing
+\renewcommand{\baselinestretch}{1.15}
+\DeclareMathSizes{12}{12}{8}{6}
+\everymath{\displaystyle}
+\allowdisplaybreaks
+\raggedbottom
+\titleformat{\section}
+  {\normalfont\centering}{\thesection.}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\spaceskip=0.67em plus 0.33em minus 0.33em
+\thickmuskip=4mu plus 4mu
+\medmuskip=3mu plus 1.5mu minus 3mu
+\AtBeginDocument{%
+  \mathchardef\stdcomma=\mathcode`,
+  \mathcode`,="8000
+}
+\begingroup\lccode`~=`, \lowercase{\endgroup\def~}{\stdcomma\mspace{\medmuskip}}
+\let\oldfrac\frac
+\def\frac#1#2{\mathchoice{\text{\scalebox{.83}{${\oldfrac{#1}{#2}}$}}}{\text{\scalebox{.83}{${\displaystyle\oldfrac{#1}{#2}}$}}}{\genfrac{}{}{}{2}{#1}{#2}}{\genfrac{}{}{}{3}{#1}{#2}}}
+\begin{document}
+\setlength{\abovedisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+\setlength{\belowdisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+
+\;\\ [3\baselineskip]
+\section*{\begin{Large}X.\end{Large} \\ [\baselineskip]
+DEMONSTRATION OF AN EXPRESSION FROM WHICH THE BINOMIAL FORMULA IS A SPECIAL CASE.}
+\begin{center}
+\rule{2in}{0.1pt}\\ [0.5\baselineskip]
+\begin{scriptsize} Journal für die reine und angewandte Mathematik, edited by Crelle, Vol. 1, Berlin 1826.\par\end{scriptsize}
+\rule{2in}{0.1pt}\\ [0.5\baselineskip]
+\end{center}
+
+This expression is as follows:
+\[
+\begin{aligned}
+(x+\alpha)^n=&x^n+\binom{n}{1} \alpha(x+\beta)^{n-1}+\binom{n}{2} \alpha(\alpha-2 \beta)(x+2 \beta)^{n-2}+\dots \\
+&+\binom{n}{\mu} \alpha(\alpha-\mu \beta)^{\mu-1}(x+\mu \beta)^{n-\mu}+\dots \\
+&+\binom{n}{n-1} \alpha(\alpha-(n-1) \beta)^{n-2}(x+(n-1) \beta)+\alpha(\alpha-n \beta)^{n-1};
+\end{aligned}
+\]
+\(x\), \(\alpha\), and \(\beta\) are arbitrary quantities, \(n\) is a positive integer.
+
+When \(n=0\), the expression gives
+\[(x+\alpha)^0=x^0,\]
+which is what was required. Now, we can prove, as follows, that if the expression holds for \(n=m\), then it must also hold for \(n=m+1\), i.e. it is true in general.
+
+Let
+\[\begin{aligned}
+(x+\alpha)^m=&x^m+\frac{m}{1} \alpha(x+\beta)^{m-1}+\frac{m(m-1)}{1.2} \alpha(\alpha-2 \beta)(x+2 \beta)^{m-2}+\dots \\
+&+\frac{m}{1} \alpha(\alpha-(m-1) \beta)^{m-2}(x+(m-1) \beta)+\alpha(\alpha-m \beta)^{m-1}.
+\end{aligned}\]
+Multiplying by \((m+1) d x\) and integrating, we find that
+\[\begin{gathered}
+(x+\alpha)^{m+1}=x^{m+1}+\frac{m+1}{1} \alpha(x+\beta)^m+\frac{(m+1) m}{1.2} \alpha(\alpha-2 \beta)(x+2 \beta)^{m-1}+\dots \\
++\frac{m+1}{1} \alpha(\alpha-m \beta)^{m-1}(x+m \beta)+C,
+\end{gathered}\]
+with \(C\) being an arbitrary constant. To find its value, we let \(x=-(m+1) {\beta}\). Then the last two equations give
+\[\begin{gathered}
+(\alpha-(m+1) \beta)^m=(-1)^m\left[(m+1)^m \beta^m-m^m \alpha \beta^{m-1}\right. \\
++\frac{m}{2}(m-1)^{m-1} \alpha(\alpha-2 \beta) \beta^{m-2}-\frac{m(m-1)}{2.3}(m-2)^{m-2} \alpha\left(\alpha-3 \beta^2 \beta^{m-3}+\dots\right], \\
+(\alpha-(m+1) \beta)^{m+1}=(-1)^{m+1}\left[(m+1)^{m+1} \beta^{m+1}-(m+1) m^m \alpha \beta^m\right. \\
+\left.+\frac{(m+1) m}{2}(m-1)^{m-1} \alpha(a-2 \beta) \beta^{m-1}-\dots\right]+C.
+\end{gathered}\]
+Multiplying the first equation by \((m+1) {\beta}\) and adding the product to the second equation, we find
+\[C=(\alpha-(m+1) \beta)^{m+1}+(m+1) \beta(\alpha-(m+1) \beta)^m,\]
+or
+\[C=\alpha(\alpha-(m+1) \beta)^n.\]
+
+It follows that the proposed equation remains valid for \(n=m+1\). But it is true for \(n=0\); therefore it will be true for \(n=0,1,2,3\), etc., that is, for any positive integer value of \(n\).
+
+If we set \(\beta=0\), we obtain the binomial formula. If we set \(\alpha=-x\), we find
+\[0=x^n-\frac{n}{1} x(x+\beta)^{n-1} +\frac{n(n-1)}{1.2} x(x+2 \beta)^{n-1} -\frac{n(n-1)(n-2)}{1.2.3} x(x+3 \beta)^{n-1}+\dots\]
+or by dividing by \(x\),
+\[0=x^{n-1}-\frac{n}{1}(x+\beta)^{n-1} +\frac{n(n-1)}{1.2}(x+2 \beta)^{n-1} -\frac{n(n-1)(n-2)}{1.2.3}(x+3 \beta)^{n-1}+\dots\]
+which is also known; for the right-hand side of this equation is nothing else but
+\[(-1)^n \Delta^n\left(x^{n-1}\right),\]
+if one sets the constant difference equal to \({\beta}\).
+\begin{center}
+\rule{2in}{0.1pt}
+\end{center}
+\vfill
+\end{document}
