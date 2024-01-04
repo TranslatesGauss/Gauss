@@ -1,0 +1,1077 @@
+\documentclass[oneside, 12 pt, leqno]{memoir}
+\usepackage{standalone}
+\usepackage[dvips,text={6.2in,8.5in},left=0.9truein,top=1.5truein]{geometry}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{microtype}
+\usepackage{indentfirst}
+\usepackage[utf8]{inputenc}
+\usepackage{exscale}
+\usepackage{mlmodern}
+\usepackage[OT1]{fontenc}
+\usepackage[bottomfloats]{footmisc}
+\parindent=2.27em
+\parskip=0pt
+\nonfrenchspacing
+\renewcommand{\baselinestretch}{1.15}
+\DeclareMathSizes{12}{12}{8}{6}
+\everymath{\displaystyle}
+\allowdisplaybreaks
+\raggedbottom
+\titleformat{\section}
+  {\normalfont\centering}{\thesection.}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\centering}{\thesection.}{1em}{}
+\spaceskip=0.67em plus 0.33em minus 0.33em
+\thickmuskip=4mu plus 4mu
+\medmuskip=3mu plus 1.5mu minus 3mu
+\AtBeginDocument{%
+  \mathchardef\stdcomma=\mathcode`,
+  \mathcode`,="8000
+}
+\begingroup\lccode`~=`, \lowercase{\endgroup\def~}{\stdcomma\mspace{\medmuskip}}
+%\let\oldfrac\frac
+%\def\frac#1#2{\mathchoice{\text{\scalebox{.83}{${\oldfrac{#1}{#2}}$}}}{\text{\scalebox{.83}{${\displaystyle\oldfrac{#1}{#2}}$}}}{\genfrac{}{}{}{2}{#1}{#2}}{\genfrac{}{}{}{3}{#1}{#2}}}
+\begin{document}
+\setlength{\abovedisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+\setlength{\belowdisplayskip}{0.33\baselineskip plus .16\baselineskip minus .16\baselineskip}
+
+\;\\ [3\baselineskip]
+\section*{\begin{Large}XI.\end{Large} \\ [\baselineskip]
+SUR L'INTÉGRATION DE LA FORMULE DIFFÉRENTIELLE \(\frac{\varrho d x}{\sqrt{R}}\), \(R\) ET \(\varrho\) ÉTANT DES FONCTIONS ENTIÈRES.}
+\begin{center}
+\rule{2in}{0.1pt}\\ [0.5\baselineskip]
+{\tiny Journal für die reine und angewandte Mathematik, herausgegeben von Crelle, Bd. 1, Berlin 1826.\par}
+\rule{2in}{0.1pt}\\ [0.5\baselineskip]
+\end{center}
+
+\subsection*{1.}
+
+Si l'on différentie par rapport à \(x\) l'expression
+\[\tag{1} z=\log \frac{p+q \sqrt{R}}{p-q \sqrt{R}},\]
+où \(p\), \(q\) et \(R\) sont des fonctions entières d'une quantité variable \(x\), on obtiendra
+\[d z=\frac{d p+d(q \sqrt{R})}{p+q \sqrt{R}}-\frac{d p-d(q \sqrt{R})}{p-q \sqrt{R}},\]
+ou
+\[d z=\frac{(p-q \sqrt{R})[d p+d(q \sqrt{R})]-(p+q \sqrt{R})[d p-d(q \sqrt{R})]}{p^2-q^2 R},\]
+c'est-à-dire,
+\[d z=\frac{2 p d(q \sqrt{R})-2 d p. q \sqrt{R}}{p^2-q^2 R}.\]
+Or
+\[d(q \sqrt{R})=d q \sqrt{R}+\frac{1}{2} q \frac{d R}{\sqrt{R}},\]
+donc par substitution
+\[d z=\frac{p q d R+2(p d q-q d p) R}{\left(p^2-q^2 R\right) \sqrt{R}},\]
+par conséquent, en faisant
+\[\tag{2}\begin{gathered}
+p q \frac{d R}{d x}+2\left(p \frac{d q}{d x}-q \frac{d p}{d x}\right) R=M, \\
+p^2-q^2 R=N,
+\end{gathered}\]
+on aura
+\[\tag{3}d z=\frac{M d x}{N \sqrt{R}},\]
+où, comme on le voit aisément, \(M\) et \(N\) sont des fonctions entières de \(x\).
+Or, \(z\) étant égal à \(\log \frac{p+q \sqrt{R}}{p-q \sqrt{R}}\), on aura en intégrant
+\[\tag{4}\int \frac{M d x}{N \sqrt{R}}=\log \frac{p+q \sqrt{R}}{p-q \sqrt{R}}.\]
+
+Il s'ensuit que dans la différentielle \(\frac{\varrho d x}{\sqrt{R}}\) on peut trouver une infinité de formes différentes pour la fonction rationnelle \(\varrho\), qui rendent cette différentielle intégrable par des logarithmes, savoir par une expression de la forme \(\log \frac{p+q \sqrt{R}}{p-q \sqrt{R}}\). La fonction \(\varrho\) contient, comme on le voit par les équations (2), outre \(R\), encore deux fonctions indéterminées \(p\) et \(q\); c'est par ces fonctions qu'elle sera déterminée.
+
+On peut renverser la question et demander s'il est possible de supposer les fonctions \(p\) et \(q\) telles, que \(\varrho\) ou \(\frac{M}{N}\) prenne une forme déterminée donnée. La solution de ce problème conduit à une foule de résultats intéressants, que l'on doit considérer comme autant de propriétés des fonctions de la forme \(\int \frac{\varrho d x}{\sqrt{R}}\). Dans ce mémoire je me bornerai au cas où \(\frac{M}{N}\) est une fonction entière de \(x\), en essayant de résoudre ce problème général:
+
+\begin{quote}"Trouver toutes les différentielles de la forme \(\frac{\varrho d x}{\sqrt{R}}\), où \(\varrho\) et \(R\) sont des fonctions entières de \(x\), dont les intégrales puissent s'exprimer par une fonction de la forme \(\log \frac{p+q \sqrt{R}}{p-q \sqrt{R}}\)."\end{quote} 
+
+\subsection*{2.}
+
+En différentiant l'équation
+\[N=p^2-q^2 R,\]
+on obtient
+\[d N=2 p d p-2 q d q. R-q^2 d R;\]
+donc en multipliant par \(p\),
+\[p d N=2 p^2 d p-2 p q d q. R- pq^2 d R,\]
+c'est-à-dire, lorsqu'on remet à la place de \(p^2\) sa valeur \(N+q^2 R\),
+\[p d N=2 N d p+2 q^2 d p. R-2 p q d q. R-p q^2 d R,\]
+ou
+\[p d N=2 N d p-q[2(p d q-q d p) R+p q d R],\]
+donc, puisque (2)
+\[2(p d q-q d p) R+p q d R=M d x,\]
+on a
+\[p d N=2 N d p-q M d x,\]
+ou bien
+\[q M=2 N \frac{d p}{d x}-p \frac{d N}{d x},\]
+donc
+\[\tag{5}\frac{M}{N}=\left(2 \frac{d p}{d x}-p \frac{d N}{N d x}\right) : q.\]
+Maintenant \(\frac{M}{N}\) doit être une fonction entière de \(x\); en désignant cette fonction par \(\varrho\), on aura
+\[q \varrho=2 \frac{d p}{d x}-p \frac{d N}{N d x}.\]
+Il s'ensuit que \(p \frac{d N}{N d x}\) doit être une fonction entière de \(x\). En faisant
+\[N=(x+a)^m\left(x+a_1\right)^{m_1} \dots\left(x+a_n\right)^{m_n},\]
+on aura
+\[\frac{d N}{N d x}=\frac{m}{x+a}+\frac{m_1}{x+a_1}+\dots+\frac{m_n}{x+a_n},\] 
+donc l'expression
+\[p\left(\frac{m}{x+a}+\frac{m_1}{x+a_1}+\dots+\frac{m_n}{x+a_n}\right)\]
+doit de même être une fonction entière, ce qui ne peut avoir lieu   à moins que le produit \((x+a) \dots\left(x+a_n\right)\) ne soit facteur de \(p\). Il faut donc que
+\[p=(x+a) \dots\left(x+a_n\right) p_1,\]
+\(p_1\) étant une fonction entière. Or
+\[N=p^2-q^2 R,\]
+donc
+\[(x+a)^m \dots\left(x+a_n\right)^{m_n}=p_1^2(x+a)^2\left(x+a_1\right)^2 \dots\left(x+a_n\right)^2-q^2 R.\]
+Comme \(R\) n'a pas de facteur de la forme \((x+a)^2\), et comme on peut toujours supposer que \(p\) et \(q\) n'ont pas de facteur commun, il est clair que 
+\[m=m_1=\dots=m_n=1, \]
+et que
+\[R=(x+a)\left(x+a_1\right) \dots\left(x+a_n\right) R_1,\]
+\(R_1\) étant une fonction entière. On a donc
+\[N=(x+a)\left(x+a_1\right) \dots\left(x+a_n\right), \quad R=N R_1,\]
+c'est-à-dire que \(N\) doit être facteur de \(R\). On a de même \(p=N p_1\). En substituant ces valeurs de \(R\) et de \(p\) dans les équations (2), on trouvera les deux équations suivantes
+\[\tag{6}\begin{gathered}
+p_1^2 N-q^2 R_1=1, \\
+\frac{M}{N}=p_1 q \frac{d R}{d x}+2\left(p \frac{d q}{d x}-q \frac{d p}{d x}\right) R_1=\varrho.
+\end{gathered}\]
+La première de ces équations détermine la forme des fonctions \(p_1\), \(q\), \(N\) et \(R_1\); celles-ci étant déterminées, la seconde équation donnera ensuite la fonction \(\varrho\). On peut aussi trouver cette dernière fonction par l'équation (5).
+
+\subsection*{3.}
+
+Maintenant tout dépend de l'équation
+\[\tag{7} p_1^2 N-q^2 R_1=1.\]
+Cette équation peut bien être résolue par la méthode ordinaire des coefficiens indéterminés, mais l'application de cette méthode serait ici extrêmement prolixe, et ne conduirait guère à un résultat général. Je vais donc prendre une autre route, semblable à celle qu'on emploie pour la résolution des équations indéterminées du second degré à deux inconnues. La seule différence est, qu'au lieu de nombres entiers, on aura à traiter des fonctions entières. Comme dans la suite nous aurons souvent besoin de parler du degré d'une fonction, je me servirai de la lettre \(\delta\) pour désigner ce degré, en sorte que \(\delta P\) désignera le degré de la fonction \(P\), par exemple,
+\[\begin{gathered}
+\delta\left(x^m+a x^{m-1}+\dots\right)=m, \\
+\delta\left(\frac{x^5+c x}{x^3+e}\right)=2, \\
+\delta\left(\frac{x+e}{x^2+k}\right)=-1, \text { etc. }
+\end{gathered}\]
+D’ailleurs, il est clair que les équations suivantes auront lieu:
+\[\begin{aligned}
+& \delta(P Q)=\delta P+\delta Q, \\
+& \delta\left(\frac{P}{Q}\right)=\delta P-\delta Q, \\
+& \delta\left(P^m\right)=m \delta P ;
+\end{aligned}\]
+de plus
+\[\delta\left(P+P^{\prime}\right)=\delta P,\]
+si \(\delta P^{\prime}\) est moindre que \(\delta P\). De même je désignerai, pour abréger, la partie entière d'une fonction rationnelle \(u\) par \(E u\), en sorte que
+\[u=E u+u^{\prime}\]
+où \(\delta u^{\prime}\) est négatif. Il est clair que
+\[E\left(s+s^{\prime}\right)=E s+E s^{\prime},\]
+donc, lorsque \(\delta s'\) est négatif,
+\[E\left(s+s^{\prime}\right)=E s.\]
+Relativement à ce signe, on aura le théorème suivant:
+
+\begin{quote}"Lorsque les trois fonctions rationnelles \(u\), \(v\) et \(z\) ont la propriété que
+\[u^2=v^2+z\]
+on aura, si \(\delta z<\delta v\), \(E u= \pm E v\)."
+\end{quote}
+
+En effet, on a par définition
+\[\begin{aligned}
+& u=E u+u^{\prime}, \\
+& v=E v+v^{\prime},
+\end{aligned}\]
+\(\delta u^{\prime}\) et \(\delta v^{\prime}\) étant négatifs; donc en substituant ces valeurs dans l'équation \(u^2=v^2+z\),
+\[(E u)^2+2 u^{\prime} E u+u^{\prime 2}=(E v)^2+2 v^{\prime} E v+v^{\prime 2}+z.\]
+Il s'ensuit
+\[(E u)^2-(E v)^2=z+v^{\prime 2}-u^{\prime 2}+2 v^{\prime} E v-2 u^{\prime} E u=t,\]
+ou bien,
+\[(E u+E v)(E u-E v)=t.\]
+On voit aisément que \(\delta t<\delta v\); au contraire \(\delta(E u+E v)(E u-E v)\) est au moins égal à \(\delta v\), si \((E u+E v)(E u-E v)\) n’est pas égal à zéro. Il faut donc nécessairement que \((E u+E v)(E u-E v)\) soit nul, ce qui donne
+\[E u= \pm E v. \quad \text {c. q. f. d.}\]
+
+Il est clair que l'équation (7) ne saurait subsister à moins qu'on n'ait 
+\[\delta\left(N p_1^2\right)=\delta\left(R_1 q^2\right), \]
+c'est-à-dire, 
+\[\delta N+2 \delta p_1=\delta R_1+2 \delta q,\]
+d'où
+\[\delta\left(N R_1\right)=2\left(\delta q-\delta p_1+\delta R_1\right).\]
+Le plus grand exposant de la fonction \(R\) doit donc être un nombre pair. Soit \(\delta N=n-m\), \(\delta R_1=n+m\).
+
+\subsection*{4.}
+
+Cela posé, au lieu de l'équation
+\[p_1^2 N-q^2 R_1=1,\]
+je vais proposer la suivante
+\[\tag{8}p_1^2 N-q^2 R_1=v,\]
+où \(v\) est une fonction entière dont le degré est moindre que \(\frac{\delta N+\delta R_1}{2}\). Cette équation, comme on le voit, est plus générale; elle peut être résolue par le même procédé.
+
+Soit \(t\) la partie entière de la fonction fractionnaire \(\frac{R_1}{N}\), et soit \(t^{\prime}\) le reste; cela posé, on aura
+\[\tag{9}R_1=N t+t^{\prime},\]
+et il est clair que \(t\) doit être du degré \(2 m\), lorsque \(\delta N=n-m\) et \(\delta R_1=n+m\). En substituant cette expression de \(R_1\) dans l'équation (8), on en tirera
+\[\tag{10}\left(p_1^2-q^2 t\right) N-q^2 t^{\prime}=v.\]
+
+Soit maintenant
+\[\tag{11}t=t_1^2+{t_1}^{\prime},\]
+on peut toujours déterminer \(t_1\) de manière que le degré de \(t_1{ }^{\prime}\) soit moindre que \(m\). A cet effet, faisons
+\[\begin{aligned}
+& t=\alpha_0+\alpha_1 x+\dots+\alpha_{2 m} x^{2 m}, \\
+& t_1=\beta_0+\beta_1 x+\dots+\beta_m x^m, \\
+& t_1^{\prime}=\gamma_0+\gamma_1 x+\dots+\gamma_{m-1} x^{m-1};
+\end{aligned}\]
+cela posé, l'équation (11) donnera
+\[\begin{gathered}
+\alpha_{2 m} x^{2 m}+\alpha_{2 m-1} x^{2 m-1}+\alpha_{2 m-2} x^{2 m-2}+\dots+\alpha_{m-1} x^{m-1}+\dots+\alpha_1 x+\alpha_0 \\
+=\beta_m^2 x^{2 m}+2 \beta_m \beta_{m-1} x^{2 m-1}+\left(\beta_{m-1}^2+2 \beta_m \beta_{m-2}\right) x^{2 m-2}+\dots \\
++\gamma_{m-1} x^{m-1}+\gamma_{m-2} x^{m-2}+\dots+\gamma_1 x+\gamma_0.
+\end{gathered}\]
+De cette équation on déduira, en comparant les coefficiens entre eux,
+\[\begin{aligned}
+\alpha_{2 m} & =\beta_m^2, \\
+\alpha_{2 m-1} & =2 \beta_m \beta_{m-1}, \\
+\alpha_{2 m-2} & =2 \beta_m \beta_{m-2}+\beta_{m-1}^2, \\
+\alpha_{2 m-3} & =2 \beta_m \beta_{m-3}+2 \beta_{m-1} \beta_{m-2}, \\
+\alpha_{2 m-4} & =2 \beta_m \beta_{m-4}+2 \beta_{m-1} \beta_{m-3}+\beta_{m-2}^2, \\
+\dots & \dots \dots \dots \dots \dots \dots \\
+\alpha_m & =2 \beta_m \beta_0+2 \beta_{m-1} \beta_1+2 \beta_{m-2} \beta_2+\dots , \\
+\gamma_{m-1} & =\alpha_{m-1}-2 \beta_{m-1} \beta_0-2 \beta_{m-2} \beta_1 - \dots ,\\
+\gamma_{m-2} & =\alpha_{m-2}-2 \beta_{m-2} \beta_0-2 \beta_{m-3} \beta_1- \dots , \\
+\dots & \dots \dots \dots \dots \dots \dots \\
+\gamma_2 & =\alpha_2-2 \beta_2 \beta_0-\beta_1^2, \\
+\gamma_1 & =\alpha_1-2 \beta_1 \beta_0, \\
+\gamma_0 & =\alpha_0-\beta_0^2.\end{aligned}\]
+Les \(m+1\) premières équations donnent toujours, comme il est aisé de le voir, les valeurs des \(m+1\) quantités \(\beta_m\), \(\beta_{m-1} \dots \beta_0\), et les \(m\) dernières équations donnent les valeurs de \(\gamma_0\), \(\gamma_1\), \(\gamma_2 \dots \gamma_{m-1}\). L'équation supposée (11) est donc toujours possible.
+
+Substituant dans l'équation (10), au lieu de \(t\), sa valeur tirée de l'équation (11), on aura
+\[\tag{12}\left(p_1^2-q^2 t_1^2\right) N-q^2\left(N t_1^{\prime}+t^{\prime}\right)=v;\]
+d'où l'on tire
+\[\left(\frac{p_1}{q}\right)^2=t_1^2+t_1^{\prime}+\frac{t^{\prime}}{N}+\frac{v}{q^2 N}.\]
+En remarquant que
+\[\delta\left(t_1^{\prime}+\frac{t^{\prime}}{N}+\frac{v}{q^2 N}\right)<\delta t_1,\]
+on aura, par ce qui précède,
+\[E\left(\frac{p_1}{q}\right)= \pm E t_1= \pm t_1,\]
+donc
+\[p_1= \pm t_1 q+\beta, \text { où } \delta \beta<\delta q,\]
+ou bien, comme on peut prendre \(t_1\) avec le signe qu'on voudra,
+\[p_1=t_1 q+\beta.\]
+En substituant cette expression, au lieu de \(p_1\) dans l'équation (12), elle se changera en
+\[\tag{13}\left(\beta^2+2 \beta t_1 q\right) N-q^2 s=v,\]
+où, pour abréger, on a fait
+\[N t_1^{\prime}+t^{\prime}=s.\]
+De cette équation il est facile de tirer
+\[\left(\frac{q}{\beta}-\frac{t_1 N}{s}\right)^2=\frac{N\left(t_1^2 N+s\right)}{s^2}-\frac{v}{s \beta^2},\]
+ou, puisque \(t_1^2 N+s=R_1\) (car \(R_1=t N+t^{\prime}\), \(s=N {t_1}^{\prime}+t^{\prime}\), et \(t=t_1^2+{t_1}^{\prime}\)),
+\[\left(\frac{q}{\beta}-\frac{t_1 N}{s}\right)^2=\frac{R_1 N}{s^2}-\frac{v}{s \beta^2}.\]
+
+Soit maintenant
+\[R_1 N=r^2+r^{\prime} \text {, où } \delta r^{\prime}<\delta r^{\prime},\]
+on aura
+\[\left(\frac{q}{\beta}-\frac{t_1 N}{s}\right)^2=\left(\frac{r}{s}\right)^2+\frac{r^{\prime}}{s^2}-\frac{v}{s \beta^2}.\]
+Or, on voit aisément que
+\[\delta\left(\frac{r^{\prime}}{s^2}-\frac{v}{s \beta^2}\right)<\delta\left(\frac{r}{s}\right),\]
+donc
+\[E\left(\frac{q}{\beta}-\frac{t_1 N}{s}\right)=E\left(\frac{r}{s}\right),\]
+et par suite
+\[E\left(\frac{q}{\beta}\right)=E\left(\frac{r+t_1 N}{s}\right);\]
+donc en faisant
+\[E\left(\frac{r+t_1 N}{s}\right)=2 \mu,\]
+on aura
+\[q=2 \mu \beta+\beta_1 \text {, où } \delta \beta_1<\delta \beta .\]
+En substituant cette expression de \(q\) dans l'équation (13), on aura
+\[\beta^2 N+2 \beta t_1 N\left(2 \mu \beta+\beta_1\right)-s\left(4 \mu^2 \beta^2+4 \mu \beta_1 \beta+\beta_1^2\right)=v,\]
+c'est-à-dire,
+\[\beta^2\left(N+4 \mu t_1 N-4 s \mu^2\right)+2\left(t_1 N-2 \mu s\right) \beta \beta_1-s \beta_1^2=v.\]
+Faisant pour abréger
+\[\tag{14}\begin{aligned}
+& s_1=N+4 \mu t_1 N-4 s \mu^2, \\
+& t_1 N-2 \mu s=-r_1,
+\end{aligned}\]
+on obtient
+\[\tag{15}s_1 \beta^2-2 r_1 \beta \beta_1-s \beta_1^2=v.\]
+Puisque \(E\left(\frac{r+t_1 N}{s}\right)=2 \mu\), on a
+\[r+t_1 N=2 s \mu+\varepsilon \text {, où } \delta \varepsilon<\delta s,\]
+par suite la dernière des équations (14) donnera
+\[r_1=r-\varepsilon.\]
+
+En multipliant l'expression de \(s_1\) par \(s\), on obtient
+\[s s_1=N s+4 \mu t_1 N s-4 s^2 \mu^2=N s+t_1^2 N^2-\left(2 s \mu-t_1 N\right)^2.\]
+Or \(2 s \mu-t_1 N=r_1\), donc
+\[s s_1=N s+t_1^2 N^2-r_1^2, \text { et } r_1^2+s s_1=N\left(s+t_1^2 N\right);\]
+de plus on a
+\[s+t_1^2 N=R_1,\]
+donc
+\[\tag{16} r_1^2+s s_1 = N R_1 = R.\]
+D'après ce qui précède on a \(R=r^2+r^{\prime}\), donc
+\[r^2-r_1^2=s s_1-r^{\prime},\left(r+r_1\right)\left(r-r_1\right)=s s_1-r^{\prime}.\]
+Or puisque \(\delta r^{\prime}<\delta r\), il suit de cette équation que
+\[\delta\left(s s_1\right)=\delta\left(r+r_1\right)\left(r-r_1\right),\]
+c'est-à-dire, puisque \(r-r_1=\varepsilon\), où \(\delta \varepsilon<\delta r\),
+\[\delta s+\delta s_1=\delta r+\delta \varepsilon.\]
+Or \(\delta s > \delta \varepsilon\), donc
+\[\delta s_1 < \delta r.\]
+On a de plus \(s=N {t_1}^{\prime}+t^{\prime}\), où \(\delta t^{\prime}<\delta N\) et \({\delta t_1}^{\prime}<\delta t_1\), donc
+\[\delta s< \delta N+\delta t_1.\]
+Mais \(R=N\left(s+t_1^2 N\right)\), par conséquent,
+\[\delta R=2 \delta t_1+2 \delta N,\]
+et puisque \(\delta R=2 \delta r=2 \delta r_1\), on aura
+\[\delta t_1+\delta N=\delta r_1.\]
+On en conclut
+\[\delta s< \delta r_1.\]
+
+L'équation \(p_1^2 N-q^2 R_1=v\) est donc transformée en celle-ci:
+\[s_1 \beta^2-2 r_1 \beta \beta_1-s \beta_1^2=v,\]
+où
+\[\delta r_1=\frac{1}{2} \delta R=n, \quad \delta \beta_1<\delta \beta, \quad \delta s<n, \quad \delta s_1<n.\]
+On obtient cette équation, comme on vient de le voir, en faisant
+\[\tag{17}\begin{aligned}
+& p_1=t_1 q+\beta, \\
+& q=2 \mu \beta+\beta_1,
+\end{aligned}\]
+\(t_1\) étant déterminé par l'équation
+\[t=t_1^2+{t_1}^{\prime}, \text { où } \delta {t_1}^{\prime}<\delta t_1, \quad t=E\left(\frac{R_1}{N}\right),\]
+et \(\mu\) par l'équation,
+\[2 \mu=E\left(\frac{r+t_1 N}{s}\right),\]
+où
+\[r^2+r^{\prime}=R_1 N, \quad s=N t_1^{\prime}+R_1-N t.\]
+De plus on a
+\[\tag{18}\left\{\begin{array}{l}
+r_1=2 \mu s-t_1 N, \\
+s_1=N+4 \mu t_1 N-4 s \mu^2, \\
+r_1^2+s s_1=R_1 N=R.
+\end{array}\right.\]
+Il s'agit maintenant de l'équation (15).
+
+\subsection*{5.\\
+{\scriptsize \textit{Résolution de l'équation: \(s_1 \beta^2-2 r_1 \beta \beta_1-s \beta_1^2=v\), où \(\delta s<\delta r_1\), \(\delta s_1<\delta r_1\), \(\delta v<\delta r_1\), \(\delta \beta_1<\delta \beta \).}}}
+
+En divisant l'équation
+\[\tag{19}s_1 \beta^2-2 r_1 \beta_1 \beta_1-s \beta_1^2=v,\]
+par \(s_1 \beta_1^2\), on obtient
+\[\frac{\beta^2}{\beta_1^2}-2 \frac{r_1}{s_1}\frac{\beta}{\beta_1}-\frac{s}{s_1}=\frac{v}{s_1 \beta_1^2},\]
+donc
+\[\left(\frac{\beta}{\beta_1}-\frac{r_1}{s_1}\right)^2=\left(\frac{r_1}{s_1}\right)^2+\frac{s}{s_1}+\frac{v}{s_1 \beta_1^2}.\]
+On tire de là, en remarquant que \(\delta\left(\frac{s}{s_1}+\frac{v}{s_1 \beta_1^2}\right)<\delta\left(\frac{r_1}{s_1}\right),\)
+\[E\left(\frac{\beta}{\beta_1}-\frac{r_1}{s_1}\right)= \pm E\left(\frac{r_1}{s_1}\right),\]
+donc
+\[E\left(\frac{\beta}{\beta_1}\right)=E\left(\frac{r_1}{s_1}\right) \cdot(1 \pm 1),\]
+où l'on doit prendre le signe +, car l'autre signe donnerait \(E\left(\frac{\beta}{\beta_1}\right)=0\); donc
+\[E\left(\frac{\beta}{\beta_1}\right)=2 E\left(\frac{r_1}{s_1}\right),\]
+par conséquent, en faisant
+\[E\left(\frac{r_1}{s_1}\right)=\mu_1,\]
+on aura
+\[\beta=2 \beta_1, \quad u_1+\beta_2 \text {, où } \delta \beta_2<\delta \beta_1.\]
+Substituant cette valeur de \(\beta\) dans l'équation proposée, on a
+\[s_1\left(\beta_2^2+4 \beta_1 \beta_2 \mu_1+4 \mu_1^2 \beta_1^2\right)-2 r_1 \beta_1\left(\beta_2+2 \mu_1 \beta_1\right)-s \beta_1^2=v,\]
+ou bien
+\[\tag{20}s_2 \beta_1^2-2 r_2 \beta_1 \beta_2-s_1 \beta_2^2=-v,\]
+où
+\[r_2=2 \mu_1 s_1-r_1, \quad s_2=s+4 r_1 \mu_1-4 s_1 \mu_1^2.\]
+
+L'équation \(E\left(\frac{r_1}{s_1}\right)=\mu_1\) donne
+\[r_1=\mu_1 s_1+\varepsilon_1 \text {, où } \delta \varepsilon_1<\delta s_1.\]
+On obtient par là,
+\[\begin{aligned}
+& r_2=r_1-2 \varepsilon_1, \\
+& s_2=s+4 \varepsilon_1 \mu_1,
+\end{aligned}\]
+donc, comme il est facile de le voir,
+\[\delta r_2=\delta r_1, \quad \delta s_2<\delta r_2.\]
+L'équation (19) a par conséquent la même forme que l'équation (20); on peut donc appliquer à celle-ci la même opération, c'est-à-dire en faisant
+\[\mu_2=E\left(\frac{r_2}{s_2}\right), \quad r_2=s_2 \mu_2+\varepsilon_2, \quad \beta_1=2 \mu_2 \beta_2+\beta_3,\]
+on aura
+\[s_3 \beta_2^{2}-2 r_3 \beta_2 \beta_3-s_2 \beta_3^2=v,\]
+où
+\[\begin{gathered}
+r_3=2 \mu_2 s_2-r_2=r_2-2 \varepsilon_2, \\
+s_3=s_1+4 r_2 \mu_2-4 s_2 \mu_2^2=s_1+4 \varepsilon_2, \mu_2, \\
+\delta \beta_3<\delta \beta_2.
+\end{gathered}\]
+
+En continuant ce procédé, on obtiendra, après \(n-1\) transformations, cette équation:
+\[\tag{21}\begin{gathered}
+s_n \beta_{n-1}^2-2 r_n \beta_{n-1} \beta_n-s_{n-1} \beta_n^2=(-1)^{n-1} v, \\
+\text { où } \delta \beta_n<\delta \beta_{n-1}.
+\end{gathered}\]
+Les quantités \(s_n\), \(r_n\), \(\beta_n\), sont déterminées par les équations suivantes:
+\[\begin{aligned}
+\beta_{n-1} & =2 \mu_n \beta_n+\beta_{n+1}, \\
+\mu_n & =E\left(\frac{r_n}{s_n}\right), \\
+r_n & =2 \mu_{n-1} s_{n-1}-r_{n-1}, \\
+s_n & =s_{n-2}+4 r_{n-1} \mu_{n-1}-4 s_{n-1} \mu_{n-1}^2.
+\end{aligned}\]
+A ces équations on peut ajouter celles-ci:
+\[\begin{aligned}
+& r_n=\mu_n s_n+\varepsilon_n, \\
+& r_n=r_{n-1}-2 \varepsilon_{n-1}, \\
+& s_n=s_{n-2}+4 \varepsilon_{n-1} \mu_{n-1}.
+\end{aligned}\]
+Or, les nombres \(\delta \beta\), \(\delta \beta_1\), \(\delta {\beta}_2 \dots \delta {\beta}_n\), etc. formant une série décroissante, on doit nécessairement, après un certain nombre de transformations, trouver un \(\beta_n\) égal à zéro. Soit donc
+\[\beta_m=0,\]
+l'équation (21) donnera, en posant \(n=m\),
+\[\tag{22} s_m \beta_{m-1}^2=(-1)^{m-1} v.\]
+
+Voila l'équation générale de condition pour la résolubilité de l'équation (19); \(s_m\) dépend des fonctions \(s\), \(s_1\), \(r_1\), et \(\beta_{m-1}\) doit être pris de manière à satisfaire à la condition
+\[\delta s_m+2 \delta \beta_{m-1}<\delta r.\]
+L'équation (22) fait voir, que pour tous les \(s\), \(s_1\) et \(r_1\), on peut trouver une infinité de valeurs de \(v\), qui satisfont à l'équation (19).
+
+En substituant dans l'équation proposée, au lieu de \(v\), sa valeur \((-1)^{m-1} s_m \beta_{m-1}^2\), on obtiendra
+\[s_1 \beta^2-2 r_1 \beta \beta_1-s \beta_1^2=(-1)^{m-1} s_m \beta_{m-1}^2,\]
+équation toujours résoluble. On voit aisément que \(\beta\) et \(\beta_1\) ont le facteur commun \(\beta_{m-1}\). Donc, si l'on suppose que \(\beta\) et \(\beta_1\) n'ont pas de facteur commun, \(\beta_{m-1}\) sera indépendant de \(x\). On peut donc faire \(\beta_{m-1}=1\), d'où résulte cette équation,
+\[s_1 \beta^2-2 r_1 \beta \beta_1-s \beta_1^2=(-1)^{m-1} s_m.\]
+
+Les fonctions \(\beta\), \(\beta_1\), \(\beta_2 \dots\) sont déterminées par l'équation
+\[\beta_{n-1}=2 \mu_n \beta_n+\beta_{n+1},\]
+en posant successivement \(n=1,2,3 \dots m-1\) et en remarquant que \({\beta}_m=0\). On obtient par là
+\[\begin{aligned}
+ \beta_{m-2}&=2 \mu_{m-1} \beta_{m-1}, \\
+ \beta_{m-3}&=2 \mu_{m-2} \beta_{m-2}+\beta_{m-1}, \\
+ \beta_{m-4}&=2 \mu_{m-3} \beta_{m-3}+\beta_{m-2}, \\
+ \dots &\dots \dots \dots \dots \\
+ \beta_3&=2 \mu_4 \beta_4+\beta_5, \\
+ \beta_2&=2 \mu_3 \beta_3+\beta_4,  \\
+ \beta_1&=2 \mu_2 \beta_2+\beta_3, \\
+ \beta &=2 \mu_1 \beta_1+\beta_2. \\
+\end{aligned}\]
+Ces équations donnent
+\[\begin{aligned}
+& \frac{\beta}{\beta_1}=2 \mu_1+\frac{1}{\frac{\beta_1}{\beta_2}}, \\
+& \frac{\beta_1}{\beta_2}=2 \mu_2 +\frac{1}{\frac{\beta_2}{\beta_3}}, \\
+& \dots \dots \dots \\
+& \frac{\beta_{m-3}}{\beta_{m-2}}=2 \mu_{m-2}+\frac{1}{\frac{\beta_{m-2}}{\beta_{m-1}}}, \\
+& \frac{\beta_{m-2}}{\beta_{m-1}}=2 \mu_{m-1}.
+\end{aligned}\]
+On en tire par des substitutions successives:
+\[\frac{\beta}{\beta_1}=2 \mu_1+\cfrac{1}{2 \mu_2+\cfrac{1}{2 \mu_3+\cfrac{1}{\ddots+\cfrac{1}{2 \mu_{m-2}+\cfrac{1}{2 \mu_{m-1}}.}}}}\]
+On aura donc les valeurs de \(\beta\) et de \(\beta_1\) en transformant cette fraction continue en fraction ordinaire.
+
+\subsection*{6.}
+
+En substituant dans l'équation
+\[p_1^2 N-q^2 R_1=v\]
+pour \(v\) sa valeur \((-1)^{m-1} s_m\), on aura
+\[p_1^2 N-q^2 R_1=(-1)^{m-1} s_m,\]
+où
+\[\begin{aligned}
+& q=2 \mu \beta+\beta_1, \\
+& p_1=t_1 q+\beta,
+\end{aligned}\]
+donc
+\[\frac{p_1}{q}=t_1+\frac{\beta}{q}=t_1+\frac{1}{\frac{q}{\beta}};\]
+or
+\[\frac{q}{\beta}=2\mu+\frac{\beta_1}{\beta};\]
+par conséquent,
+\[\frac{p_1}{q}=t_1+\cfrac{1}{2 \mu+\cfrac{1}{2 \mu_1+\cfrac{1}{2 \mu_2+\cfrac{1}{\ddots+\cfrac{1}{2 u_{m-1}}.}}}}\]
+
+L'équation
+\[p_1^2 N-q^2 R_1=v\]
+donne
+\[\begin{aligned}
+& \left(\frac{p_1}{q}\right)^2=\frac{R_1}{N}+\frac{v}{q^2 N}, \\
+& \frac{p_1}{q}=\sqrt{\frac{R_1}{N}+\frac{v}{q^2 N}};
+\end{aligned}\]
+donc en supposant \(m\) infini
+\[\frac{p_1}{q}=\sqrt{\frac{R_1}{N}};\]
+donc
+\[\sqrt{\frac{R_1}{N}}=t_1+\cfrac{1}{2 \mu+\cfrac{1}{2 \mu_1+\cfrac{1}{2 \mu_2+\cfrac{1}{2 \mu_3+\cfrac{1}{\text { etc. }}}}}}\]
+On trouve donc les valeurs de \(p_1\) et de \(q\) par la transformation de la fonction \(\sqrt{\frac{R_1}{N}}\) en fraction continue.\footnote{L'équation ci-dessus n'exprime pas une égalité absolue. Elle indique seulement d'une manière abrégée, comment on peut trouver les quantités \(t_1\), \(\mu\), \(\mu_1\), \(\mu_2 \dots\). Si toutefois la fraction continue a une valeur, celle-ci sera toujours égale it \(\sqrt{\frac{R_1}{N}}\). }
+
+\subsection*{7.}
+
+Soit maintenant \(v=a\), l'on aura
+\[s_m=(-1)^{m-1} a.\]
+Donc si l'équation
+\[p_1^2 N-q^2 R_1=a,\]
+est résoluble, il faut qu'au moins une des quantités,
+\[s, s_1, s_2 \dots s_m \text {, etc. }\]
+soit indépendante de \(x\).
+
+D'autre part, lorsqu'une de ces quantités est indépendante de \(x\), il est toujours possible de trouver deux fonctions entières \(p_1\) et \(q\) qui satisfassent à cette équation. En effet, lorsque \(s_m=a\), on aura les valeurs de \(p_1\) et de \(q\) en transformant la fraction continue
+\[\frac{p_1}{q}=t_1+\cfrac{1}{2 \mu+\cfrac{1}{2 \mu_1+\cfrac{1}{2 \mu_2+\cfrac{1}{\ddots+\cfrac{1}{2 \mu_{m-1}}}}}}\]
+en fraction ordinaire. Les fonctions \(s\), \(s_1\), \(s_2\), etc., sont en général, comme il est aisé de le voir, du degré \(n-1\), lorsque \(N R_1\) est du degré \(2 n\). L'équation de condition
+\[s_m=a,\]
+donnera donc \(n-1\) équations entre les coefficiens des fonctions \(N\) et \(R_1\); il n'y a donc que \(n+1\) de ces coefficiens qu'on puisse prendre arbitrairement, les autres sont déterminés par les équations de condition.
+
+\subsection*{8.}
+
+De ce qui précède, il s'ensuit qu'on trouve toutes les valeurs de \(R_1\) et de \(N\), qui rendent la différentielle \(\frac{\varrho d x}{\sqrt{R_1 N}}\) intégrable par une expression de la forme
+\[\log \frac{p+q \sqrt{R_1 N}}{p-q \sqrt{ R_1 N}},\]
+en faisant successivement les quantités \(s\), \(s_1\), \(s_2 \dots s_m\), indépendantes de \(x\). 
+
+Puisque \(p=p_1 N\), on a de même,
+\[\int \frac{\varrho d x}{\sqrt{R_1 N}}=\log \frac{p_1 \sqrt{ N }+q \sqrt{R_1}}{p_1 \sqrt{ N }-q \sqrt{R_1}};\]
+ou bien
+\[\tag{23} \left\{ \begin{array}{lc} & \int \frac{\varrho dx}{\sqrt{R_1N}} = \log \frac{y \sqrt{N} + \sqrt{R_1}}{y\sqrt{N} - \sqrt{R}},\\ \text{où} \\ &y = t_1 + \cfrac{1}{2\mu+\cfrac{1}{2\mu_1 + \cfrac{1}{2\mu_2+\cfrac{1}{\ddots + \cfrac{1}{2\mu_{m-1}},}}}} \end{array} \right.\]
+en supposant \(s_m\) égal à une constante.
+
+Les quantités \(R_1\), \(N\), \(p_1\) et \(q\) étant ainsi déterminées, on trouve \(\varrho\)
+par l'équation (5). Cette équation donne, en mettant \(p_1 N\) au lieu de \(p\), et \(\varrho\) au lieu de \(\frac{M}{N}\),
+\[\varrho=\left(p_1 \frac{d N}{d x}+2 N \frac{d p_1}{d x}\right): q.\]
+Il s'ensuit que
+\[\delta \varrho=\delta p_1+\delta N-1-\delta q=\delta p-\delta q-1.\]
+Or on a vu que \(\delta p-\delta q=n\), donc
+\[\delta \varrho=n-1.\]
+Donc si la fonction \(R\) ou \(R_1 N\) est du degré \(2 n\), la fonction \(\varrho\) sera nécessairement du degré \(n-1\).
+
+\subsection*{9.}
+
+Nous avons vu plus haut que
+\[R=R_1 N;\]
+mais on peut toujours supposer que la fonction \(N\) est constante. En effet on a
+\[\int \frac{\varrho d x}{\sqrt{R_1 N}}=\log \frac{p_1 \sqrt{N}+q \sqrt{R_1}}{p_1 \sqrt{N}-q \sqrt{R_1}},\]
+et par conséquent,
+\[\int \frac{\varrho d x}{\sqrt{R_1 N}}=\frac{1}{2} \log \left(\frac{p_1 \sqrt{N}+q \sqrt{R_1}}{p_1 \sqrt{N}-q \sqrt{R_1}}\right)^2=\frac{1}{2} \log \frac{p_1^2 N+q^2 R_1+2 p_1 q \sqrt{R_1 N}}{p_1^2 N+q^2 R_1-2 p_1 q \sqrt{R_1 N}};\]
+ou, en faisant \(p_1^2 N+q^2 R_1=p^{\prime}\) et \(2 p_1 q=q^{\prime}\),
+\[\int \frac{2 \varrho d x}{\sqrt{R}}=\log \frac{p^{\prime}+q^{\prime} \sqrt{R}}{p^{\prime}-q^{\prime} \sqrt{R}}.\]
+Il est clair que \(p^{\prime}\) et \(q^{\prime}\) n'ont pas de facteur commun; on peut donc toujours poser
+\[N=1.\]
+Au lieu de l'équation \(p_1^2 N-q_2 R_1=1\), on a alors celle-ci,
+\[p^{\prime 2}-q^{\prime 2} R=1,\]
+dont on obtient la solution en faisant \(N=1\) et mettant \(R\) au lieu de \(R_1\). 
+
+Ayant \(N=1\), on voit aisément que
+\[t=R ; \quad t_1=r ; \quad R=r^2+s;\]
+donc
+\[\tag{24}
+\left\{ \begin{array}{l}
+ \frac{p^{\prime}}{q^{\prime}}=r+\cfrac{1}{2 \mu+\cfrac{1}{2 \mu_1+\cfrac{1}{2 \mu_2+\cfrac{1}{\ddots+\cfrac{1}{2 \mu_{m-1}},}}}} \\
+\begin{array}{ll} R=r^2+s,& \\
+ \mu=E\left(\frac{r}{s}\right), & r=s \mu+\varepsilon, \\
+ r_1=r-2 \varepsilon,& s_1=1+4 \varepsilon \mu, \\
+ \mu_1=E\left(\frac{r_1}{s_1}\right), & r_1=s_1 \mu_1+\varepsilon_1, \\
+ r_2=r_1-2 \varepsilon_1, & s_2=s+4 \varepsilon_1, \mu_1 , \end{array}\\
+ \dots \dots \dots \dots \dots \dots \dots\\
+\begin{array}{ll} \mu_n=E\left(\frac{r_n}{s_n}\right), & r_n=\mu_n s_n+\varepsilon_n, \\
+ r_{n+1}=r_n-2 \varepsilon_n, &s_{n+1}=s_{n-1}+4 \varepsilon_n \mu_n , \end{array} \\
+ \dots \dots \dots \dots \dots \dots \dots \dots \dots \\
+ \begin{array}{ll} \mu_{m-1}=E\left(\frac{r_{m-1}}{s_{m-1}}\right), & r_{m-1}=\mu_{m-1} s_{m-1}+\varepsilon_{m-1}, \\
+ r_m=r_{m-1}-2 \varepsilon_{m-1}, & s_m=s_{m-2}+4 \varepsilon_{m-1} \mu_{m-1}=a. \end{array}
+\end{array}\right.\]
+Ayant déterminé les quantités \(R\), \(r\), \(\mu\), \(\mu_1 \dots \mu_{m-1}\) par ces équations, on aura
+\[\tag{25}\left\{\begin{array}{lc}
+&\int \frac{\varrho d x}{\sqrt{R}}=\log \frac{p^{\prime}+q^{\prime} \sqrt{R}}{p^{\prime}-q^{\prime} \sqrt{R}}, \\
+\text{où} &\\
+&\varrho=\frac{2}{q^{\prime}} \frac{d p^{\prime}}{d x},
+\end{array}\right.\]
+ce qui résulte de l'équation (5) en y posant \(N=1\).
+
+\subsection*{10.}
+
+On peut donner à l'expression \(\log \frac{p_1 \sqrt{N}+q \sqrt{R_1}}{p_1 \sqrt{N}-q \sqrt{R_1}}\) une forme plus simple, savoir,
+\[\begin{aligned}
+\log \frac{p_1 \sqrt{N}+q \sqrt{R_1}}{p_1 \sqrt{N}-q \sqrt{R_1}}=&\log \frac{t_1 \sqrt{\Lambda}+\sqrt{R_1}}{t_1 \sqrt{N}-\sqrt{R_1}} +\log \frac{r_1+\sqrt{R}}{r_1-\sqrt{R}} \\
+&+\log \frac{r_2+\sqrt{R}}{r_2-\sqrt{R}}+\dots+\log \frac{r_m+\sqrt{R}}{r_m-\sqrt{R}},
+\end{aligned}\]
+ce qu'on peut démontrer comme il suit. Soit
+\[\frac{\alpha_m}{\beta_m}=t_1+\cfrac{1}{2 \mu+\cfrac{1}{2 \mu_1+\cfrac{1}{\ddots+\cfrac{1}{2 \mu_{m-1}},}}}\]
+on a par la théorie des fractions continues,
+\begin{align*}
+\tag{a} \alpha_m=\alpha_{m-2}+2 \mu_{m-1} \alpha_{m-1}, \\
+\tag{b} \beta_m=\beta_{m-2}+2 \mu_{m-1} \beta_{m-1}.
+\end{align*}
+De ces équations on tire, en éliminant \(\mu_{m-1}\),
+\[\alpha_m \beta_{m-1}-\beta_m \alpha_{m-1}=-\left(\alpha_{m-1} \beta_{m-2}-\beta_{m-1} \alpha_{m-2}\right),\]
+donc
+\[\alpha_m \beta_{m-1}-\beta_m \alpha_{m-1}=(-1)^{m-1},\]
+ce qui est connu.
+
+Les deux équations (a) et (b) donnent encore
+\[\begin{aligned}
+\alpha_m^2&=\alpha_{m-2}^2+4 \alpha_{m-1} \alpha_{m-2} \mu_{m-1}+4 \mu_{m-1}^2 \alpha_{m-1}^2, \\
+\beta_m^2&=\beta_{m-2}^2+4 \beta_{m-1} \beta_{m-2} \mu_{m-1}+4 \mu_{m-1}^2 \beta_{m-1}^2.
+\end{aligned}\]
+Il s'ensuit que
+\[\begin{aligned}
+\alpha_m^2 N-\beta_m^2 R_1=\alpha_{m-2}^2 N-\beta_{m-2}^2 R_1&+4 \mu_{m-1}\left(\alpha_{m-1} \alpha_{m-2} N-\beta_{m-1} \beta_{m-2} R_1\right) \\
+&+4 \mu_{m-1}^2\left(\alpha_{m-1}^2 N-\beta_{m-1}^2 R_1\right).
+\end{aligned}\]
+Or on a
+\[\begin{gathered}
+\alpha_m^2 N-\beta_m^2 R_1=(-1)^{m-1} s_m, \\
+\alpha_{m-1}^2 N-\beta_{m-1}^2 R_1=(-1)^{m-2} s_{m-1}, \\
+\alpha_{m-2}^2 N-\beta_{m-2}^2 R_1=(-1)^{m-3} s_{m-2},
+\end{gathered}\]
+donc, en substituant,
+\[s_m=s_{m-2}+4(-1)^{m-1} \mu_{m-1}\left(\alpha_{m-1} \alpha_{m-2} N-\beta_{m-1} \beta_{m-2} R_1\right)-4 \mu_{m-1}^2 s_{m-1} .\]
+Mais, d'après ce qui précède, on a
+\[s_m=s_{m-2}+4 \mu_{m-1} r_{m-1}-4 s_{m-1} \mu_{m-1}^2,\]
+donc
+\[r_{m-1}=(-1)^{m-1}\left(\alpha_{m-1} \alpha_{m-2} N-\beta_{m-1} \beta_{m-2} R_1\right).\]
+
+Soit
+\[z_m=\alpha_m \sqrt{N}+\beta_m \sqrt{R_1}, \text { et } z_m^{\prime}=\alpha_m \sqrt{N}-\beta_m \sqrt{R_1},\]
+on aura en multipliant,
+\[z_m z_{m-1}^{\prime}=\alpha_m \alpha_{m-1} N-\beta_m \beta_{m-1} R_1-\left(\alpha_m \beta_{m-1}-\alpha_{m-1} \beta_m\right) \sqrt{N R_1};\]
+mais on vient de voir qu'on a
+\[\alpha_m \beta_{m-1}-\alpha_{m-1} \beta_m=(-1)^{m-1}, \quad \alpha_m \alpha_{m-1} N-\beta_m \beta_{m-1} R_1=(-1)^m r_m;\]
+on tire de là
+\[z_m z_{m-1}^{\prime}=(-1)^m\left(r_m+\sqrt{R}\right),\]
+et de la même manière,
+\[{z_m}^{\prime} z_{m-1}=(-1)^m\left(r_m-\sqrt{R}\right);\]
+on en tire en divisant,
+\[\frac{z_m}{{z_m}^{\prime}} \frac{z_{m-1}^{\prime}}{z_{m-1}}=\frac{r_m+\sqrt{R}}{r_m-\sqrt{R}};\]
+ou, en multipliant par \(\frac{z_{m-1}}{z_{m-1}^{\prime}}\),
+\[\frac{z_m}{z_m^{\prime}}=\frac{r_m+\sqrt{R}}{r_m-\sqrt{R}} \frac{z_{m-1}}{z_{m-1}^{\prime}}.\]
+
+En faisant successivement \(m=1,2,3 \dots m\), on aura,
+\[\begin{aligned}
+&\frac{z_1}{z_1^{\prime}}=\frac{r_1+\sqrt{R}}{r_1-\sqrt{R}} \frac{z_0}{z_0^{\prime}} \\
+&\frac{z_2}{z_2^{\prime}}=\frac{r_2+\sqrt{R}}{r_2-\sqrt{R}} \frac{z_1}{z_1^{\prime}} \\
+&\dots \dots \dots \dots \dots \\
+&\frac{z_m}{z_m^{\prime}}=\frac{r_m+\sqrt{R}}{r_m-\sqrt{R}} \frac{z_{m-1}}{z_{m-1}^{\prime}}
+\end{aligned}\]
+d'où l'on tire,
+\[\frac{z_m}{z_{m^{\prime}}}=\frac{z_0}{z_0{ }^{\prime}} \frac{r_1+\sqrt{R}}{r_1-\sqrt{R}} \frac{r_2+\sqrt{R}}{r_2-\sqrt{R}} \frac{r_3+\sqrt{R}}{r_3-\sqrt{R}} \dots \frac{r_m+\sqrt{R}}{r_m-\sqrt{R}}.\]
+Or on a
+\[\begin{aligned}
+& z_0=\alpha_0 \sqrt{N}+\beta_0 \sqrt{R_1}=t_1 \sqrt{N}+\sqrt{R_1}, \\
+& z_0^{\prime}=\alpha_0 \sqrt{N}-\beta_0 \sqrt{R_1}=t_1 \sqrt{N}-\sqrt{R_1},
+\end{aligned}\]
+et
+\[\frac{z_m}{{z_m}^{\prime}}=\frac{\alpha_m \sqrt{N}+\beta_m \sqrt{R_1}}{\alpha_m \sqrt{N}-\beta_m \sqrt{R_1}},\]
+donc
+\[\frac{\alpha_m \sqrt{N}+\beta_m \sqrt{R_1}}{\alpha_m \sqrt{N}-\beta_m \sqrt{R_1}}=\frac{t_1 \sqrt{N}+\sqrt{R_1}}{t_1 \sqrt{N}-\sqrt{R_1}} \cdot \frac{r_1+\sqrt{R}}{r_1-\sqrt{R}} \cdot \frac{r_2+\sqrt{R}}{r_2-\sqrt{R}} \cdots \frac{r_m+\sqrt{R}}{r_m-\sqrt{R}},\]
+et en prenant les logarithmes
+\begin{gather*}
+\tag{26}\log \frac{\alpha_m \sqrt{N}+\beta_m \sqrt{R_1}}{\alpha_m \sqrt{N}-\beta_m \sqrt{R_1}} \\
+=\log \frac{t_1 \sqrt{N}+\sqrt{R_1}}{t_1 \sqrt{N}-\sqrt{R_1}}+\log \frac{r_1+\sqrt{R}}{r_1-\sqrt{R}}+\log \frac{r_2+\sqrt{R}}{r_2-\sqrt{R}}+\dots+\log \frac{r_m+\sqrt{R}}{r_m-\sqrt{R}},
+\end{gather*}
+ce qu’il fallait démontrer.
+
+\subsection*{11.}
+
+En différentiant l'expression \(z=\log \frac{\alpha_m \sqrt{N}+\beta_m \sqrt{R_1}}{\alpha_m \sqrt{N}-\beta_m \sqrt{R_1}}\), on aura, après les réductions convenables,
+\[d z=\frac{2\left(\alpha_m d \beta_m-\beta_m d \alpha_m\right) N R_1-\alpha_m \beta_m\left(R_1 d N-N d R_1\right)}{\left(\alpha_m^2 N-\beta_m^2 R_1\right) \sqrt{N R_1}}.\]
+Or on a
+\[\alpha_m^2 N-\beta_m^2 R_1=(-1)^{m-1} s_m,\]
+donc en faisant
+\[\tag{27}(-1)^{m-1} \varrho_m=2\left(\alpha_m \frac{d \beta_m}{d x}-\beta_m \frac{d \alpha_m}{d x}\right) N R_1-\alpha_m \beta_m\left(\frac{R_1 d N-N d R_1}{d x}\right),\]
+on aura
+\[d z=\frac{\varrho_m}{s_m} \frac{d x}{\sqrt{N R_1}},\]
+et
+\[z=\int \frac{\varrho_m}{s_m} \frac{d x}{\sqrt{ N R_1}},\]
+donc
+\[\int \frac{\varrho_m}{s_m} \frac{d x}{\sqrt{N R_1}}=\log \frac{\alpha_m \sqrt{N}+\beta_m \sqrt{R_1}}{\alpha_m \sqrt{N}-\beta_m \sqrt{ R_1}},\]
+ou bien
+\[\tag{28}\int \frac{\varrho_m}{s_m} \frac{d x}{\sqrt{R}}=\log \frac{t_1 \sqrt{N}+\sqrt{R_1}}{t_1 \sqrt{N}-\sqrt{R_1}}+\log \frac{r_1+\sqrt{R}}{r_1-\sqrt{ R}}+\dots+\log \frac{r_m+\sqrt{R}}{r_m-\sqrt{ R}}.\]
+
+Dans cette expression \(s_m\) est tout au plus du degré \((n-1)\) et \(\varrho_m\) est nécessairement du degré \(\left(n-1+\delta s_m\right)\), ce dont on peut se convaincre de la manière suivante. En différentiant l'équation
+\[\tag{29}\alpha_m^2 N-\beta_m^2 R_1=(-1)^{m-1} s_m,\]
+on trouvera la suivante
+\[2 \alpha_m d \alpha_m N+\alpha_m^2 d N-2 \beta_m d \beta_m. R_1-\beta_m^2 d R_1=(-1)^{m-1} d s_m,\]
+ou, en multipliant par \(\alpha_m N\),
+\[\alpha_m^2 N\left(2 N d \alpha_m+\alpha_m d N\right)-2 \alpha_m \beta_m d \beta_m N R_1-\beta_m^2 \alpha_m N d R_1=(-1)^{m-1} \alpha_m N d s_m.\]
+Mettant ici à la place de \(\alpha_m^2 N\), sa valeur tirée de l'équation (29), on aura
+\[\begin{aligned}
+(-1)^{m-1} s_m\left(2 N d \alpha_m+\alpha_m d N\right) +\beta_m [&2 N R_1 \beta_m d \alpha_m+\alpha_m \beta_m R_1 d N \\
+&-2 \alpha_m d \beta_m N R_1 -\beta_m \alpha_m N d R_1]
+=(-1)^{m-1} \alpha_m N d s_m,
+\end{aligned}\]
+c'est-à-dire,
+\[\begin{aligned}
+\beta_m\left[2\left(\alpha_m d \beta_m-\beta_m d \alpha_m\right) N R_1-\alpha_m \beta_m\left(R_1 d N-N d R_1\right)\right] &\\
+=(-1)^{m-1}\left[s_m\left(2 N d \alpha_m+\alpha_m d N\right)-\alpha_m N d s_m\right]&.
+\end{aligned}\]
+En vertu de l'équation (27) le premier membre de cette équation est égal à \(\beta_m(-1)^{m-1} \varrho_m d x\); donc on aura
+\[\tag{30}\beta_m \varrho_m=s_m\left(\frac{2 N d \alpha_m}{d x}+\frac{\alpha_m d N}{d x}\right)-\alpha_m \frac{N d s_m}{d x}.\]
+Puisque \(\delta s_m<n\), le second membre de cette équation sera nécessairement du degré \(\left(\delta s_m+\delta N+\delta \alpha_m-1\right)\), comme il est facile de le voir; donc
+\[\delta \varrho_m=\delta s_m+\delta N+\delta \alpha_m-\delta \beta_m-1.\]
+Or de l'équation (29) il suit que
+\[2 \delta \alpha_m+\delta N=2 \delta \beta_m+\delta R_1,\]
+donc
+\[\delta \varrho_m=\delta s_m+\frac{\delta N+\delta R_1}{2}-1;\]
+ou, puisque \(\delta N+\delta R_1=2 n\),
+\[\delta \varrho_m=\delta s_m+n-1,\]
+c'est-à-dire que \(\varrho_m\) est nécessairement du degré \(\left(\delta s_m+n-1\right)\). Il suit de là que la fonction \(\frac{\varrho_m}{s_m}\) est du degré \((n-1)\).
+
+Faisant dans la formule (28) \(N=1\), on aura \(t_1=r\), et par conséquent
+\[\tag{31}\int \frac{\varrho_m d x}{s_m \sqrt{R}}=\log \frac{r+\sqrt{R}}{r-\sqrt{R}}+\log \frac{r_1+\sqrt{R}}{r_1-\sqrt{R}}+\dots+\log \frac{r_m+\sqrt{R}}{r_m-\sqrt{R}},\]
+où, suivant l'équation (30),
+\[\beta_m \varrho_m=2 s_m \frac{d \alpha_m}{d x}-\alpha_m \frac{d s_m}{d x}.\]
+
+L'équation (28) donne, en faisant \(s_m=a\),
+\begin{gather*}
+\tag{32}\int \frac{\varrho_m d x}{a \sqrt{R}}=\log \frac{t_1 \sqrt{N}+\sqrt{R_1}}{t_1 \sqrt{N}-\sqrt{R_1}}+\log \frac{r_1+\sqrt{R}}{r_1-\sqrt{R}}+\dots+\log \frac{r_m+\sqrt{R}}{r_m-\sqrt{R}} \\
+\text { où } \beta_m \varrho_m=a\left(2 N \frac{d \alpha_m}{d x}+\alpha_m \frac{d N}{d x}\right),
+\end{gather*}
+et lorsque \(N=1\),
+\begin{gather*}
+\tag{33} \int \frac{\varrho_m d x}{\sqrt{R}}=\log \frac{r+\sqrt{R}}{r-\sqrt{R}}+\log \frac{r_1+\sqrt{R}}{r_1-\sqrt{R}}+\dots+\log \frac{r_m+\sqrt{R}}{r_m-\sqrt{R}}, \\
+\text { où } \varrho_m=\frac{2}{\beta_m} \frac{d a_m}{d x}.
+\end{gather*}
+
+D'après ce qui précède, cette formule a la même généralité que la formule (32), et donne toutes les intégrales de la forme \(\int \frac{\varrho d x}{\sqrt{R}}\), où \(\varrho\) et \(R\) sont des fonctions entières, qui sont exprimables par une fonction logarithmique de la forme \(\log \frac{p+q \sqrt{R}}{p-q \sqrt{R}}\).
+
+\subsection*{12.}
+
+Dans l'équation (28) la fonction \(\frac{\varrho_m}{s_m}\) est donnée par l'équation (30). Mais on peut exprimer cette fonction d'une manière plus commode à l'aide des quantités \(t_1\), \(r_1\), \(r_2\), etc. \(\mu\), \(\mu_1\), \(\mu_2\), etc. En effet, soit
+\[z_m=\log \frac{r_m+\sqrt{R}}{r_m-\sqrt{R}},\]
+on aura en différentiant,
+\[d z_m=\frac{d r_m+\frac{1}{2} \frac{d R}{\sqrt{R}}}{r_m+\sqrt{R}}-\frac{d r_m-\frac{1}{2} \frac{d R}{\sqrt{R}}}{r_m-\sqrt{R}},\]
+ou en réduisant,
+\[\tag{33'}d z_m=\frac{r_m d R-2 R d r_m}{r_m^2-R} \frac{1}{\sqrt{R}}.\]
+Or nous avons trouvé plus haut
+\[s_m=s_{m-2}+4 \mu_{m-1} r_{m-1}-4 s_{m-1} \mu_{m-1}^2,\]
+donc en multipliant par \(s_{m-1}\),
+\[s_m s_{m-1}=s_{m-1} s_{m-2}+4 \mu_{m-1} s_{m-1} r_{m-1}-4 s_{m-1}^2 \mu_{m-1}^2,\]
+c'est-à-dire,
+\[s_m s_{m-1}=s_{m-1} s_{m-2}+r_{m-1}^2-\left(2 s_{m-1} \mu_{m-1}-r_{m-1}\right)^2.\]
+Mais on a
+\[r_m=2 s_{m-1} \mu_{m-1}-r_{m-1},\]
+donc en substituant cette quantité,
+\[s_m s_{m-1}=s_{m-1} s_{m-2}+r_{m-1}^2-r_m^2,\]
+d'où l'on déduit par transposition,
+\[r_m^2+s_m s_{m-1}=r_{m-1}^2+s_{m-1} s_{m-2}.\]
+
+Il suit de cette équation que \(r_m^2+s_m s_{m-1}\) a la même valeur pour tous les \(m\) et par conséquent que
+\[r_m^2+s_m s_{m-1}=r_1^2+s s_1;\]
+or nous avons vu plus haut que \(r_1^2+s s_1=R\), et par suite,
+\[\tag{34} R=r_m^2+s_m s_{m-1}.\]
+Substituant cette expression pour \(R\) dans l'équation \(\left(33^{\prime}\right)\), on aura après les réductions convenables
+\[d z_m=\frac{2 d r_m}{\sqrt{R}}-\frac{d s_m}{s_m} \frac{r_m}{\sqrt{R}}-\frac{d s_{m-1}}{s_{m-1}} \frac{r_m}{\sqrt{R}};\]
+mais puisque \(r_m=2 s_{m-1} \mu_{m-1}-r_{m-1}\), le terme \(-\frac{d s_{m-1}}{s_{m-1}} \frac{r_m}{\sqrt{R}}\) se transforme en \(-2 \mu_{m-1} \frac{d s_{m-1}}{\sqrt{R}}+\frac{d s_{m-1}}{s_{m-1}} \frac{r_{m-1}}{\sqrt{R}}\). On obtient donc
+\[d z_m=\left(2 d r_m-2 \mu_{m-1} d s_{m-1}\right) \frac{1}{\sqrt{R}}-\frac{d s_m}{s_m} \frac{r_m}{\sqrt{R}}+\frac{d s_{m-1}}{s_{m-1}} \frac{r_{m-1}}{\sqrt{R}},\]
+et en intégrant
+\[\tag{35}\int \frac{d s_m}{s_m} \frac{r_m}{\sqrt{R}}=-z_m+\int\left(2 d r_m-2 \mu_{m-1} d s_{m-1}\right) \frac{1}{\sqrt{R}}+\int \frac{d s_{m-1}}{s_{m-1}} \frac{r_{m-1}}{\sqrt{R}}.\]
+
+Cette expression est, comme on le voit, une formule de réduction pour les intégrales de la forme \(\int \frac{d s_m}{s_m} \frac{r_m}{\sqrt{R}}\). Car elle donne l'intégrale \(\int \frac{d s_m}{s_m} \frac{r_m}{\sqrt{R}}\) par une autre intégrale de la même forme et par une intégrale de la forme \(\int \frac{t d x}{\sqrt{R}}\) où \(t\) est une fonction entière. Mettant dans cette formule à la place de \(m\) successivement \(m\), \(m-1\), \(m-2 \dots 3\), \(2\), \(1\), on obtiendra \(m\) équations semblables, dont la somme donnera la formule suivante (en remarquant que \(r_0=2 s\mu-r_1=t_1 N\) en vertu de l'équation \(r_1+t_1 N=2 s \mu\))
+\[\begin{aligned}
+\int \frac{d s_m}{s_m} \sqrt{n}=&-\left(z_1+z_2+z_3+\dots+z_m\right)+\int \frac{d s}{s} \frac{t_1 N}{\sqrt{R}} \\
+&+\int 2\left(d r_1+d r_2+\dots+d r_m+\mu d s-\mu_1 d s_1-\dots-\mu_{m-1} d s_{m-1}\right) \frac{1}{\sqrt{R}}.
+\end{aligned}\]
+
+On peut encore réduire l'intégrale \(\int \frac{ds}{s} \sqrt{N}\). En différentiant l'expression
+\[z=\log \frac{t_1 \sqrt{N}+\sqrt{R_1}}{t_1 \sqrt{N}-\sqrt{R_1}},\]
+on aura après quelques réductions,
+\[d z=\frac{-2 d t_1 N R_1-t_1\left(R_1 d N-N d R_1\right)}{\left(t_1^2 N-R_1\right) \sqrt{R}}.\]
+Or on a
+\[R_1=t_1^2 N+s;\]
+substituant donc cette valeur de \(R_1\) dans l'équation ci-dessus, on trouve
+\[d z=\left(2 N d t_1+t_1 d N\right) \frac{1}{\sqrt{R}}-\frac{d s}{s} \frac{t_1 N}{\sqrt{R}},\]
+donc en intégrant
+\[\int \frac{d s}{s} \frac{t_1 N}{\sqrt{R}}=-z+\int\left(2 N d t_1+t_1 d N\right) \frac{1}{\sqrt{R}}.\]
+L'expression de \(\int \frac{d s_m}{s_m} \frac{r_m}{\sqrt{R}}\) se transforme par là en celle-ci,
+\[\begin{gathered}
+\int \frac{d s_{m}}{s_m} \frac{r_m}{\sqrt{R}}=-\left(z+z_1+z_2+\dots+z_m\right) \\
++\int \frac{2}{\sqrt{R}}\left(N d t_1+\frac{1}{2} t_1 d N+d r_1+\dots+d r_m-\mu d s-\mu_1 d s_1-\dots-\mu_{m-1} d s_{m-1}\right),
+\end{gathered}\]
+ou, en mettant à la place des quantités \(z, z_1, z_2 \dots\) leurs valeurs,
+\[\tag{36}
+\begin{gathered}
+ \int\frac{ds_m}{s_m} \frac{r_m}{\sqrt{R}} \\
+ =\int \frac{2}{\sqrt{R}}\left(N d t_1+\frac{1}{2} t_1 d N+d r_1+\dots+d r_m+\mu d s-\mu_1 d s_1-\dots-\mu_{m-1} d s_{m-1}\right) \\
+ -\log \frac{t_1 \sqrt{N}+\sqrt{R_1}}{t_1 \sqrt{N}-\sqrt{R_1}}-\log \frac{r_1+\sqrt{R}}{r_1-\sqrt{R}}- \log \frac{r_2+\sqrt{R}}{r_2-\sqrt{R}}-\dots-\log \frac{r_m+\sqrt{R}}{r_m-\sqrt{R}}.
+\end{gathered}\]
+Cette formule est entièrement la même que la formule (28); elle donne
+\[\tag{37}\begin{gathered}
+\frac{\varrho_m}{s_m} d x=-\frac{r_m d s_n}{s_m} \\
++2\left(N d t_1+\frac{1}{2} t_1 d N+d r_1+\dots+d r_m-\mu d s-\dots-\mu_{m-1} d s_{m-1}\right).
+\end{gathered}\]
+Mais l'expression ci-dessus dispense du calcul des fonctions \(\alpha_m\) et \(\beta_m\).
+
+Si maintenant \(s_m\) est indépendant de \(x\), l'intégrale \(\int \frac{d s_m}{s_m} \frac{r_m}{\sqrt{R}}\) disparaît et l'on obtient la formule suivante:
+\[\tag{38} \begin{gathered}
+ \int \frac{2}{\sqrt{R}}\left(\frac{1}{2} t_1 d N+N d t_1+d r_1+\dots+d r_m-\mu d s-\dots-\mu_{m-1} d s_{m-1}\right) \\
+=  \log \frac{t_1 \sqrt{N}+\sqrt{R_1}}{t_1 \sqrt{N}-\sqrt{R_1}}+\log \frac{r_1+\sqrt{R}}{r_1-\sqrt{R}}+\log \frac{r_2+\sqrt{R}}{r_2-\sqrt{R}}+\dots+\log \frac{r_m+\sqrt{R}}{r_m-\sqrt{R}}.
+\end{gathered}\]
+
+Si dans l'expression (36) on fait \(N=1\), on a \(t_1=r\), et par suite
+\[\tag{39}\begin{aligned}{r}
+\int \frac{d s_m}{s_m} \frac{r_m}{\sqrt{R}} = \int \frac{2}{\sqrt{R}}\left(d r+d r_1+\dots+d r_m-\mu d s-\dots-\mu_{m-1} d s_{m-1}\right) \\
+-\log \frac{r+\sqrt{R}}{r-\sqrt{R}}-\log \frac{r_1+\sqrt{R}}{r_1-\sqrt{R}}-\dots-\log \frac{r_m+\sqrt{R}}{r_m-\sqrt{R}}
+\end{aligned}\]
+et si l'on fait \(s_m=a\) :
+\[\tag{40}\begin{gathered}
+\int \frac{2}{\sqrt{{R}}}\left(d r+d r_1+\dots+d r_m-\mu d s-\mu_1 d s_1-\dots-\mu_{m-1} d s_{m-1}\right) \\
+=\log \frac{r+\sqrt{R}}{r-\sqrt{R}}+\log \frac{r_1+\sqrt{R}}{r_1-\sqrt{R}}+\dots+\log \frac{r_m+\sqrt{R}}{r_m-\sqrt{R}}.
+\end{gathered}\]
+
+En vertu de ce qui précède, cette formule a la même généralité que (38); elle donne par conséquent toutes les intégrales de la forme \(\int \frac{t d x}{\sqrt{R}}\), où \(t\) est une fonction entière, qui peuvent être exprimées par une fonction de la forme \(\log \frac{p+q \sqrt{R}}{p-q \sqrt{R}}\).
+
+\subsection*{13.}
+
+Nous avons vu ci-dessus que
+\[\sqrt{\frac{R_1}{N}}=t_1+\cfrac{1}{2 \mu+\cfrac{1}{2 \mu_1+\cfrac{1}{2 \mu_n+\cfrac{1}{2 \mu_3+\cfrac{1}{\ddots}}}}}\]
+donc, lorsque \(N=1\),
+\[\sqrt{R}=r+\cfrac{1}{2 \mu+\cfrac{1}{2 \mu_1+\cfrac{1}{2 \mu_2+\cfrac{1}{2 \mu_3+\cfrac{1}{\ddots}}}}}\]
+En général les quantités \(\mu\), \(\mu_1\), \(\mu_2\), \(\mu_3 \dots\) sont différentes entre elles. Mais lorsqu'une des quantités \(s\), \(s_1\), \(s_2 \dots\) est indépendante de \(x\), la fraction continue devient \textit{périodique}. On peut le démontrer comme il suit.
+
+On a
+\[r_{m+1}^2+s_m s_{m+1}=R=r^2+s,\]
+donc, lorsque \(s_m=a\),
+\[r_{m+1}^2-r^2=s-a s_{m+1}=\left(r_{m+1}+r\right)\left(r_{m+1}-r\right).\]
+Or \(\delta r_{m+1}=\delta r\), \(\delta s<\delta r\), \(\delta s_{m+1}<\delta r\), donc cette équation ne peut subsister à moins qu'on n'ait en même temps,
+\[r_{m+1}=r, \quad s_{m+1}=\frac{s}{a}.\]
+Or, puisque \(\mu_{m+1}=E\left(\frac{r_{m+1}}{s_{m+1}}\right)\) on a de même
+\[\mu_{m+1}=a E\left(\frac{r}{s}\right);\]
+mais \(E\left(\frac{r}{s}\right)=\mu\), donc
+\[\mu_{m+1}=a \mu .\]
+
+On a de plus
+\[s_{m+2}=s_m+4 \mu_{m+1} r_{m+1}-4 \mu_{m+1}^2 s_{m+1},\]
+donc ayant \(s_m=a\), \(r_{m+1}=r\), \(\mu_{m+1}=a \mu\) on en conclut
+\[s_{m+2}=a\left(1+4 \mu r-4 \mu^2 s\right);\]
+or \(s_1=1+4 \mu r-4 \mu^2 s\), donc
+\[s_{m+2}=a s_1.\]
+
+On a de même
+\[r_{m+2}=2 \mu_{m+1} s_{m+1}-r_{m+1}=2 \mu s-r,\]
+donc, puisque \(r_1=2 \mu s-r\),
+\[r_{m+2}=r_1,\]
+d'où l'on tire
+\[\mu_{m+2}=E\left(\frac{r_{m+2}}{s_{m+2}}\right)=\frac{1}{a} E\left(\frac{r_1}{s_1}\right),\]
+donc
+\[\mu_{m+2}=\frac{\mu_1}{a}.\]
+
+En continuant ce procédé on voit sans peine qu’on aura en général
+\[\tag{41}\left\{\begin{array}{l} r_{m+n}=r_{n-1}, \quad s_{m+n}=a^{\pm1} s_{n-1}, \\
+\mu_{m+n}=a^{\mp 1} \mu_{n-1}. \end{array}\right.\]
+Le signe supérieur doit être pris lorsque \(n\) est pair et le signe inférieur dans le cas contraire.
+
+Mettant dans l'équation
+\[r_m^2+s_{m-1} s_m=r^2+s\]
+\(a\) à la place de \(s_m\), on aura
+\[\left(r_m-r\right)\left(r_m+r\right)=s-a s_{m-1}.\]
+Il s'ensuit que
+\[r_m=r, \quad s_{m-1}=\frac{s}{r}.\]
+Or on a \(\mu_m=E\left(\frac{r_m}{s_m}\right)\), donc
+\[\mu_m=\frac{1}{a} E r;\]
+c'est-à-dire
+\[\mu_m=\frac{1}{a} r.\]
+On a de plus
+\[r_m+r_{m-1}=2 s_{m-1} \mu_{m-1},\]
+c'est-à-dire, puisque \(r_m=r\), \(s_{m-1}=\frac{s}{a}\),
+\[r+r_{m-1}=\frac{2 s}{a} \mu_{m-1}.\]
+Mais \(r+r_1=2 s \mu\), donc
+\[r_{m-1}-r_1=\frac{2 s}{a}\left(\mu_{m-1}-a \mu\right).\]
+On a
+\[r_{m-1}^2+s_{m-1} s_{m-2}=r_1^2+s s_1,\]
+c'est-à-dire, puisque \(s_{m-1}=\frac{s}{a}\),
+\[\left(r_{m-1}+r_1\right)\left(r_{m-1}-r_1\right)=\frac{s}{a}\left(a s_1-s_{m-2}\right).\]
+Or nous avons vu que
+\[r_{m-1}-r_1=\frac{2 s}{a}\left(\mu_{m-1}-a \mu\right),\]
+donc en substituant,
+\[2\left(r_{m-1}+r_1\right)\left(\mu_{m-1}-a \mu\right)=a s_1-s_{m-2}.\]
+Cette équation donne, en remarquant que \(\delta^{\prime}\left(r_{m-1}+r_1\right)>\delta\left(a s_1-s_{m-2}\right)\),
+\[\mu_{m-1}=a \mu, s_{m-2}=a s_1,\]
+et par conséquent.
+\[r_{m-1}=r_1.\]
+
+Par un procédé semblable on trouvera aisément,
+\[r_{m-2}=r_{2,}, \quad s_{m-3}=\frac{1}{a} s_2, \quad \mu_{m-2}=\frac{\mu_1}{a},\]
+et en général
+\[\tag{42}\left\{\begin{array}{l}r_{m-n}=r_n, \quad s_{m-n}=a^{ \pm 1} s_{n-1}, \\
+\mu_{m-n}=a^{\mp 1} \mu_{n-1}.\end{array}\right.\]
+
+\subsection*{14.}
+
+\begin{center}A. Soit \(m\) un nombre pair, \(2 k\).\end{center}
+
+Dans ce cas on voit aisément, en vertu des équations (41) et (42), que les quantités \(r\), \(r_1\), \(r_2 \dots s\), \(s_1\), \(s_2 \dots, \mu\), \(\mu_1\), \(\mu_2 \dots\) forment les séries suivantes: 
+{\setlength\arraycolsep{0.25em}\[\begin{array}{cccccccccccc|ccc}
+0&1&..&2k-2&2k-1&2k&2k+1&2k+2&..&4k-1&4k&4k+1&4k+2&4k+3&\text{etc.}\\
+r&r_1&..&r_2&r_1&r&r&r_1&..&r_2&r_1&r&r&r_1&\text{etc.}\\
+s&s_1&..&as_1&\frac{s}{a}&a&\frac{s}{a}&as_1&..&s_1&s&1&s&s_1&\text{etc.}\\
+\mu&\mu_1&..&\frac{\mu_1}{a}&a \mu & \frac{r}{a}&a\mu& \frac{\mu_1}{a}&..&\mu_1&\mu&r&\mu&\mu_1&\text{etc.}
+\end{array}\]}
+
+\begin{center}B. Soit \(m\) un nombre impair, \(2 k-1\).\end{center}
+
+Dans ce cas l'équation
+\[s_{m-n}=a^{ \pm 1} s_{n-1} \text { ou } s_{2 k-n-1}=a^{ \pm 1} s_{n-1}\]
+donne, pour \(n=k\),
+\[s_{k-1}=a^{ \pm 1} s_{k-1}, \text { donc } a=1.\]
+Les quantités \(r\), \(r_1\) etc. \(s\), \(s_1\) etc.,\(\|,\|_1\) etc. forment les séries suivantes:
+\[\begin{array}{cccccccccc|ccc}
+0 & 1 & .. & k-2 & k-1 & k & k+1 & .. & 2 k-2 & 2 k-1 & 2 k & 2 k+1 & \text { etc. } \\
+r & r_1 & .. & r_{k-2} & r_{k-1} & r_{k-1} & r_{k-2} & .. & r_1 & r & r & r_1 & \text { etc. } \\
+s & s_1 & .. & s_{k-2} & s_{k-1} & s_{k-2} & s_{k-3} & .. & s & 1 & s & s_1 & \text { etc. } \\
+\mu & \mu_1 & .. & \mu_{k-2} & \mu_{k-1} & \mu_{k-2} & \mu_{k-3} & .. & \mu & r & \mu & \mu_1 & \text { etc. }
+\end{array}\]
+
+On voit par là que, lorsqu'une des quantités \(s\), \(s_1\), \(s_2 \dots\) est indépendante de \(x\), la fraction continue résultant de \(\sqrt{R}\) est toujours périodique et de la forme suivante, lorsque \(s_m=a\) :
+\[\sqrt{R} = r+\cfrac{1}{2 \mu+\cfrac{1}{2 \mu_1+\cfrac{1}{\ddots \cfrac{1}{\frac{2\mu_1}{a}+\cfrac{1}{2 a \mu+\cfrac{1}{\frac{2 r}{a}+\cfrac{1}{2 a \mu+\cfrac{1}{\frac{2 \mu_1}{a}+\cfrac{1}{\ddots+\cfrac{1}{2 \mu+\cfrac{1}{2 r+\cfrac{1}{2 \mu+\cfrac{1}{\ddots}}}}}}}}}}}}}\]
+Lorsque \(m\) est impair, on a de plus \(a=1\), et par suite
+\[\sqrt{R}=r+\cfrac{1}{2 \mu+\cfrac{1}{2 \mu_1+\cfrac{1}{\ddots+\cfrac{1}{2 \mu_1+\cfrac{1}{2 \mu+\cfrac{1}{2 r+\cfrac{1}{2 \mu+\cfrac{1}{2 \mu_1+\cfrac{1}{\ddots}}}}}}}}}\]
+
+La réciproque a également lieu; c'est-à-dire que, lorsque la fraction continue résultant de \(\sqrt{R}\) a la forme ci-dessus, \(s_m\) sera indépendant de \(x\). En effet, soit
+\[\mu_m=\frac{r}{a} ,\]
+on tire de l'équation \(r_m=s_m \mu_m+\varepsilon_m\),
+\[r_m=\frac{r}{a} s_m+\varepsilon_m.\]
+Or, puisque \(r_m=r_{m-1}-2 \varepsilon_{m-1}\), où \(\delta \varepsilon_{m-1} < \delta r\), il est clair que
+\[r_m=r+\gamma_m \text {, où } \delta \gamma_m<\delta r.\]
+On en tire
+\[r\left(1-\frac{s_m}{a}\right)=\varepsilon_m-\gamma_m,\]
+et par conséquent \(s_m=a\), ce qu’il fallait démontrer. En combinant cela avec ce qui précède, on trouve la proposition suivante:
+
+"Lorsqu'il est possible de trouver pour \(\varrho\) une fonction entière telle, que
+\[\int \frac{\varrho d x}{\sqrt{R}}=\log \frac{y+\sqrt{R}}{y-\sqrt{R}},\]
+la fraction continue résultant de \(\sqrt{R}\) est périodique, et a la forme suivante:
+\[\sqrt{R}=r+\cfrac{1}{2 \mu+\cfrac{1}{2 \mu_1+\cfrac{1}{\ddots +\cfrac{1}{2 \mu_1+\cfrac{1}{2 \mu+\cfrac{1}{2 r+\cfrac{1}{2 \mu +\cfrac{1}{2 \mu_1+\text {etc.}}}}}}}}}\]
+et réciproquement, lorsque la fraction continue résultant de \(\sqrt{R}\) a cette forme, il est toujours possible de trouver pour \(\varrho\) une fonction entière qui satisfasse à l'équation,
+\[\int \frac{\varrho d x}{\sqrt{R}}=\log \frac{y+\sqrt{R}}{y-\sqrt{R}}.\]
+La fonction \(y\) est donnée par l'expression suivante:
+\[y=r+\cfrac{1}{2 \mu+\cfrac{1}{2 \mu_1+\cfrac{1}{2 \mu_2+\cfrac{1}{\ddots +\cfrac{1}{2 \mu+\cfrac{1}{2 r}.}}}}}\]
+
+Dans cette proposition est contenue la solution complète du problème proposé au commencement de ce mémoire.
+
+\subsection*{15.}
+
+Nous venons de voir que, lorsque \(s_{2 k-1}\) est indépendant de \(x\), on aura toujours \(s_k=s_{k-2}\), et lorsque \(s_{2 k}\) est indépendant de \(x\), on aura \(s_k=c s_{k-1}\), où \(c\) est constant. La réciproque a également lieu, ce qu'on peut démontrer comme il suit.
+
+I. Soit d'abord \(s_k=s_{k-2}\), on a
+\[r_{k-1}^2+s_{k-1} s_{k-2}=r_k^2+s_k s_{k-1};\]
+or \(s_k=s_{k-2}\), donc
+\[r_k=r_{k-1}.\]
+De plus
+\[\begin{gathered}
+r_k=\mu_k s_k+\varepsilon_k, \\
+r_{k-2}=\mu_{k-2} s_{k-2}+\varepsilon_{k-2},
+\end{gathered}\]
+donc
+\[r_k-r_{k-2}=s_k\left(\mu_k-\mu_{k-2}\right)+\varepsilon_k-\varepsilon_{k-2}.\]
+Mais
+\[r_k=r_{k-1}, \quad r_{k-2}=r_{k-1}+2 \varepsilon_{k-2},\]
+donc, en substituant, on trouve
+\[0=s_k\left(\mu_k-\mu_{k-2}\right)+\varepsilon_k+\varepsilon_{k-2}.\]
+Cette équation donne, en remarquant que \(\delta \varepsilon_k<\delta s_k, \quad \delta \varepsilon_{k-2}<\delta s_{k-2}\),
+\[\mu_k=\mu_{k-2}, \quad \varepsilon_k=-\varepsilon_{k-2}.\]
+Or \(r_{k+1}=r_k-2 \varepsilon_k\), donc, en vertu de la dernière équation,
+\[r_{k+1}=r_{k-1}+2 \varepsilon_{k-2},\]
+et, puisque \(r_{k-1}=r_{k-2}-2 \varepsilon_{k-2}\), on en conclut
+\[r_{k+1}=r_{k-2}.\]
+
+On a
+\[r_{k+1}^2+s_k s_{k+1}=r_{k-2}^2+s_{k-2} s_{k-3},\]
+donc, puisque \(r_{k+1}=r_{k-2}\), \(s_k=s_{k-2}\), on a aussi
+\[s_{k+1}=s_{k-3}.\]
+
+En combinant cette équation avec celles-ci,
+\[r_{k+1}=\mu_{k+1} s_{k+1}+\varepsilon_{k+1}, \quad r_{k-3}=\mu_{k-3} s_{k-3}+\varepsilon_{k-3},\]
+on obtiendra
+\[r_{k+1}-r_{k-3}=s_{k+1}\left(\mu_{k+1}-\mu_{k-3}\right)+\varepsilon_{k+1}-\varepsilon_{k-3}.\]
+Or on a \(r_{k+1}=r_{k-2}\), et \(r_{k-2}=r_{k-3}-2 \varepsilon_{k-3}\), par conséquent
+\[0=s_{k+1}\left(\mu_{k+1}-\mu_{k-3}\right)+\varepsilon_{k+1}+\varepsilon_{k-3}.\]
+Il s'ensuit que
+\[\mu_{k+1}=\mu_{k-3}, \varepsilon_{k+1}=-\varepsilon_{k-3}.\]
+
+En continuant de cette manière, on voit aisément qu’on aura en général
+\[r_{k+n}=r_{k-n-1}, \quad \mu_{k+n}={\mu}_{k-n-2}, \quad s_{k+n}=s_{k-n-2}.\]
+En posant dans la dernière équation \(n=k-1\), on trouvera
+\[s_{2 k-1}=s_{-1}.\]
+Or il est clair que \(s_{-1}\) est la même chose que 1; car on a en général
+\[R=r_m^2+s_m s_{m-1}\]
+donc en faisant \(m=0\),
+\[R=r^2+s s_{-1}\]
+mais \(R=r^2+s\), donc \(s_{-1}=1\), et par conséquent
+\[s_{2 k-1}=1.\]
+
+II. Soit en second lieu \(s_k=c s_{k-1}\), on a
+\[\begin{gathered}
+r_k=\mu_k s_k+\varepsilon_k, \\
+r_{k-1}=\mu_{k-1} s_{k-1}+\varepsilon_{k-1},
+\end{gathered}\]
+donc
+\[r_k-r_{k-1}=s_{k-1}\left(c \mu_k-\mu_{k-1}\right)+\varepsilon_k-\varepsilon_{k-1}.\]
+Or \(r_k-r_{k-1}=-2 \varepsilon_{k-1}\), donc
+\[0=s_{k-1}\left(c \mu_k-\mu_{k-1}\right)+\varepsilon_k+\varepsilon_{k-1}.\]
+Cette équation donne
+\[\mu_k=\frac{1}{c} \mu_{k-1}, \quad \varepsilon_k=-\varepsilon_{k-1}.\]
+Donc des équations
+\[r_k-r_{k-1}=-2 \varepsilon_{k-1}, \quad r_{k+1}-r_k=-2 \varepsilon_k,\]
+on déduit en ajoutant
+\[r_{k+1}=r_{k-1}.\]
+
+On a de plus
+\[r_{k+1}^2+s_k s_{k+1}=r_{k-1}^2+s_{k-1} s_{k-2},\]
+et, puisque \(r_{k+1}=r_{k-1}\) et \(s_k=c s_{k-1}\), on en conclut
+\[s_{k+1}=\frac{1}{c} s_{k-2}.\]
+
+En continuant de cette manière, on aura,
+\[s_{2 k}=c^{ \pm 1},\]
+c'est-à-dire que \(s_{2 k}\) est indépendant de \(x\).
+
+Cette propriété des quantités \(s\), \(s_1\), \(s_2\) etc. fait voir que l'équation \(s_{2 k}=a\) est identique avec l'équation \(s_k=a^{ \pm 1} s_{k-1}\) et que l'équation \(s_{2 k-1}=1\) est identique avec l'équation \(s_k=s_{k-2}\). Il s'ensuit que, lorsqu'on cherche la forme de \(R\) qui convient à l'équation \(s_{2 k}=a\), on peut au lieu de cette équation poser \(s_k=a^{ \pm 1} s_{k-1}\), et que, lorsqu'on cherche la forme de \(R\) qui convient à l'équation \(s_{2 k-1}=1\), il suffit de faire \(s_k=s_{k-2}\), ce qui abrége beaucoup le calcul.
+
+\subsection*{16.}
+
+En vertu des équations (41) et (42) on peut donner à l'expression (40) une forme plus simple.
+\begin{center}a) Lorsque \(m\) est pair et égal à \(2 k\), on a\end{center}
+\[\tag{43}\left\{\begin{array}{l}\int \frac{2}{\sqrt{R}}\left(d r+d r_1+\dots+d r_{k-1}+\frac{1}{2} d r_k-\mu d s-\mu_1 d s_1-\dots-\mu_{k-1} d s_{k-1}\right) \\ =\log \frac{r+\sqrt{R}}{r-\sqrt{R}}+\log \frac{r_1+\sqrt{R}}{r_1-\sqrt{R}}+\dots+\log \frac{r_{k-1}+\sqrt{R}}{r_{k-1}-\sqrt{R}}+\frac{1}{2} \log \frac{r_k+\sqrt{R}}{r_k-\sqrt{R}}.\end{array}\right.\]
+\begin{center} b) Lorsque \(m\) est impair et égal à \(2 k-1\), on a \end{center}
+\[\tag{44} \left\{\begin{array}{c}\int \frac{2}{\sqrt{R}}\left(d r+d r_1+\dots+d_{r_{k-1}}-\mu d s-\mu_1 d s_1-\dots-\mu_{k-2} d s_{k-2}-\frac{1}{2} \mu_{k-1} d s_{k-1}\right) \\ =\log \frac{r+\sqrt{R}}{r-\sqrt{R}}+\log \frac{r_1+\sqrt{R}}{r_1-\sqrt{R}}+\dots+\log \frac{r_{k-1}+\sqrt{R}}{r_{k-1}-\sqrt{R}}.\end{array}\right.\]
+
+\subsection*{17.}
+
+Pour appliquer ce qui précède à un exemple, prenons l'intégrale
+\[\int \frac{\varrho d x}{\sqrt{x^4+\alpha x^3+\beta x^2+\gamma x+\delta}}.\]
+On a ici \(\delta R=4\), donc les fonctions \(s\), \(s_1\), \(s_2\), \(s_3 \dots\) sont du premier degré, et par suite l'équation \(s_m=\) const. ne donne qu'une seule équation de condition entre les quantités, \(\alpha\), \(\beta\), \(\gamma\), \(\delta\), \(\varepsilon\).
+
+Faisant
+\[x^4+\alpha x^3+\beta x^2+\gamma x+\delta=\left(x^2+a x+b\right)^2+c+e x\]
+on aura
+\[r=x^2+a x+b, \quad s=c+e x.\]
+Pour abréger le calcul, nous ferons \(c=0\). Dans ce cas on a \(s=e x\), et par conséquent,
+\[\mu=E\left(\frac{r}{s}\right)=E\left(\frac{x^2+a x+b}{e x}\right);\]
+c'est-à-dire
+\[\mu=\frac{x}{e}+\frac{a}{e}, \quad \varepsilon=b\]
+De plus
+\[\begin{gathered}
+r_1=r-2 \varepsilon=x^2+a x+b-2 b=x^2+a x-b,\\
+s_1=1+4 \varepsilon \mu=1+4 b \frac{x+a}{e}=\frac{4 b}{e} x+\frac{4 a b}{e}+1, \\
+\mu_1=E\left(\frac{r_1}{s_1}\right)=E \frac{x^2+a x-b}{\frac{4 b}{e} x+\frac{4 a b}{e}+1}=\frac{e}{4 b} x-\frac{e^2}{16 b^2}, \\
+\varepsilon_1=r_1-\mu_1 s_1=\frac{a e}{4 b}+\frac{e^2}{16 b^2}-b, \\
+s_2=s+4 \varepsilon_1 \mu_1=\left(\frac{a e^2}{4 b^2}+\frac{e^3}{16 b^3}\right) x-\frac{e^2}{4 b^2}\left(\frac{a e}{4 b}+\frac{e^2}{16 b^2}-b\right).
+\end{gathered}\]
+
+Soit maintenant en premier lieu \(s_1\) constant. Alors l'équation
+\[s_1=\frac{4 b}{e} x+\frac{4 a b}{e}+1\]
+donne
+\[b=0,\]
+par conséquent,
+\[\begin{gathered}
+r=x^2+a x, \\
+\int \frac{2}{\sqrt{R}}\left(d r-\frac{1}{2} \mu d s\right)=\log \frac{r+\sqrt{R}}{r-\sqrt{R}},
+\end{gathered}\]
+ou, puisque \(\mu=\frac{x+a}{e}\), \(s=e x\),
+\[\int \frac{(3 x+a) d x}{\sqrt{\left(x^2+a x\right)^2+e x}}=\log \frac{x^2+a x+\sqrt{R}}{x^2+a x-\sqrt{R}}.\]
+Cette intégrale se trouve aussi facilement en divisant le numérateur et le dénominateur de la différentielle par \(\sqrt{x}\).
+
+Soit en deuxième lieu \(s_2\) constant. Dans ce cas la formule (43) donne, \(k\) étant égal à l'unité,
+\[\int \frac{2}{\sqrt{R}}\left(d r+\frac{1}{2} d r_1-\mu d s\right)=\log \frac{r+\sqrt{R}}{r-\sqrt{R}}+\frac{1}{2} \log \frac{r_1+\sqrt{R}}{r_1-\sqrt{R}}.\]
+Or l'équation \(s_2=\) const. donne \(s_1=c s\), donc
+\[\frac{4 b}{e} x+\frac{4 a b}{e}+1=c e x.\]
+L'équation de condition sera donc \(\frac{4 a b}{e}+1=0\), c'est-à-dire
+\[e=-4 a b,\]
+donc
+\[R=\left(x^2+a x+b\right)^2-4 a b x.\]
+De plus, ayant \(\mu=\frac{x+a}{e}\), \(r=x^2+a x+b\), \(r_1=x^2+a x-b\), on aura la formule,
+\[\int \frac{(4 x+a) d x}{\sqrt{\left(x^2+a x+b\right)^2-4 a b x}}=\log \frac{x^2+a x+b+\sqrt{R}}{x^2+a x+b-\sqrt{R}}+\frac{1}{2} \log \frac{x^2+a x^2-b+\sqrt{R}}{x^2+a x-b-\sqrt{R}}.\]
+
+Soit en troisième lieu \(s_3\) constant. Cette équation donne \(s=s_2\), c'est-à-dire
+\[\frac{a e}{4 b}+\frac{e^2}{16 b^2}-b=0.\]
+On en tire
+\[e=-2 b\left(a \pm \sqrt{a^2+4 b}\right).\]
+La formule (44) donne par conséquent, puisque \(k=2\),
+\[\int \frac{\left(5 x+\frac{3}{2} a \mp \frac{1}{2} \sqrt{a^2+4 b}\right) d x}{\sqrt{\left(x^2+a x+b\right)^2-2 b x\left(a \pm \sqrt{a^2+4 b}\right)}}
+=\log \frac{x^2+a x+b+\sqrt{R}}{x^2+a x+b-\sqrt{R}}+\log \frac{x^2+a x-b+\sqrt{R}}{x^2+a x-b-\sqrt{R}}.\]
+Si par exemple \(a=0\), \(b=1\), on aura cette intégrale:
+\[\int \frac{(5 x-1) d x}{\sqrt{\left(x^2+1\right)^2-4 x}}=\log \frac{x^2+1+\sqrt{\left(x^2+1\right)^2-4 x}}{x^2+1-\sqrt{\left(x^2+1\right)^2-4 x}}+\log \frac{x^2-1+\sqrt{\left(x^2+1\right)^2-4 x}}{x^2-1-\sqrt{\left(x^2+1\right)^2-4 x}}.\]
+
+Soit en quatrième lieu \(s_4\) constant. Cela donne \(s_2=c s_1\), c'est-à-dire
+\[\left(\frac{a e^2}{4 b^2}+\frac{e^3}{16 b^3}\right) x-\frac{e^2}{4 b^2}\left(\frac{a e}{4 b}+\frac{e^2}{16 b^2}-b\right)=\frac{4 c b}{e} x+\left(\frac{4 a b}{e}+1\right) c.\]
+On en tire, en comparant les coefficiens et éliminant ensuite \(c\),
+\[\begin{gathered}
+\frac{e}{16 b^3}(e+4 a b)^2=-\frac{e}{b}\left(\frac{a e}{4 b}+\frac{e^2}{16 b^2}-b\right),\\
+(e+4 a b)^2=16 b^3-e(e+4 a b), \\
+e^2+6 a b e=8 b^3-8 a^2 b^2, \\
+e=-3 a b \mp \sqrt{8 b^3+a^2 b^2}=-b\left(3 a \pm \sqrt{a^2+8 b}\right).
+\end{gathered}\]
+En vertu de cette expression la formule (43) donne,
+\[\begin{aligned}
+\int \frac{\left(6 x+\frac{3}{2} a-\frac{1}{2} \sqrt{a^2+8 b}\right) d x}{\sqrt{\left(x^2+a x+b\right)^2-b\left(3 a+\sqrt{a^2+8 b}\right) x}}&=\log \frac{x^2+a x+b+\sqrt{R}}{x^2+a x+b-\sqrt{R}} \\
++\log \frac{x^2+a x-b+\sqrt{R}}{x^2+a x-b-\sqrt{R}}&+\frac{1}{2} \log \frac{x^2+a x+\frac{1}{4} a\left(a-\sqrt{a^2+8 b}\right)+\sqrt{R}}{x^2+a x+\frac{1}{4} a\left(a-\sqrt{a^2+8 b}\right)-\sqrt{R}}.
+\end{aligned}\]
+Si l'on fait par exemple \(a=0\), \(b=\frac{1}{2}\), on obtiendra
+\[ \begin{aligned} \int &\frac{\left(x+\frac{1}{6}\right)dx}{\sqrt{x^4+x^2+x+\frac{1}{4}}} = \frac{1}{6} \log \frac{x^2 + \frac{1}{2} + \sqrt{x^4+x^2+x+\frac{1}{4}}}{x^2 + \frac{1}{2} - \sqrt{x^4+x^2+x+\frac{1}{4}}} \\
+&+  \frac{1}{6} \log \frac{x^2 + -\frac{1}{2} + \sqrt{x^4+x^2+x+\frac{1}{4}}}{x^2 - \frac{1}{2} - \sqrt{x^4+x^2+x+\frac{1}{4}}} + \frac{1}{12} \log \frac{x^2 + \sqrt{x^4+x^2+x+\frac{1}{4}}}{x^2 - \sqrt{x^4+x^2+x+\frac{1}{4}}} 
+\end{aligned}\]
+
+On peut continuer de cette manière et trouver un plus grand nombre d'intégrales. Ainsi par exemple l'intégrale
+\[\int \frac{\left(x+\frac{\sqrt{5}+1}{14}\right) d x}{\sqrt{\left(x^2+\frac{\sqrt{5}-1}{2}\right)^2+(\sqrt{5}-1)^2 x}}\]
+peut s'exprimer par des logarithmes.
+\begin{center}\rule{2in}{0.1pt}\end{center}
+
+Nous avons ici cherché les intégrales de la forme \(\int \frac{\varrho dx}{\sqrt{R}}\) qui peuvent s'exprimer par une fonction logarithmique de la forme \(\log \frac{p+q \sqrt{R}}{p-q \sqrt{R}}\). On pourrait rendre le problème encore plus général, et chercher en général toutes les intégrales de la forme ci-dessus qui pourraient s'exprimer d'une manière quelconque par des logarithmes; mais on ne trouverait pas d'intégrales nouvelles. On a en effet ce théorème remarquable:
+
+\begin{quote}"Lorsqu'une intégrale de la forme \(\int \frac{\varrho d x}{\sqrt{R}}\), où \(\varrho\) et \(R\) sont des fonctions entières de \(x\), est exprimable par des logarithmes, on peut toujours l'exprimer de la manière suivante:
+\[\int \frac{\varrho d x}{\sqrt{R}}=A \log \frac{p+q \sqrt{R}}{p-q \sqrt{R}},\]
+où \(A\) est constant, et \(p\) et \(q\) des fonctions entières de \(x\)." \end{quote}
+
+Je démontrerai ce théorème dans une autre occasion.
+
+\begin{center}\rule{2in}{0.1pt}\end{center}
+\vfill
+\end{document}
