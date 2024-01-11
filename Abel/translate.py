@@ -1,7 +1,7 @@
 from openai import OpenAI
 
-def translate(transcription_path,translation_path,api_key):
-  client = OpenAI(api_key)
+def translate(transcription_path,translation_path,my_api_key):
+  client = OpenAI(api_key=my_api_key)
   with open(transcription_path,'r') as fp:
     transcription = fp.read()
   paragraphs = transcription.split('\n\n')
